@@ -10,8 +10,8 @@
 }
 :root {
     height: 100%;
-    --light-mode-bg: rgba(255, 221, 188, 0.75);
-    --dark-mode-bg: rgba(119, 46, 12, 0.75);
+    --light-mode-bg: rgba(209, 209, 209, 0.75);
+    --dark-mode-bg: rgba(94, 94, 94, 0.75);
     --dark-bg: rgb(20, 20, 20);
     --light-bg: white;
 }
@@ -81,7 +81,7 @@ body {
 
 /* Extend the orange header background to cover filter tags - INDEX PAGE ONLY */
 body:not(.classPage) .header {
-  height: 19vh !important; /* Increased from 14.5vh */
+  height: 15vh !important; /* Increased from 14.5vh */
 }
 
 /* Update class grid to account for taller header - INDEX PAGE ONLY */
@@ -463,43 +463,49 @@ span {
   align-items: center;
   justify-content: flex-start;
   margin: -1vh 0vw 0 0vw; /* Remove negative left margin */
-  width: 100%;
-  position: relative;
+  /* width: 100%; */
+  position: absolute;
+  right: 9vw;
+  top: 4vh;
   z-index: 100;
-  padding-left: 1vw; /* Reduce left padding for better alignment */
+  /*padding-left: 1vw; Reduce left padding for better alignment */
 }
-
 .search-box {
-  position: relative;
+  position: absolute;
+  right: 0;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(189, 189, 189, 0.95);
   border-radius: 2vh;
   padding: 0.8vh 1.5vw;
   backdrop-filter: blur(15px);
   border: 2px solid rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  min-width: 25vw;
+  width: calc(2vh + 1.5vw + 1.7vw);
   max-width: 35vw;
+  max-height: 4vh;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: black;
+  overflow: hidden;
 }
 
 .search-box:focus-within {
   background: rgba(255, 255, 255, 1);
-  border-color: #2196F3;
-  box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
-  transform: translateY(-1px);
+  border-color: #a7a7a7;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 25vw;
+    right: 0;
 }
 
 .search-icon {
   color: rgba(0, 0, 0, 0.6);
   font-size: 2vh;
-  margin-right: 0.8vw;
+  margin-right: 0.8vw; 
   transition: color 0.2s ease;
 }
 
 .search-box:focus-within .search-icon {
-  color: #2196F3;
+  color: #000000;
 }
 
 #searchInput {
@@ -707,13 +713,16 @@ span {
   --md-filter-chip-hover-label-text-color: black;
   --md-filter-chip-label-text-color: black;
   --md-filter-chip-focus-label-text-color: black;
+ --md-sys-color-surface-container-high: #e3e9e9;
+    --md-sys-color-primary: #006a6a;
+
 }
 
 
 
 .fab {
-    position: fixed;    /* take it out of normal flow and pin it */
-    bottom: 2vh;       /* distance from bottom of screen */
-    right: 2vh;        /* distance from right side */
-    z-index: 9999;      /* make sure it’s above other stuff */
+    position: fixed;
+    bottom: 2vh;
+    right: 2vh;
+    z-index: 9999;
   }

@@ -90,13 +90,15 @@ md-sys-color {
 
 </head>
 
-<body onload="load();setTimeout(dothing, 100)" style="background-color: var(--light-bg)" id="body">
-  <md-fab label="Add Rating? (make me better plz)" class="fab"></md-fab>
+<body onload="load();setTimeout(dothing, 100);modeChange('dark_mode')" style="background-color: var(--light-bg)" id="body">
+  <md-fab label="Review Class" size="large" class="fab">
+    <md-icon class="material-symbols-rounded" slot="icon">add</md-icon>
+  </md-fab>
+
   
     <div class="container" id="fullHeightDiv">
       <img src="/Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
           <img src="closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
-           <span class="material-symbols-rounded mode" style="font-size:5vh" onclick="modeChange(this)">light_mode</span>
         <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
           <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: calc(6vh + 1vw + 0.5vw)">
             Close
@@ -104,9 +106,9 @@ md-sys-color {
           <div class="sidebarItem">
             <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.location.href = './index.html'";>flood</span>Home
           </div>
-          <div class="sidebarItem" onclick="window.open('https://forms.gle/BzNknKsfrAYHzkww7', '_blank').focus();">
-            <span class="material-symbols-rounded sidebar-icon no-fill" style="font-size:4vw">rate_review</span>Rate class
-          </div>
+          <!-- <div class="sidebarItem" onclick="window.open('https://forms.gle/BzNknKsfrAYHzkww7', '_blank').focus();">
+            <span class="material-symbols-rounded sidebar-icon no-fill" style="font-size:4vw">add</span>Rate class
+          </div> -->
           <div class="sidebarItem">
             <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.open('../handbook.pdf')">menu_book</span>Handbook
           </div>
@@ -132,13 +134,15 @@ md-sys-color {
                  
                 </div>
                 <div class="search-container">
-                  <div class="search-box">
-                      <span class="material-symbols-rounded search-icon">search</span>
-                      <input type="text" id="searchInput" placeholder="Search courses..." 
-                             onkeyup="searchCourses()" autocomplete="off">
-                      <span class="material-symbols-rounded clear-search" id="clearSearch" 
-                            onclick="clearSearch()" style="display: none;">close</span>
-                  </div>
+                  <label for="searchInput">
+                    <div class="search-box">
+                        <span class="material-symbols-rounded search-icon">search</span>
+                        <input type="text" id="searchInput" placeholder="Search courses..." 
+                              onkeyup="searchCourses()" autocomplete="off">
+                        <span class="material-symbols-rounded clear-search" id="clearSearch" 
+                              onclick="clearSearch()" style="display: none;">close</span>
+                    </div> 
+                  </label>
                 </div>
                 <div>
                   <md-chip-set class="filterArea">
@@ -190,6 +194,12 @@ function fav(element) {
     //alert(sessionStorage.getItem("bookmarks"));
 }
 function modeChange(thing) {
+  if(thing == "dark_mode") {
+    document.getElementsByTagName('style')[0].innerHTML="md-filter-chip { background-color: rgba(150, 150, 150, 0.5); --md-sys-color-outline:lightgrey;} .header {color: white;} .sidebar{color: white} .menuPic {filter: invert(100%)} .mode {filter: invert(100%)}";
+      document.getElementById('body').style.backgroundColor = "var(--dark-bg)";
+      document.getElementById('sidebar').style.backgroundColor = "var(--dark-mode-bg)";
+      document.getElementById('header').style.backgroundColor = "var(--dark-mode-bg)";
+  }
   if(thing.innerText == "light_mode") {
     thing.removeAttribute("onclick");
     thing.style.transition = "transform 1.5s ease, opacity 0.75s ease";
