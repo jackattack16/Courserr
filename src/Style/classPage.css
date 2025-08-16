@@ -1,0 +1,476 @@
+:root {
+  --borderRad: 1vw;
+}
+
+
+.classPageInfoContainer {
+  position: absolute;
+  overflow-y: scroll;
+  width: 95vw;
+  height: 100vh;
+  left: 5vw;
+  /* top | right | bottom | left */
+  padding: 13vh 2.5vw 3vh 2.5vw;
+  border-radius: var(--borderRad);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.classPageFullSpread {
+  width: 90vw;
+  height: 40vh;
+  border-radius: var(--borderRad);
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3vh;
+  background: linear-gradient(135deg, #13678A 0%, #1a8bb8 100%);
+  box-shadow: 0 8px 32px rgba(19, 103, 138, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.classPageHalfSpread {
+  /*border: 4px solid black;*/
+  width: 44vw;
+  height: 40vh;
+  border-radius: var(--borderRad);
+  margin-bottom: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff0c8;
+}
+
+.classPageDescriptionGraphContainer {
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3vh;
+}
+
+.classPageDescriptionGraphContainer .classPageHalfSpread {
+  width: 44vw;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .classPageDescriptionGraphContainer {
+    flex-direction: column;
+    width: 90vw;
+  }
+  
+  .classPageDescriptionGraphContainer .classPageHalfSpread {
+    width: 90vw;
+    margin-bottom: 3vh;
+  }
+}
+
+.classPageHeaderRight {
+  height: 40vh;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 1vw;
+}
+
+.classPageHeaderLeft {
+  height: 40vh;
+  width: 45vw;
+  display: flex;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.classPageClassName {
+  height: 40vh;
+  width: 45vw;
+  padding: 4vh 3vw;
+  border-top-left-radius: var(--borderRad) var(--borderRad);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.classPageClassRateing {
+  height: 40vh;
+  width: 45vw;
+  font-size: 6vh;
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: var(--borderRad) var(--borderRad);
+}
+
+.classPageClassRateing > span {
+  margin-right: 1.5vw;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.classPageName {
+  font-size: 28vh;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(90deg, #fff 30%, #45C4B0 70%, #13678A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 6px 24px rgba(0,0,0,0.7),
+    0 2px 8px #45C4B0,
+    0 0px 2px #fff;
+  line-height: 0.8;
+  margin-bottom: 2vh;
+  text-align: center;
+  letter-spacing: -1px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  border-radius: 1vw;
+  padding: 0.2em 0.5em;
+}
+
+.classPageTeacher {
+  font-size: 3.2vh;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 1.5vh;
+  text-align: center;
+}
+.classPageClassInfo {
+  height: 40vh;
+  width: 22.5vw;
+  padding: 1vh 0.8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3vh;
+}
+.classPageBORDERS {
+  border-top-right-radius: var(--borderRad) var(--borderRad);
+  border-bottom-right-radius: var(--borderRad) var(--borderRad);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-grow: 1;
+  min-height: 0;
+  height: 100%;
+  margin-top: 0.6vh;
+}
+.classPageClassPrereq {
+  height: 8vh;
+  overflow: visible;
+  padding: 0.5vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.classPageClassTags {
+  margin-top: 4em; /* Move tags even lower below prerequisites */
+  margin-bottom: 0.5em;
+  padding: 0;
+  height: auto;
+  overflow: visible;
+}
+
+.tagsTitle {
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5vh;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.6vh;
+  padding: 0.2vh 0.6vw;
+}
+
+.classPageClassTagsArea {
+  padding: 0.1em 0.2vw;
+  min-height: 2.2em;
+  max-height: 16vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em 0.5em;
+  align-content: flex-start;
+  overflow-y: auto;
+  background: rgba(255,255,255,0.10);
+  border-radius: 0.6vh;
+  border: 2px solid #b3d1e6;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.classPageClassTagsArea::-webkit-scrollbar {
+  width: 0.5em;
+  background: #e0e0e0;
+}
+.classPageClassTagsArea::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1em;
+}
+.classPageClassDecription {
+  font-size: larger;
+  text-align: center;
+  display: flex;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #45C4B0;
+  color: #000000;
+  overflow-y: auto;
+  max-height: 40vh;
+}
+
+.classPageClassDecription > h1 {
+  color: #000000;
+  background: rgba(0, 0, 0, 0.1);
+  margin-bottom: 2vh;
+}
+
+.classPageClassDecription > p {
+  padding: 0 2.5vw 0 2.5vw;
+  color: #000000;
+  font-size: 2.2vh;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.classPageGraphHalf {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #45C4B0;
+  border-radius: var(--borderRad);
+  padding: 1.5vh 1.5vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.classPageGraphHalf::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+  border-radius: var(--borderRad);
+}
+
+#myChart {
+  max-height: 90%;
+  max-width: 90%;
+  height: auto !important;
+  width: auto !important;
+  position: relative;
+  z-index: 1;
+  border-radius: calc(var(--borderRad) - 0.5vh);
+  background-color: #ffffff;
+  padding: 1.5vh 1.5vw;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.commentBox {
+  margin-bottom: 3vh;
+  width: 90vw;
+  height: 18vh;
+  
+  background-color: rgb(255, 226, 138);
+  border-radius: var(--borderRad);
+  display: grid;
+  grid-template: 
+                      "ratee textt" 18vh / 20vw 70vw;
+  align-items: center;
+  justify-items: center;
+}
+
+.overall {
+  grid-area: overall;
+  /*background-color: red;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-size: 2.5vh;
+  padding-top: 4vh;
+}
+
+.textt {
+  grid-area: textt;
+  /*background-color: yellow;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3vh;
+  padding: 2vh 2vw;
+  text-align: center;
+  max-width: 100%;
+  word-wrap: break-word;
+  line-height: 1.4;
+  margin-left: 2vw;
+}
+
+.ratee {
+  grid-area: ratee;
+  display: flex;
+  font-weight:800;
+  color:#c36b00;
+  justify-content: center;
+  align-items: center;
+  /*background-color: orange;*/
+  font-size: 8vh;
+  font-weight: bold;
+  margin-right: 2vw;
+}
+
+h1 {
+  height: 3.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2vh;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8vh;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.8vh;
+  padding: 0.3vh 0.8vw;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 1.8vh;
+    color: #ffffff;
+    font-size: 1.8vh;
+    font-weight: 500;
+    padding: 0.6vh 0.8vw;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 0.6vh;
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+}
+
+li:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(0.3vw);
+}
+
+.classPageClassInfo > div::-webkit-scrollbar {
+    height: 0.5vh;
+    width: 0.5vw;
+}
+
+.classPageClassInfo > div::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 2vh;
+}
+
+.classPageClassInfo > div::-webkit-scrollbar-track {
+    background: transparent;
+}
+md-chip-set::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom styling for Material Design chips in the course info section */
+.classPageClassTagsArea md-suggestion-chip {
+  --md-sys-color-primary: #ffffff;
+  --md-sys-color-on-primary: #13678A;
+  --md-suggestion-chip-container-color: rgba(255, 255, 255, 0.9);
+  --md-suggestion-chip-label-text-color: #13678A;
+  --md-suggestion-chip-hover-container-color: rgba(255, 255, 255, 1);
+  --md-suggestion-chip-pressed-container-color: rgba(255, 255, 255, 0.8);
+  margin: 0.2vh 0.2vw;
+  font-weight: 600;
+  font-size: 1.4vh;
+  border-radius: 1.2vh;
+  transition: all 0.2s ease;
+  padding: 0.3vh 0.6vw;
+}
+
+.classPageClassTagsArea md-suggestion-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .classPageName {
+    font-size: 14vh;
+    line-height: 0.9;
+    -webkit-line-clamp: 3;
+  }
+  
+  .classPageTeacher {
+    font-size: 2.4vh;
+  }
+  
+  .classPageClassInfo {
+    padding: 0.8vh 0.6vw;
+    gap: 0.8vh;
+  }
+  
+  h1 {
+    font-size: 1.8vh;
+    height: 2.5vh;
+  }
+  
+  li {
+    font-size: 1.5vh;
+    padding: 0.4vh 0.5vw;
+  }
+  
+  .tagsTitle {
+    font-size: 1.8vh;
+    height: 2.5vh;
+  }
+  
+  .classPageClassTagsArea md-suggestion-chip {
+    font-size: 1.2vh;
+  }
+  
+  .classPageHeaderRight,
+  .classPageHeaderLeft {
+    width: 50vw;
+  }
+  
+  .classPageClassName,
+  .classPageClassRateing {
+    width: 50vw;
+  }
+  
+  .classPageClassDecription > p {
+    font-size: 1.8vh;
+  }
+}
