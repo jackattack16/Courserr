@@ -1855,6 +1855,1110 @@ const apCalculusAB = new Class(
     ["Calculus", "AP", "Derivatives", "Integrals"] // tags
 );
 
+const freshmanBand9 = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "9", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Includes all 9th grade band members; each student has a weekly lesson. Students registered for Freshman Band participate in Marching Band, which functions as a marching unit during the first quarter.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Freshman Band (9)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const concertBandFall = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "10, 11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Fall", // Semester Offered
+    "None", // honorsAP
+    "Students are placed into Wind Symphony / Symphonic Band or Concert Band based on progress and ability; Wind Symphony/Symphonic placement is by audition in September during marching season. Marching Band includes students in Wind Symphony, Symphonic Band, and Concert Band and functions as a marching unit during the first quarter. Weekly lessons are required.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Concert Band (Fall)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const percussionTechniques = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "10", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Fall", // Semester Offered
+    "None", // honorsAP
+    "Sophomores perform on keyboard percussion with the marching band during the fall and perform as a percussion ensemble at the Holiday Concert. Each student also has a weekly lesson.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Percussion Techniques", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const concertBandSpring = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "10, 11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Spring", // Semester Offered
+    "None", // honorsAP
+    "Students are placed into Wind Symphony / Symphonic Band or Concert Band in the spring based on progress and ability; Wind Symphony/Symphonic placement is by audition in September during marching season. Marching Band includes students in Wind Symphony, Symphonic Band, and Concert Band and functions as a marching unit during the first quarter. Weekly lessons are required.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Concert Band (Spring)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const windSymphonySymphonicBand = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "10, 11, 12", // usualGrade
+    "Audition / Director Placement", // prerequisite
+    "Semester", // duration
+    "Spring", // Semester Offered
+    "None", // honorsAP
+    "10–12 students are divided into Wind Symphony, Symphonic Band, and Concert Band. Spring placement is based on progress/ability; Wind Symphony and Symphonic Band require an audition in September during marching season. Marching Band includes these ensembles and functions as a marching unit during the first quarter. Weekly lessons are required.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Wind Symphony / Symphonic Band*", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const twirler = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "10, 11, 12", // usualGrade
+    "Director Selection", // prerequisite
+    "Quarter", // duration
+    "Fall", // Semester Offered
+    "None", // honorsAP
+    "Feature Twirler is selected in the spring. Students must design routines to music provided by the band director and demonstrate understanding and application of baton fundamentals within their routines.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Twirler (10-12)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const freshmanChoir = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "9", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Open to all ninth graders; no experience or audition required. The choir meets daily and each student also has a weekly lesson.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Freshman Choir", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const concertChoir = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "10, 11, 12", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Open to grades 10–12 with no experience or audition required. Choir meets daily and each student also has a weekly lesson.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Concert Choir", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const concertChorale = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "10, 11, 12", // usualGrade
+    "Audition", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "AHS auditioned large ensemble for grades 10–12. Auditions are held in January for the following year; new students should see the director for audition information.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Concert Chorale*", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const freshmanOrchestra9 = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "9", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Open to 9th grade students and performs at most concerts. Focuses on tone production, intonation, rhythm, articulation, dynamics, and expression, with foundational music literacy through music theory study.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Freshman Orchestra (9)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const symphonyOrchestra = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "10, 11, 12", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Develops advanced technique, musicianship, style, and knowledge of music history and theory through study and performance of advanced orchestral literature. Performs at all AHS concerts and throughout the community.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Symphony Orchestra (10-12)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const chamberOrchestra = new Class(
+    false, // dualCredit
+    "Music", // subject
+    "10, 11, 12", // usualGrade
+    "Audition", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Open to orchestra members in grades 10–12 by audition. Requires mastery-level scales and playing tests. Students learn a large, varied repertoire and perform in full ensemble and smaller groups throughout the community.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Chamber Orchestra* (10-12)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
+);
+
+const aquatics = new Class(
+    false, // dualCredit
+    "Physical Education", // subject
+    "9, 10, 11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Fall", // Semester Offered
+    "None", // honorsAP
+    "Students gain awareness of water safety and learn skills for being safe in, on, and around water. Focus includes refinement of strokes, coordination, flexibility, cardiovascular fitness, muscular strength, endurance, and body composition.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Aquatics", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Fitness", "Safety", "Swimming", "Wellness"] // tags
+);
+
+const lifeguardingWSI = new Class(
+    false, // dualCredit
+    "Physical Education", // subject
+    "10, 11, 12", // usualGrade
+    "Must be 15+ yrs and meet swimming prerequisites", // prerequisite
+    "Semester", // duration
+    "Spring", // Semester Offered
+    "None", // honorsAP
+    "Covers Red Cross certification in Lifeguarding and WSI. Students must demonstrate swimming prerequisites including swimming 300 yards, treading water, surface diving, and object retrieval. Skills tested on first day—failure results in drop from class.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Lifeguarding/WSI*", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Certification", "Swimming", "Safety", "Training"] // tags
+);
+
+const unifiedPE = new Class(
+    false, // dualCredit
+    "Physical Education", // subject
+    "9, 10, 11, 12", // usualGrade
+    "Instructor Approval Required", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Combined General and Adapted PE class focused on recreation, fitness, and adapted athletics. Students participate in sports and fitness activities, modifying for others as needed, and engage in roles such as coach, official, coordinator, and athlete. Requires application, interview, and acceptance.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Unified Physical Education", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Inclusive", "Fitness", "Leadership", "Sports"] // tags
+);
+
+const weights1 = new Class(
+    false, // dualCredit
+    "Physical Education", // subject
+    "9, 10, 11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Introductory lifting course focused on proper techniques, core strength, flexibility, and safety in the weight room. Required for all 9th graders or any student taking weights for the first time at Ames High. Not recommended for current athletes already in lifting programs.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Weights I", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Strength", "Fitness", "Training", "Wellness"] // tags
+);
+
+const weights2 = new Class(
+    false, // dualCredit
+    "Physical Education", // subject
+    "10, 11, 12", // usualGrade
+    "Weights I", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Focused on continued development in weight training, strength, and flexibility. Students set individual goals, refine form and function, and learn to design workouts for long-term fitness. Not recommended for athletes already in lifting programs.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Weights II", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Strength", "Training", "Fitness", "Wellness"] // tags
+);
+
+const outdoorRecreation = new Class(
+    false, // dualCredit
+    "Physical Education", // subject
+    "11, 12", // usualGrade
+    "Junior or Senior standing", // prerequisite
+    "Semester", // duration
+    "Spring", // Semester Offered
+    "None", // honorsAP
+    "Elective PE course emphasizing outdoor activities, fitness, leadership, and appreciation for nature. Activities may include golf, hiking, archery, rock climbing, camping, canoeing, survival skills, and emergency preparedness.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Outdoor Recreation", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Outdoors", "Fitness", "Leadership", "Wellness"] // tags
+);
+
+const teamGamesSports = new Class(
+    false, // dualCredit
+    "Physical Education", // subject
+    "9, 10, 11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Fall", // Semester Offered
+    "None", // honorsAP
+    "Covers rules, skills, fundamentals, and strategies across a wide variety of team activities. Students explore roles such as trainer, coach, player, and manager. Sports include lacrosse, field hockey, ultimate games, rugby, basketball, broomball, and more. Safety and sportsmanship emphasized.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Team Games/Sports", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Sports", "Teamwork", "Strategy", "Fitness"] // tags
+);
+
+const lifetimeActivities = new Class(
+    false, // dualCredit
+    "Physical Education", // subject
+    "9, 10, 11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Spring", // Semester Offered
+    "None", // honorsAP
+    "Focuses on lifetime leisure and wellness activities such as golf, disc golf, pickleball, bowling, sand volleyball, yoga, spikeball, jogging, and ping pong. Promotes physical literacy and lifelong wellness skills.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Lifetime Activities", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Wellness", "Fitness", "Sports", "Lifetime"] // tags
+);
+
+const innovationFitness = new Class(
+    false, // dualCredit
+    "Physical Education", // subject
+    "9, 10, 11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Helps students create goals for healthier lifestyles with lower-impact fitness options. Activities include yoga, aerobics, data-tracking fitness tech, Bosu-trainers, jump roping, kickboxing, medicine balls, and resistance training.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Innovation Fitness: Individual Performance PE", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Wellness", "Fitness", "Health", "Training"] // tags
+);
+
+const earthAndSpaceScience = new Class(
+    false, // dualCredit
+    "Science", // subject
+    "9", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Required for graduation. Emphasizes Earth’s place in the universe, Earth’s systems, and human impact on Earth. Topics include planetary motion, gravity, watersheds, hydrosphere, atmosphere, biosphere, climate systems, and climate change.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Earth and Space Science (REQUIRED)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Earth Science", "Climate", "Astronomy", "Systems"] // tags
+);
+
+const biology = new Class(
+    false, // dualCredit
+    "Science", // subject
+    "10", // usualGrade
+    "Earth and Space Science", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Explores life sciences: survival, growth, reproduction, genetics, natural selection, and ecosystems. Includes both classroom and field-based experiences with project-based applications of biology concepts.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Biology", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Life Science", "Genetics", "Ecology", "Evolution"] // tags
+);
+
+const physicalScience = new Class(
+    false, // dualCredit
+    "Science", // subject
+    "11", // usualGrade
+    "Earth and Space Science; Biology", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Introduces physics and chemistry concepts with lab and discussion. Topics include motion, momentum, forces, energy, electricity, magnetism, gravitation, atomic theory, reactions, stoichiometry, and acids/bases.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Physical Science", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Physics", "Chemistry", "Energy", "Matter"] // tags
+);
+
+const physics = new Class(
+    false, // dualCredit
+    "Science", // subject
+    "11, 12", // usualGrade
+    "Earth and Space Science; Biology", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Focuses on matter and energy interactions through labs and discussions. Topics include motion, forces, energy, momentum, waves, electricity, magnetism, and gravitation.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Physics", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Physics", "Forces", "Energy", "Waves"] // tags
+);
+
+const chemistry = new Class(
+    false, // dualCredit
+    "Science", // subject
+    "11, 12", // usualGrade
+    "Earth and Space Science; Biology", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Explores matter and energy interactions with labs and discussions. Topics include kinetic molecular theory, heat, periodic table, mole, stoichiometry, atomic theory, reactions, solutions, kinetics, and acids/bases.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Chemistry", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Chemistry", "Reactions", "Atoms", "Molecules"] // tags
+);
+
+const apBiology = new Class(
+    true, // dualCredit
+    "Science", // subject
+    "11, 12", // usualGrade
+    "Earth and Space Science; Biology; Chemistry", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "AP", // honorsAP
+    "College-level course emphasizing inquiry-based biology. Topics include evolution, energy processes, genetics, information transfer, ecology, and interactions. Students conduct labs and projects aligned with AP Biology standards.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [6,0,5], // averageTimePerWeek
+    "calculate", // icon
+    "AP Biology*", // className
+    ['A+','B-','A'], // grades
+    [5,4,4], //classDifficulty
+    ["AP", "Biology", "Genetics", "Ecology"] // tags
+);
+
+const apPhysics = new Class(
+    true, // dualCredit
+    "Science", // subject
+    "11, 12", // usualGrade
+    "Earth and Space Science; Biology; Physics; Geometry", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "AP", // honorsAP
+    "College-level algebra-based physics course. Topics include motion, forces, energy, momentum, rotations, oscillations, and fluids. Includes inquiry-based investigations and preparation for the AP Physics exam.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [6,0,5], // averageTimePerWeek
+    "calculate", // icon
+    "AP Physics*", // className
+    ['A+','B-','A'], // grades
+    [5,4,4], //classDifficulty
+    ["AP", "Physics", "Forces", "Energy"] // tags
+);
+
+const apChemistry = new Class(
+    true, // dualCredit
+    "Science", // subject
+    "11, 12", // usualGrade
+    "Earth and Space Science; Biology; Chemistry", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "AP", // honorsAP
+    "College-level chemistry course covering atomic/molecular structure, reactions, kinetics, equilibrium, and thermodynamics. Includes inquiry-based labs aligned with AP Chemistry standards.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [6,0,5], // averageTimePerWeek
+    "calculate", // icon
+    "AP Chemistry*", // className
+    ['A+','B-','A'], // grades
+    [5,4,4], //classDifficulty
+    ["AP", "Chemistry", "Molecules", "Reactions"] // tags
+);
+
+const advancedPhysics = new Class(
+    false, // dualCredit
+    "Science", // subject
+    "12", // usualGrade
+    "Physics", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Culminating senior course continuing physics topics, designed for Class of 2026 only. Completes a full year of physics for students who began earlier coursework.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Advanced Physics (Class of 2026 only)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Physics", "Senior", "Capstone", "Energy"] // tags
+);
+
+const advancedChemistry = new Class(
+    false, // dualCredit
+    "Science", // subject
+    "12", // usualGrade
+    "Chemistry", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Culminating senior course continuing chemistry topics, designed for Class of 2026 only. Completes a full year of chemistry for students who began earlier coursework.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Advanced Chemistry (Class of 2026 only)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Chemistry", "Senior", "Capstone", "Reactions"] // tags
+);
+
+const honorsWorldStudies = new Class(
+    false, // dualCredit
+    "Social Studies", // subject
+    "9", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "Honors", // honorsAP
+    "Optional replacement for World Studies. Provides greater depth and breadth in regional studies, with regular homework including readings, book assignments, and essays.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Honors World Studies", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["History", "Geography", "Culture", "Honors"] // tags
+);
+
+const worldStudies = new Class(
+    false, // dualCredit
+    "Social Studies", // subject
+    "9", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Required course examining geography, history, and economics of world regions, from early civilizations to modern-day issues.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "World Studies (REQUIRED)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["History", "Geography", "Economics", "Required"] // tags
+);
+
+const apUSHistory = new Class(
+    true, // dualCredit
+    "Social Studies", // subject
+    "10", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "AP", // honorsAP
+    "Optional replacement for U.S. History. A college-level survey from 1491 to the present. Emphasizes historical thinking, analytical writing, and primary source analysis with a rigorous reading load.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [6,0,5], // averageTimePerWeek
+    "calculate", // icon
+    "AP US History", // className
+    ['A+','B-','A'], // grades
+    [5,4,4], //classDifficulty
+    ["AP", "History", "United States", "Analysis"] // tags
+);
+
+const usHistory = new Class(
+    false, // dualCredit
+    "Social Studies", // subject
+    "10", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Required U.S. History course taught thematically, covering migration, democracy, civil rights, economic trends, war, conflict, and identity.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "US History (REQUIRED)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["History", "United States", "Required", "Society"] // tags
+);
+
+const apPsychology = new Class(
+    true, // dualCredit
+    "Social Studies", // subject
+    "11, 12", // usualGrade
+    "Sociology or AP Psychology", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "AP", // honorsAP
+    "College-level course introducing human behavior, mental processes, and therapy. Covers many psychology topics quickly with lecture, discussion, experiments, and demonstrations. Daily reading expected.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [6,0,5], // averageTimePerWeek
+    "calculate", // icon
+    "AP Psychology", // className
+    ['A+','B-','A'], // grades
+    [5,4,4], //classDifficulty
+    ["AP", "Psychology", "Behavior", "Mental Health"] // tags
+);
+
+const apEuropeanHistory = new Class(
+    true, // dualCredit
+    "Social Studies", // subject
+    "11, 12", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "AP", // honorsAP
+    "College-level course beginning with the Renaissance (1450) and tracing European economic, social, cultural, and diplomatic history to the present. Emphasizes historical thinking, analysis, and writing.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [6,0,5], // averageTimePerWeek
+    "calculate", // icon
+    "AP European History", // className
+    ['A+','B-','A'], // grades
+    [5,4,4], //classDifficulty
+    ["AP", "History", "Europe", "Analysis"] // tags
+);
+
+const westernCiv1 = new Class(
+    false, // dualCredit
+    "Social Studies", // subject
+    "11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Fall", // Semester Offered
+    "None", // honorsAP
+    "Survey of European influence from Greek and Roman traditions through Renaissance developments. Focuses on religion, culture, and scientific advancements.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Western Civilization I", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["History", "Europe", "Civilization", "Culture"] // tags
+);
+
+const westernCiv2 = new Class(
+    false, // dualCredit
+    "Social Studies", // subject
+    "11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Spring", // Semester Offered
+    "None", // honorsAP
+    "Survey of European influence from absolute monarchies through WWII. Covers democratic ideals, religious traditions, economic principles, and social change via conflict.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Western Civilization II", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["History", "Europe", "Civilization", "Conflict"] // tags
+);
+
+const sociology = new Class(
+    false, // dualCredit
+    "Social Studies", // subject
+    "11, 12", // usualGrade
+    "Sociology or AP Psychology", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Discussion-based course examining social life, social change, and the causes and consequences of human behavior. Includes field study activities.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Sociology", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Sociology", "Behavior", "Society", "Discussion"] // tags
+);
+
+const economics = new Class(
+    false, // dualCredit
+    "Social Studies", // subject
+    "11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Studies micro and macroeconomics: how societies use limited resources to satisfy needs and wants. Increases awareness of economic systems and real-world issues.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Economics", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Economics", "Finance", "Systems", "Society"] // tags
+);
+
+const nonWesternWorld = new Class(
+    false, // dualCredit
+    "Social Studies", // subject
+    "11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Broad overview of Native America, Africa, Japan, and the Middle East. Focuses on cultural characteristics including language, food, customs, values, and material objects.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Non-Western World", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Culture", "Geography", "History", "World"] // tags
+);
+
+const worldIssues = new Class(
+    false, // dualCredit
+    "Social Studies", // subject
+    "11, 12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Helps students develop skills to analyze and understand current issues such as human rights, environmental challenges, and world governance.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "World Issues", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Current Events", "Global Issues", "Human Rights", "Environment"] // tags
+);
+
+const apUSGovernment = new Class(
+    true, // dualCredit
+    "Social Studies", // subject
+    "12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "AP", // honorsAP
+    "Optional replacement for U.S. Government. College-level course covering U.S. political systems, ideology, elections, parties, courts, and policymaking. Emphasizes American political ideals and high-level discussions.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [6,0,5], // averageTimePerWeek
+    "calculate", // icon
+    "AP US Government", // className
+    ['A+','B-','A'], // grades
+    [5,4,4], //classDifficulty
+    ["AP", "Government", "Politics", "United States"] // tags
+);
+
+const usGovernment = new Class(
+    false, // dualCredit
+    "Social Studies", // subject
+    "12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Required U.S. Government course covering Constitution, branches of government, media, elections, political parties, and policy-making.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "US Government (REQUIRED)", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Government", "Politics", "United States", "Required"] // tags
+);
+
+// FRENCH
+const french1 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "9", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Introductory French for beginners. Focuses on listening and reading comprehension, high-frequency vocabulary, and basic language patterns. Students begin to respond in words or simple sentences and develop foundational speaking and writing.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "French I", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "French", "Listening", "Speaking"] // tags
+);
+
+const french2 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "10", // usualGrade
+    "French I", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Intermediate French for students completing French I. Emphasizes comprehension, vocabulary expansion, spontaneous speaking, and additional writing practice.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "French II", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "French", "Intermediate", "Speaking"] // tags
+);
+
+const french3 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "11", // usualGrade
+    "French II", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Advanced-intermediate French. Students acquire more complex structures, practice spontaneous speech, improve confidence in speaking and writing, and develop fluency in listening and reading.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "French III", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "French", "Fluency", "Speaking"] // tags
+);
+
+const french4 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "12", // usualGrade
+    "French III", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Advanced French. Students refine comprehension, differentiate tenses, and sustain conversations using complex sentence structures. Emphasis on fluency, literacy, and cultural understanding.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "French IV", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "French", "Advanced", "Culture"] // tags
+);
+
+// GERMAN
+const german1 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "9", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Introductory German for beginners. Focuses on listening and reading comprehension, high-frequency vocabulary, and basic language patterns. Students begin responding with simple words or sentences and build foundational skills.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "German I", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "German", "Listening", "Speaking"] // tags
+);
+
+const german2 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "10", // usualGrade
+    "German I", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Intermediate German course following German I. Focuses on improved comprehension, vocabulary, spontaneous speaking, and more complex writing skills.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "German II", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "German", "Intermediate", "Speaking"] // tags
+);
+
+const german3 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "11", // usualGrade
+    "German II", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Advanced-intermediate German. Emphasis on using more spontaneous and complex structures in speaking and writing, with stronger fluency in comprehension and production.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "German III", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "German", "Fluency", "Speaking"] // tags
+);
+
+const german4 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "12", // usualGrade
+    "German III", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Advanced German course focusing on fluency, literacy, grammar refinement, cultural studies, and conversational skills across tenses. Emphasis on sustained dialogue and comprehension.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "German IV", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "German", "Advanced", "Culture"] // tags
+);
+
+// SPANISH
+const spanish1 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "9", // usualGrade
+    "None", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Introductory Spanish for beginners. Focus on listening and reading comprehension, high-frequency vocabulary, and basic language patterns. Students respond in simple words/sentences and begin producing language.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Spanish I", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "Spanish", "Listening", "Speaking"] // tags
+);
+
+const spanish2 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "10", // usualGrade
+    "Spanish I", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Intermediate Spanish building from Spanish I. Students expand comprehension, vocabulary, and begin more spontaneous speaking and writing while developing cultural awareness.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Spanish II", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "Spanish", "Intermediate", "Speaking"] // tags
+);
+
+const spanish3 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "11", // usualGrade
+    "Spanish II", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Advanced-intermediate Spanish. Expands vocabulary and structures for more complex communication. Focus on improving fluency and confidence in listening, reading, speaking, and writing.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Spanish III", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "Spanish", "Fluency", "Speaking"] // tags
+);
+
+const spanish4 = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "12", // usualGrade
+    "Spanish III", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "Advanced Spanish. Students refine grammar, distinguish tenses, expand fluency, and engage in sustained dialogue. Emphasis on cultural understanding and advanced literacy.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Spanish IV", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "Spanish", "Advanced", "Culture"] // tags
+);
+
+const heritageSpanish = new Class(
+    false, // dualCredit
+    "World Languages", // subject
+    "9, 10, 11, 12", // usualGrade
+    "Home language Spanish", // prerequisite
+    "Full Year", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "For students whose home language is Spanish. Focuses on improving literacy (reading and writing) and overall fluency. Includes study of diverse Spanish-speaking cultures.", // description
+    [4.0, 3.5, 3.8], // ratings
+    ["Challenging but worth it.", "Helped me understand better."], // comments
+    [4,0,2], // averageTimePerWeek
+    "calculate", // icon
+    "Heritage Spanish", // className
+    ['A+','B-','A'], // grades
+    [4,3,2], //classDifficulty
+    ["Language", "Spanish", "Heritage", "Culture"] // tags
+);
 
 
 
@@ -1936,3 +3040,72 @@ courseMap.set("Pre-Calculus (MAT 129)", preCalculus);
 courseMap.set("AP Calculus (AB) (MAT 211)", apCalculusAB);
 console.log('Total classes loaded:', courseMap ? courseMap.size : 'courseMap undefined');
 console.log('Class names:', courseMap ? Array.from(courseMap.keys()) : 'No classes');
+
+// Music
+courseMap.set("Freshman Band (9)",freshmanBand9);
+courseMap.set("Concert Band (Fall)",concertBandFall);
+courseMap.set("Percussion Techniques",percussionTechniques);
+courseMap.set("Concert Band (Spring)",concertBandSpring);
+courseMap.set("Wind Symphony / Symphonic Band*",windSymphonySymphonicBand);
+courseMap.set("Twirler (10-12)",twirler);
+courseMap.set("Freshman Choir",freshmanChoir);
+courseMap.set("Concert Choir",concertChoir);
+courseMap.set("Concert Chorale*",concertChorale);
+courseMap.set("Freshman Orchestra (9)",freshmanOrchestra9);
+courseMap.set("Symphony Orchestra (10-12)",symphonyOrchestra);
+courseMap.set("Chamber Orchestra* (10-12)",chamberOrchestra);
+
+// Physical Education
+courseMap.set("Aquatics",aquatics);
+courseMap.set("Lifeguarding/WSI*",lifeguardingWSI);
+courseMap.set("Unified Physical Education",unifiedPE);
+courseMap.set("Weights I",weights1);
+courseMap.set("Weights II",weights2);
+courseMap.set("Outdoor Recreation",outdoorRecreation);
+courseMap.set("Team Games/Sports",teamGamesSports);
+courseMap.set("Lifetime Activities",lifetimeActivities);
+courseMap.set("Innovation Fitness: Individual Performance PE",innovationFitness);
+
+// Science
+courseMap.set("Earth and Space Science (REQUIRED)",earthAndSpaceScience);
+courseMap.set("Biology",biology);
+courseMap.set("Physical Science",physicalScience);
+courseMap.set("Physics",physics);
+courseMap.set("Chemistry",chemistry);
+courseMap.set("AP Biology*",apBiology);
+courseMap.set("AP Physics*",apPhysics);
+courseMap.set("AP Chemistry*",apChemistry);
+courseMap.set("Advanced Physics (Class of 2026 only)",advancedPhysics);
+courseMap.set("Advanced Chemistry (Class of 2026 only)",advancedChemistry);
+
+// Social Studies
+courseMap.set("Honors World Studies",honorsWorldStudies);
+courseMap.set("World Studies (REQUIRED)",worldStudies);
+courseMap.set("AP US History",apUSHistory);
+courseMap.set("US History (REQUIRED)",usHistory);
+courseMap.set("AP Psychology",apPsychology);
+courseMap.set("AP European History",apEuropeanHistory);
+courseMap.set("Western Civilization I",westernCiv1);
+courseMap.set("Western Civilization II",westernCiv2);
+courseMap.set("Sociology",sociology);
+courseMap.set("Economics",economics);
+courseMap.set("Non-Western World",nonWesternWorld);
+courseMap.set("World Issues",worldIssues);
+courseMap.set("AP US Government",apUSGovernment);
+courseMap.set("US Government (REQUIRED)",usGovernment);
+courseMap.set("American Society Through Film* (HUM 121)",americanSocietyThroughFilmSS);
+
+// World Languages
+courseMap.set("French I",french1);
+courseMap.set("French II",french2);
+courseMap.set("French III",french3);
+courseMap.set("French IV",french4);
+courseMap.set("German I",german1);
+courseMap.set("German II",german2);
+courseMap.set("German III",german3);
+courseMap.set("German IV",german4);
+courseMap.set("Spanish I",spanish1);
+courseMap.set("Spanish II",spanish2);
+courseMap.set("Spanish III",spanish3);
+courseMap.set("Spanish IV",spanish4);
+courseMap.set("Heritage Spanish",heritageSpanish);
