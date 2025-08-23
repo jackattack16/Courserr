@@ -2267,7 +2267,7 @@ const earthAndSpaceScience = new Class(
     ["Challenging but worth it.", "Helped me understand better."], // comments
     [4,0,2], // averageTimePerWeek
     "calculate", // icon
-    "Earth and Space Science (REQUIRED)", // className
+    "Earth and Space Science", // className
     ['A+','B-','A'], // grades
     [4,3,2], //classDifficulty
     ["Earth Science", "Climate", "Astronomy", "Systems"] // tags
@@ -2414,12 +2414,12 @@ const advancedPhysics = new Class(
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
-    "Culminating senior course continuing physics topics, designed for Class of 2026 only. Completes a full year of physics for students who began earlier coursework.", // description
+    "Culminating senior course continuing physics topics. Completes a full year of physics for students who began earlier coursework.", // description
     [4.0, 3.5, 3.8], // ratings
     ["Challenging but worth it.", "Helped me understand better."], // comments
     [4,0,2], // averageTimePerWeek
     "calculate", // icon
-    "Advanced Physics (Class of 2026 only)", // className
+    "Advanced Physics", // className
     ['A+','B-','A'], // grades
     [4,3,2], //classDifficulty
     ["Physics", "Senior", "Capstone", "Energy"] // tags
@@ -2438,7 +2438,7 @@ const advancedChemistry = new Class(
     ["Challenging but worth it.", "Helped me understand better."], // comments
     [4,0,2], // averageTimePerWeek
     "calculate", // icon
-    "Advanced Chemistry (Class of 2026 only)", // className
+    "Advanced Chemistry", // className
     ['A+','B-','A'], // grades
     [4,3,2], //classDifficulty
     ["Chemistry", "Senior", "Capstone", "Reactions"] // tags
@@ -2476,7 +2476,7 @@ const worldStudies = new Class(
     ["Challenging but worth it.", "Helped me understand better."], // comments
     [4,0,2], // averageTimePerWeek
     "calculate", // icon
-    "World Studies (REQUIRED)", // className
+    "World Studies", // className
     ['A+','B-','A'], // grades
     [4,3,2], //classDifficulty
     ["History", "Geography", "Economics", "Required"] // tags
@@ -2514,7 +2514,7 @@ const usHistory = new Class(
     ["Challenging but worth it.", "Helped me understand better."], // comments
     [4,0,2], // averageTimePerWeek
     "calculate", // icon
-    "US History (REQUIRED)", // className
+    "US History", // className
     ['A+','B-','A'], // grades
     [4,3,2], //classDifficulty
     ["History", "United States", "Required", "Society"] // tags
@@ -2704,7 +2704,7 @@ const usGovernment = new Class(
     ["Challenging but worth it.", "Helped me understand better."], // comments
     [4,0,2], // averageTimePerWeek
     "calculate", // icon
-    "US Government (REQUIRED)", // className
+    "US Government", // className
     ['A+','B-','A'], // grades
     [4,3,2], //classDifficulty
     ["Government", "Politics", "United States", "Required"] // tags
@@ -3067,7 +3067,7 @@ courseMap.set("Lifetime Activities",lifetimeActivities);
 courseMap.set("Innovation Fitness: Individual Performance PE",innovationFitness);
 
 // Science
-courseMap.set("Earth and Space Science (REQUIRED)",earthAndSpaceScience);
+courseMap.set("Earth and Space Science",earthAndSpaceScience);
 courseMap.set("Biology",biology);
 courseMap.set("Physical Science",physicalScience);
 courseMap.set("Physics",physics);
@@ -3075,14 +3075,14 @@ courseMap.set("Chemistry",chemistry);
 courseMap.set("AP Biology*",apBiology);
 courseMap.set("AP Physics*",apPhysics);
 courseMap.set("AP Chemistry*",apChemistry);
-courseMap.set("Advanced Physics (Class of 2026 only)",advancedPhysics);
-courseMap.set("Advanced Chemistry (Class of 2026 only)",advancedChemistry);
+courseMap.set("Advanced Physics",advancedPhysics);
+courseMap.set("Advanced Chemistry",advancedChemistry);
 
 // Social Studies
 courseMap.set("Honors World Studies",honorsWorldStudies);
-courseMap.set("World Studies (REQUIRED)",worldStudies);
+courseMap.set("World Studies",worldStudies);
 courseMap.set("AP US History",apUSHistory);
-courseMap.set("US History (REQUIRED)",usHistory);
+courseMap.set("US History",usHistory);
 courseMap.set("AP Psychology",apPsychology);
 courseMap.set("AP European History",apEuropeanHistory);
 courseMap.set("Western Civilization I",westernCiv1);
@@ -3092,20 +3092,20 @@ courseMap.set("Economics",economics);
 courseMap.set("Non-Western World",nonWesternWorld);
 courseMap.set("World Issues",worldIssues);
 courseMap.set("AP US Government",apUSGovernment);
-courseMap.set("US Government (REQUIRED)",usGovernment);
+courseMap.set("US Government",usGovernment);
 courseMap.set("American Society Through Film* (HUM 121)",americanSocietyThroughFilmSS);
 
 // World Languages
-courseMap.set("French I",french1);
-courseMap.set("French II",french2);
-courseMap.set("French III",french3);
-courseMap.set("French IV",french4);
-courseMap.set("German I",german1);
-courseMap.set("German II",german2);
-courseMap.set("German III",german3);
-courseMap.set("German IV",german4);
-courseMap.set("Spanish I",spanish1);
-courseMap.set("Spanish II",spanish2);
-courseMap.set("Spanish III",spanish3);
-courseMap.set("Spanish IV",spanish4);
+courseMap.set("French 1",french1);
+courseMap.set("French 2",french2);
+courseMap.set("French 3",french3);
+courseMap.set("French 4",french4);
+courseMap.set("German 1",german1);
+courseMap.set("German 2",german2);
+courseMap.set("German 3",german3);
+courseMap.set("German 4",german4);
+courseMap.set("Spanish 1",spanish1);
+courseMap.set("Spanish 2",spanish2);
+courseMap.set("Spanish 3",spanish3);
+courseMap.set("Spanish 4",spanish4);
 courseMap.set("Heritage Spanish",heritageSpanish);
