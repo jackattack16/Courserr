@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courserr</title>
+
+    <style>
+        .class-container {
+            display: flex;
+            flex-direction: row;
+            height: 90vh;
+            width: 90vw;
+            overflow: scroll;
+        }
+        .class-column {
+            height: fit-content;
+            flex: 1;
+            border: 1px solid black;
+        }
+        .class-card {
+            width: 100%;
+            border: 1px solid red;
+        }
+        .tall {
+            height: 50vh;
+        }
+        .medium {
+            height: 30vh;
+        }
+        .small {
+            height: 15vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="class-container">
+        <div class="class-column">
+            <div class="class-card tall"></div>
+            <div class="class-card medium"></div>
+            <div class="class-card small"></div>
+        </div>
+        <div class="class-column">
+            <div class="class-card medium"></div>
+            <div class="class-card small"></div>
+            <div class="class-card tall"></div>
+        </div>
+        <div class="class-column">
+            <div class="class-card small"></div>
+            <div class="class-card tall"></div>
+            <div class="class-card medium"></div>
+        </div>
+    </div>
+</body>
