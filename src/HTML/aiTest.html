@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Text Summarizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Import the transformers.js library -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.1"></script>
+    <script type="module">
+        import { pipeline } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.1';
+
+        // Initialize a summarization pipeline globally
+        let summarizer = null;
+        let isModelLoading = false;
+
+        // Function to load the model asynchronously
+        async function loadModel() {
+            if (isModelLoading) return;
+            isModelLoading = true;
+            const statusIndicator = document.getElementById('statusIndicator');
+            statusIndicator.textContent = 'Loading summarization model... This may take a moment.';
+            try {
+                // The 'Xenova/distilbart-cnn-6-6' model is a good, small option for in-browser summarization.
+                summarizer = await pipeline('summarization', 'Xenova/distilbart-cnn-6-6');
+                statusIndicator.textContent = 'Model loaded and ready!';
+                statusIndicator.classList.remove('text-yellow-600');
+                statusIndicator.classList.add('text-green-600');
+                document.getElementById('summarizeButton').disabled = false;
+            } catch (error) {
+                console.error('Error loading model:', error);
+                statusIndicator.textContent = 'Error loading model. Please check your connection and refresh.';
+                statusIndicator.classList.remove('text-yellow-600');
+                statusIndicator.classList.add('text-red-600');
+            } finally {
+                isModelLoading = false;
+            }
+        }
+
+        // Call the load function when the window loads
+        window.onload = loadModel;
+
+        // Make the summarizeText function available globally
+        window.summarizeText = async function() {
+            const inputText = document.getElementById('inputText').value;
+            const summaryOutput = document.getElementById('summaryOutput');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+
+            if (!inputText.trim()) {
+                summaryOutput.textContent = 'Please enter some text to summarize.';
+                return;
+            }
+
+            // Ensure the model is loaded before summarizing
+            if (!summarizer) {
+                summaryOutput.textContent = 'Model is still loading. Please wait a moment.';
+                return;
+            }
+
+            // Show loading indicator
+            loadingIndicator.classList.remove('hidden');
+            summaryOutput.textContent = '';
+
+            try {
+                // Call the summarization pipeline with the input text
+                const result = await summarizer(inputText, {
+                    // Min and max length can be adjusted to control summary length
+                    min_length: 30,
+                    max_length: 100,
+                });
+                const summary = result[0].summary_text;
+                summaryOutput.textContent = summary;
+            } catch (error) {
+                console.error('Error summarizing text:', error);
+                summaryOutput.textContent = 'An error occurred during summarization. Please check the console for details.';
+            } finally {
+                // Hide loading indicator
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-2xl border border-gray-200">
+        <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Local Text Summarizer</h1>
+        <p id="statusIndicator" class="text-center text-yellow-600 mb-4">Loading model...</p>
+        <div class="mb-6">
+            <textarea id="inputText" rows="10" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow" placeholder="Paste your text here..."></textarea>
+        </div>
+        <button id="summarizeButton" onclick="summarizeText()" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" disabled>
+            Summarize
+        </button>
+        
+        <div id="loadingIndicator" class="hidden text-center mt-4">
+            <svg class="animate-spin h-8 w-8 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </div>
+        
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold mb-2 text-gray-700">Summary:</h2>
+            <div id="summaryOutput" class="bg-gray-50 p-6 rounded-lg border border-gray-200 min-h-[100px] text-gray-800 whitespace-pre-wrap">
+                Your summary will appear here.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
