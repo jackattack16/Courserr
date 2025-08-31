@@ -1,0 +1,185 @@
+.class-info-container {
+    position: absolute;
+    height: 100vh;
+    width: 95vw;
+    left: 5vw;
+    padding: 13vh 2.5vw 3vh 2.5vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 5vh;
+    column-gap: 2vw;
+    overflow-y: scroll;
+}
+
+.class-page-header {
+    background-color: #157daa;
+    height: 45vh;
+    width: 90vw;
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.class-page-header-left {
+    background-color: rgba(0, 0, 0, 0.075);
+    flex: 1;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.class-page-header-right {
+    flex: 1;
+    height: inherit;
+    border-radius: 0 1vh 1vh 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.class-title-teacher-holder {
+    background-color: rgba(0, 0, 0, 0.15);
+    height: fit-content;
+    width: fit-content;
+    max-width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    border-radius: 1vh;
+    border: 1px solid #ffffff10;
+}
+
+.class-prerequisites {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2vh;
+    overflow-y: scroll;
+}
+
+.class-tags {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2vh;
+    overflow-y: scroll;
+}
+
+.class-tags-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.class-quick-info {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2vh;
+    overflow-y: scroll;
+}
+
+.class-page-half-box {
+    height: 45vh;
+    width: 44vw;
+    border-radius: 1vh;
+    background-color: #157daa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+/* Smaller Element Styling */
+
+
+.class-title {
+    font-size: 7vh;
+    color: black;
+}
+
+.class-teacher {
+    font-size: 4vh;
+    /* color: black; */
+}
+
+.description-paragraph {
+    font-size: 3vh;
+    text-align: center;
+    color: black;
+    padding: 0 5% 0 5%;
+}
+
+.title-teacher-break {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.elevated-rectangle-title {
+    background-color: #ffffff35;
+    font-weight: bold;
+    height: 4vh;
+    font-size: 3vh;
+    text-align: center;
+    align-content: center;
+    width: 90%;
+    border-radius: 0.5vh;
+    border: 1px solid #ffffff20;
+    margin-bottom: 2.5vh;
+    color: white;
+}
+
+.elevated-rectangle {
+    background-color: #ffffff35;
+    font-size: 2vh;
+    text-align: left;
+    align-content: center;
+    width: 90%;
+    border-radius: 0.5vh;
+    border-left: 3px solid rgb(255, 255, 255);
+    color: white;
+    padding: 0.45vh 0 0.45vh 5%;
+    margin-bottom: 2vh;
+    transition: all 0.5s cubic-bezier(.17,.67,.36,1.02);
+}
+
+.elevated-rectangle-half {
+    background-color: #4e4e4e49;
+    font-size: 2vh;
+    text-align: center;
+    align-content: center;
+    width: fit-content;
+    border-radius: 0.5vh;
+    border-left: 3px solid rgb(255, 255, 255);
+    border-right: 3px solid rgb(255, 255, 255);
+    border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: white;
+    margin: 0 0.5vw 1vh 0;
+    padding: 0.45vh 5% 0.45vh 5%;
+}
+
+.elevated-rectangle:hover {
+    transform: translateX(0.25vw);
+    background-color: #ffffff50;
+}
