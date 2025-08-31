@@ -89,6 +89,21 @@ function displayCourseDetails() {
   
   // set the teacher/department
   if (teachersEl) teachersEl.textContent = course.getSubject() + " Department";
+
+  // add dynamic colours 
+
+  let headerElements = document.querySelectorAll(".class-page-header");
+  let halfElements = document.querySelectorAll(".class-page-half-box");
+
+  for(let i = 0; i < headerElements.length; i++) {
+    headerElements[i].classList.add(course.getSubject().replace(" ", "").toLowerCase());
+    console.log("changed colour");
+  }
+
+  for(let i = 0; i < halfElements.length; i++) {
+    halfElements[i].classList.add(course.getSubject().replace(" ", "").toLowerCase());
+    console.log("changed colour");
+  }
   
   // create the star rating display
   if (starRateEl) {
@@ -101,7 +116,7 @@ function displayCourseDetails() {
       if (i < rating) {
         starsHTML += "<span class=\"material-symbols-rounded\" style=\"font-variation-settings:'FILL' 1;font-size: 5vh\">star</span>";
       } else {
-        starsHTML += "<span class=\"material-symbols-rounded\" style=\"font-variation-settings:'FILL' 0;font-size: 5vh\">star</span>";
+        starsHTML += "<span class=\"material-symbols-rounded\" stlye=\"font-variation-settings:'FILL' 0;font-size: 5vh\">star</span>";
       }
     }
     starRateEl.innerHTML = starsHTML;
@@ -329,17 +344,17 @@ function createDynamicGraph(course) {
       type: "scatter",
       data: {
         datasets: [{
-          label: `${course.getClassName()} Data`,
+          label: `Data`,
           pointRadius: 8,
-          pointBackgroundColor: "rgba(69, 196, 176, 0.8)",
-          pointBorderColor: "rgba(69, 196, 176, 1)",
+          pointBackgroundColor: "rgba(0, 0, 0, 0.8)",
+          pointBorderColor: "rgba(255, 255, 255, 1)",
           pointBorderWidth: 2,
           data: dataPoints
         }, {
           label: 'Trend Line',
           type: 'line',
           data: trendLinePoints,
-          borderColor: "rgba(19, 103, 138, 1)",
+          borderColor: "rgba(0, 0, 0, 1)",
           borderWidth: 3,
           fill: false,
           pointRadius: 0,
@@ -380,7 +395,7 @@ function createDynamicGraph(course) {
               fontStyle: 'bold'
             },
             gridLines: {
-              color: "rgba(200,200,200,0.2)"
+              color: "rgba(0, 0, 0, 0.25)"
             }
           }],
           yAxes: [{
@@ -398,7 +413,7 @@ function createDynamicGraph(course) {
               fontStyle: 'bold'
             },
             gridLines: {
-              color: "rgba(200,200,200,0.2)"
+              color: "rgba(0, 0, 0, 0.25)"
             }
           }]
         },

@@ -126,13 +126,14 @@ md-sys-color {
         }
     </style>
 <link rel="stylesheet" href="../Style/classPage2.css">
+<link rel="stylesheet" href="../Style/classColours.css">
 </head>
 
 <body class="classPage" onload="load();dothing()" style="background-color: var(--light-bg)" id="body">
-    <div class="container" id="fullHeightDiv">
+    <div  class="container" id="fullHeightDiv">
         <img src="../Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
         <img src="../Images/closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
-        <span class="material-symbols-rounded mode" style="font-size:5vh" onclick="modeChange(this)">light_mode</span>
+        <span class="material-symbols-rounded mode" style="font-size:5vh" onclick="modeChange()">light_mode</span>
         <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
           <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: calc(6vh + 1vw + 0.5vw)">
             Close
@@ -164,7 +165,7 @@ md-sys-color {
 
 
         <div class="class-info-container">
-            <div class="class-page-header health">
+            <div class="class-page-header">
                 <div class="class-page-header-left">
                     <div class="class-title-teacher-holder">
 
@@ -218,12 +219,22 @@ md-sys-color {
                 </div>
             </div>
 
-            <div class="class-page-half-box description health classPageClassDecription">
+            <div class="class-page-half-box description classPageClassDecription">
               <p class="description-paragraph"></p>
             </div>
 
-            <div class="class-page-half-box health">
+            <div class="class-page-half-box">
               <canvas id="myChart" class='classPageGraphHalf'></canvas>
+            </div>
+
+            <div class="class-comment-container">
+              <div class="comment-box">
+                <div class="comment-text"> 
+                  <p>I really enjoyed this class because the material was interesting and our teacher, Ms. Johnson, made it engaging and fun to learn about. The workload can be pretty heavy at times, but I think it's worth it if you're interested in history like I am. My only suggestion would be to maybe have a few more group projects or discussions throughout the semester - sometimes we just sat through lectures for hours without much interaction. Overall though, I learned so much and appreciated the effort Ms. Johnson put into making this class enjoyable.</p>
+                </div>
+                <div class="review-info"></div>
+                <div class="comment-tags-holder"></div>
+              </div>
             </div>
 
         </div>
@@ -272,6 +283,14 @@ let course;
             //console.log('No course found');
         }
     };
+
+    function modeChange(thing) {
+        console.log("darkmode");
+        document.getElementsByTagName('style')[0].innerHTML="md-filter-chip { background-color: rgba(150, 150, 150, 0.5); --md-sys-color-outline:lightgrey;} .header {color: white;} .sidebar{color: white} .menuPic {filter: invert(100%)} .mode {filter: invert(100%)}";
+          document.getElementById('body').style.backgroundColor = "var(--dark-bg)";
+          document.getElementById('sidebar').style.backgroundColor = "var(--dark-mode-bg)";
+          document.getElementById('header').style.backgroundColor = "var(--dark-mode-bg)";
+      }
 </script>
 </body>
 </html>
