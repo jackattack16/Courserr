@@ -2,134 +2,71 @@
 <html lang="en">
  
 <head>
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courserr</title>
-    
-    <link rel="icon" href="logo.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
-      rel="stylesheet">
-      
-      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      <link rel="stylesheet" href="../Style/style.css">
-      
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="importmap">
-    {
-      "imports": {
-        "@material/web/": "https://esm.run/@material/web/"
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courserr</title>
+
+  <!-- Favicon -->
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap">
+  <!-- Material Symbols (for md-icon) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" />
+
+  <!-- Material Web (md-icon, chips, etc.) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "@material/web/": "https://esm.run/@material/web/"
     }
+  }
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-  <script src="../Javascript/Class.js"></script>
-    <script src="../Javascript/ClassInstantiation.js"></script>
-    <script src="../Javascript/script.js"></script>
   <script type="module">
     import '@material/web/all.js';
     import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
-
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   </script>
 
-    <style>
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-md-suggestion-chip {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
+  <!-- Your JS files -->
+  <script src="../Javascript/Class.js"></script>
+  <script src="../Javascript/ClassInstantiation.js"></script>
+  <script src="../Javascript/script.js"></script>
+  <script src="../Javascript/loadClass.js"></script>
 
-</style>
-<style>
-.material-symbols-rounded {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 500,
-  'GRAD' 200,
-  'opsz' 48;
-  /*font-size: 4vh;*/
-  transition: font-variation-settings 0.5s ease;
-}
-.unfilled {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 500,
-  'GRAD' -25,
-  'opsz' 48;
-  font-size: 50vh;
-}
-.no-fill {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 500,
-  'GRAD' 200,
-  'opsz' 48;
-}
-@media (max-width:768px) {
-  .material-symbols-rounded {
-  font-size: 3vh;
-}
-}
-.codePic {
-  height: 4vw;
-  margin-left: 0.5vw;
-  top: 92vh;
-  position: absolute;
-}
-.header {
-  height: 10vh;
-}
-md-suggestion-chip {
-  transition: background-color 1.5s ease;
-  background-color: white;
-  color: black;
-}
-md-sys-color {
-  transition: outline-color 1.5s ease;
-}
 
-</style>
-<style>
-        /*body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-            color: #fff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }*/
-        /*h1 {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }*/
-        .chart-container {
-            width: 80%;
-            max-width: 800px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-        canvas {
-            width: 100% !important;
-            height: auto !important;
-        }
-    </style>
-<link rel="stylesheet" href="../Style/classPage2.css">
-<link rel="stylesheet" href="../Style/classColours.css">
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="../Style/style.css">
+  <link rel="stylesheet" href="../Style/classPage2.css">
+  <link rel="stylesheet" href="../Style/classColours.css">
+
+  <!-- md-icon styling -->
+  <style>
+    md-icon {
+      color: #006A6A;
+      --md-icon-size: 48px;
+    }
+    md-icon.rounded {
+      --md-icon-font: 'Material Symbols Rounded';
+    }
+    md-icon.sharp {
+      --md-icon-font: 'Material Symbols Sharp';
+    }
+    md-icon.outlined {
+      --md-icon-font: 'Material Symbols Outlined';
+    }
+    md-icon[filled] {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
 </head>
 
-<body class="classPage" onload="load();dothing()" style="background-color: var(--light-bg)" id="body">
+<body class="classPage" style="background-color: var(--light-bg)" id="body">
     <div  class="container" id="fullHeightDiv">
         <img src="../Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
         <img src="../Images/closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
@@ -163,7 +100,7 @@ md-sys-color {
         </div>
 
 
-
+        <div class="main-content-class-page">
         <div class="class-info-container">
             <div class="class-page-header">
                 <div class="class-page-header-left">
@@ -219,32 +156,157 @@ md-sys-color {
                 </div>
             </div>
 
-            <div class="class-page-half-box description classPageClassDecription">
+            <div class="class-page-half-box description classPageClassDecription" id="getColor">
               <p class="description-paragraph"></p>
             </div>
 
             <div class="class-page-half-box">
               <canvas id="myChart" class='classPageGraphHalf'></canvas>
             </div>
+        </div>
 
-            <div class="class-comment-container">
+
+
+
+
+            <div class="class-comment-container" id="commentContainer">
+
+              <div class="comment-header" id="commentHeader">
+                <h1>Comments</h1>
+                <md-filled-text-field placeholder="Search Comments">
+                  <span slot="leading-icon" class="material-symbols-rounded">search</md-icon>
+                </md-outlined-text-field>
+              </div>
+              <div class="area-with-the-comments">
               <div class="comment-box">
                 <div class="comment-text"> 
                   <p>I really enjoyed this class because the material was interesting and our teacher, Ms. Johnson, made it engaging and fun to learn about. The workload can be pretty heavy at times, but I think it's worth it if you're interested in history like I am. My only suggestion would be to maybe have a few more group projects or discussions throughout the semester - sometimes we just sat through lectures for hours without much interaction. Overall though, I learned so much and appreciated the effort Ms. Johnson put into making this class enjoyable.</p>
                 </div>
-                <div class="review-info"></div>
-                <div class="comment-tags-holder"></div>
+                <div class="review-info">
+                  <div class="elevated-rectangle">Average Grade: A+</div>
+                  <div class="elevated-rectangle">Time Spent: 2 hours / week</div>
+                  <div class="elevated-rectangle">Difficulty: 3 / 5</div>
+                </div>
+                <!-- <div class="comment-tags-holder">
+                  <div class="elevated-rectangle-half">Reading Heavy</div>
+                          <div class="elevated-rectangle-half">Extra Credit</div>
+                          <div class="elevated-rectangle-half">Hard Tests</div>
+                          <div class="elevated-rectangle-half">Fun</div>
+                          <div class="elevated-rectangle-half">Engaging</div>
+                          <div class="elevated-rectangle-half">Extra Credit</div>
+                          <div class="elevated-rectangle-half">Hard Tests</div>
+                          <div class="elevated-rectangle-half">Fun</div>
+                          <div class="elevated-rectangle-half">Engaging</div>
+                </div> -->
+                <div class="comment-kicker">
+                  <!-- <md-icon-button>
+                    <span class="material-symbols-rounded" id="likeBtn">thumb_up</span>
+                  </md-icon-button>
+                  <md-icon-button>
+                    <span class="material-symbols-rounded" id="flagBtn">flag</span>
+                  </md-icon-button> -->
+                  <md-icon-button class="infoBtn">
+                    <span class="material-symbols-rounded">info</span>
+                  </md-icon-button>
+
+                  
+
+                </div>
               </div>
+
+              <div class="comment-box">
+                <div class="comment-text"> 
+                  <p>I really enjoyed this class because the material was interesting and our teacher, Ms. Johnson, made it engaging and fun to learn about. The workload can be pretty heavy at times, but I think it's worth it if you're interested in history like I am. My only suggestion would be to maybe have a few more group projects or discussions throughout the semester - sometimes we just sat through lectures for hours without much interaction. Overall though, I learned so much and appreciated the effort Ms. Johnson put into making this class enjoyable.</p>
+                </div>
+                <div class="review-info">
+                  <div class="elevated-rectangle">Average Grade: A+</div>
+                  <div class="elevated-rectangle">Time Spent: 2 hours / week</div>
+                  <div class="elevated-rectangle">Difficulty: 3 / 5</div>
+                </div>
+                <!-- <div class="comment-tags-holder">
+                  <div class="elevated-rectangle-half">Reading Heavy</div>
+                          <div class="elevated-rectangle-half">Extra Credit</div>
+                          <div class="elevated-rectangle-half">Hard Tests</div>
+                          <div class="elevated-rectangle-half">Fun</div>
+                          <div class="elevated-rectangle-half">Engaging</div>
+                          <div class="elevated-rectangle-half">Extra Credit</div>
+                          <div class="elevated-rectangle-half">Hard Tests</div>
+                          <div class="elevated-rectangle-half">Fun</div>
+                          <div class="elevated-rectangle-half">Engaging</div>
+                </div> -->
+                <div class="comment-kicker">
+                  <!-- <md-icon-button>
+                    <span class="material-symbols-rounded" id="likeBtn">thumb_up</span>
+                  </md-icon-button>
+                  <md-icon-button>
+                    <span class="material-symbols-rounded" id="flagBtn">flag</span>
+                  </md-icon-button> -->
+                  <md-icon-button class="infoBtn">
+                    <span class="material-symbols-rounded">info</span>
+                  </md-icon-button>
+
+                  
+
+                </div>
+              </div>
+
+              <div class="comment-box">
+                <div class="comment-text"> 
+                  <p>I really enjoyed this class because the material was interesting and our teacher, Ms. Johnson, made it engaging and fun to learn about. The workload can be pretty heavy at times, but I think it's worth it if you're interested in history like I am. My only suggestion would be to maybe have a few more group projects or discussions throughout the semester - sometimes we just sat through lectures for hours without much interaction. Overall though, I learned so much and appreciated the effort Ms. Johnson put into making this class enjoyable.</p>
+                </div>
+                <div class="review-info">
+                  <div class="elevated-rectangle">Average Grade: A+</div>
+                  <div class="elevated-rectangle">Time Spent: 2 hours / week</div>
+                  <div class="elevated-rectangle">Difficulty: 3 / 5</div>
+                </div>
+                <!-- <div class="comment-tags-holder">
+                  <div class="elevated-rectangle-half">Reading Heavy</div>
+                          <div class="elevated-rectangle-half">Extra Credit</div>
+                          <div class="elevated-rectangle-half">Hard Tests</div>
+                          <div class="elevated-rectangle-half">Fun</div>
+                          <div class="elevated-rectangle-half">Engaging</div>
+                          <div class="elevated-rectangle-half">Extra Credit</div>
+                          <div class="elevated-rectangle-half">Hard Tests</div>
+                          <div class="elevated-rectangle-half">Fun</div>
+                          <div class="elevated-rectangle-half">Engaging</div>
+                </div> -->
+                <div class="comment-kicker">
+                  <!-- <md-icon-button>
+                    <span class="material-symbols-rounded" id="likeBtn">thumb_up</span>
+                  </md-icon-button>
+                  <md-icon-button>
+                    <span class="material-symbols-rounded" id="flagBtn">flag</span>
+                  </md-icon-button> -->
+                  <md-icon-button class="infoBtn">
+                    <span class="material-symbols-rounded">info</span>
+                  </md-icon-button>
+
+                  
+
+                </div>
+              </div>
+              </div>
+
+            </div>
             </div>
 
-        </div>
+       
 
 
         
 </div>
 
-
+<div class="dialoge-holder">
+  <md-dialog id="infoDialog">
+                    <div slot="content">These comments are submitted by students at Ames High School. They are anonymous and reviewed to ensure compliance with Ames Community School District policy. Their purpose is to give students a clear idea of what to expect in a class and to provide insights beyond a standard course description.</div>
+                    <div slot="actions">
+                      <md-text-button form="form-id" value="ok" id="closeBtn">Ok</md-text-button>
+                    </div>
+                  </md-dialog>
+</div>
+<script src="../Javascript/comments.js"></script>
 <script src="../Javascript/loadClass.js"></script>
+
 <script>
 let course;
   window.onload = function() {
@@ -262,26 +324,27 @@ let course;
           }
         }
         
-        console.log('Course name from URL: ' + courseName);
-        console.log('displayCourseDetails function exists: ' + (typeof displayCourseDetails));
-        console.log('courseMap exists: ' + (typeof courseMap !== 'undefined'));
+        //console.log('Course name from URL: ' + courseName);
+        //console.log('displayCourseDetails function exists: ' + (typeof displayCourseDetails));
+       // console.log('courseMap exists: ' + (typeof courseMap !== 'undefined'));
         
-        console.log('Course name from URL:', courseName);
-        console.log('displayCourseDetails function exists:', typeof displayCourseDetails);
-        console.log('courseMap exists:', typeof courseMap !== 'undefined');
+        //console.log('Course name from URL:', courseName);
+        //console.log('displayCourseDetails function exists:', typeof displayCourseDetails);
+       // console.log('courseMap exists:', typeof courseMap !== 'undefined');
         
         if (courseName) {
           if (typeof displayCourseDetails === 'function') {
-            console.log('Calling displayCourseDetails...');
+          //  console.log('Calling displayCourseDetails...');
             displayCourseDetails();
           } else {
-            console.error('displayCourseDetails function not found');
+           // console.error('displayCourseDetails function not found');
           }
             //console.log('Course: ' + courseName);
         } else {
-            console.error('No course found in URL');
+           // console.error('No course found in URL');
             //console.log('No course found');
         }
+        makeCommentBackground();
     };
 
     function modeChange(thing) {
@@ -291,6 +354,23 @@ let course;
           document.getElementById('sidebar').style.backgroundColor = "var(--dark-mode-bg)";
           document.getElementById('header').style.backgroundColor = "var(--dark-mode-bg)";
       }
+
+      
+</script>
+<script>
+  const infoBtn = document.querySelectorAll('.infoBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const infoDialog = document.getElementById('infoDialog');
+
+  for (let i = 0; i < infoBtn.length; i++) {
+     infoBtn[i].addEventListener("click", () => {
+      infoDialog.show();
+     });
+    }
+
+  closeBtn.addEventListener('click', () => {
+    infoDialog.close(); // opens the dialog
+  });
 </script>
 </body>
 </html>

@@ -1,15 +1,25 @@
 .class-info-container {
-    position: absolute;
-    height: 100vh;
-    width: 95vw;
-    left: 5vw;
-    padding: 13vh 2.5vw 3vh 2.5vw;
+    padding: 17vh 2.5vw 3vh 2.5vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 5vh;
     column-gap: 2vw;
+
+}
+
+.main-content-class-page {
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100vh;
+    width: 95vw;
+    left: 5vw;
+}
+
+.class-info-container-padding {
+    padding: 17vh 2.5vw 3vh 2.5vw;
 }
 
 .class-page-header {
@@ -105,48 +115,86 @@
 
 .class-comment-container {
     width: 100%;
-    background-color: darkcyan;
+    /* background-color: rgb(78, 78, 78); */
     height: fit-content;
-    padding: 1vh 2.5vw 1vh 2.5vw;
+    
 } 
+
+.area-with-the-comments {
+    padding: 1vh 2.5vw 1vh 2.5vw;
+}
+
+.comment-header {
+    height: 9vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+    padding: 0 2.5vw;
+    font-size: 4vh;
+}
 
 .comment-box {
     height: 25vh;
-    background-color: gainsboro;
+    background-color: #373737;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 2vh;
+    margin-bottom: 3vh;
 }
 
 .review-info {
-    height: 75%;
+    flex-wrap: wrap;
+    height: 85%;
     width: 30%;
-    background-color: darksalmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
+
 .comment-text {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
-    height: 75%;
+    height: 100%;
     width: 70%;
     padding: 1% 2.5% 1% 2.5%;
     font-size: 2.2vh;
     text-align: center;
+    border-radius: 1vh;
+    background-color: gainsboro;
 }
 
 .comment-tags-holder {
     height: 25%;
-    width: 100%;
-    background-color: darkolivegreen;
+    width: 90%;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding-left: 0.5vw;
+}
+
+.comment-kicker {
+    height: 15%;
+    width: 2.5%;
+    margin-left: 27.5%;
+    background-color: #7c7474;
+    border-top-left-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
-
-
-
-
-
-/* Smaller Element Styling */
+/* Smaller Element Styling  */
 
 
 .class-title {
@@ -171,6 +219,22 @@
     border-radius: 5px;
     width: 80%;
 }
+
+.comment-icon {
+    font-size: 6vh !important;
+}
+
+.review-info>.elevated-rectangle:last-child {
+    margin-bottom: 0;
+}
+
+.comment-tags-holder>.elevated-rectangle-half {
+    margin-bottom: 0;
+    max-height: fit-content;
+    text-wrap: nowrap;
+    padding: 0.45vh 2% 0.45vh 2%;
+}
+
 
 
 
@@ -225,3 +289,11 @@
     transform: translateX(0.25vw);
     background-color: #ffffff50;
 }
+
+:root {
+  --md-sys-typescale-body-large: 400 1rem system-ui;
+  --md-sys-color-primary: #000000;
+  --md-sys-color-surface-container-highest: gainsboro;
+  --md-filled-text-field-label-text-color: #3f4948;
+  --md-filled-text-field-input-text-color: #161d1d;
+  }

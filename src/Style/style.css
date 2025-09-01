@@ -3,10 +3,10 @@
 
 
 * {
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
     box-sizing: border-box;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Roboto','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 :root {
     height: 100%;
@@ -286,6 +286,7 @@ md-filter-chip[selected]:hover {
 
 .class-grid::-webkit-scrollbar {
     width: 0.5vw;
+    z-index: 999;
 }
 
 .class-grid::-webkit-scrollbar-thumb {
@@ -465,7 +466,7 @@ span {
   margin: -1vh 0vw 0 0vw; /* Remove negative left margin */
   /* width: 100%; */
   position: absolute;
-  right: 9vw;
+  right: 5vw;
   top: 4vh;
   z-index: 100;
   /*padding-left: 1vw; Reduce left padding for better alignment */
