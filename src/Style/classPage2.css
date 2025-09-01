@@ -297,3 +297,55 @@
   --md-filled-text-field-label-text-color: #3f4948;
   --md-filled-text-field-input-text-color: #161d1d;
   }
+
+
+
+
+
+/* Hiding stuff when big */
+
+.class-info-container-mobile {
+    display: none;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .class-info-container {
+         display: none;
+    }
+
+    .class-info-container-mobile {
+        padding-top: 17.5vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        row-gap: 5vh;
+        column-gap: 2vw;
+    }
+
+    .class-info-container-padding {
+        padding: 17vh 2.5vw 0 2.5vw;
+
+    }   
+
+    .class-comment-container {
+        display: none;
+    }
+
+    body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .class-page-half-box {
+        height: 45vh;
+        width: 90vw;
+        border-radius: 1vh;
+        background-color: #157daa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
