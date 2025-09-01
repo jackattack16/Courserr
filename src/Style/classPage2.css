@@ -198,17 +198,17 @@
 
 
 .class-title {
-    font-size: 7vh;
+    font-size: min(7vh, 7vw);
     color: black;
 }
 
 .class-teacher {
-    font-size: 4vh;
+    font-size: min(4vh, 4vw);
     /* color: black; */
 }
 
 .description-paragraph {
-    font-size: 3vh;
+    font-size: min(3vh, 4.5vw);
     text-align: center;
     color: black;
     padding: 0 5% 0 5%;
@@ -315,7 +315,7 @@
     .class-info-container {
          display: none;
     }
-
+    
     .class-info-container-mobile {
         padding-top: 17.5vh;
         display: flex;
@@ -340,7 +340,7 @@
     }
 
     .class-page-half-box {
-        height: 45vh;
+        height: 30vh;
         width: 90vw;
         border-radius: 1vh;
         background-color: #157daa;
@@ -348,4 +348,5 @@
         align-items: center;
         justify-content: center;
     }
+    
 }
