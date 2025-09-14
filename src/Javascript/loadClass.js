@@ -1,6 +1,5 @@
 // this file handles loading individual class pages
 // pretty much just takes the course name from URL and displays all the info
-
 function loadClassData() {
   const urlParams = new URLSearchParams(window.location.search);
   const categoryParam = urlParams.get('category');
@@ -89,21 +88,6 @@ function displayCourseDetails() {
   
   // set the teacher/department
   if (teachersEl) teachersEl.textContent = course.getSubject() + " Department";
-
-  // add dynamic colours 
-
-  let headerElements = document.querySelectorAll(".class-page-header");
-  let halfElements = document.querySelectorAll(".class-page-half-box");
-
-  for(let i = 0; i < headerElements.length; i++) {
-    headerElements[i].classList.add(course.getSubject().replace(" ", "").toLowerCase());
-    console.log("changed colour");
-  }
-
-  for(let i = 0; i < halfElements.length; i++) {
-    halfElements[i].classList.add(course.getSubject().replace(" ", "").toLowerCase());
-    console.log("changed colour");
-  }
   
   // create the star rating display
   if (starRateEl) {
@@ -116,19 +100,22 @@ function displayCourseDetails() {
       if (i < rating) {
         starsHTML += "<span class=\"material-symbols-rounded\" style=\"font-variation-settings:'FILL' 1;font-size: 5vh\">star</span>";
       } else {
-        starsHTML += "<span class=\"material-symbols-rounded\" stlye=\"font-variation-settings:'FILL' 0;font-size: 5vh\">star</span>";
+        starsHTML += "<span class=\"material-symbols-rounded\" style=\"font-variation-settings:'FILL' 0;font-size: 5vh\">star</span>";
       }
     }
     starRateEl.innerHTML = starsHTML;
   }
   
   // update prerequisites section
-  const prereqEl = document.querySelector('.classPageClassPrereq ul');
+  const prereqEl = document.getElementById('yourbrother');
   if (prereqEl) {
     if (course.getPrerequisite() === "None") {
-      prereqEl.innerHTML = "<li>None</li>";
+      prereqEl.innerHTML += "<div class='elevated-rectangle'>None</div>"
     } else {
-      prereqEl.innerHTML = `<li>${course.getPrerequisite()}</li>`;
+      const array = course.getPrerequisite().split(/,| or |;/);
+      for(let i = 0; i < array.length; i++) {
+        prereqEl.innerHTML += `<div class='elevated-rectangle'>${array[i]}</div>`;
+      }
     }
   }
   
@@ -139,15 +126,15 @@ function displayCourseDetails() {
   }
   
   // update the quick hits section with course stats
-  const quickHitsEl = document.querySelector('.classPageBORDERS ul');
+  const quickHitsEl = document.getElementById('yourmom');
   if (quickHitsEl) {
-    quickHitsEl.innerHTML = `
-      <li>Homework: ~${course.getAverageTimePerWeek() || 2} hours/week</li>
-      <li>Average Grade: ${course.getAverageGrade() || 'B'}</li>
-      <li>Duration: ${course.getDuration()}</li>
-      <li>Grade Level: ${course.getUsualGrade()}</li>
-      <li>Dual Credit: ${course.getDualCredit() ? 'Yes' : 'No'}</li>
-      <li>Honors/AP: ${course.getHonorsAP()}</li>
+    quickHitsEl.innerHTML += `
+      <div class='elevated-rectangle'>Homework: ~${course.getAverageTimePerWeek() || 2} hours/week</div>
+      <div class ='elevated-rectangle'>Average Grade: ${course.getAverageGrade() || 'B'}</div>
+      <div class ='elevated-rectangle'>Duration: ${course.getDuration()}</div>
+      <div class ='elevated-rectangle'>Grade Level: ${course.getUsualGrade()}</div>
+      <div class ='elevated-rectangle'>Dual Credit: ${course.getDualCredit() ? 'Yes' : 'No'}</div>
+      <div class ='elevated-rectangle'>Honors/AP: ${course.getHonorsAP()}</div>
     `;
   }
   
@@ -344,17 +331,17 @@ function createDynamicGraph(course) {
       type: "scatter",
       data: {
         datasets: [{
-          label: `Data`,
+          label: `${course.getClassName()} Data`,
           pointRadius: 8,
-          pointBackgroundColor: "rgba(0, 0, 0, 0.8)",
-          pointBorderColor: "rgba(255, 255, 255, 1)",
+          pointBackgroundColor: "rgba(69, 196, 176, 0.8)",
+          pointBorderColor: "rgba(69, 196, 176, 1)",
           pointBorderWidth: 2,
           data: dataPoints
         }, {
           label: 'Trend Line',
           type: 'line',
           data: trendLinePoints,
-          borderColor: "rgba(0, 0, 0, 1)",
+          borderColor: "rgba(19, 103, 138, 1)",
           borderWidth: 3,
           fill: false,
           pointRadius: 0,
@@ -395,7 +382,7 @@ function createDynamicGraph(course) {
               fontStyle: 'bold'
             },
             gridLines: {
-              color: "rgba(0, 0, 0, 0.25)"
+              color: "rgba(200,200,200,0.2)"
             }
           }],
           yAxes: [{
@@ -413,7 +400,7 @@ function createDynamicGraph(course) {
               fontStyle: 'bold'
             },
             gridLines: {
-              color: "rgba(0, 0, 0, 0.25)"
+              color: "rgba(200,200,200,0.2)"
             }
           }]
         },
