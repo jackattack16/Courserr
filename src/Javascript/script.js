@@ -139,7 +139,7 @@ function makeHTML(course, fill) {
   let bodyHTML = "";
   console.log('makeHTML called for course:', course.getClassName());
   // Always use lowercase, no spaces, for subject class assignment
-  const subjectClass = course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase();
+  const subjectClass = course.getSubject().replace(/\s+/g, '').toLowerCase();
   if (fill === true) {
     let classCardDiv = `<div class="classCard ${subjectClass}" onclick="openClass('${course.getClassName()}')" >`;
     let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded"${unfilled}>${course.getIcon()}</span><div class="className" onclick="openClass('${course.getClassName()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 1" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
