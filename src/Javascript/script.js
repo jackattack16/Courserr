@@ -146,7 +146,7 @@ function makeHTML(course, fill) {
     // Add subjectClass to classRate for color
     let starDiv = `<div class="classRate ${subjectClass}">` + numberToStars(course.getAverageRating()) + `</div>`;
     let descriptionDiv = `<div class="classDes">${course.getDescription()}</div></div>`;
-    let htmlCard = classCardDiv + headerDiv + starDiv + descriptionDiv;
+    let htmlCard = classCardDiv + headerDiv + descriptionDiv;
     bodyHTML += htmlCard;
   } else {
     let classCardDiv = `<div class="classCard ${subjectClass}"  >`;
@@ -154,7 +154,7 @@ function makeHTML(course, fill) {
     // Add subjectClass to classRate for color
     let starDiv = `<div class="classRate ${subjectClass}">` + numberToStars(course.getAverageRating()) + `</div>`;
     let descriptionDiv = `<div class="classDes">${course.getDescription()}</div></div>`;
-    let htmlCard = classCardDiv + headerDiv + starDiv + descriptionDiv;
+    let htmlCard = classCardDiv + headerDiv + descriptionDiv;
     bodyHTML += htmlCard;
   }
   console.log('Generated HTML for', course.getClassName(), ':', bodyHTML.substring(0, 200) + '...');
