@@ -1,6 +1,5 @@
 // this file handles loading individual class pages
 // pretty much just takes the course name from URL and displays all the info
-
 function loadClassData() {
   const urlParams = new URLSearchParams(window.location.search);
   const categoryParam = urlParams.get('category');
@@ -108,12 +107,15 @@ function displayCourseDetails() {
   }
   
   // update prerequisites section
-  const prereqEl = document.querySelector('.classPageClassPrereq ul');
+  const prereqEl = document.getElementById('yourbrother');
   if (prereqEl) {
     if (course.getPrerequisite() === "None") {
-      prereqEl.innerHTML = "<li>None</li>";
+      prereqEl.innerHTML += "<div class='elevated-rectangle'>None</div>"
     } else {
-      prereqEl.innerHTML = `<li>${course.getPrerequisite()}</li>`;
+      const array = course.getPrerequisite().split(/,| or /);
+      for(let i = 0; i < array.length; i++) {
+        prereqEl.innerHTML += `<div class='elevated-rectangle'>${array[i]}</div>`;
+      }
     }
   }
   
@@ -124,15 +126,15 @@ function displayCourseDetails() {
   }
   
   // update the quick hits section with course stats
-  const quickHitsEl = document.querySelector('.classPageBORDERS ul');
+  const quickHitsEl = document.getElementById('yourmom');
   if (quickHitsEl) {
-    quickHitsEl.innerHTML = `
-      <li>Homework: ~${course.getAverageTimePerWeek() || 2} hours/week</li>
-      <li>Average Grade: ${course.getAverageGrade() || 'B'}</li>
-      <li>Duration: ${course.getDuration()}</li>
-      <li>Grade Level: ${course.getUsualGrade()}</li>
-      <li>Dual Credit: ${course.getDualCredit() ? 'Yes' : 'No'}</li>
-      <li>Honors/AP: ${course.getHonorsAP()}</li>
+    quickHitsEl.innerHTML += `
+      <div class='elevated-rectangle'>Homework: ~${course.getAverageTimePerWeek() || 2} hours/week</div>
+      <div class ='elevated-rectangle'>Average Grade: ${course.getAverageGrade() || 'B'}</div>
+      <div class ='elevated-rectangle'>Duration: ${course.getDuration()}</div>
+      <div class ='elevated-rectangle'>Grade Level: ${course.getUsualGrade()}</div>
+      <div class ='elevated-rectangle'>Dual Credit: ${course.getDualCredit() ? 'Yes' : 'No'}</div>
+      <div class ='elevated-rectangle'>Honors/AP: ${course.getHonorsAP()}</div>
     `;
   }
   
