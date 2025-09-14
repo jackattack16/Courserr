@@ -112,7 +112,7 @@ function displayCourseDetails() {
     if (course.getPrerequisite() === "None") {
       prereqEl.innerHTML += "<div class='elevated-rectangle'>None</div>"
     } else {
-      const array = course.getPrerequisite().split(/,| or /);
+      const array = course.getPrerequisite().split(/,| or |;/);
       for(let i = 0; i < array.length; i++) {
         prereqEl.innerHTML += `<div class='elevated-rectangle'>${array[i]}</div>`;
       }
