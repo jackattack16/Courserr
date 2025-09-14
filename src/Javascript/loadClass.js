@@ -78,22 +78,17 @@ function displayCourseDetails() {
   document.title = course.getClassName() + " - Courserr";
   
   // get all the DOM elements we need to update
-  const classNameEl = document.querySelectorAll('.class-title');
+  const classNameEl = document.getElementById('className');
   const classPageClassNameEl = document.getElementById('classPageClassName');
-  const teachersEl = document.querySelectorAll('.class-teacher');
+  const teachersEl = document.getElementById('teachers');
   const starRateEl = document.getElementById('starRate');
   
   // update the course name in both places
-  if (classNameEl) {
-    classNameEl[1].textContent = course.getClassName();
-  }
+  if (classNameEl) classNameEl.textContent = course.getClassName();
   if (classPageClassNameEl) classPageClassNameEl.textContent = course.getClassName();
   
   // set the teacher/department
-  if (teachersEl) {
-    teachersEl[0].textContent = course.getSubject() + " Department";
-    teachersEl[1].textContent = course.getSubject() + " Department";
-  }
+  if (teachersEl) teachersEl.textContent = course.getSubject() + " Department";
 
   // add dynamic colours 
 
@@ -138,11 +133,9 @@ function displayCourseDetails() {
   }
   
   // update the description
-  const descEl = document.querySelectorAll('.classPageClassDecription p');
-  console.log(descEl);
+  const descEl = document.querySelector('.classPageClassDecription p');
   if (descEl) {
-    descEl[0].textContent = course.getDescription();
-    descEl[1].textContent = course.getDescription();
+    descEl.textContent = course.getDescription();
   }
   
   // update the quick hits section with course stats
@@ -179,14 +172,7 @@ if (tagsEl) {
   
   // create the graph (with a small delay to make sure everything is loaded)
   setTimeout(() => {
-    let windowGet = document.querySelector('body').clientWidth;
-    if(windowGet >= 768) {
-      createDynamicGraph(course, 'myChart');
-      console.log("desktop mode");
-    } else {
-      createDynamicGraph(course, 'myChart2');
-      console.log("mobile mode");
-    }
+    createDynamicGraph(course);
   }, 100);
   
   // handle comments section
@@ -233,27 +219,23 @@ if (tagsEl) {
   console.log('finished loading course:', course.getClassName());
 }
 
-function createDynamicGraph(course, canvasSize) {
+function createDynamicGraph(course) {
   console.log('creating graph for:', course.getClassName());
   
+  // make sure Chart.js is loaded
   if (typeof Chart === 'undefined') {
     console.error('Chart.js not loaded!');
     return;
   }
-
-  console.log(document.querySelector(`#${canvasSize} ~ p`));
-  document.querySelector(`#${canvasSize} ~ p`).style.display = "none";
   
-  // pick canvas depending on screen width
-  let screenWidth = document.querySelector('body').clientWidth;
-  console.log("screen width " + screenWidth);
-  const canvas = document.getElementById(canvasSize);
+  // find the canvas element
+  const canvas = document.getElementById('myChart');
   if (!canvas) {
     console.error('canvas element not found');
     return;
   }
-
-  // sanity check chart creation
+  
+  // test if we can create a chart first
   try {
     const testChart = new Chart(canvas, {
       type: 'line',
@@ -265,17 +247,26 @@ function createDynamicGraph(course, canvasSize) {
           borderColor: 'red'
         }]
       },
-      options: { responsive: true, maintainAspectRatio: false }
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
     });
-    testChart.destroy();
+    console.log('test chart worked, destroying it...');
+    testChart.destroy(); // clean up test chart
   } catch (error) {
     console.error('test chart failed:', error);
     return;
   }
   
+  // get the course data we need
   const hours = course.getAverageTimePerWeek();
   const grades = course.getGrades();
   
+  console.log('course hours:', hours);
+  console.log('course grades:', grades);
+  
+  // convert letter grades to numbers for the graph
   const gradeValues = {
     'A+': 13, 'A': 12, 'A-': 11,
     'B+': 10, 'B': 9, 'B-': 8,
@@ -284,21 +275,32 @@ function createDynamicGraph(course, canvasSize) {
     'F': 1
   };
   
+  // create data points from the actual course data
   const dataPoints = [];
+  
+  // if we have both hours and grades, use them
   if (hours && grades.length > 0) {
     const minLength = Math.min(hours.length, grades.length);
     for (let i = 0; i < minLength; i++) {
       const gradeValue = gradeValues[grades[i]];
       if (gradeValue && hours[i] >= 0) {
-        dataPoints.push({ x: gradeValue, y: hours[i] });
+        dataPoints.push({
+          x: gradeValue,
+          y: hours[i]
+        });
       }
     }
   }
   
+  // if we don't have enough data, create some sample points
   if (dataPoints.length < 3) {
     const avgHours = course.getAverageTimePerWeek();
     const avgGrade = course.getAverageGrade();
-    const avgGradeValue = gradeValues[avgGrade] || 9;
+    const avgGradeValue = gradeValues[avgGrade] || 9; // default to B
+    
+    console.log('creating sample data. avg hours:', avgHours, 'avg grade:', avgGrade);
+    
+    // create some points around the average
     dataPoints.push(
       { x: avgGradeValue - 1, y: Math.max(0, avgHours - 1) },
       { x: avgGradeValue, y: avgHours },
@@ -306,26 +308,39 @@ function createDynamicGraph(course, canvasSize) {
     );
   }
   
+  console.log('final data points:', dataPoints);
+  
+  // calculate the trend line
   function calcTrendLine(data) {
     let n = data.length;
     let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
-    data.forEach(p => {
-      sumX += p.x; sumY += p.y;
-      sumXY += p.x * p.y; sumX2 += p.x * p.x;
+
+    data.forEach(point => {
+      sumX += point.x;
+      sumY += point.y;
+      sumXY += point.x * point.y;
+      sumX2 += point.x * point.x;
     });
+
     let slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
     let intercept = (sumY - slope * sumX) / n;
+
     return { slope, intercept };
   }
 
   const { slope, intercept } = calcTrendLine(dataPoints);
+
+  // create points for the trend line
   const trendLinePoints = [];
   for (let x = 1; x <= 13; x++) {
-    trendLinePoints.push({ x, y: slope * x + intercept });
+    trendLinePoints.push({ x: x, y: slope * x + intercept });
   }
 
+  console.log('creating chart with', dataPoints.length, 'data points');
+
   try {
-    const chart = new Chart(canvas, {   // ← use the chosen canvas here
+    // create the actual chart
+    const chart = new Chart("myChart", {
       type: "scatter",
       data: {
         datasets: [{
@@ -349,28 +364,91 @@ function createDynamicGraph(course, canvasSize) {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        legend: { display: true },
+        legend: {
+          display: true,
+          labels: {
+            fontColor: "#000000",
+            fontSize: 14,
+            fontStyle: 'bold'
+          }
+        },
         scales: {
           xAxes: [{
             ticks: {
-              min: 1, max: 13,
-              callback: val => ({
-                1:'F',2:'D-',3:'D',4:'D+',5:'C-',6:'C',7:'C+',
-                8:'B-',9:'B',10:'B+',11:'A-',12:'A',13:'A+'
-              }[val])
+              min: 1,
+              max: 13,
+              callback: function(value) {
+                const gradeLabels = {
+                  1: 'F', 2: 'D-', 3: 'D', 4: 'D+', 5: 'C-', 6: 'C', 7: 'C+', 
+                  8: 'B-', 9: 'B', 10: 'B+', 11: 'A-', 12: 'A', 13: 'A+'
+                };
+                return gradeLabels[value];
+              },
+              fontColor: "#000000",
+              fontSize: 14
             },
-            scaleLabel: { display: true, labelString: 'Grade' }
+            scaleLabel: {
+              display: true,
+              labelString: 'Grade',
+              fontColor: "#000000",
+              fontSize: 16,
+              fontStyle: 'bold'
+            },
+            gridLines: {
+              color: "rgba(0, 0, 0, 0.25)"
+            }
           }],
           yAxes: [{
             ticks: {
               min: 0,
-              max: Math.max(10, Math.ceil(Math.max(...dataPoints.map(p => p.y)) + 2))
+              max: Math.max(10, Math.ceil(Math.max(...dataPoints.map(p => p.y)) + 2)),
+              fontColor: "#000000",
+              fontSize: 14
             },
-            scaleLabel: { display: true, labelString: 'Hours per Week' }
+            scaleLabel: {
+              display: true,
+              labelString: 'Hours per Week',
+              fontColor: "#000000",
+              fontSize: 16,
+              fontStyle: 'bold'
+            },
+            gridLines: {
+              color: "rgba(0, 0, 0, 0.25)"
+            }
           }]
+        },
+        layout: {
+          padding: {
+            left: 10,
+            right: 10,
+            top: 10,
+            bottom: 10
+          }
+        },
+        tooltips: {
+          backgroundColor: "rgba(0,0,0,0.8)",
+          titleFontColor: "#ffffff",
+          bodyFontColor: "#ffffff",
+          borderColor: "rgba(0,0,0,0.8)",
+          borderWidth: 1,
+          callbacks: {
+            label: function(tooltipItem, data) {
+              if (tooltipItem.datasetIndex === 0) {
+                const gradeValue = tooltipItem.xLabel;
+                const gradeLabels = {
+                  1: 'F', 2: 'D-', 3: 'D', 4: 'D+', 5: 'C-', 6: 'C', 7: 'C+', 
+                  8: 'B-', 9: 'B', 10: 'B+', 11: 'A-', 12: 'A', 13: 'A+'
+                };
+                const hours = tooltipItem.yLabel;
+                return `Grade: ${gradeLabels[gradeValue]}, Hours: ${hours.toFixed(1)}/week`;
+              }
+              return data.datasets[tooltipItem.datasetIndex].label;
+            }
+          }
         }
       }
     });
+    
     console.log('chart created successfully!');
   } catch (error) {
     console.error('error creating chart:', error);
