@@ -2978,37 +2978,37 @@ courseMap.set("Advanced Plant Science", AdvancedPlantScience);
 courseMap.set("Ag Research & Development Capstone", AgResearchAndDevelopmentCapstone);
 
 // Business
-courseMap.set("Accounting 1 (ACC104)", accounting1);
-courseMap.set("Business Engagement Collaborative (ADM221)", businessEngagementCollaborative);
-courseMap.set("Advanced Business Engagement Collaborative (ADM936)", advancedBusinessEngagementCollaborative);
-courseMap.set("Internship Program 1 (WBL110)", internshipProgram1);
-courseMap.set("Internship Program 2 (WBL150)", internshipProgram2);
+courseMap.set("Accounting 1 – Dual Credit Course", accounting1);
+courseMap.set("Business Engagement Collaborative – Dual Credit Course", businessEngagementCollaborative);
+courseMap.set("Advanced Business Engagement Collaborative – Dual Credit Course", advancedBusinessEngagementCollaborative);
+courseMap.set("Internship Program 1 – Dual Credit Courses", internshipProgram1);
+courseMap.set("Internship Program 2 – Dual Credit Courses", internshipProgram2);
 courseMap.set("Introduction to Business", introductionToBusiness);
 
 // English
-courseMap.set("English 9 Workshop", english9Workshop);
-courseMap.set("English 9 Literature", english9Literature);
-courseMap.set("Basic Composition", basicComposition);
-courseMap.set("Creative Writing", creativeWriting10);
-courseMap.set("Mythology, Fantasy, Folklore", mythologyFantasyFolklore);
-courseMap.set("Survey of Literature (10th)", surveyOfLiterature10);
-courseMap.set("American Literature", americanLiterature);
-courseMap.set("Speech", speech);
-courseMap.set("Multimedia Composition", multimediaComposition);
-courseMap.set("Introduction to Journalism", introToJournalism);
-courseMap.set("Activism & Social Justice Literature", activismAndSocialJusticeLit);
-courseMap.set("Horror Literature", horrorLiterature);
-courseMap.set("Science-Fiction Literature", scienceFictionLiterature);
-courseMap.set("Shakespeare", shakespeare);
-courseMap.set("American Society Through Film", americanSocietyThroughFilm_HUM121);
-courseMap.set("Survey of Literature (12th)", surveyOfLiterature12);
+courseMap.set("English 9 Workshop (writing)", english9Workshop);
+courseMap.set("English 9 Literature (literature)", english9Literature);
+courseMap.set("Basic Composition (writing)", basicComposition);
+courseMap.set("Creative Writing (writing)", creativeWriting10);
+courseMap.set("Mythology, Fantasy, Folklore (literature)", mythologyFantasyFolklore);
+courseMap.set("Survey of Literature (10th) (literature)", surveyOfLiterature10);
+courseMap.set("American Literature (writing & literature)", americanLiterature);
+courseMap.set("Speech (writing)", speech);
+courseMap.set("Multimedia Composition (writing)", multimediaComposition);
+courseMap.set("Introduction to Journalism (writing)", introToJournalism);
+courseMap.set("Activism & Social Justice Lit. (literature)", activismAndSocialJusticeLit);
+courseMap.set("Horror Literature (literature)", horrorLiterature);
+courseMap.set("Science-Fiction Literature (literature)", scienceFictionLiterature);
+courseMap.set("Shakespeare (literature)", shakespeare);
+courseMap.set("American Society Through Film* (HUM 121)", americanSocietyThroughFilm_HUM121);
+courseMap.set("Survey of Literature (12th) (Literature)", surveyOfLiterature12);
 courseMap.set("Drama", drama);
-courseMap.set("Advanced Journalism", advancedJournalism);
+courseMap.set("Adv. Journalism (AHS Newspaper – The Web)", advancedJournalism);
 courseMap.set("SPIRIT (AHS Yearbook)", spiritYearbook);
-courseMap.set("AP English Language & Composition (ENG 105 & 106)", apEnglishLanguageAndComposition_ENG105_106);
-courseMap.set("AP English Literature & Composition (LIT 101 & 185)", apEnglishLiteratureAndComposition_LIT101_185);
-courseMap.set("Advanced Creative Writing (ENG221)", advancedCreativeWriting_ENG221);
-courseMap.set("World Literature 2 (LIT 151)", worldLiterature2_LIT151);
+courseMap.set("AP English Language & Composition* (ENG 105 & 106) – Dual Credit Course", apEnglishLanguageAndComposition_ENG105_106);
+courseMap.set("AP English Literature & Composition* (Lit 101 & 185) – Dual Credit Course", apEnglishLiteratureAndComposition_LIT101_185);
+courseMap.set("Advanced Creative Writing (11-12)* (ENG221) – Dual Credit Course", advancedCreativeWriting_ENG221);
+courseMap.set("World Literature 2* (LIT 151) (Offered 26-27) – Dual Credit Course", worldLiterature2_LIT151);
 
 // Human Services
 courseMap.set("Introduction to Human Services", introductionToHumanServices);
@@ -3018,8 +3018,7 @@ courseMap.set("Child Development II", childDevelopment2);
 courseMap.set("Early Childhood Education I", earlyChildhoodEducation1);
 courseMap.set("Early Childhood Education II", earlyChildhoodEducation2);
 courseMap.set("Early Childhood Education III – Field Experience", earlyChildhoodEducation3);
-courseMap.set("Internship Program 1 (Human Services)", internshipProgram1);
-courseMap.set("Internship Program 2 (Human Services)", internshipProgram2);
+courseMap.set("Internship Program (Internship 1 & Internship 2) – Dual Credit Courses", internshipProgram_HumanServices);
 
 // Information Solutions
 courseMap.set("Advertising", advertising);
@@ -3029,7 +3028,7 @@ courseMap.set("Microsoft Certification* – Dual Credit Course", microsoftCertif
 
 // Mathematics
 courseMap.set("Algebra 1AB", algebra1AB);
-courseMap.set("Algebra 1", algebra1);
+courseMap.set("Algebra 1*", algebra1);
 courseMap.set("Geometry AB", geometryAB);
 courseMap.set("Geometry", geometry);
 courseMap.set("Algebra 2", algebra2);
@@ -3038,8 +3037,8 @@ courseMap.set("Computer Science", computerScience);
 courseMap.set("Statistics (MAT 157)", statistics);
 courseMap.set("Pre-Calculus (MAT 129)", preCalculus);
 courseMap.set("AP Calculus (AB) (MAT 211)", apCalculusAB);
-console.log('Total classes loaded:', courseMap ? courseMap.size : 'courseMap undefined');
-console.log('Class names:', courseMap ? Array.from(courseMap.keys()) : 'No classes');
+// console.log('Total classes loaded:', courseMap ? courseMap.size : 'courseMap undefined');
+// console.log('Class names:', courseMap ? Array.from(courseMap.keys()) : 'No classes');
 
 // Music
 courseMap.set("Freshman Band (9)",freshmanBand9);
@@ -3093,19 +3092,19 @@ courseMap.set("Non-Western World",nonWesternWorld);
 courseMap.set("World Issues",worldIssues);
 courseMap.set("AP US Government",apUSGovernment);
 courseMap.set("US Government",usGovernment);
-courseMap.set("American Society Through Film* (HUM 121)",americanSocietyThroughFilmSS);
 
 // World Languages
-courseMap.set("French 1",french1);
-courseMap.set("French 2",french2);
-courseMap.set("French 3",french3);
-courseMap.set("French 4",french4);
-courseMap.set("German 1",german1);
-courseMap.set("German 2",german2);
-courseMap.set("German 3",german3);
-courseMap.set("German 4",german4);
-courseMap.set("Spanish 1",spanish1);
-courseMap.set("Spanish 2",spanish2);
-courseMap.set("Spanish 3",spanish3);
-courseMap.set("Spanish 4",spanish4);
+courseMap.set("French I",french1);
+courseMap.set("French II",french2);
+courseMap.set("French III",french3);
+courseMap.set("French IV",french4);
+courseMap.set("German I",german1);
+courseMap.set("German II",german2);
+courseMap.set("German III",german3);
+courseMap.set("German IV",german4);
+courseMap.set("Spanish I",spanish1);
+courseMap.set("Spanish II",spanish2);
+courseMap.set("Spanish III",spanish3);
+courseMap.set("Spanish IV",spanish4);
 courseMap.set("Heritage Spanish",heritageSpanish);
+const entries = Array.from(courseMap.entries());
