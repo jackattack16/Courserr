@@ -42,7 +42,7 @@
   background: #ddc260 !important;
   color: #ab9649 !important;
 }
-.physical, .education {
+.physical, .education, .pe {
   background: #b9efd0 !important; /* light green for PE */
   color: #6aba8a !important;
 }
