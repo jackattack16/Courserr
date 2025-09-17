@@ -57,6 +57,7 @@ function load() {
 
 function dothing() {
   let body = document.getElementById('classGrid');
+  let currentBody;
   let totalHTML = "";
   
   // Check if courseMap exists and has data
@@ -75,64 +76,72 @@ function dothing() {
   console.log("Current filters:", curentFilters);
   console.log("Search query:", searchQuery);
   
-  if(curentFilters.length === 0 && !searchQuery) {
-     for (let i = 0; i < allCourses.length; i++) {
-            const course = allCourses[i];
-            if(bookmarks.includes(course.getClassName())) {
-                  totalHTML += makeHTML(course, true);
-                } else {
-                  totalHTML += makeHTML(course, false);
-                }
-    }
-  } else {
-    for (let i = 0; i < allCourses.length; i++) {
-            const course = allCourses[i];
-            let shouldShow = false;
-            
-            // Check search query first
-            if (searchQuery) {
-                const courseName = course.getClassName().toLowerCase();
-                const courseSubject = course.getSubject().toLowerCase();
-                const courseDescription = course.getDescription().toLowerCase();
-                
-                if (courseName.includes(searchQuery) || 
-                    courseSubject.includes(searchQuery) || 
-                    courseDescription.includes(searchQuery)) {
-                    shouldShow = true;
-                }
-            } else {
-                shouldShow = true; // If no search query, show by default
-            }
-            
-            // Then apply filter logic if there are active filters
-            if (shouldShow && curentFilters.length > 0) {
-                shouldShow = false; // Reset and check filters
-                
-                for (let j = 0; j < curentFilters.length; j++) {
-                  const filter = curentFilters[j];
-                  
-                  if (filter === "bookmarked") {
-                    if (bookmarks.includes(course.getClassName())) {
-                      shouldShow = true;
-                      break;
-                    }
-                  } else if (filter.toLowerCase() === course.getSubject().toLowerCase()) {
-                    shouldShow = true;
-                    break;
-                  }
-                }
-            }
-            
-            if (shouldShow) {
-              if(bookmarks.includes(course.getClassName())) {
-                totalHTML += makeHTML(course, true);
-              } else {
-                totalHTML += makeHTML(course, false);
-              }
-            }
+  if (curentFilters.length === 0 && !searchQuery) {
+  for (let i = 0; i < allCourses.length; i++) {
+    const course = allCourses[i];
+    const colNum = (i % 4) + 1; // cycle 1 → 4
+    const targetCol = document.getElementById(`col${colNum}`);
+
+    if (bookmarks.includes(course.getClassName())) {
+      targetCol.innerHTML += makeHTML(course, true);
+    } else {
+      targetCol.innerHTML += makeHTML(course, false);
     }
   }
-    body.innerHTML = totalHTML;
+} else {
+  for (let i = 0; i < allCourses.length; i++) {
+    const course = allCourses[i];
+    let shouldShow = false;
+
+    // Search logic
+    if (searchQuery) {
+      const courseName = course.getClassName().toLowerCase();
+      const courseSubject = course.getSubject().toLowerCase();
+      const courseDescription = course.getDescription().toLowerCase();
+
+      if (
+        courseName.includes(searchQuery) ||
+        courseSubject.includes(searchQuery) ||
+        courseDescription.includes(searchQuery)
+      ) {
+        shouldShow = true;
+      }
+    } else {
+      shouldShow = true;
+    }
+
+    // Filter logic
+    if (shouldShow && curentFilters.length > 0) {
+      shouldShow = false;
+
+      for (let j = 0; j < curentFilters.length; j++) {
+        const filter = curentFilters[j];
+
+        if (filter === "bookmarked") {
+          if (bookmarks.includes(course.getClassName())) {
+            shouldShow = true;
+            break;
+          }
+        } else if (filter.toLowerCase() === course.getSubject().toLowerCase()) {
+          shouldShow = true;
+          break;
+        }
+      }
+    }
+
+    if (shouldShow) {
+      const colNum = (i % 4) + 1; // cycle 1 → 4
+      const targetCol = document.getElementById(`col${colNum}`);
+
+      if (bookmarks.includes(course.getClassName())) {
+        targetCol.innerHTML += makeHTML(course, true);
+      } else {
+        targetCol.innerHTML += makeHTML(course, false);
+      }
+    }
+  }
+}
+
 }
 
 function makeHTML(course, fill) {
@@ -157,7 +166,7 @@ function makeHTML(course, fill) {
     let htmlCard = classCardDiv + headerDiv + descriptionDiv;
     bodyHTML += htmlCard;
   }
-  console.log('Generated HTML for', course.getClassName(), ':', bodyHTML.substring(0, 200) + '...');
+  console.log('Generated HTML for', course.getClassName(), ':', bodyHTML);
   return bodyHTML;
 }
 

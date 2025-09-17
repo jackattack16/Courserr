@@ -667,3 +667,11 @@ span {
     right: 2vh;
     z-index: 9999;
   }
+
+.class-grid-col {
+  height: fit-content;
+  gap: 2vh;
+  display: flex;
+  flex-direction: column;
+
+}
