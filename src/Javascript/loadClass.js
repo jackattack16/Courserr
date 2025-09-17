@@ -96,12 +96,12 @@ function displayCourseDetails() {
   let halfElements = document.querySelectorAll(".class-page-half-box");
 
   for(let i = 0; i < headerElements.length; i++) {
-    headerElements[i].classList.add(course.getSubject().replace(" ", "").toLowerCase());
+    headerElements[i].classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
     console.log("changed colour");
   }
 
   for(let i = 0; i < halfElements.length; i++) {
-    halfElements[i].classList.add(course.getSubject().replace(" ", "").toLowerCase());
+    halfElements[i].classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
     console.log("changed colour");
   }
   

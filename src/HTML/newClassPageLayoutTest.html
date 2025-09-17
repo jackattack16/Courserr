@@ -324,25 +324,25 @@ let course;
           }
         }
         
-        //console.log('Course name from URL: ' + courseName);
-        //console.log('displayCourseDetails function exists: ' + (typeof displayCourseDetails));
-       // console.log('courseMap exists: ' + (typeof courseMap !== 'undefined'));
+        console.log('Course name from URL: ' + courseName);
+        console.log('displayCourseDetails function exists: ' + (typeof displayCourseDetails));
+       console.log('courseMap exists: ' + (typeof courseMap !== 'undefined'));
         
-        //console.log('Course name from URL:', courseName);
-        //console.log('displayCourseDetails function exists:', typeof displayCourseDetails);
-       // console.log('courseMap exists:', typeof courseMap !== 'undefined');
+        console.log('Course name from URL:', courseName);
+        console.log('displayCourseDetails function exists:', typeof displayCourseDetails);
+       console.log('courseMap exists:', typeof courseMap !== 'undefined');
         
         if (courseName) {
           if (typeof displayCourseDetails === 'function') {
-          //  console.log('Calling displayCourseDetails...');
+           console.log('Calling displayCourseDetails...');
             displayCourseDetails();
           } else {
-           // console.error('displayCourseDetails function not found');
+           console.error('displayCourseDetails function not found');
           }
-            //console.log('Course: ' + courseName);
+            console.log('Course: ' + courseName);
         } else {
-           // console.error('No course found in URL');
-            //console.log('No course found');
+           console.error('No course found in URL');
+            console.log('No course found');
         }
         makeCommentBackground();
     };

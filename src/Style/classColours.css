@@ -2,7 +2,7 @@
   background: #8bc34a !important; /* green for agriculture */
   color: #3e5c1c !important;
 }
-.appliedsciences, .technology, .engineering, .manufacturing {
+.appliescience, .technology, .engineering, .manufacturing {
   background: #607d8b !important; /* blue-grey for STEM */
   color: #263238 !important;
 }
@@ -26,11 +26,11 @@
   background: #e57373 !important; /* red for health */
   color: #7f2323 !important;
 }
-.human, .services {
+.human, .services, .humanservices {
   background: #9d99bb !important; /* pink for human services */
   color: #3d1a84 !important;
 }
-.information, .solutions {
+.information, .solutions, .informationsolutions {
   background: #82f0ffb6 !important; /* cyan for info tech */
   color: #0095a5 !important;
 }
