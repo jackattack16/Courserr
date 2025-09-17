@@ -2,7 +2,7 @@
   background: #8bc34a !important; /* green for agriculture */
   color: #3e5c1c !important;
 }
-.appliescience, .technology, .engineering, .manufacturing {
+.appliescience, .technology, .engineering, .manufacturing, .cte {
   background: #607d8b !important; /* blue-grey for STEM */
   color: #263238 !important;
 }

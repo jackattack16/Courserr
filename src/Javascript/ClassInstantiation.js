@@ -207,7 +207,7 @@ const AgResearchAndDevelopmentCapstone = new Class(
 
 const ComputerAidedManufacturing = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -226,7 +226,7 @@ const ComputerAidedManufacturing = new Class(
 
 const introductiontoCarpentry = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -245,7 +245,7 @@ const introductiontoCarpentry = new Class(
 
 const introductionToManufacturing = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -264,7 +264,7 @@ const introductionToManufacturing = new Class(
 
 const engineeringCADDDrafting = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "10, 11, 12", // usualGrade
     "Computer Aided Manufacturing", // prerequisite
     "Semester", // duration
@@ -283,7 +283,7 @@ const engineeringCADDDrafting = new Class(
 
 const architecturalCADDDrafting = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "10, 11, 12", // usualGrade
     "Computer Aided Manufacturing", // prerequisite
     "Semester", // duration
@@ -302,7 +302,7 @@ const architecturalCADDDrafting = new Class(
 
 const manufacturingAndWelding = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "10, 11, 12", // usualGrade
     "Intro to Manufacturing", // prerequisite
     "Semester", // duration
@@ -321,7 +321,7 @@ const manufacturingAndWelding = new Class(
 
 const advancedManufacturingAndWelding = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "10, 11, 12", // usualGrade
     "Manufacturing and Welding", // prerequisite
     "Semester", // duration
@@ -340,7 +340,7 @@ const advancedManufacturingAndWelding = new Class(
 
 const woodworking1 = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "10, 11, 12", // usualGrade
     "Introduction to Carpentry", // prerequisite
     "Semester", // duration
@@ -359,7 +359,7 @@ const woodworking1 = new Class(
 
 const woodworking2 = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "10, 11, 12", // usualGrade
     "Woodworking 1", // prerequisite
     "Semester", // duration
@@ -378,7 +378,7 @@ const woodworking2 = new Class(
 
 const carpentry1 = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "10, 11, 12", // usualGrade
     "Introduction to Carpentry", // prerequisite
     "Semester", // duration
@@ -397,7 +397,7 @@ const carpentry1 = new Class(
 
 const carpentry2 = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "10, 11, 12", // usualGrade
     "Carpentry 1", // prerequisite
     "Semester", // duration
@@ -416,7 +416,7 @@ const carpentry2 = new Class(
 
 const contractWoodworking = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "11, 12", // usualGrade
     "Woodworking 2 and Carpentry 2", // prerequisite
     "Semester", // duration
@@ -435,7 +435,7 @@ const contractWoodworking = new Class(
 
 const itecContractAdvancedTechnology = new Class(
     false, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "11, 12", // usualGrade
     "Woodworking 2, Carpentry 2 OR Advanced Metals and Welding **Instructor Approval", // prerequisite
     "Semester", // duration
@@ -454,7 +454,7 @@ const itecContractAdvancedTechnology = new Class(
 
 const internshipProgram1 = new Class(
     true, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "11, 12", // usualGrade
     "**Instructor Approval Required", // prerequisite
     "Semester (2-period block)", // duration
@@ -473,7 +473,7 @@ const internshipProgram1 = new Class(
 
 const internshipProgram2 = new Class(
     true, // dualCredit
-    "Applied Sciences, Technology, Engineering, and Manufacturing", // subject
+    "CTE", // subject
     "12", // usualGrade
     "Internship 1 – Seniors only", // prerequisite
     "Semester (2-period block)", // duration
@@ -492,7 +492,7 @@ const internshipProgram2 = new Class(
 
 const foundationsOf2DArt = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -511,7 +511,7 @@ const foundationsOf2DArt = new Class(
 
 const drawingPaintingPrintmaking = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "10, 11, 12", // usualGrade
     "Foundations of 2-D ART", // prerequisite
     "Semester", // duration
@@ -530,7 +530,7 @@ const drawingPaintingPrintmaking = new Class(
 
 const advancedDrawingPaintingPrintmaking = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "10, 11, 12", // usualGrade
     "Foundations of 2-D ART, Drawing, Painting, Printmaking", // prerequisite
     "Semester", // duration
@@ -549,7 +549,7 @@ const advancedDrawingPaintingPrintmaking = new Class(
 
 const graphicDesign1 = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -568,7 +568,7 @@ const graphicDesign1 = new Class(
 
 const advancedGraphicDesign = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "Graphic Design", // prerequisite
     "Semester", // duration
@@ -587,7 +587,7 @@ const advancedGraphicDesign = new Class(
 
 const foundationsOf3DArt = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -606,7 +606,7 @@ const foundationsOf3DArt = new Class(
 
 const advanced3DArt = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "Foundations of 3-D Art", // prerequisite
     "Semester", // duration
@@ -625,7 +625,7 @@ const advanced3DArt = new Class(
 
 const ceramics1 = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "Foundations of 3-D Art", // prerequisite
     "Semester", // duration
@@ -644,7 +644,7 @@ const ceramics1 = new Class(
 
 const advancedCeramics = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "10, 11, 12", // usualGrade
     "Foundations of 3-D Art; Ceramics 1", // prerequisite
     "Semester", // duration
@@ -663,7 +663,7 @@ const advancedCeramics = new Class(
 
 const jewelry1 = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "Foundations of 3-D Art", // prerequisite
     "Semester", // duration
@@ -682,7 +682,7 @@ const jewelry1 = new Class(
 
 const advancedJewelry = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "10, 11, 12", // usualGrade
     "Foundations of 3-D Art; Jewelry 1", // prerequisite
     "Semester", // duration
@@ -701,7 +701,7 @@ const advancedJewelry = new Class(
 
 const foundationsOf4DArt = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -720,7 +720,7 @@ const foundationsOf4DArt = new Class(
 
 const advanced4DArt = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "Foundations of 4-D Art", // prerequisite
     "Semester", // duration
@@ -739,7 +739,7 @@ const advanced4DArt = new Class(
 
 const photography1 = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -758,7 +758,7 @@ const photography1 = new Class(
 
 const advancedPhotography = new Class(
     false, // dualCredit
-    "art education", // subject
+    "Arts", // subject
     "9, 10, 11, 12", // usualGrade
     "Photography 1", // prerequisite
     "Semester", // duration
@@ -777,7 +777,7 @@ const advancedPhotography = new Class(
 
 const introductionToBusiness = new Class(
     false, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "9, 10", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -796,7 +796,7 @@ const introductionToBusiness = new Class(
 
 const marketingAndSelling = new Class(
     false, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -815,7 +815,7 @@ const marketingAndSelling = new Class(
 
 const accounting1 = new Class(
     true, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "10, 11, 12", // usualGrade
     "None", // prerequisite
     "Full Year", // duration
@@ -834,7 +834,7 @@ const accounting1 = new Class(
 
 const businessAndPersonalLaw = new Class(
     false, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -853,7 +853,7 @@ const businessAndPersonalLaw = new Class(
 
 const entrepreneurship1 = new Class(
     false, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -872,7 +872,7 @@ const entrepreneurship1 = new Class(
 
 const accounting2 = new Class(
     false, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "11, 12", // usualGrade
     "Accounting 1", // prerequisite
     "Full Year", // duration
@@ -891,7 +891,7 @@ const accounting2 = new Class(
 
 const entrepreneurship2 = new Class(
     false, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "11, 12", // usualGrade
     "None", // prerequisite
     "Full Year", // duration
@@ -910,9 +910,9 @@ const entrepreneurship2 = new Class(
 
 const businessEngagementCollaborative = new Class(
     true, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "11, 12", // usualGrade
-    "Any Business or Information Solutions course or Instructor Approval", // prerequisite
+    "Any Business or informationsolutions course or Instructor Approval", // prerequisite
     "Semester (2-period block)", // duration
     "Fall", // Semester Offered
     "None", // honorsAP
@@ -929,7 +929,7 @@ const businessEngagementCollaborative = new Class(
 
 const advancedBusinessEngagementCollaborative = new Class(
     true, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "11, 12", // usualGrade
     "Business Engagement Collaborative", // prerequisite
     "Semester (2-period block)", // duration
@@ -948,7 +948,7 @@ const advancedBusinessEngagementCollaborative = new Class(
 
 const internshipProgramBusiness = new Class(
     true, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "11, 12", // usualGrade
     "Instructor Approval Required", // prerequisite
     "Semester (2-period block)", // duration
@@ -967,7 +967,7 @@ const internshipProgramBusiness = new Class(
 
 const entrepreneurship3 = new Class(
     false, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "12", // usualGrade
     "Entrepreneurship 2", // prerequisite
     "Full Year", // duration
@@ -986,7 +986,7 @@ const entrepreneurship3 = new Class(
 
 const personalFinance = new Class(
     false, // dualCredit
-    "Business, Finance, Marketing, & Management", // subject
+    "business", // subject
     "11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -1441,18 +1441,18 @@ const worldLiterature2_LIT151 = new Class(
 );
 const introductionToHumanServices = new Class(
     false, // dualCredit
-    "Human Services", // subject
+    "humanservices", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
-    "Introduces careers and opportunities in Human Services supporting individuals and families. Topics include career prep, family, parenting, money management, decision-making, communication, nutrition, and roles in family, community, and workforce.", // description
+    "Introduces careers and opportunities in humanservices supporting individuals and families. Topics include career prep, family, parenting, money management, decision-making, communication, nutrition, and roles in family, community, and workforce.", // description
     [4.0, 3.5, 3.8], // ratings
     ["Challenging but worth it.", "Helped me understand better."], // comments
     [4,0,2], // averageTimePerWeek
     "calculate", // icon
-    "Introduction to Human Services", // className
+    "Introduction to humanservices", // className
     ['A+','B-','A'], // grades
     [4,3,2], //classDifficulty
     ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
@@ -1460,13 +1460,13 @@ const introductionToHumanServices = new Class(
 
 const lifespanNutritionAndWellness = new Class(
     false, // dualCredit
-    "Human Services", // subject
+    "humanservices", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
     "Spring", // Semester Offered
     "None", // honorsAP
-    "Laboratory course applying lifetime wellness and nutrition principles for informed personal choices and careers in hospitality, education, human services, and health sciences.", // description
+    "Laboratory course applying lifetime wellness and nutrition principles for informed personal choices and careers in hospitality, education, humanservices, and health sciences.", // description
     [4.0, 3.5, 3.8], // ratings
     ["Challenging but worth it.", "Helped me understand better."], // comments
     [4,0,2], // averageTimePerWeek
@@ -1479,7 +1479,7 @@ const lifespanNutritionAndWellness = new Class(
 
 const childDevelopment1 = new Class(
     false, // dualCredit
-    "Human Services", // subject
+    "humanservices", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -1498,7 +1498,7 @@ const childDevelopment1 = new Class(
 
 const childDevelopment2 = new Class(
     false, // dualCredit
-    "Human Services", // subject
+    "humanservices", // subject
     "10, 11, 12", // usualGrade
     "Child Development I", // prerequisite
     "Semester", // duration
@@ -1517,7 +1517,7 @@ const childDevelopment2 = new Class(
 
 const earlyChildhoodEducation1 = new Class(
     false, // dualCredit
-    "Human Services", // subject
+    "humanservices", // subject
     "10, 11, 12", // usualGrade
     "Child Development II", // prerequisite
     "Semester", // duration
@@ -1536,7 +1536,7 @@ const earlyChildhoodEducation1 = new Class(
 
 const earlyChildhoodEducation2 = new Class(
     false, // dualCredit
-    "Human Services", // subject
+    "humanservices", // subject
     "10, 11, 12", // usualGrade
     "Early Childhood Education I", // prerequisite
     "Semester", // duration
@@ -1555,7 +1555,7 @@ const earlyChildhoodEducation2 = new Class(
 
 const earlyChildhoodEducation3 = new Class(
     false, // dualCredit
-    "Human Services", // subject
+    "humanservices", // subject
     "11, 12", // usualGrade
     "Early Childhood Education II", // prerequisite
     "Semester", // duration
@@ -1574,7 +1574,7 @@ const earlyChildhoodEducation3 = new Class(
 
 const internshipProgram_HumanServices = new Class(
     true, // dualCredit
-    "Human Services", // subject
+    "humanservices", // subject
     "11, 12", // usualGrade
     "Instructor Approval Required", // prerequisite
     "Semester (2-period block)", // duration
@@ -1593,7 +1593,7 @@ const internshipProgram_HumanServices = new Class(
 
 const advertising = new Class(
     false, // dualCredit
-    "Information Solutions", // subject
+    "informationsolutions", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -1612,7 +1612,7 @@ const advertising = new Class(
 
 const videoProduction = new Class(
     false, // dualCredit
-    "Information Solutions", // subject
+    "informationsolutions", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -1631,7 +1631,7 @@ const videoProduction = new Class(
 
 const webDesign = new Class(
     false, // dualCredit
-    "Information Solutions", // subject
+    "informationsolutions", // subject
     "10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -1650,7 +1650,7 @@ const webDesign = new Class(
 
 const microsoftCertification = new Class(
     true, // dualCredit
-    "Information Solutions", // subject
+    "informationsolutions", // subject
     "10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2085,7 +2085,7 @@ const chamberOrchestra = new Class(
 
 const aquatics = new Class(
     false, // dualCredit
-    "Physical Education", // subject
+    "PE", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2104,7 +2104,7 @@ const aquatics = new Class(
 
 const lifeguardingWSI = new Class(
     false, // dualCredit
-    "Physical Education", // subject
+    "PE", // subject
     "10, 11, 12", // usualGrade
     "Must be 15+ yrs and meet swimming prerequisites", // prerequisite
     "Semester", // duration
@@ -2123,7 +2123,7 @@ const lifeguardingWSI = new Class(
 
 const unifiedPE = new Class(
     false, // dualCredit
-    "Physical Education", // subject
+    "PE", // subject
     "9, 10, 11, 12", // usualGrade
     "Instructor Approval Required", // prerequisite
     "Full Year", // duration
@@ -2134,7 +2134,7 @@ const unifiedPE = new Class(
     ["Challenging but worth it.", "Helped me understand better."], // comments
     [4,0,2], // averageTimePerWeek
     "calculate", // icon
-    "Unified Physical Education", // className
+    "Unified PE", // className
     ['A+','B-','A'], // grades
     [4,3,2], //classDifficulty
     ["Inclusive", "Fitness", "Leadership", "Sports"] // tags
@@ -2142,7 +2142,7 @@ const unifiedPE = new Class(
 
 const weights1 = new Class(
     false, // dualCredit
-    "Physical Education", // subject
+    "PE", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2161,7 +2161,7 @@ const weights1 = new Class(
 
 const weights2 = new Class(
     false, // dualCredit
-    "Physical Education", // subject
+    "PE", // subject
     "10, 11, 12", // usualGrade
     "Weights I", // prerequisite
     "Semester", // duration
@@ -2180,7 +2180,7 @@ const weights2 = new Class(
 
 const outdoorRecreation = new Class(
     false, // dualCredit
-    "Physical Education", // subject
+    "PE", // subject
     "11, 12", // usualGrade
     "Junior or Senior standing", // prerequisite
     "Semester", // duration
@@ -2199,7 +2199,7 @@ const outdoorRecreation = new Class(
 
 const teamGamesSports = new Class(
     false, // dualCredit
-    "Physical Education", // subject
+    "PE", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2218,7 +2218,7 @@ const teamGamesSports = new Class(
 
 const lifetimeActivities = new Class(
     false, // dualCredit
-    "Physical Education", // subject
+    "PE", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2237,7 +2237,7 @@ const lifetimeActivities = new Class(
 
 const innovationFitness = new Class(
     false, // dualCredit
-    "Physical Education", // subject
+    "PE", // subject
     "9, 10, 11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2446,7 +2446,7 @@ const advancedChemistry = new Class(
 
 const honorsWorldStudies = new Class(
     false, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "9", // usualGrade
     "None", // prerequisite
     "Full Year", // duration
@@ -2465,7 +2465,7 @@ const honorsWorldStudies = new Class(
 
 const worldStudies = new Class(
     false, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "9", // usualGrade
     "None", // prerequisite
     "Full Year", // duration
@@ -2484,7 +2484,7 @@ const worldStudies = new Class(
 
 const apUSHistory = new Class(
     true, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "10", // usualGrade
     "None", // prerequisite
     "Full Year", // duration
@@ -2503,7 +2503,7 @@ const apUSHistory = new Class(
 
 const usHistory = new Class(
     false, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "10", // usualGrade
     "None", // prerequisite
     "Full Year", // duration
@@ -2522,7 +2522,7 @@ const usHistory = new Class(
 
 const apPsychology = new Class(
     true, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "11, 12", // usualGrade
     "Sociology or AP Psychology", // prerequisite
     "Semester", // duration
@@ -2541,7 +2541,7 @@ const apPsychology = new Class(
 
 const apEuropeanHistory = new Class(
     true, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "11, 12", // usualGrade
     "None", // prerequisite
     "Full Year", // duration
@@ -2560,7 +2560,7 @@ const apEuropeanHistory = new Class(
 
 const westernCiv1 = new Class(
     false, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2579,7 +2579,7 @@ const westernCiv1 = new Class(
 
 const westernCiv2 = new Class(
     false, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2598,7 +2598,7 @@ const westernCiv2 = new Class(
 
 const sociology = new Class(
     false, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "11, 12", // usualGrade
     "Sociology or AP Psychology", // prerequisite
     "Semester", // duration
@@ -2617,7 +2617,7 @@ const sociology = new Class(
 
 const economics = new Class(
     false, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2636,7 +2636,7 @@ const economics = new Class(
 
 const nonWesternWorld = new Class(
     false, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2655,7 +2655,7 @@ const nonWesternWorld = new Class(
 
 const worldIssues = new Class(
     false, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "11, 12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2674,7 +2674,7 @@ const worldIssues = new Class(
 
 const apUSGovernment = new Class(
     true, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2693,7 +2693,7 @@ const apUSGovernment = new Class(
 
 const usGovernment = new Class(
     false, // dualCredit
-    "Social Studies", // subject
+    "SocialStudies", // subject
     "12", // usualGrade
     "None", // prerequisite
     "Semester", // duration
@@ -2713,7 +2713,7 @@ const usGovernment = new Class(
 // FRENCH
 const french1 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "9", // usualGrade
     "None", // prerequisite
     "Full Year", // duration
@@ -2732,7 +2732,7 @@ const french1 = new Class(
 
 const french2 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "10", // usualGrade
     "French I", // prerequisite
     "Full Year", // duration
@@ -2751,7 +2751,7 @@ const french2 = new Class(
 
 const french3 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "11", // usualGrade
     "French II", // prerequisite
     "Full Year", // duration
@@ -2770,7 +2770,7 @@ const french3 = new Class(
 
 const french4 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "12", // usualGrade
     "French III", // prerequisite
     "Full Year", // duration
@@ -2790,7 +2790,7 @@ const french4 = new Class(
 // GERMAN
 const german1 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "9", // usualGrade
     "None", // prerequisite
     "Full Year", // duration
@@ -2809,7 +2809,7 @@ const german1 = new Class(
 
 const german2 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "10", // usualGrade
     "German I", // prerequisite
     "Full Year", // duration
@@ -2828,7 +2828,7 @@ const german2 = new Class(
 
 const german3 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "11", // usualGrade
     "German II", // prerequisite
     "Full Year", // duration
@@ -2847,7 +2847,7 @@ const german3 = new Class(
 
 const german4 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "12", // usualGrade
     "German III", // prerequisite
     "Full Year", // duration
@@ -2867,7 +2867,7 @@ const german4 = new Class(
 // SPANISH
 const spanish1 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "9", // usualGrade
     "None", // prerequisite
     "Full Year", // duration
@@ -2886,7 +2886,7 @@ const spanish1 = new Class(
 
 const spanish2 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "10", // usualGrade
     "Spanish I", // prerequisite
     "Full Year", // duration
@@ -2905,7 +2905,7 @@ const spanish2 = new Class(
 
 const spanish3 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "11", // usualGrade
     "Spanish II", // prerequisite
     "Full Year", // duration
@@ -2924,7 +2924,7 @@ const spanish3 = new Class(
 
 const spanish4 = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "12", // usualGrade
     "Spanish III", // prerequisite
     "Full Year", // duration
@@ -2943,7 +2943,7 @@ const spanish4 = new Class(
 
 const heritageSpanish = new Class(
     false, // dualCredit
-    "World Languages", // subject
+    "Language", // subject
     "9, 10, 11, 12", // usualGrade
     "Home language Spanish", // prerequisite
     "Full Year", // duration
@@ -3010,7 +3010,7 @@ courseMap.set("AP English Literature & Composition* (Lit 101 & 185) – Dual Cre
 courseMap.set("Advanced Creative Writing (11-12)* (ENG221) – Dual Credit Course", advancedCreativeWriting_ENG221);
 courseMap.set("World Literature 2* (LIT 151) (Offered 26-27) – Dual Credit Course", worldLiterature2_LIT151);
 
-// Human Services
+// humanservices
 courseMap.set("Introduction to Human Services", introductionToHumanServices);
 courseMap.set("Lifespan Nutrition and Wellness", lifespanNutritionAndWellness);
 courseMap.set("Child Development I", childDevelopment1);
@@ -3020,7 +3020,7 @@ courseMap.set("Early Childhood Education II", earlyChildhoodEducation2);
 courseMap.set("Early Childhood Education III – Field Experience", earlyChildhoodEducation3);
 courseMap.set("Internship Program (Internship 1 & Internship 2) – Dual Credit Courses", internshipProgram_HumanServices);
 
-// Information Solutions
+// informationsolutions
 courseMap.set("Advertising", advertising);
 courseMap.set("Video Production", videoProduction);
 courseMap.set("Web Design", webDesign);
@@ -3054,10 +3054,10 @@ courseMap.set("Freshman Orchestra (9)",freshmanOrchestra9);
 courseMap.set("Symphony Orchestra (10-12)",symphonyOrchestra);
 courseMap.set("Chamber Orchestra* (10-12)",chamberOrchestra);
 
-// Physical Education
+// PE
 courseMap.set("Aquatics",aquatics);
 courseMap.set("Lifeguarding/WSI*",lifeguardingWSI);
-courseMap.set("Unified Physical Education",unifiedPE);
+courseMap.set("Unified PE",unifiedPE);
 courseMap.set("Weights I",weights1);
 courseMap.set("Weights II",weights2);
 courseMap.set("Outdoor Recreation",outdoorRecreation);
@@ -3077,7 +3077,7 @@ courseMap.set("AP Chemistry*",apChemistry);
 courseMap.set("Advanced Physics",advancedPhysics);
 courseMap.set("Advanced Chemistry",advancedChemistry);
 
-// Social Studies
+// SocialStudies
 courseMap.set("Honors World Studies",honorsWorldStudies);
 courseMap.set("World Studies",worldStudies);
 courseMap.set("AP US History",apUSHistory);
@@ -3093,7 +3093,7 @@ courseMap.set("World Issues",worldIssues);
 courseMap.set("AP US Government",apUSGovernment);
 courseMap.set("US Government",usGovernment);
 
-// World Languages
+// Language
 courseMap.set("French I",french1);
 courseMap.set("French II",french2);
 courseMap.set("French III",french3);
