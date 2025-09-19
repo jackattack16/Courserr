@@ -3021,7 +3021,7 @@ courseMap.set("Advanced Business Engagement Collaborative – Dual Credit Course
 courseMap.set("German II", german2);
 courseMap.set("Early Childhood Education II", earlyChildhoodEducation2);
 courseMap.set("Introduction to Agriscience", introductionToAgriscience);
-courseMap.set("Introductionto Carpentry", introductiontoCarpentry);
+courseMap.set("Introduction to Carpentry", introductiontoCarpentry);
 courseMap.set("German III", german3);
 courseMap.set("Multimedia Composition (writing)", multimediaComposition);
 courseMap.set("Early Childhood Education III – Field Experience", earlyChildhoodEducation3);

@@ -291,3 +291,8 @@ function openClass(className) {
     console.log('Opening class:', className);
     window.location.href = './classPage.html?category=' + encodeURIComponent(classToOpen);
 }
+
+function openPrereq(className) {
+    console.log('Opening class:', className);
+    window.location.href = './newClassPageLayoutTest.html?category=' + encodeURIComponent(className);
+}

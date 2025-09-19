@@ -123,12 +123,19 @@ function displayCourseDetails() {
   }
   
   // update prerequisites section
-  const prereqEl = document.querySelector('.classPageClassPrereq ul');
+
+
+
+  const prereqEl = document.getElementById('prereq');
+
   if (prereqEl) {
     if (course.getPrerequisite() === "None") {
-      prereqEl.innerHTML = "<li>None</li>";
+      prereqEl.innerHTML += "<div class='elevated-rectangle'>None</div>"
     } else {
-      prereqEl.innerHTML = `<li>${course.getPrerequisite()}</li>`;
+      const array = course.getPrerequisite().split(/,| OR /);
+      for(let i = 0; i < array.length; i++) {
+        prereqEl.innerHTML += `<div class='elevated-rectangle' onclick="openPrereq('${array[i]}')"><u>${array[i]}</u></div>`;
+      }
     }
   }
   
