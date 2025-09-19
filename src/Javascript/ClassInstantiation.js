@@ -1452,7 +1452,7 @@ const introductionToHumanServices = new Class(
     ["Challenging but worth it.", "Helped me understand better."], // comments
     [4,0,2], // averageTimePerWeek
     "calculate", // icon
-    "Introduction to humanservices", // className
+    "Introduction to Human Services", // className
     ['A+','B-','A'], // grades
     [4,3,2], //classDifficulty
     ["Research", "Critical Thinking", "Problem Solving", "Capstone"] // tags
