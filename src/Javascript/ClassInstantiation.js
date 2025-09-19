@@ -304,7 +304,7 @@ const manufacturingAndWelding = new Class(
     false, // dualCredit
     "CTE", // subject
     "10, 11, 12", // usualGrade
-    "Intro to Manufacturing", // prerequisite
+    "Introduction To Manufacturing", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
