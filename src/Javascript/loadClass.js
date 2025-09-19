@@ -139,16 +139,19 @@ function displayCourseDetails() {
   }
   
   // update the quick hits section with course stats
-  const quickHitsEl = document.querySelector('.classPageBORDERS ul');
+  const quickHitsEl = document.getElementById('quickHits');
+
+
   if (quickHitsEl) {
-    quickHitsEl.innerHTML = `
-      <li>Homework: ~${course.getAverageTimePerWeek() || 2} hours/week</li>
-      <li>Average Grade: ${course.getAverageGrade() || 'B'}</li>
-      <li>Duration: ${course.getDuration()}</li>
-      <li>Grade Level: ${course.getUsualGrade()}</li>
-      <li>Dual Credit: ${course.getDualCredit() ? 'Yes' : 'No'}</li>
-      <li>Honors/AP: ${course.getHonorsAP()}</li>
-    `;
+
+
+    quickHitsEl.innerHTML += `
+      <div class='elevated-rectangle'>Homework: ~${course.getAverageTimePerWeek() || 2} hours/week</div>
+      <div class ='elevated-rectangle'>Average Grade: ${course.getAverageGrade() || 'B'}</div>
+      <div class ='elevated-rectangle'>Duration: ${course.getDuration()}</div>
+      <div class ='elevated-rectangle'>Grade Level: ${course.getUsualGrade()}</div>
+      <div class ='elevated-rectangle'>Dual Credit: ${course.getDualCredit() ? 'Yes' : 'No'}</div>
+      <div class ='elevated-rectangle'>Honors/AP: ${course.getHonorsAP()}</div>`;
   }
   
   // add tags dynamically from the course object
