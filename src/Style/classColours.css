@@ -1,30 +1,30 @@
 .agriculture {
-  background: #8bc34a !important; /* green for agriculture */
-  color: #3e5c1c !important;
+  background: #a2bf82 !important; /* green for agriculture */
+  color: #6a9836 !important;
 }
 .appliescience, .technology, .engineering, .manufacturing, .cte {
   background: #607d8b !important; /* blue-grey for STEM */
   color: #263238 !important;
 }
 .arteducation, .arts {
-  background: #ffb74d !important; /* orange for art */
-  color: #7c4700 !important;
+  background: #e2bd85 !important; /* orange for art */
+  color: #96611b !important;
 }
 .business, .finance, .marketing, .management {
   background: #ffd600 !important; /* gold for business */
   color: #7c6f00 !important;
 }
 .career, .technicaleducation {
-  background: #bdbdbd !important; /* grey for CTE */
-  color: #333 !important;
+  background: #c1b1b1 !important; /* grey for CTE */
+  color: #4a4242 !important;
 }
 .english {
-  background: #7a98de !important;
-  color: #5e75ab !important;
+  background: #d5da9c !important;
+  color: #9b9433 !important;
 }
 .health {
-  background: #e57373 !important; /* red for health */
-  color: #7f2323 !important;
+  background: #e4a5a5 !important; /* red for health */
+  color: #aa4141 !important;
 }
 .human, .services, .humanservices {
   background: #9d99bb !important; /* pink for human services */
@@ -35,19 +35,19 @@
   color: #0095a5 !important;
 }
 .mathematics, .math {
-  background: #335a8a !important;
-  color: #203957 !important;
+  background: #a5b9d0 !important;
+  color: #427bc1 !important;
 }
 .music {
-  background: #ddc260 !important;
-  color: #ab9649 !important;
+  background: #ffde91 !important;
+  color: #a76a39 !important;
 }
 .physical, .education, .pe {
   background: #b9efd0 !important; /* light green for PE */
   color: #6aba8a !important;
 }
 .science {
-  background: #7f995a !important;
+  background: #acc58a !important;
   color: #55663c !important;
 }
 .social, .studies, .history, .socialstudies {
@@ -59,6 +59,6 @@
   color: #296450 !important;
 }
 .misc {
-  background: #c3044c !important;
+  background: #4f4f4f !important;
   color: #8f0339 !important;
 }
