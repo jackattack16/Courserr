@@ -376,15 +376,6 @@ span {
   user-select: none;
 }
 
-/* Subject Color Styles - unified and visually meaningful */
-
-/* Subject Color Styles - all lowercase for mapping */
-
-.misc {
-  background: #c3044c !important;
-  color: #8f0339 !important;
-}
-
 .closeMenu {
   z-index: 901;
   opacity: 0;
@@ -541,12 +532,14 @@ span {
     font-size: 2.2vh;
   }
   
+    padding-top: 18.5vh;
   .clear-search {
     font-size: 2.6vh;
     margin-left: 1.5vw;
   }
 }
 
+    padding-top: 18.5vh;
 
 @media (hover: none) {
   .sidebarItem:hover {
@@ -586,7 +579,8 @@ span {
     padding-top: 18.5vh;
     grid-template-columns: 40vw 40vw;
     height: 100vh;
-    width: 100vw;
+    width: 1
+    padding-top: 18.5vh;
   } 
   .classHeader {
     width: 38vw;
@@ -667,3 +661,11 @@ span {
     right: 2vh;
     z-index: 9999;
   }
+
+.class-grid-col {
+  height: fit-content;
+  gap: 2vh;
+  display: flex;
+  flex-direction: column;
+
+}

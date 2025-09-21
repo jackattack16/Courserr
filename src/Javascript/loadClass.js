@@ -88,6 +88,21 @@ function displayCourseDetails() {
   
   // set the teacher/department
   if (teachersEl) teachersEl.textContent = course.getSubject() + " Department";
+
+  // add dynamic colours 
+
+  let headerElements = document.querySelectorAll(".class-page-header");
+  let halfElements = document.querySelectorAll(".class-page-half-box");
+
+  for(let i = 0; i < headerElements.length; i++) {
+    headerElements[i].classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
+    console.log("changed colour");
+  }
+
+  for(let i = 0; i < halfElements.length; i++) {
+    halfElements[i].classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
+    console.log("changed colour");
+  }
   
   // create the star rating display
   if (starRateEl) {
@@ -107,14 +122,18 @@ function displayCourseDetails() {
   }
   
   // update prerequisites section
-  const prereqEl = document.getElementById('yourbrother');
+
+
+
+  const prereqEl = document.getElementById('prereq');
+
   if (prereqEl) {
     if (course.getPrerequisite() === "None") {
       prereqEl.innerHTML += "<div class='elevated-rectangle'>None</div>"
     } else {
-      const array = course.getPrerequisite().split(/,| or |;/);
+      const array = course.getPrerequisite().split(/,| OR /);
       for(let i = 0; i < array.length; i++) {
-        prereqEl.innerHTML += `<div class='elevated-rectangle'>${array[i]}</div>`;
+        prereqEl.innerHTML += `<div class='elevated-rectangle' onclick="openPrereq('${array[i]}')"><u>${array[i]}</u></div>`;
       }
     }
   }
@@ -126,16 +145,19 @@ function displayCourseDetails() {
   }
   
   // update the quick hits section with course stats
-  const quickHitsEl = document.getElementById('yourmom');
+  const quickHitsEl = document.getElementById('quickHits');
+
+
   if (quickHitsEl) {
+
+
     quickHitsEl.innerHTML += `
       <div class='elevated-rectangle'>Homework: ~${course.getAverageTimePerWeek() || 2} hours/week</div>
       <div class ='elevated-rectangle'>Average Grade: ${course.getAverageGrade() || 'B'}</div>
       <div class ='elevated-rectangle'>Duration: ${course.getDuration()}</div>
       <div class ='elevated-rectangle'>Grade Level: ${course.getUsualGrade()}</div>
       <div class ='elevated-rectangle'>Dual Credit: ${course.getDualCredit() ? 'Yes' : 'No'}</div>
-      <div class ='elevated-rectangle'>Honors/AP: ${course.getHonorsAP()}</div>
-    `;
+      <div class ='elevated-rectangle'>Honors/AP: ${course.getHonorsAP()}</div>`;
   }
   
   // add tags dynamically from the course object
