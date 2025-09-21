@@ -1,6 +1,5 @@
 // this file handles loading individual class pages
 // pretty much just takes the course name from URL and displays all the info
-
 function loadClassData() {
   const urlParams = new URLSearchParams(window.location.search);
   const categoryParam = urlParams.get('category');
@@ -116,7 +115,7 @@ function displayCourseDetails() {
       if (i < rating) {
         starsHTML += "<span class=\"material-symbols-rounded\" style=\"font-variation-settings:'FILL' 1;font-size: 5vh\">star</span>";
       } else {
-        starsHTML += "<span class=\"material-symbols-rounded\" stlye=\"font-variation-settings:'FILL' 0;font-size: 5vh\">star</span>";
+        starsHTML += "<span class=\"material-symbols-rounded\" style=\"font-variation-settings:'FILL' 0;font-size: 5vh\">star</span>";
       }
     }
     starRateEl.innerHTML = starsHTML;
@@ -354,17 +353,17 @@ function createDynamicGraph(course) {
       type: "scatter",
       data: {
         datasets: [{
-          label: `Data`,
+          label: `${course.getClassName()} Data`,
           pointRadius: 8,
-          pointBackgroundColor: "rgba(0, 0, 0, 0.8)",
-          pointBorderColor: "rgba(255, 255, 255, 1)",
+          pointBackgroundColor: "rgba(69, 196, 176, 0.8)",
+          pointBorderColor: "rgba(69, 196, 176, 1)",
           pointBorderWidth: 2,
           data: dataPoints
         }, {
           label: 'Trend Line',
           type: 'line',
           data: trendLinePoints,
-          borderColor: "rgba(0, 0, 0, 1)",
+          borderColor: "rgba(19, 103, 138, 1)",
           borderWidth: 3,
           fill: false,
           pointRadius: 0,
@@ -405,7 +404,7 @@ function createDynamicGraph(course) {
               fontStyle: 'bold'
             },
             gridLines: {
-              color: "rgba(0, 0, 0, 0.25)"
+              color: "rgba(200,200,200,0.2)"
             }
           }],
           yAxes: [{
@@ -423,7 +422,7 @@ function createDynamicGraph(course) {
               fontStyle: 'bold'
             },
             gridLines: {
-              color: "rgba(0, 0, 0, 0.25)"
+              color: "rgba(200,200,200,0.2)"
             }
           }]
         },
