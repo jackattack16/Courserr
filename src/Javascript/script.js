@@ -55,6 +55,10 @@ function load() {
   }, 100);
 }
 
+function loadClasses() {
+  
+}
+
 function dothing() {
   let body = document.getElementById('classGrid');
   let currentBody;
