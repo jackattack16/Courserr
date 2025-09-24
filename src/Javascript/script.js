@@ -52,11 +52,36 @@ function load() {
   // Initialize filter chip states after a short delay to ensure DOM is ready
   setTimeout(() => {
     updateFilterButtons();
+    const allCourses = Array.from(courseMap.values());
+    loadClasses(allCourses);
   }, 100);
+  
 }
 
-function loadClasses() {
-  
+function loadClasses(courseArray) {
+  let classLength = courseArray.length;
+  console.log(classLength);
+
+  // Define the object for each off the columns for easy access with a variable
+  const collObj = {
+    'col1': document.getElementById('col1'),
+    'col2': document.getElementById('col2'),
+    'col3': document.getElementById('col3'),
+    'col4': document.getElementById('col4'),
+  }
+
+  // Loop through all of the provided courses
+  for(let i = 0; i < classLength; i++) {
+    const course = courseArray[i];
+    console.log(course.getClassName());
+    const colNum = (i % 4) + 1; // Gets the column number that the class will be added to
+    collObj['col' + colNum].innerHTML += makeHTML(course, false);
+  }
+
+  // Print how many classes per column 
+  for(let x = 1; x < 5; x++) {
+    console.log(`Column ${x} classes: ${collObj['col'+ x].childElementCount}`);
+  }
 }
 
 function dothing() {
@@ -150,7 +175,7 @@ function dothing() {
 
 function makeHTML(course, fill) {
   let bodyHTML = "";
-  console.log('makeHTML called for course:', course.getClassName());
+  //console.log('makeHTML called for course:', course.getClassName());
   // Always use lowercase, no spaces, for subject class assignment
   const subjectClass = course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase();
   if (fill === true) {
@@ -170,7 +195,7 @@ function makeHTML(course, fill) {
     let htmlCard = classCardDiv + headerDiv + descriptionDiv;
     bodyHTML += htmlCard;
   }
-  console.log('Generated HTML for', course.getClassName(), ':', bodyHTML);
+  //console.log('Generated HTML for', course.getClassName(), ':', bodyHTML);
   return bodyHTML;
 }
 
