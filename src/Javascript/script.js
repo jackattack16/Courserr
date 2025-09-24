@@ -23,7 +23,7 @@ function updateFilterButtons() {
     });
     
     // Add bookmarked filter
-    filterHTML += `<span class="filterChip"><md-filter-chip label="Bookmarked" onclick="filter(this.label)"></md-filter-chip></span>`;
+    filterHTML += `<span class="filterChip"><md-filter-chip label="Bookmarked" onclick="addFilter(this.label)"></md-filter-chip></span>`;
     
     filterArea.innerHTML = filterHTML;
     
@@ -75,7 +75,13 @@ function loadClasses(courseArray) {
     const course = courseArray[i];
     //console.log(course.getClassName());
     const colNum = (i % 4) + 1; // Gets the column number that the class will be added to
-    collObj['col' + colNum].innerHTML += makeHTML(course, false);
+    
+    if(bookmarks.includes(course.getClassName())) {
+      collObj['col' + colNum].innerHTML += makeHTML(course, true);
+    } else {
+      collObj['col' + colNum].innerHTML += makeHTML(course, false);
+    }
+    
   }
 
   // Print how many classes per column 
@@ -112,12 +118,19 @@ function addFilter(filter) {
   } else {
     loadClasses(filteredCourses);
   }
+
+  console.log(bookmarks);
   
 }
 
-function filterCourses(course) {
+function filterCourses(course, bookmark) {
   console.log(curentFilters.includes(course.getSubject()));
-  return curentFilters.includes(course.getSubject());
+  if(curentFilters.includes('Bookmarked')) {
+    return curentFilters.includes(course.getSubject()) || bookmarks.includes(course.getClassName());
+  } else {
+    return curentFilters.includes(course.getSubject());
+  }
+  
 }
 
 function dothing() {
@@ -184,7 +197,7 @@ function dothing() {
 
         if (filter === "bookmarked") {
           if (bookmarks.includes(course.getClassName())) {
-            shouldShow = true;
+            shoulshouldShowdShow = true;
             break;
           }
         } else if (filter.toLowerCase() === course.getSubject().toLowerCase()) {
