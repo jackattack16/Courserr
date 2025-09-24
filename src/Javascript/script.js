@@ -19,7 +19,7 @@ function updateFilterButtons() {
     
     // Add subject filters dynamically
     subjects.forEach(subject => {
-      filterHTML += `<span class="filterChip"><md-filter-chip label="${subject}" onclick="filter(this.label)"></md-filter-chip></span>`;
+      filterHTML += `<span class="filterChip"><md-filter-chip label="${subject}" onclick="addFilter(this.label)"></md-filter-chip></span>`;
     });
     
     // Add bookmarked filter
@@ -73,7 +73,7 @@ function loadClasses(courseArray) {
   // Loop through all of the provided courses
   for(let i = 0; i < classLength; i++) {
     const course = courseArray[i];
-    console.log(course.getClassName());
+    //console.log(course.getClassName());
     const colNum = (i % 4) + 1; // Gets the column number that the class will be added to
     collObj['col' + colNum].innerHTML += makeHTML(course, false);
   }
@@ -82,6 +82,42 @@ function loadClasses(courseArray) {
   for(let x = 1; x < 5; x++) {
     console.log(`Column ${x} classes: ${collObj['col'+ x].childElementCount}`);
   }
+}
+
+
+function addFilter(filter) {
+  // Add the selected filter to the currentFilters array
+  if(curentFilters.includes(filter)) {
+    curentFilters.splice(curentFilters.indexOf(filter), 1);
+    console.log(curentFilters);
+  } else {
+    curentFilters.push(filter);
+    console.log(curentFilters);
+  }
+
+  // Filter out unwanted courses
+  const allCourses = Array.from(courseMap.values());
+  const filteredCourses = allCourses.filter(filterCourses);
+  console.log(filteredCourses);
+  
+  // Remove all the courses currently on the page
+  document.getElementById('col1').innerHTML = '';
+  document.getElementById('col2').innerHTML = '';
+  document.getElementById('col3').innerHTML = '';
+  document.getElementById('col4').innerHTML = '';
+
+  // Re-add classes 
+  if(curentFilters.length === 0) {
+    loadClasses(allCourses);
+  } else {
+    loadClasses(filteredCourses);
+  }
+  
+}
+
+function filterCourses(course) {
+  console.log(curentFilters.includes(course.getSubject()));
+  return curentFilters.includes(course.getSubject());
 }
 
 function dothing() {
