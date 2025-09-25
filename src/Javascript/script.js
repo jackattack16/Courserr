@@ -2,6 +2,7 @@ let curentFilters = [];
 let bookmarks = [];
 let currentAnimations = [];
 let searchQuery = '';
+let timeout = null;
 
 const unfilled= "style=\"font-variation-settings:'FILL' 0\"";
 
@@ -118,13 +119,9 @@ function addFilter(filter) {
   } else {
     loadClasses(filteredCourses);
   }
-
-  console.log(bookmarks);
-  
 }
 
 function filterCourses(course, bookmark) {
-  console.log(curentFilters.includes(course.getSubject()));
   if(curentFilters.includes('Bookmarked')) {
     return curentFilters.includes(course.getSubject()) || bookmarks.includes(course.getClassName());
   } else {
@@ -320,21 +317,55 @@ function shuffleArray(array) {
     return array;
 }
 
+function waitToSearch() {
+  clearTimeout(timeout);
+  console.log(searchQuery)
+  const allCourses = Array.from(courseMap.values());
+  const filteredCourses = allCourses.filter(filterSearch);
+
+  // Make a new timeout set to go off a bit once user is done typing
+  if(searchQuery !== '') {
+    timeout = setTimeout(function () {
+      runSearch(allCourses, filteredCourses);
+    }, 500);
+  } else {
+    runSearch(allCourses, filteredCourses);
+  }
+}
+
 function searchCourses() {
-    const searchInput = document.getElementById('searchInput');
-    const clearButton = document.getElementById('clearSearch');
-    
-    searchQuery = searchInput.value.toLowerCase().trim();
-    
-    // Show/hide clear button
-    if (searchQuery.length > 0) {
-        clearButton.style.display = 'block';
-    } else {
-        clearButton.style.display = 'none';
-    }
-    
-    // Refresh the course display
-    dothing();
+  const searchInput = document.getElementById('searchInput');
+  const clearButton = document.getElementById('clearSearch');
+  
+  searchQuery = searchInput.value.toLowerCase().trim();
+  
+  // Show/hide clear button
+  if (searchQuery.length > 0) {
+      clearButton.style.display = 'block';
+  } else {
+      clearButton.style.display = 'none';
+  }
+
+  // Check for if the user is done typing then search
+  waitToSearch();
+}
+
+function runSearch(allCourses, filteredCourses) {
+
+  document.getElementById('col1').innerHTML = '';
+  document.getElementById('col2').innerHTML = '';
+  document.getElementById('col3').innerHTML = '';
+  document.getElementById('col4').innerHTML = '';
+
+  if(filteredCourses.length === 0 && searchQuery === '') {
+    loadClasses(allCourses);
+  } else {
+    loadClasses(filteredCourses);
+  }
+}
+
+function filterSearch(query) {
+  return query.getClassName().toLowerCase().includes(searchQuery);
 }
 
 function clearSearch() {
