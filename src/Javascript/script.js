@@ -380,6 +380,14 @@ function clearSearch() {
     dothing();
 }
 
+const searchBar = document.getElementById('search-container');
+console.log(searchBar);
+searchBar.addEventListener("focusout", (event) => {
+  const searchInput = document.getElementById('searchInput');
+  searchInput.value = '';
+  searchCourses();
+});
+
 function fav(element) {
    let fillValue;
    //alert(element.id);
