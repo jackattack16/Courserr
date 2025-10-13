@@ -29,7 +29,7 @@
   </script>
   <script src="../Javascript/Class.js"></script>
     <script src="../Javascript/ClassInstantiation.js"></script>
-    <script src="../Javascript/script.js"></script>
+    
   <script type="module">
     import '@material/web/all.js';
     import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
@@ -91,7 +91,7 @@ md-sys-color {
 
 </head>
 
-<body onload="load();setTimeout(dothing, 100);" style="background-color: var(--light-bg)" id="body">
+<body onload="load();" style="background-color: var(--light-bg)" id="body">
   <md-fab label="Review Class" size="large" class="fab" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdzS9RgGFL1E0A3C-tiwaXu3Zx13y2GUMDnRKxamePGoYw8-w/viewform?usp=header', '_blank').focus()">
     <md-icon class="material-symbols-rounded" slot="icon">add</md-icon>
   </md-fab>
@@ -134,9 +134,9 @@ md-sys-color {
                   <!--<button onclick="menuOpen()" style="height: 10vh; width: 10vw">Click Me</button>-->
                  
                 </div>
-                <div class="search-container">
+                <div class="search-container" id="search-container">
                   <label for="searchInput">
-                    <div class="search-box">
+                    <div class="search-box" focusout="searchCourses()">
                         <span class="material-symbols-rounded search-icon">search</span>
                         <input type="text" id="searchInput" placeholder="Search courses..." 
                               onkeyup="searchCourses()" autocomplete="off">
@@ -294,5 +294,6 @@ function openClass(classToOpen) {
 }
 
 </script>
+<script src="../Javascript/script.js"></script>
 </body >
 </html>
