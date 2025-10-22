@@ -1,5 +1,5 @@
 // this file handles loading individual class pages
-// pretty much just takes the course name from URL and displays all the info
+// updated to work with API integration
 function loadClassData() {
   const urlParams = new URLSearchParams(window.location.search);
   const categoryParam = urlParams.get('category');
@@ -15,6 +15,12 @@ function loadClassData() {
           courseName = courseParam;
           console.log('got course from fallback:', courseName);
       }
+  }
+  
+  // Wait for courses to be loaded from API
+  if (!coursesLoaded) {
+    console.log('Courses not loaded yet, waiting...');
+    return null;
   }
   
   if (!courseMap) {
@@ -64,6 +70,14 @@ function loadClassData() {
 
 function displayCourseDetails() {
   console.log('loading course details...');
+  
+  // Wait for courses to be loaded if they're not ready yet
+  if (!coursesLoaded) {
+    console.log('Waiting for courses to load...');
+    setTimeout(displayCourseDetails, 100);
+    return;
+  }
+  
   const course = loadClassData();
   
   if (!course) {

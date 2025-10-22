@@ -7,6 +7,12 @@ let timeout = null;
 const unfilled= "style=\"font-variation-settings:'FILL' 0\"";
 
 function updateFilterButtons() {
+  // Wait for courses to be loaded
+  if (!coursesLoaded || typeof courseMap === 'undefined' || courseMap.size === 0) {
+    console.log("Courses not loaded yet, skipping filter update");
+    return;
+  }
+  
   // Get all unique subjects from the courseMap
   const allCourses = Array.from(courseMap.values());
   const subjects = [...new Set(allCourses.map(course => course.getSubject()))];
@@ -134,6 +140,13 @@ function dothing() {
   let body = document.getElementById('classGrid');
   let currentBody;
   let totalHTML = "";
+  
+  // Wait for courses to be loaded from API
+  if (!coursesLoaded) {
+    console.log("Courses not loaded yet, waiting...");
+    setTimeout(dothing, 100);
+    return;
+  }
   
   // Check if courseMap exists and has data
   if (typeof courseMap === 'undefined' || courseMap.size === 0) {
