@@ -132,6 +132,7 @@ function dothing() {
     if (shouldShow) {
       const colNum = (i % 4) + 1; // cycle 1 → 4
       const targetCol = document.getElementById(`col${colNum}`);
+      console.log(`col${colNum}`);
 
       if (bookmarks.includes(course.getClassName())) {
         targetCol.innerHTML += makeHTML(course, true);
@@ -146,7 +147,7 @@ function dothing() {
 
 function makeHTML(course, fill) {
   let bodyHTML = "";
-  console.log('makeHTML called for course:', course.getClassName());
+  //console.log('makeHTML called for course:', course.getClassName());
   // Always use lowercase, no spaces, for subject class assignment
   const subjectClass = course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase();
   if (fill === true) {
@@ -166,7 +167,7 @@ function makeHTML(course, fill) {
     let htmlCard = classCardDiv + headerDiv + descriptionDiv;
     bodyHTML += htmlCard;
   }
-  console.log('Generated HTML for', course.getClassName(), ':', bodyHTML);
+  //console.log('Generated HTML for', course.getClassName(), ':', bodyHTML);
   return bodyHTML;
 }
 
@@ -228,7 +229,7 @@ function filter(type) {
     }
   });
   
-  body.innerHTML = "";
+  body.innerHTML = '<div class="class-grid-col" id="col1"></div> \n <div class="class-grid-col" id="col2"></div> \n <div class="class-grid-col" id="col3"></div> \n <div class="class-grid-col" id="col4"></div>';
   dothing();
 }
 

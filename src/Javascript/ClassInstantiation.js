@@ -3095,7 +3095,7 @@ courseMap.set("Survey of Literature (12th) (Literature)", surveyOfLiterature12);
 courseMap.set("World Literature 2* (LIT 151) (Offered 26-27) – Dual Credit Course", worldLiterature2_LIT151);
 courseMap.set("Economics", economics);
 courseMap.set("Jewelry 1", jewelry1);
-courseMap.set("Foundations Of 3 Dart", foundationsOf3DArt);
+courseMap.set("Foundations Of 3-D art", foundationsOf3DArt);
 courseMap.set("Chamber Orchestra* (10-12)", chamberOrchestra);
 courseMap.set("Western Civilization I", westernCiv1);
 courseMap.set("Ag Research & Development Capstone", AgResearchAndDevelopmentCapstone);
