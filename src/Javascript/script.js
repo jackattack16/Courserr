@@ -207,6 +207,7 @@ function dothing() {
     if (shouldShow) {
       const colNum = (i % 4) + 1; // cycle 1 → 4
       const targetCol = document.getElementById(`col${colNum}`);
+      console.log(`col${colNum}`);
 
       if (bookmarks.includes(course.getClassName())) {
         targetCol.innerHTML += makeHTML(course, true);
@@ -303,7 +304,7 @@ function filter(type) {
     }
   });
   
-  body.innerHTML = "";
+  body.innerHTML = '<div class="class-grid-col" id="col1"></div> \n <div class="class-grid-col" id="col2"></div> \n <div class="class-grid-col" id="col3"></div> \n <div class="class-grid-col" id="col4"></div>';
   dothing();
 }
 

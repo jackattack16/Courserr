@@ -68,7 +68,9 @@
 </head>
 
 <body class="classPage" style="background-color: var(--light-bg)" id="body">
-    <div  class="container" id="fullHeightDiv">
+    <div class="container" id="fullHeightDiv">
+        <img src="../Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
+        <img src="../Images/closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
         <span class="material-symbols-rounded mode" style="font-size:5vh" onclick="modeChange()">light_mode</span>
         <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
           <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: calc(6vh + 1vw + 0.5vw)">
@@ -87,7 +89,7 @@
           
         </div>
         <div class="main-content">
-          <div class="header" style="background-color: var(--light-mode-bg)" id="header">
+          <div class="header" style="background-color: var(--light-mode-bg);height: 10vh;" id="header">
                 <div class="title"> 
                   <strong>Course<i>rr</i></strong>
                   <!--<button style="height: 10vh; width: 10vw">Click Me</button>-->
@@ -100,14 +102,14 @@
 
 
         <div class="main-content-class-page">
-        <div class="class-info-container">
+        <div class="class-info-container" style="padding-top:12.5vh">
             <div class="class-page-header">
                 <div class="class-page-header-left">
                     <div class="class-title-teacher-holder">
 
-                        <h1 class="class-title" id="className">AP US History</h1>
+                        <h1 class="class-title" id="className">Loading...</h1>
                         <hr class="title-teacher-break">
-                        <div class="class-teacher" id="teachers">Cynthia Gillette</div>
+                        <div class="class-teacher" id="teachers">Loading...</div>
 
                     </div>
                 </div>
@@ -139,7 +141,7 @@
             </div>
 
             <div class="class-page-half-box description classPageClassDecription" id="getColor">
-              <p class="description-paragraph"></p>
+              <p class="description-paragraph">Loading...</p>
             </div>
 
             <div class="class-page-half-box">
@@ -185,9 +187,6 @@
 
               <div class="comment-header" id="commentHeader">
                 <h1>Comments</h1>
-                <md-filled-text-field placeholder="Search Comments">
-                  <span slot="leading-icon" class="material-symbols-rounded">search</md-icon>
-                </md-outlined-text-field>
               </div>
               <div class="area-with-the-comments">
               <div class="comment-box">
