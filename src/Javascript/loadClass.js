@@ -161,71 +161,152 @@ function displayCourseDetails() {
   }
   
   // add tags dynamically from the course object
-const tagsEl = document.querySelector('.classPageClassTagsArea');
-if (tagsEl) {
-  let tagsHTML = "";
-  const courseTags = course.getTags();
-  if (courseTags && courseTags.length > 0) {
-    // Generate tags from the course's tag array
-    courseTags.forEach(tag => {
-      tagsHTML += `<md-suggestion-chip label="${tag}"></md-suggestion-chip>`;
-    });
-  } else {
-    tagsHTML = `
-      <md-suggestion-chip label="Academic"></md-suggestion-chip>
-      <md-suggestion-chip label="Core Subject"></md-suggestion-chip>
-    `;
-  }
-  tagsEl.innerHTML = tagsHTML;
-}
+  loadDynamicTags(course);
   
   // create the graph (with a small delay to make sure everything is loaded)
   setTimeout(() => {
     createDynamicGraph(course);
   }, 100);
   
-  // handle comments section
-  const commentsContainer = document.getElementById('commentsContainer');
-  if (!commentsContainer) {
-    // if comments container doesn't exist, create it and remove old comment boxes
-    const existingComments = document.querySelectorAll('.commentBox');
-    if (existingComments.length > 0) {
-      const firstComment = existingComments[0];
-      const newContainer = document.createElement('div');
-      newContainer.id = 'commentsContainer';
-      newContainer.innerHTML = '<!-- Comments will be added here dynamically -->';
-      firstComment.parentNode.insertBefore(newContainer, firstComment);
-      
-      // remove all the old comment boxes
-      existingComments.forEach(comment => comment.remove());
-    }
-  }
-  
-  // add the actual comments from course data
-  const commentsContainerFinal = document.getElementById('commentsContainer');
-  if (commentsContainerFinal && course.getComments().length > 0) {
-    let commentsHTML = '';
-    course.getComments().forEach((comment, index) => {
-      const rating = course.getRatings()[index] || course.getAverageRating();
-      commentsHTML += `
-        <div class="commentBox">
-          <div class="textt">${comment}</div>
-          <div class="ratee">${rating}</div>
-        </div>
-      `;
-    });
-    commentsContainerFinal.innerHTML = commentsHTML;
-  } else if (commentsContainerFinal) {
-    // if no comments, show a message
-    commentsContainerFinal.innerHTML = `
-      <div class="commentBox">
-        <div class="textt">No reviews available for this course yet. Be the first to share your experience!</div>
-        <div class="ratee">-</div>
-      </div>
-    `;
-  }
+  // handle comments section - load dynamic comments
+  loadDynamicComments(course);
   
   console.log('finished loading course:', course.getClassName());
+}
+
+function loadDynamicComments(course) {
+  console.log('Loading dynamic comments for:', course.getClassName());
+  
+  // Get the comments area
+  const commentsArea = document.querySelector('.area-with-the-comments');
+  if (!commentsArea) {
+    console.error('Comments area not found');
+    return;
+  }
+  
+  // Clear existing comments
+  commentsArea.innerHTML = '';
+  
+  // Get comments and ratings from the course
+  const comments = course.getComments();
+  const ratings = course.getRatings();
+  const averageRating = course.getAverageRating();
+  const averageGrade = course.getAverageGrade();
+  const averageTime = course.getAverageTimePerWeek();
+  const difficulty = course.getClassDifficulty();
+  
+  console.log('Course comments:', comments);
+  console.log('Course ratings:', ratings);
+  
+  if (comments && comments.length > 0) {
+    // Create comment boxes for each comment
+    comments.forEach((comment, index) => {
+      const rating = ratings[index] || averageRating;
+      const grade = course.getGrades()[index] || averageGrade;
+      const timeSpent = course.getAverageTimePerWeek()[index] || averageTime;
+      const difficultyRating = course.getClassDifficulty()[index] || difficulty;
+      
+      const commentBox = document.createElement('div');
+      commentBox.className = 'comment-box';
+      
+      commentBox.innerHTML = `
+        <div class="comment-text"> 
+          <p>${comment}</p>
+        </div>
+        <div class="review-info">
+          <div class="elevated-rectangle">Average Grade: ${grade}</div>
+          <div class="elevated-rectangle">Time Spent: ${timeSpent} hours / week</div>
+          <div class="elevated-rectangle">Difficulty: ${difficultyRating} / 5</div>
+        </div>
+        <div class="comment-kicker">
+          <md-icon-button class="infoBtn">
+            <span class="material-symbols-rounded">info</span>
+          </md-icon-button>
+        </div>
+      `;
+      
+      commentsArea.appendChild(commentBox);
+    });
+  } else {
+    // No comments available
+    const noCommentsBox = document.createElement('div');
+    noCommentsBox.className = 'comment-box';
+    noCommentsBox.innerHTML = `
+      <div class="comment-text"> 
+        <p>No reviews available for this course yet. Be the first to share your experience!</p>
+      </div>
+      <div class="review-info">
+        <div class="elevated-rectangle">Average Grade: ${averageGrade || 'N/A'}</div>
+        <div class="elevated-rectangle">Time Spent: ${averageTime || 0} hours / week</div>
+        <div class="elevated-rectangle">Difficulty: ${difficulty || 0} / 5</div>
+      </div>
+      <div class="comment-kicker">
+        <md-icon-button class="infoBtn">
+          <span class="material-symbols-rounded">info</span>
+        </md-icon-button>
+      </div>
+    `;
+    
+    commentsArea.appendChild(noCommentsBox);
+  }
+  
+  // Re-attach event listeners for info buttons
+  const infoBtns = document.querySelectorAll('.infoBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const infoDialog = document.getElementById('infoDialog');
+
+  for (let i = 0; i < infoBtns.length; i++) {
+     infoBtns[i].addEventListener("click", () => {
+      infoDialog.show();
+     });
+    }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      infoDialog.close();
+    });
+  }
+  
+  console.log('Dynamic comments loaded successfully');
+}
+
+function loadDynamicTags(course) {
+  console.log('Loading dynamic tags for:', course.getClassName());
+  
+  // Get the tags holder element
+  const tagsHolder = document.querySelector('.class-tags-holder');
+  if (!tagsHolder) {
+    console.error('Tags holder not found');
+    return;
+  }
+  
+  // Clear existing tags
+  tagsHolder.innerHTML = '';
+  
+  // Get tags from the course
+  const courseTags = course.getTags();
+  console.log('Course tags:', courseTags);
+  
+  if (courseTags && courseTags.length > 0) {
+    // Create tag elements for each tag
+    courseTags.forEach(tag => {
+      const tagElement = document.createElement('div');
+      tagElement.className = 'elevated-rectangle-half';
+      tagElement.textContent = tag;
+      tagsHolder.appendChild(tagElement);
+    });
+  } else {
+    // Default tags if none are provided
+    const defaultTags = ['Academic', 'Core Subject'];
+    defaultTags.forEach(tag => {
+      const tagElement = document.createElement('div');
+      tagElement.className = 'elevated-rectangle-half';
+      tagElement.textContent = tag;
+      tagsHolder.appendChild(tagElement);
+    });
+  }
+  
+  console.log('Dynamic tags loaded successfully');
 }
 
 function createDynamicGraph(course) {
@@ -355,15 +436,15 @@ function createDynamicGraph(course) {
         datasets: [{
           label: `${course.getClassName()} Data`,
           pointRadius: 8,
-          pointBackgroundColor: "rgba(69, 196, 176, 0.8)",
-          pointBorderColor: "rgba(69, 196, 176, 1)",
+          pointBackgroundColor: "rgba(15, 15, 15, 0.8)",
+          pointBorderColor: "rgb(95, 95, 95)",
           pointBorderWidth: 2,
           data: dataPoints
         }, {
           label: 'Trend Line',
           type: 'line',
           data: trendLinePoints,
-          borderColor: "rgba(19, 103, 138, 1)",
+          borderColor: "rgb(0, 0, 0)",
           borderWidth: 3,
           fill: false,
           pointRadius: 0,

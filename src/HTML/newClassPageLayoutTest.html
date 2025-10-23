@@ -67,7 +67,7 @@
 </head>
 
 <body class="classPage" style="background-color: var(--light-bg)" id="body">
-    <div  class="container" id="fullHeightDiv">
+    <div class="container" id="fullHeightDiv">
         <img src="../Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
         <img src="../Images/closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
         <span class="material-symbols-rounded mode" style="font-size:5vh" onclick="modeChange()">light_mode</span>
@@ -88,7 +88,7 @@
           
         </div>
         <div class="main-content">
-          <div class="header" style="background-color: var(--light-mode-bg)" id="header">
+          <div class="header" style="background-color: var(--light-mode-bg);height: 10vh;" id="header">
                 <div class="title"> 
                   <strong>Course<i>rr</i></strong>
                   <!--<button style="height: 10vh; width: 10vw">Click Me</button>-->
@@ -101,14 +101,14 @@
 
 
         <div class="main-content-class-page">
-        <div class="class-info-container">
+        <div class="class-info-container" style="padding-top:12.5vh">
             <div class="class-page-header">
                 <div class="class-page-header-left">
                     <div class="class-title-teacher-holder">
 
-                        <h1 class="class-title" id="className">AP US History</h1>
+                        <h1 class="class-title" id="className">Loading...</h1>
                         <hr class="title-teacher-break">
-                        <div class="class-teacher" id="teachers">Cynthia Gillette</div>
+                        <div class="class-teacher" id="teachers">Loading...</div>
 
                     </div>
                 </div>
@@ -140,12 +140,15 @@
             </div>
 
             <div class="class-page-half-box description classPageClassDecription" id="getColor">
-              <p class="description-paragraph"></p>
+              <p class="description-paragraph">Loading...</p>
             </div>
 
             <div class="class-page-half-box">
               <canvas id="myChart" class='classPageGraphHalf'></canvas>
             </div>
+
+            <!-- AI Summary Box -->
+            
         </div>
 
 
@@ -156,9 +159,6 @@
 
               <div class="comment-header" id="commentHeader">
                 <h1>Comments</h1>
-                <md-filled-text-field placeholder="Search Comments">
-                  <span slot="leading-icon" class="material-symbols-rounded">search</md-icon>
-                </md-outlined-text-field>
               </div>
               <div class="area-with-the-comments">
               <div class="comment-box">
@@ -354,6 +354,227 @@ let course;
   closeBtn.addEventListener('click', () => {
     infoDialog.close(); // opens the dialog
   });
+</script>
+
+<script>
+// AI Summary Generation with Offline Fallback
+document.addEventListener('DOMContentLoaded', function() {
+    const generateBtn = document.getElementById('generateSummaryBtn');
+    const summaryContent = document.getElementById('aiSummaryContent');
+    const loadingDiv = document.getElementById('aiSummaryLoading');
+    const modeIndicator = document.getElementById('aiModeIndicator');
+    
+    if (generateBtn) {
+        generateBtn.addEventListener('click', generateAISummary);
+    }
+    
+    // Check online/offline status
+    function isOnline() {
+        return navigator.onLine;
+    }
+    
+    async function generateAISummary() {
+        // Show loading state
+        summaryContent.style.display = 'none';
+        loadingDiv.style.display = 'flex';
+        generateBtn.disabled = true;
+        
+        // Collect data from the page
+        const courseData = collectCourseData();
+        
+        try {
+            // Use offline fallback for now (can be enhanced with online models later)
+            console.log('Using offline AI analysis');
+            const summary = createAISummary(courseData);
+            displaySummary(summary);
+        } catch (error) {
+            console.error('Error generating summary:', error);
+            // Fallback to basic summary
+            const summary = createBasicSummary(courseData);
+            displaySummary(summary);
+        }
+    }
+    
+    function collectCourseData() {
+        // Collect course information
+        const courseName = document.getElementById('className')?.textContent || 'Unknown Course';
+        const teacher = document.getElementById('teachers')?.textContent || 'Unknown Teacher';
+        const description = document.querySelector('.description-paragraph')?.textContent || '';
+        
+        // Collect tags
+        const tagElements = document.querySelectorAll('.class-tags-holder .elevated-rectangle-half');
+        const tags = Array.from(tagElements).map(tag => tag.textContent.trim());
+        
+        // Collect comments from the dynamically loaded comments
+        const commentElements = document.querySelectorAll('.comment-text p');
+        const comments = Array.from(commentElements).map(comment => comment.textContent.trim());
+        
+        // Collect review info
+        const reviewInfo = [];
+        const reviewElements = document.querySelectorAll('.review-info .elevated-rectangle');
+        reviewElements.forEach(review => {
+            reviewInfo.push(review.textContent.trim());
+        });
+        
+        return {
+            courseName,
+            teacher,
+            description,
+            tags,
+            comments,
+            reviewInfo
+        };
+    }
+    
+    // Enhanced offline AI analysis
+    function createAISummary(data) {
+        const { courseName, teacher, description, tags, comments, reviewInfo } = data;
+        
+        let summary = `🤖 **AI-Powered Course Analysis:**\n\n`;
+        
+        // Start with course description as the foundation
+        if (description && description.trim()) {
+            summary += `📖 **Course Description:**\n${description}\n\n`;
+        }
+        
+        // Course overview with more detail
+        summary += `📚 **Course Overview:**\n`;
+        summary += `${courseName} is taught by ${teacher}. `;
+        
+        // Incorporate description into overview if not already shown
+        if (!description || !description.trim()) {
+            summary += `This course provides students with comprehensive learning opportunities. `;
+        }
+        
+        // Tags analysis with more context
+        if (tags.length > 0) {
+            summary += `\n\n🏷️ **Key Course Characteristics:**\n`;
+            summary += `Based on student feedback, this course is characterized as: ${tags.join(', ')}. `;
+            
+            // Provide context for each tag
+            if (tags.includes('Reading Heavy')) {
+                summary += `Students should expect significant reading assignments and should develop strong reading comprehension skills. `;
+            }
+            if (tags.includes('Hard Tests')) {
+                summary += `Assessments are challenging and require thorough preparation and understanding of course material. `;
+            }
+            if (tags.includes('Fun') || tags.includes('Engaging')) {
+                summary += `The course content and teaching methods are designed to be engaging and enjoyable for students. `;
+            }
+            if (tags.includes('Extra Credit')) {
+                summary += `Additional opportunities for academic improvement are available through extra credit assignments. `;
+            }
+        }
+        
+        // Enhanced comments analysis
+        if (comments.length > 0) {
+            summary += `\n\n💬 **Student Feedback Analysis:**\n`;
+            const positiveAspects = [];
+            const challenges = [];
+            const workloadNotes = [];
+            
+            comments.forEach(comment => {
+                const lowerComment = comment.toLowerCase();
+                if (lowerComment.includes('enjoy') || lowerComment.includes('fun') || lowerComment.includes('great') || lowerComment.includes('love')) {
+                    positiveAspects.push('Students find the course engaging and enjoyable');
+                }
+                if (lowerComment.includes('heavy') || lowerComment.includes('difficult') || lowerComment.includes('challenging') || lowerComment.includes('hard')) {
+                    challenges.push('Course workload can be demanding');
+                }
+                if (lowerComment.includes('workload') || lowerComment.includes('time') || lowerComment.includes('hours')) {
+                    workloadNotes.push('Students mention workload considerations');
+                }
+            });
+            
+            if (positiveAspects.length > 0) {
+                summary += `✅ **Positive Aspects:** ${positiveAspects[0]}\n`;
+            }
+            if (challenges.length > 0) {
+                summary += `⚠️ **Challenges:** ${challenges[0]}\n`;
+            }
+            if (workloadNotes.length > 0) {
+                summary += `⏰ **Workload Considerations:** Students should plan their time accordingly\n`;
+            }
+        }
+        
+        // Review metrics with analysis
+        if (reviewInfo.length > 0) {
+            summary += `\n\n📊 **Student Performance Data:**\n`;
+            reviewInfo.forEach(info => {
+                summary += `• ${info}\n`;
+            });
+        }
+        
+        // Comprehensive recommendation based on all data
+        summary += `\n\n🎯 **Overall Assessment:**\n`;
+        
+        // Base recommendation on course description and tags
+        if (description && description.toLowerCase().includes('advanced') || tags.includes('Hard Tests')) {
+            summary += `This course appears to be academically rigorous and suitable for students seeking a challenging learning experience. `;
+        } else if (tags.includes('Fun') || tags.includes('Engaging')) {
+            summary += `This course offers an engaging learning environment that balances academic rigor with student enjoyment. `;
+        } else {
+            summary += `This course provides a solid academic foundation with opportunities for student growth and development. `;
+        }
+        
+        // Add specific recommendations based on tags
+        if (tags.includes('Reading Heavy')) {
+            summary += `Students should develop strong reading habits and time management skills. `;
+        }
+        if (tags.includes('Hard Tests')) {
+            summary += `Regular study and preparation are essential for success in this course. `;
+        }
+        if (tags.includes('Extra Credit')) {
+            summary += `Students have opportunities to improve their grades through additional work. `;
+        }
+        
+        summary += `Overall, this course offers a comprehensive learning experience that combines academic challenge with student support.`;
+        
+        return summary;
+    }
+    
+    // Basic fallback summary
+    function createBasicSummary(data) {
+        const { courseName, teacher, description } = data;
+        return `📚 **Course Summary:**\n\n${courseName} taught by ${teacher}.\n\n${description || 'No description available.'}`;
+    }
+    
+    function displaySummary(summary) {
+        // Hide loading and show summary
+        loadingDiv.style.display = 'none';
+        summaryContent.style.display = 'flex';
+        
+        // Create and display the summary
+        const summaryDiv = document.createElement('div');
+        summaryDiv.className = 'ai-summary-text';
+        summaryDiv.innerHTML = summary.replace(/\n/g, '<br>');
+        
+        summaryContent.innerHTML = '';
+        summaryContent.appendChild(summaryDiv);
+        
+        // Re-enable button
+        generateBtn.disabled = false;
+        generateBtn.innerHTML = `
+            <span slot="icon" class="material-symbols-rounded">refresh</span>
+            Regenerate Summary
+        `;
+    }
+    
+    // Update mode indicator
+    function updateModeIndicator() {
+        if (modeIndicator) {
+            const icon = modeIndicator.querySelector('.mode-icon');
+            const text = modeIndicator.querySelector('.mode-text');
+            
+            modeIndicator.className = 'ai-mode-indicator offline';
+            icon.textContent = 'psychology';
+            text.textContent = 'AI Analysis';
+        }
+    }
+    
+    // Initialize mode indicator
+    updateModeIndicator();
+});
 </script>
 </body>
 </html>

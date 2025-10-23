@@ -23,7 +23,7 @@
 }
 
 .class-page-header {
-    background-color: #157daa;
+    background-color: #c4c4c4;
     height: 45vh;
     width: 90vw;
     border-radius: 1vh;
@@ -51,7 +51,7 @@
 }
 
 .class-title-teacher-holder {
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.25);
     height: fit-content;
     width: fit-content;
     max-width: 90%;
@@ -62,6 +62,7 @@
     padding: 1%;
     border-radius: 1vh;
     border: 1px solid #ffffff10;
+    color: black;
 }
 
 .class-prerequisites {
@@ -107,7 +108,7 @@
     height: 45vh;
     width: 44vw;
     border-radius: 1vh;
-    background-color: #157daa;
+    background-color: #c4c4c4;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,7 +116,7 @@
 
 .class-comment-container {
     width: 100%;
-    /* background-color: rgb(78, 78, 78); */
+    background-color: rgb(78, 78, 78); 
     height: fit-content;
     
 } 
