@@ -290,6 +290,205 @@
     background-color: #ffffff50;
 }
 
+/* AI Summary Box Styles */
+.ai-summary-container {
+    width: 100%;
+    padding: 0 2.5vw;
+    margin-bottom: 3vh;
+}
+
+.ai-summary-box {
+    background-color: #157daa;
+    border-radius: 1vh;
+    padding: 2vh 2vw;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.ai-summary-box:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.ai-summary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    padding-bottom: 1vh;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.ai-summary-title-section {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    flex: 1;
+}
+
+.ai-mode-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5vh 1vw;
+    border-radius: 0.5vh;
+    font-size: 1.8vh;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.ai-mode-indicator.online {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.ai-mode-indicator.offline {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #FF9800;
+}
+
+.mode-icon {
+    font-size: 2vh;
+}
+
+.mode-text {
+    font-weight: 500;
+}
+
+.ai-icon {
+    font-size: 4vh;
+    color: #ffffff;
+    margin-right: 1vw;
+}
+
+.ai-summary-title {
+    font-size: 4vh;
+    color: white;
+    margin: 0;
+    flex: 1;
+}
+
+.generate-summary-btn {
+    --md-sys-color-primary: #ffffff;
+    --md-sys-color-on-primary: #157daa;
+    --md-sys-color-primary-container: #ffffff;
+    --md-sys-color-on-primary-container: #157daa;
+    font-size: 2vh;
+    height: 5vh;
+    border-radius: 0.5vh;
+    transition: all 0.3s ease;
+}
+
+.generate-summary-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.ai-summary-content {
+    min-height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ai-summary-placeholder {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+.placeholder-icon {
+    font-size: 6vh;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ai-summary-placeholder p {
+    font-size: 2.5vh;
+    margin: 0;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
+.ai-summary-text {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1vh;
+    padding: 2vh;
+    color: white;
+    font-size: 2.2vh;
+    line-height: 1.6;
+    border-left: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ai-summary-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    gap: 2vh;
+}
+
+.loading-spinner {
+    width: 4vh;
+    height: 4vh;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.ai-summary-loading p {
+    font-size: 2.5vh;
+    margin: 0;
+}
+
+/* Mobile responsiveness for AI summary */
+@media (max-width: 768px) {
+    .ai-summary-container {
+        padding: 0 1vw;
+    }
+    
+    .ai-summary-box {
+        padding: 1.5vh 1.5vw;
+    }
+    
+    .ai-summary-header {
+        flex-direction: column;
+        gap: 1vh;
+        align-items: center;
+    }
+    
+    .ai-summary-title {
+        font-size: 3vh;
+    }
+    
+    .generate-summary-btn {
+        font-size: 1.8vh;
+        height: 4vh;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .ai-summary-text {
+        font-size: 2vh;
+        padding: 1.5vh;
+    }
+    
+    .ai-summary-placeholder p {
+        font-size: 2vh;
+    }
+}
+
 :root {
   --md-sys-typescale-body-large: 400 1rem system-ui;
   --md-sys-color-primary: #000000;
