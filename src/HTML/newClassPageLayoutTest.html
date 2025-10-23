@@ -20,7 +20,8 @@
   <script type="importmap">
   {
     "imports": {
-      "@material/web/": "https://esm.run/@material/web/"
+      "@material/web/": "https://esm.run/@material/web/",
+      "@huggingface/transformers": "https://esm.run/@huggingface/transformers"
     }
   }
   </script>
@@ -73,7 +74,7 @@
         <span class="material-symbols-rounded mode" style="font-size:5vh" onclick="modeChange()">light_mode</span>
         <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
           <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: calc(6vh + 1vw + 0.5vw)">
-            Close
+            <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.location.href = './index.html'";>back</span>
           </div>
           <div class="sidebarItem">
             <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.location.href = './index.html'";>flood</span>Home
@@ -148,7 +149,34 @@
             </div>
 
             <!-- AI Summary Box -->
-            
+            <div class="ai-summary-container">
+              <div class="ai-summary-box">
+                <div class="ai-summary-header">
+                  <div class="ai-summary-title-section">
+                    <span class="material-symbols-rounded ai-icon">psychology</span>
+                    <h2 class="ai-summary-title">AI Summary</h2>
+                    <div class="ai-mode-indicator" id="aiModeIndicator">
+                      <span class="material-symbols-rounded mode-icon">cloud_off</span>
+                      <span class="mode-text">Offline Mode</span>
+                    </div>
+                  </div>
+                  <md-filled-button class="generate-summary-btn" id="generateSummaryBtn">
+                    <span slot="icon" class="material-symbols-rounded">auto_awesome</span>
+                    Generate Summary
+                  </md-filled-button>
+                </div>
+                <div class="ai-summary-content" id="aiSummaryContent">
+                  <div class="ai-summary-placeholder">
+                    <span class="material-symbols-rounded placeholder-icon">psychology</span>
+                    <p>Click "Generate Summary" to get an AI-powered analysis of this course based on student feedback, tags, and course information.</p>
+                  </div>
+                </div>
+                <div class="ai-summary-loading" id="aiSummaryLoading" style="display: none;">
+                  <div class="loading-spinner"></div>
+                  <p>Generating AI summary...</p>
+                </div>
+              </div>
+            </div>
         </div>
 
 
@@ -338,7 +366,33 @@ let course;
           document.getElementById('header').style.backgroundColor = "var(--dark-mode-bg)";
       }
 
-      
+      function openClose(closed) {
+  let lines = document.getElementById('lines');
+  let exes = document.getElementById('exes');
+  let text = document.getElementById('mobileClose');
+  let sidebar = document.getElementById('sidebar');
+  if(closed) {
+    exes.style.opacity = "1";
+    exes.style.transform = "rotate(-90deg)"
+    exes.style.zIndex = "1002";
+    lines.style.opacity = "0";
+    lines.style.transform = "rotate(90deg)";
+    lines.style.zIndex = "1001";
+    sidebar.style.transform = "translateX(0vw)"
+    text.style.opacity = "1";
+    
+  } else {
+    exes.style.opacity = "0";
+    exes.style.transform = "rotate(0deg)"
+    exes.style.zIndex = "1001";
+    lines.style.opacity = "1";
+    lines.style.transform = "rotate(0deg)";
+    lines.style.zIndex = "1002";
+    sidebar.style.transform = "translateX(-40vw)"
+    text.style.opacity = "0";
+  }
+
+}
 </script>
 <script>
   const infoBtn = document.querySelectorAll('.infoBtn');
@@ -357,12 +411,17 @@ let course;
 </script>
 
 <script>
-// AI Summary Generation with Offline Fallback
+// AI Summary Generation with TensorFlow.js BART Model
 document.addEventListener('DOMContentLoaded', function() {
     const generateBtn = document.getElementById('generateSummaryBtn');
     const summaryContent = document.getElementById('aiSummaryContent');
     const loadingDiv = document.getElementById('aiSummaryLoading');
     const modeIndicator = document.getElementById('aiModeIndicator');
+    
+    // TensorFlow.js BART model configuration
+    let bartModel = null;
+    let modelLoaded = false;
+    const MODEL_NAME = 'Xenova/bart-large-cnn'; // BART model for summarization
     
     if (generateBtn) {
         generateBtn.addEventListener('click', generateAISummary);
@@ -371,6 +430,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check online/offline status
     function isOnline() {
         return navigator.onLine;
+    }
+    
+    // Load TensorFlow.js BART model
+    async function loadBARTModel() {
+        if (modelLoaded) return true;
+        
+        try {
+            console.log('Loading TensorFlow.js BART model...');
+            const { pipeline } = await import('@huggingface/transformers');
+            
+            // Load the BART model for summarization
+            bartModel = await pipeline('summarization', MODEL_NAME, {
+                quantized: true, // Use quantized model for better performance
+                progress_callback: (progress) => {
+                    console.log('Model loading progress:', Math.round(progress.loaded / progress.total * 100) + '%');
+                }
+            });
+            
+            modelLoaded = true;
+            console.log('TensorFlow.js BART model loaded successfully');
+            return true;
+        } catch (error) {
+            console.error('Error loading TensorFlow.js BART model:', error);
+            return false;
+        }
     }
     
     async function generateAISummary() {
@@ -383,15 +467,90 @@ document.addEventListener('DOMContentLoaded', function() {
         const courseData = collectCourseData();
         
         try {
-            // Use offline fallback for now (can be enhanced with online models later)
-            console.log('Using offline AI analysis');
-            const summary = createAISummary(courseData);
+            let summary;
+            
+            // Try to use TensorFlow.js BART model if online
+            if (isOnline() && await loadBARTModel()) {
+                console.log('Using TensorFlow.js BART model for AI summary');
+                summary = await generateSummaryWithBART(courseData);
+            } else {
+                console.log('Using offline fallback for AI summary');
+                summary = createAISummary(courseData);
+            }
+            
             displaySummary(summary);
         } catch (error) {
             console.error('Error generating summary:', error);
-            // Fallback to basic summary
-            const summary = createBasicSummary(courseData);
+            // Fallback to offline method
+            const summary = createAISummary(courseData);
             displaySummary(summary);
+        }
+    }
+    
+    async function generateSummaryWithBART(courseData) {
+        const { courseName, teacher, description, tags, comments, reviewInfo } = courseData;
+        
+        // Create a more structured and balanced input for the BART model
+        let textToSummarize = `Course Information: ${courseName} taught by ${teacher}. `;
+        
+        // Prioritize course description and structured information
+        if (description && description.trim()) {
+            textToSummarize += `Course Description: ${description}. `;
+        }
+        
+        // Add tags as key characteristics
+        if (tags.length > 0) {
+            textToSummarize += `Key Course Characteristics: ${tags.join(', ')}. `;
+        }
+        
+        // Add review metrics as structured data
+        if (reviewInfo.length > 0) {
+            textToSummarize += `Student Performance Data: ${reviewInfo.join(', ')}. `;
+        }
+        
+        // Include comments but with less weight
+        if (comments.length > 0) {
+            // Limit comment length to prevent overwhelming the model
+            const limitedComments = comments.slice(0, 2).join(' ');
+            textToSummarize += `Student Feedback: ${limitedComments}. `;
+        }
+        
+        // Add context about what kind of summary we want
+        textToSummarize += `Please provide a comprehensive summary of this course including what students can expect, key characteristics, workload, and overall assessment.`;
+        
+        try {
+            // Use TensorFlow.js BART model for summarization with adjusted parameters
+            const result = await bartModel(textToSummarize, {
+                max_length: 250,
+                min_length: 100,
+                do_sample: false,
+                length_penalty: 1.2, // Encourage longer summaries
+                num_beams: 4 // Better quality generation
+            });
+            
+            const bartSummary = result[0]?.summary_text || 'Unable to generate summary';
+            
+            // Create a more comprehensive summary format
+            let enhancedSummary = `🤖 **AI-Powered Course Analysis (TensorFlow.js BART):**\n\n${bartSummary}\n\n`;
+            
+            // Add structured course information
+            enhancedSummary += `📚 **Course Overview:**\n`;
+            enhancedSummary += `• **Course:** ${courseName}\n`;
+            enhancedSummary += `• **Instructor:** ${teacher}\n`;
+            
+            if (tags.length > 0) {
+                enhancedSummary += `• **Key Characteristics:** ${tags.join(', ')}\n`;
+            }
+            
+            if (reviewInfo.length > 0) {
+                enhancedSummary += `• **Student Metrics:** ${reviewInfo.length} reviews available\n`;
+            }
+            
+            return enhancedSummary;
+            
+        } catch (error) {
+            console.error('TensorFlow.js BART model error:', error);
+            throw error; // This will trigger the fallback
         }
     }
     
@@ -405,7 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const tagElements = document.querySelectorAll('.class-tags-holder .elevated-rectangle-half');
         const tags = Array.from(tagElements).map(tag => tag.textContent.trim());
         
-        // Collect comments from the dynamically loaded comments
+        // Collect comments
         const commentElements = document.querySelectorAll('.comment-text p');
         const comments = Array.from(commentElements).map(comment => comment.textContent.trim());
         
@@ -426,11 +585,12 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
     
-    // Enhanced offline AI analysis
+    // Offline fallback function (original implementation)
     function createAISummary(data) {
+        // Analyze the collected data to create a comprehensive summary
         const { courseName, teacher, description, tags, comments, reviewInfo } = data;
         
-        let summary = `🤖 **AI-Powered Course Analysis:**\n\n`;
+        let summary = `🔄 **Offline AI Analysis:**\n\n`;
         
         // Start with course description as the foundation
         if (description && description.trim()) {
@@ -533,12 +693,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return summary;
     }
     
-    // Basic fallback summary
-    function createBasicSummary(data) {
-        const { courseName, teacher, description } = data;
-        return `📚 **Course Summary:**\n\n${courseName} taught by ${teacher}.\n\n${description || 'No description available.'}`;
-    }
-    
     function displaySummary(summary) {
         // Hide loading and show summary
         loadingDiv.style.display = 'none';
@@ -561,19 +715,54 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Update mode indicator
-    function updateModeIndicator() {
+    function updateModeIndicator(isOnline, isModelLoaded = false) {
         if (modeIndicator) {
             const icon = modeIndicator.querySelector('.mode-icon');
             const text = modeIndicator.querySelector('.mode-text');
             
-            modeIndicator.className = 'ai-mode-indicator offline';
-            icon.textContent = 'psychology';
-            text.textContent = 'AI Analysis';
+            if (isOnline && isModelLoaded) {
+                modeIndicator.className = 'ai-mode-indicator online';
+                icon.textContent = 'psychology';
+                text.textContent = 'AI Model (BART)';
+            } else if (isOnline) {
+                modeIndicator.className = 'ai-mode-indicator offline';
+                icon.textContent = 'cloud_download';
+                text.textContent = 'Loading Model...';
+            } else {
+                modeIndicator.className = 'ai-mode-indicator offline';
+                icon.textContent = 'cloud_off';
+                text.textContent = 'Offline Mode';
+            }
         }
     }
     
     // Initialize mode indicator
-    updateModeIndicator();
+    async function initializeModeIndicator() {
+        const online = isOnline();
+        let modelReady = false;
+        
+        if (online) {
+            // Try to load the model to check if it's available
+            modelReady = await loadBARTModel();
+        }
+        
+        updateModeIndicator(online, modelReady);
+    }
+    
+    // Add network status monitoring
+    window.addEventListener('online', async function() {
+        console.log('Network connection restored');
+        const modelReady = await loadBARTModel();
+        updateModeIndicator(true, modelReady);
+    });
+    
+    window.addEventListener('offline', function() {
+        console.log('Network connection lost - will use offline fallback');
+        updateModeIndicator(false, false);
+    });
+    
+    // Initialize on page load
+    initializeModeIndicator();
 });
 </script>
 </body>

@@ -2,6 +2,7 @@ let curentFilters = [];
 let bookmarks = [];
 let currentAnimations = [];
 let searchQuery = '';
+let timeout = null;
 
 const unfilled= "style=\"font-variation-settings:'FILL' 0\"";
 
@@ -19,11 +20,11 @@ function updateFilterButtons() {
     
     // Add subject filters dynamically
     subjects.forEach(subject => {
-      filterHTML += `<span class="filterChip"><md-filter-chip label="${subject}" onclick="filter(this.label)"></md-filter-chip></span>`;
+      filterHTML += `<span class="filterChip"><md-filter-chip label="${subject}" onclick="addFilter(this.label)"></md-filter-chip></span>`;
     });
     
     // Add bookmarked filter
-    filterHTML += `<span class="filterChip"><md-filter-chip label="Bookmarked" onclick="filter(this.label)"></md-filter-chip></span>`;
+    filterHTML += `<span class="filterChip"><md-filter-chip label="Bookmarked" onclick="addFilter(this.label)"></md-filter-chip></span>`;
     
     filterArea.innerHTML = filterHTML;
     
@@ -52,7 +53,81 @@ function load() {
   // Initialize filter chip states after a short delay to ensure DOM is ready
   setTimeout(() => {
     updateFilterButtons();
+    const allCourses = Array.from(courseMap.values());
+    loadClasses(allCourses);
   }, 100);
+  
+}
+
+function loadClasses(courseArray) {
+  let classLength = courseArray.length;
+  console.log(classLength);
+
+  // Define the object for each off the columns for easy access with a variable
+  const collObj = {
+    'col1': document.getElementById('col1'),
+    'col2': document.getElementById('col2'),
+    'col3': document.getElementById('col3'),
+    'col4': document.getElementById('col4'),
+  }
+
+  // Loop through all of the provided courses
+  for(let i = 0; i < classLength; i++) {
+    const course = courseArray[i];
+    //console.log(course.getClassName());
+    const colNum = (i % 4) + 1; // Gets the column number that the class will be added to
+    
+    if(bookmarks.includes(course.getClassName())) {
+      collObj['col' + colNum].innerHTML += makeHTML(course, true);
+    } else {
+      collObj['col' + colNum].innerHTML += makeHTML(course, false);
+    }
+    
+  }
+
+  // Print how many classes per column 
+  for(let x = 1; x < 5; x++) {
+    console.log(`Column ${x} classes: ${collObj['col'+ x].childElementCount}`);
+  }
+}
+
+
+function addFilter(filter) {
+  // Add the selected filter to the currentFilters array
+  if(curentFilters.includes(filter)) {
+    curentFilters.splice(curentFilters.indexOf(filter), 1);
+    console.log(curentFilters);
+  } else {
+    curentFilters.push(filter);
+    console.log(curentFilters);
+  }
+
+  // Filter out unwanted courses
+  const allCourses = Array.from(courseMap.values());
+  const filteredCourses = allCourses.filter(filterCourses);
+  console.log(filteredCourses);
+  
+  // Remove all the courses currently on the page
+  document.getElementById('col1').innerHTML = '';
+  document.getElementById('col2').innerHTML = '';
+  document.getElementById('col3').innerHTML = '';
+  document.getElementById('col4').innerHTML = '';
+
+  // Re-add classes 
+  if(curentFilters.length === 0) {
+    loadClasses(allCourses);
+  } else {
+    loadClasses(filteredCourses);
+  }
+}
+
+function filterCourses(course, bookmark) {
+  if(curentFilters.includes('Bookmarked')) {
+    return curentFilters.includes(course.getSubject()) || bookmarks.includes(course.getClassName());
+  } else {
+    return curentFilters.includes(course.getSubject());
+  }
+  
 }
 
 function dothing() {
@@ -119,7 +194,7 @@ function dothing() {
 
         if (filter === "bookmarked") {
           if (bookmarks.includes(course.getClassName())) {
-            shouldShow = true;
+            shoulshouldShowdShow = true;
             break;
           }
         } else if (filter.toLowerCase() === course.getSubject().toLowerCase()) {
@@ -243,21 +318,55 @@ function shuffleArray(array) {
     return array;
 }
 
+function waitToSearch() {
+  clearTimeout(timeout);
+  console.log(searchQuery)
+  const allCourses = Array.from(courseMap.values());
+  const filteredCourses = allCourses.filter(filterSearch);
+
+  // Make a new timeout set to go off a bit once user is done typing
+  if(searchQuery !== '') {
+    timeout = setTimeout(function () {
+      runSearch(allCourses, filteredCourses);
+    }, 500);
+  } else {
+    runSearch(allCourses, filteredCourses);
+  }
+}
+
 function searchCourses() {
-    const searchInput = document.getElementById('searchInput');
-    const clearButton = document.getElementById('clearSearch');
-    
-    searchQuery = searchInput.value.toLowerCase().trim();
-    
-    // Show/hide clear button
-    if (searchQuery.length > 0) {
-        clearButton.style.display = 'block';
-    } else {
-        clearButton.style.display = 'none';
-    }
-    
-    // Refresh the course display
-    dothing();
+  const searchInput = document.getElementById('searchInput');
+  const clearButton = document.getElementById('clearSearch');
+  
+  searchQuery = searchInput.value.toLowerCase().trim();
+  
+  // Show/hide clear button
+  if (searchQuery.length > 0) {
+      clearButton.style.display = 'block';
+  } else {
+      clearButton.style.display = 'none';
+  }
+
+  // Check for if the user is done typing then search
+  waitToSearch();
+}
+
+function runSearch(allCourses, filteredCourses) {
+
+  document.getElementById('col1').innerHTML = '';
+  document.getElementById('col2').innerHTML = '';
+  document.getElementById('col3').innerHTML = '';
+  document.getElementById('col4').innerHTML = '';
+
+  if(filteredCourses.length === 0 && searchQuery === '') {
+    loadClasses(allCourses);
+  } else {
+    loadClasses(filteredCourses);
+  }
+}
+
+function filterSearch(query) {
+  return query.getClassName().toLowerCase().includes(searchQuery);
 }
 
 function clearSearch() {
@@ -271,6 +380,14 @@ function clearSearch() {
     // Refresh the course display
     dothing();
 }
+
+const searchBar = document.getElementById('search-container');
+console.log(searchBar);
+searchBar.addEventListener("focusout", (event) => {
+  const searchInput = document.getElementById('searchInput');
+  searchInput.value = '';
+  searchCourses();
+});
 
 function fav(element) {
    let fillValue;
