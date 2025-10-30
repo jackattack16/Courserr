@@ -214,9 +214,9 @@ function loadDynamicComments(course) {
           <p>${comment}</p>
         </div>
         <div class="review-info">
-          <div class="elevated-rectangle">Average Grade: ${grade}</div>
-          <div class="elevated-rectangle">Time Spent: ${timeSpent} hours / week</div>
-          <div class="elevated-rectangle">Difficulty: ${difficultyRating} / 5</div>
+          <div class="elevated-rectangle" style="color:white">Average Grade: ${grade}</div>
+          <div class="elevated-rectangle" style="color:white">Time Spent: ${timeSpent} hours / week</div>
+          <div class="elevated-rectangle" style="color:white">Difficulty: ${difficultyRating} / 5</div>
         </div>
         <div class="comment-kicker">
           <md-icon-button class="infoBtn">

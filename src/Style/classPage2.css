@@ -253,7 +253,7 @@
     border-radius: 0.5vh;
     border: 1px solid #ffffff20;
     margin-bottom: 2.5vh;
-    color: white;
+    color: black;
 }
 
 .elevated-rectangle {
@@ -264,7 +264,7 @@
     width: 90%;
     border-radius: 0.5vh;
     border-left: 3px solid rgb(255, 255, 255);
-    color: white;
+    color: black;
     padding: 0.45vh 0 0.45vh 5%;
     margin-bottom: 2vh;
     transition: all 0.5s cubic-bezier(.17,.67,.36,1.02);
@@ -281,7 +281,7 @@
     border-right: 3px solid rgb(255, 255, 255);
     border-top: 1px solid rgb(255, 255, 255);
     border-bottom: 1px solid rgb(255, 255, 255);
-    color: white;
+    color: black;
     margin: 0 0.5vw 1vh 0;
     padding: 0.45vh 5% 0.45vh 5%;
 }
