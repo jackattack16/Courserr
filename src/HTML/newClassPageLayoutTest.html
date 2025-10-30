@@ -150,7 +150,7 @@
 
             <!-- AI Summary Box -->
             <div class="ai-summary-container">
-              <div class="ai-summary-box">
+              <div class="ai-summary-box" id="aiColorChange">
                 <div class="ai-summary-header">
                   <div class="ai-summary-title-section">
                     <span class="material-symbols-rounded ai-icon">psychology</span>
@@ -516,7 +516,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Add context about what kind of summary we want
-        textToSummarize += `Please provide a comprehensive summary of this course including what students can expect, key characteristics, workload, and overall assessment.`;
         
         try {
             // Use TensorFlow.js BART model for summarization with adjusted parameters
