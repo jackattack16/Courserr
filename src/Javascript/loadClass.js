@@ -96,9 +96,9 @@ function displayCourseDetails() {
 
   for(let i = 0; i < headerElements.length; i++) {
     headerElements[i].classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
-    console.log("changed colour");
+    console.log("changed colour")
   }
-
+  document.getElementById('aiColorChange').classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
   for(let i = 0; i < halfElements.length; i++) {
     halfElements[i].classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
     console.log("changed colour");
