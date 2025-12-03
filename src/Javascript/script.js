@@ -6,12 +6,49 @@ let timeout = null;
 
 const unfilled= "style=\"font-variation-settings:'FILL' 0\"";
 
+// Mapping from filter label to actual subject name used in course data
+const subjectMapping = {
+  "Business": "business",
+  "Physical Education": "PE",
+  "Social Studies": "SocialStudies",
+  "World Languages": "Language",
+  "Health": "Health",
+  "Agriculture": "Agriculture",
+  "Arts": "Arts",
+  "CTE": "CTE",
+  "English": "English",
+  "Mathematics": "Mathematics",
+  "Music": "Music",
+  "Science": "Science"
+};
+
+// Helper function to normalize subject names for comparison
+function normalizeSubjectForComparison(filterLabel) {
+  const normalized = filterLabel.trim();
+  // Use mapping if exists, otherwise return the label as-is (for case-insensitive matching)
+  if (subjectMapping.hasOwnProperty(normalized)) {
+    return subjectMapping[normalized].toLowerCase();
+  }
+  return normalized.toLowerCase();
+}
+
 function updateFilterButtons() {
-  // Get all unique subjects from the courseMap
-  const allCourses = Array.from(courseMap.values());
-  const subjects = [...new Set(allCourses.map(course => course.getSubject()))];
+  // Hardcoded formal subjects
+  const subjects = [
+    "Agriculture", 
+    "Arts", 
+    "Business", 
+    "CTE", 
+    "English", 
+    "Mathematics", 
+    "Music", 
+    "Physical Education", 
+    "Science", 
+    "Social Studies", 
+    "World Languages"
+  ];
   
-  console.log("Available subjects:", subjects);
+  console.log("Using formal subjects:", subjects);
   
   // Find the filter area
   const filterArea = document.querySelector('.filterArea');
@@ -31,7 +68,7 @@ function updateFilterButtons() {
     // Update the visual state of all filter chips based on current filters
     const filterChips = document.querySelectorAll('md-filter-chip');
     filterChips.forEach(chip => {
-      const chipLabel = chip.label.toLowerCase();
+      const chipLabel = chip.label; // Keep original case for comparison
       if (curentFilters.includes(chipLabel)) {
         chip.selected = true;
       } else {
@@ -54,6 +91,7 @@ function load() {
   setTimeout(() => {
     updateFilterButtons();
     const allCourses = Array.from(courseMap.values());
+    shuffleArray(allCourses);
     loadClasses(allCourses);
   }, 100);
   
@@ -121,13 +159,23 @@ function addFilter(filter) {
   }
 }
 
-function filterCourses(course, bookmark) {
-  if(curentFilters.includes('Bookmarked')) {
-    return curentFilters.includes(course.getSubject()) || bookmarks.includes(course.getClassName());
-  } else {
-    return curentFilters.includes(course.getSubject());
-  }
+function filterCourses(course) {
+  const courseSubject = course.getSubject().toLowerCase();
   
+  // Check if Bookmarked filter is active
+  if(curentFilters.some(f => f.toLowerCase() === 'bookmarked')) {
+    const matchesSubject = curentFilters.some(filter => {
+      if (filter.toLowerCase() === 'bookmarked') return false;
+      const normalizedFilter = normalizeSubjectForComparison(filter);
+      return normalizedFilter === courseSubject;
+    });
+    return matchesSubject || bookmarks.includes(course.getClassName());
+  } else {
+    return curentFilters.some(filter => {
+      const normalizedFilter = normalizeSubjectForComparison(filter);
+      return normalizedFilter === courseSubject;
+    });
+  }
 }
 
 function dothing() {
@@ -191,15 +239,19 @@ function dothing() {
 
       for (let j = 0; j < curentFilters.length; j++) {
         const filter = curentFilters[j];
+        const courseSubject = course.getSubject().toLowerCase();
 
-        if (filter === "bookmarked") {
+        if (filter.toLowerCase() === "bookmarked") {
           if (bookmarks.includes(course.getClassName())) {
-            shoulshouldShowdShow = true;
+            shouldShow = true;
             break;
           }
-        } else if (filter.toLowerCase() === course.getSubject().toLowerCase()) {
-          shouldShow = true;
-          break;
+        } else {
+          const normalizedFilter = normalizeSubjectForComparison(filter);
+          if (normalizedFilter === courseSubject) {
+            shouldShow = true;
+            break;
+          }
         }
       }
     }
@@ -411,6 +463,22 @@ function openClass(courseId) {
 }
 
 function openPrereq(className) {
-    console.log('Opening class:', className);
-    window.location.href = './newClassPageLayoutTest.html?category=' + encodeURIComponent(className);
+    console.log('Opening prerequisite:', className);
+    
+    // Find course by name to get its ID
+    const allCourses = Array.from(courseMap.values());
+    // Try exact match first, then case-insensitive
+    let targetCourse = allCourses.find(c => c.getClassName() === className);
+    
+    if (!targetCourse) {
+        targetCourse = allCourses.find(c => c.getClassName().toLowerCase() === className.toLowerCase());
+    }
+    
+    if (targetCourse) {
+        window.location.href = './newClassPageLayoutTest.html?courseId=' + targetCourse.getCourseId();
+    } else {
+        console.error('Prerequisite course not found:', className);
+        // Fallback to search or alert if needed, but for now just log error
+        alert("Course page not found for: " + className);
+    }
 }

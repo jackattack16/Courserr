@@ -88,7 +88,10 @@ class Class {
     getAverageTimePerWeek() {
         if (!Array.isArray(this.averageTimePerWeek) || this.averageTimePerWeek.length === 0) return 0;
         const sum = this.averageTimePerWeek.reduce((acc, val) => acc + val, 0);
-        return sum
+        return Math.round(sum / this.averageTimePerWeek.length);
+    }
+    getTimePerWeekLog() {
+        return this.averageTimePerWeek;
     }
     getIcon() { return this.icon; }
     getClassName() { return this.className; }
