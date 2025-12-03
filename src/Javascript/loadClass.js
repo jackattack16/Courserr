@@ -1,75 +1,14 @@
 // this file handles loading individual class pages
 // pretty much just takes the course name from URL and displays all the info
-function loadClassData() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const categoryParam = urlParams.get('category');
-  let courseName = '';
-
-  if (categoryParam) {
-      courseName = decodeURIComponent(categoryParam);
-      console.log('found course from URL:', courseName);
-  } else {
-      // fallback for older URLs
-      const courseParam = urlParams.get('course');
-      if (courseParam) {
-          courseName = courseParam;
-          console.log('got course from fallback:', courseName);
-      }
-  }
-  
-  if (!courseMap) {
-    console.error('courseMap not loaded yet!');
-    return null;
-  }
-  
-  // try exact match first
-  if (courseName && courseMap.has(courseName)) {
-    const course = courseMap.get(courseName);
-    console.log('found exact match:', course.getClassName());
-    return course;
-  } 
-  
-  // try case insensitive match
-  if (courseName && courseMap) {
-    console.log('exact match failed, trying case-insensitive...');
-    const allCourses = Array.from(courseMap.keys());
-    
-    const match = allCourses.find(name => name.toLowerCase() === courseName.toLowerCase());
-    if (match) {
-      console.log('Found case-insensitive match:', match);
-      return courseMap.get(match);
-    }
-    
-    // try partial matching
-    const partialMatch = allCourses.find(name => 
-      name.toLowerCase().includes(courseName.toLowerCase()) ||
-      courseName.toLowerCase().includes(name.toLowerCase())
-    );
-    if (partialMatch) {
-      console.log('Found partial match:', partialMatch);
-      return courseMap.get(partialMatch);
-    }
-  }
-  
-  // course not found
-  console.error('course not found:', courseName);
-  if (courseMap) {
-    console.log('Available courses are:');
-    Array.from(courseMap.keys()).forEach((name, index) => {
-      console.log(`${index + 1}. "${name}"`);
-    });
-  }
-  return null;
-}
-
-function displayCourseDetails() {
+function displayCourseDetails(courseId) {
+  console.log(typeof(courseId));
   console.log('loading course details...');
-  const course = loadClassData();
-  
-  if (!course) {
-    console.error('no course data available');
-    return;
-  }
+  const course = courseMap.get(Number(courseId));
+  console.log(course.getCourseId());
+  // if (!course) { 
+  //   console.error('no course data available');
+  //   return;
+  // }
   
   console.log('course loaded:', course.getClassName());
   
@@ -98,7 +37,6 @@ function displayCourseDetails() {
     headerElements[i].classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
     console.log("changed colour")
   }
-  document.getElementById('aiColorChange').classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
   for(let i = 0; i < halfElements.length; i++) {
     halfElements[i].classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
     console.log("changed colour");

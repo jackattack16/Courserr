@@ -227,7 +227,7 @@ function makeHTML(course, fill) {
   const subjectClass = course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase();
   if (fill === true) {
     let classCardDiv = `<div class="classCard ${subjectClass}" onclick="openClass('${course.getClassName()}')" >`;
-    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded"${unfilled}>${course.getIcon()}</span><div class="className" onclick="openClass('${course.getClassName()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 1" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
+    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded"${unfilled}>${course.getIcon()}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 1" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
     // Add subjectClass to classRate for color
     let starDiv = `<div class="classRate ${subjectClass}">` + numberToStars(course.getAverageRating()) + `</div>`;
     let descriptionDiv = `<div class="classDes">${course.getDescription()}</div></div>`;
@@ -235,7 +235,7 @@ function makeHTML(course, fill) {
     bodyHTML += htmlCard;
   } else {
     let classCardDiv = `<div class="classCard ${subjectClass}"  >`;
-    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded"${unfilled}>${course.getIcon()}</span><div class="className" onclick="openClass('${course.getClassName()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
+    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded"${unfilled}>${course.getIcon()}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
     // Add subjectClass to classRate for color
     let starDiv = `<div class="classRate ${subjectClass}">` + numberToStars(course.getAverageRating()) + `</div>`;
     let descriptionDiv = `<div class="classDes">${course.getDescription()}</div></div>`;
@@ -405,9 +405,9 @@ function fav(element) {
     //alert(sessionStorage.getItem("bookmarks"));
 }
 
-function openClass(className) {
-    console.log('Opening class:', className);
-    window.location.href = './newClassPageLayoutTest.html?category=' + encodeURIComponent(className);
+function openClass(courseId) {
+    //console.log('Opening class:', className);
+    window.location.href = './newClassPageLayoutTest.html?courseId=' + encodeURIComponent(courseId);
 }
 
 function openPrereq(className) {

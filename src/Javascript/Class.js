@@ -1,5 +1,7 @@
+
 class Class {
-    constructor(dualCredit, subject, usualGrade, prerequisite, duration, semesterOffered, honorsAP, description, ratings = [], comments = [], averageTimePerWeek = [], icon, className, grades = [], classDifficulty = [], tags = []) {
+  static nextId = 1;
+    constructor(dualCredit, subject, usualGrade, prerequisite, duration, semesterOffered, honorsAP, description, ratings = [], comments = [], averageTimePerWeek = [], icon, className, grades = [], classDifficulty = [], tags = [], courseId) {
         this.dualCredit = dualCredit;
         this.subject = subject;
         this.usualGrade = usualGrade;
@@ -19,8 +21,8 @@ class Class {
         this.semesterOffered = semesterOffered; // 'Both', 'Fall', 'Spring'
         this.classDifficulty = classDifficulty; // Array of difficulty ratings
         this.tags = tags; // Array of tags for this class
+        this.courseId = courseId ?? Class.nextId++;
     }
-
     validateRating(rating) {
         if (rating >= 0 && rating <= 5) {
             return true;
@@ -103,6 +105,9 @@ class Class {
         if (!Array.isArray(this.classDifficulty) || this.classDifficulty.length === 0) return 0;
         const sum = this.classDifficulty.reduce((acc, val) => acc + val, 0);
         return sum
+    }
+    getCourseId() {
+      return this.courseId;
     }
     
     getTags() { return this.tags; }

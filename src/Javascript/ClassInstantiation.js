@@ -178,7 +178,7 @@ const AdvancedAnimalScience = new Class(
     "Advanced Animal Science", // className
     ['A', 'B+', 'A-', 'B', 'A'], // grades
     [2, 4, 3, 3, 2], //classDifficulty
-    ["Advanced Biology", "Animal Industry", "Global Market", "Dual Credit"] // tags
+    ["Advanced Biology", "Animal Industry", "Global Market", "Dual Credit"], // tags
 );
 
 
@@ -3270,322 +3270,318 @@ const heritageSpanish = new Class(
 
 
 
-
-
-
-
 const courseMap = new Map();
 
 
 
-courseMap.set("Manufacturing And Welding", manufacturingAndWelding);
+courseMap.set(manufacturingAndWelding.getCourseId(), manufacturingAndWelding);
 
-courseMap.set("Advanced Plant Science", AdvancedPlantScience);
+courseMap.set(AdvancedPlantScience.getCourseId(), AdvancedPlantScience);
 
-courseMap.set("Activism & Social Justice Lit. (literature)", activismAndSocialJusticeLit);
+courseMap.set(activismAndSocialJusticeLit.getCourseId(), activismAndSocialJusticeLit);
 
-courseMap.set("Introduction to Human Services", introductionToHumanServices);
+courseMap.set(introductionToHumanServices.getCourseId(), introductionToHumanServices);
 
-courseMap.set("Physical Science", physicalScience);
+courseMap.set(physicalScience.getCourseId(), physicalScience);
 
-courseMap.set("Business Engagement Collaborative – Dual Credit Course", businessEngagementCollaborative);
+courseMap.set(businessEngagementCollaborative.getCourseId(), businessEngagementCollaborative);
 
-courseMap.set("Itec Contract Advanced Technology", itecContractAdvancedTechnology);
+courseMap.set(itecContractAdvancedTechnology.getCourseId(), itecContractAdvancedTechnology);
 
-courseMap.set("Agriculture, Food, & Natural Resources", AgricultureFoodAndNaturalResources);
+courseMap.set(AgricultureFoodAndNaturalResources.getCourseId(), AgricultureFoodAndNaturalResources);
 
-courseMap.set("German I", german1);
+courseMap.set(german1.getCourseId(), german1);
 
-courseMap.set("Advanced Graphic Design", advancedGraphicDesign);
+courseMap.set(advancedGraphicDesign.getCourseId(), advancedGraphicDesign);
 
-courseMap.set("English 9 Workshop (writing)", english9Workshop);
+courseMap.set(english9Workshop.getCourseId(), english9Workshop);
 
-courseMap.set("Computer Aided Manufacturing", ComputerAidedManufacturing);
+courseMap.set(ComputerAidedManufacturing.getCourseId(), ComputerAidedManufacturing);
 
-courseMap.set("Computer Science", computerScience);
+courseMap.set(computerScience.getCourseId(), computerScience);
 
-courseMap.set("AP US History", apUSHistory);
+courseMap.set(apUSHistory.getCourseId(), apUSHistory);
 
-courseMap.set("Percussion Techniques", percussionTechniques);
+courseMap.set(percussionTechniques.getCourseId(), percussionTechniques);
 
-courseMap.set("Agricultural Business Foundation", AgriculturalBusinessFoundation);
+courseMap.set(AgriculturalBusinessFoundation.getCourseId(), AgriculturalBusinessFoundation);
 
-courseMap.set("Agricultural Power and Technology", AgriculturalPowerAndTechnology);
+courseMap.set(AgriculturalPowerAndTechnology.getCourseId(), AgriculturalPowerAndTechnology);
 
-courseMap.set("Spanish IV", spanish4);
+courseMap.set(spanish4.getCourseId(), spanish4);
 
-courseMap.set("American Literature (writing & literature)", americanLiterature);
+courseMap.set(americanLiterature.getCourseId(), americanLiterature);
 
-courseMap.set("English 9 Literature (literature)", english9Literature);
+courseMap.set(english9Literature.getCourseId(), english9Literature);
 
-courseMap.set("Advanced Manufacturing And Welding", advancedManufacturingAndWelding);
+courseMap.set(advancedManufacturingAndWelding.getCourseId(), advancedManufacturingAndWelding);
 
-courseMap.set("Earth and Space Science", earthAndSpaceScience);
+courseMap.set(earthAndSpaceScience.getCourseId(), earthAndSpaceScience);
 
-courseMap.set("US History", usHistory);
+courseMap.set(usHistory.getCourseId(), usHistory);
 
-courseMap.set("Carpentry 2", carpentry2);
+courseMap.set(carpentry2.getCourseId(), carpentry2);
 
-courseMap.set("Marketing And Selling", marketingAndSelling);
+courseMap.set(marketingAndSelling.getCourseId(), marketingAndSelling);
 
-courseMap.set("French II", french2);
+courseMap.set(french2.getCourseId(), french2);
 
-courseMap.set("Biology", biology);
+courseMap.set(biology.getCourseId(), biology);
 
-courseMap.set("AP English Language & Composition* (ENG 105 & 106) – Dual Credit Course", apEnglishLanguageAndComposition_ENG105_106);
+courseMap.set(apEnglishLanguageAndComposition_ENG105_106.getCourseId(), apEnglishLanguageAndComposition_ENG105_106);
 
-courseMap.set("Engineering Cadddrafting", engineeringCADDDrafting);
+courseMap.set(engineeringCADDDrafting.getCourseId(), engineeringCADDDrafting);
 
-courseMap.set("Science-Fiction Literature (literature)", scienceFictionLiterature);
+courseMap.set(scienceFictionLiterature.getCourseId(), scienceFictionLiterature);
 
-courseMap.set("Innovation Fitness: Individual Performance PE", innovationFitness);
+courseMap.set(innovationFitness.getCourseId(), innovationFitness);
 
-courseMap.set("Business And Personal Law", businessAndPersonalLaw);
+courseMap.set(businessAndPersonalLaw.getCourseId(), businessAndPersonalLaw);
 
-courseMap.set("French I", french1);
+courseMap.set(french1.getCourseId(), french1);
 
-courseMap.set("Advanced Drawing Painting Printmaking", advancedDrawingPaintingPrintmaking);
+courseMap.set(advancedDrawingPaintingPrintmaking.getCourseId(), advancedDrawingPaintingPrintmaking);
 
-courseMap.set("AP English Literature & Composition* (Lit 101 & 185) – Dual Credit Course", apEnglishLiteratureAndComposition_LIT101_185);
+courseMap.set(apEnglishLiteratureAndComposition_LIT101_185.getCourseId(), apEnglishLiteratureAndComposition_LIT101_185);
 
-courseMap.set("Introduction To Manufacturing", introductionToManufacturing);
+courseMap.set(introductionToManufacturing.getCourseId(), introductionToManufacturing);
 
-courseMap.set("Advanced Animal Science", AdvancedAnimalScience);
+courseMap.set(AdvancedAnimalScience.getCourseId(), AdvancedAnimalScience); 
 
-courseMap.set("Unified PE", unifiedPE);
+courseMap.set(unifiedPE.getCourseId(), unifiedPE); 
 
-courseMap.set("Internship Program Business", internshipProgramBusiness);
+courseMap.set(internshipProgramBusiness.getCourseId(), internshipProgramBusiness); 
 
-courseMap.set("Spanish III", spanish3);
+courseMap.set(spanish3.getCourseId(), spanish3); 
 
-courseMap.set("Weights II", weights2);
+courseMap.set(weights2.getCourseId(), weights2); 
 
-courseMap.set("Food Science & Safety", FoodScienceAndSafety);
+courseMap.set(FoodScienceAndSafety.getCourseId(), FoodScienceAndSafety); 
 
-courseMap.set("Shakespeare (literature)", shakespeare);
+courseMap.set(shakespeare.getCourseId(), shakespeare); 
 
-courseMap.set("Introduction to Business", introductionToBusiness);
+courseMap.set(introductionToBusiness.getCourseId(), introductionToBusiness); 
 
-courseMap.set("Spanish I", spanish1);
+courseMap.set(spanish1.getCourseId(), spanish1); 
 
-courseMap.set("Concert Band (Spring)", concertBandSpring);
+courseMap.set(concertBandSpring.getCourseId(), concertBandSpring); 
 
-courseMap.set("Animal Science", AnimalScience);
+courseMap.set(AnimalScience.getCourseId(), AnimalScience); 
 
-courseMap.set("Carpentry 1", carpentry1);
+courseMap.set(carpentry1.getCourseId(), carpentry1); 
 
-courseMap.set("Personal Finance", personalFinance);
+courseMap.set(personalFinance.getCourseId(), personalFinance); 
 
-courseMap.set("Heritage Spanish", heritageSpanish);
+courseMap.set(heritageSpanish.getCourseId(), heritageSpanish); 
 
-courseMap.set("Pre-Calculus (MAT 129)", preCalculus);
+courseMap.set(preCalculus.getCourseId(), preCalculus); 
 
-courseMap.set("Plant Science", PlantScience);
+courseMap.set(PlantScience.getCourseId(), PlantScience); 
 
-courseMap.set("Adv. Journalism (AHS Newspaper – The Web)", advancedJournalism);
+courseMap.set(advancedJournalism.getCourseId(), advancedJournalism); 
 
-courseMap.set("Advanced Business Engagement Collaborative – Dual Credit Course", advancedBusinessEngagementCollaborative);
+courseMap.set(advancedBusinessEngagementCollaborative.getCourseId(), advancedBusinessEngagementCollaborative); 
 
-courseMap.set("German II", german2);
+courseMap.set(german2.getCourseId(), german2); 
 
-courseMap.set("Early Childhood Education II", earlyChildhoodEducation2);
+courseMap.set(earlyChildhoodEducation2.getCourseId(), earlyChildhoodEducation2); 
 
-courseMap.set("Introduction to Agriscience", introductionToAgriscience);
+courseMap.set(introductionToAgriscience.getCourseId(), introductionToAgriscience); 
 
-courseMap.set("Introduction to Carpentry", introductiontoCarpentry);
+courseMap.set(introductiontoCarpentry.getCourseId(), introductiontoCarpentry); 
 
-courseMap.set("German III", german3);
+courseMap.set(german3.getCourseId(), german3); 
 
-courseMap.set("Multimedia Composition (writing)", multimediaComposition);
+courseMap.set(multimediaComposition.getCourseId(), multimediaComposition); 
 
-courseMap.set("Early Childhood Education III – Field Experience", earlyChildhoodEducation3);
+courseMap.set(earlyChildhoodEducation3.getCourseId(), earlyChildhoodEducation3); 
 
-courseMap.set("Spanish II", spanish2);
+courseMap.set(spanish2.getCourseId(), spanish2); 
 
-courseMap.set("Child Development II", childDevelopment2);
+courseMap.set(childDevelopment2.getCourseId(), childDevelopment2); 
 
-courseMap.set("Speech (writing)", speech);
+courseMap.set(speech.getCourseId(), speech); 
 
-courseMap.set("French IV", french4);
+courseMap.set(french4.getCourseId(), french4); 
 
-courseMap.set("Advanced Ceramics", advancedCeramics);
+courseMap.set(advancedCeramics.getCourseId(), advancedCeramics); 
 
-courseMap.set("AP European History", apEuropeanHistory);
+courseMap.set(apEuropeanHistory.getCourseId(), apEuropeanHistory); 
 
-courseMap.set("French III", french3);
+courseMap.set(french3.getCourseId(), french3); 
 
-courseMap.set("Horror Literature (literature)", horrorLiterature);
+courseMap.set(horrorLiterature.getCourseId(), horrorLiterature); 
 
-courseMap.set("German IV", german4);
+courseMap.set(german4.getCourseId(), german4); 
 
-courseMap.set("Internship Program 1 – Dual Credit Courses", internshipProgram1);
+courseMap.set(internshipProgram1.getCourseId(), internshipProgram1); 
 
-courseMap.set("Ceramics 1", ceramics1);
+courseMap.set(ceramics1.getCourseId(), ceramics1); 
 
-courseMap.set("Non-Western World", nonWesternWorld);
+courseMap.set(nonWesternWorld.getCourseId(), nonWesternWorld); 
 
-courseMap.set("Outdoor Recreation", outdoorRecreation);
+courseMap.set(outdoorRecreation.getCourseId(), outdoorRecreation); 
 
-courseMap.set("Web Design", webDesign);
+courseMap.set(webDesign.getCourseId(), webDesign); 
 
-courseMap.set("Mythology, Fantasy, Folklore (literature)", mythologyFantasyFolklore);
+courseMap.set(mythologyFantasyFolklore.getCourseId(), mythologyFantasyFolklore); 
 
-courseMap.set("Wind Symphony / Symphonic Band*", windSymphonySymphonicBand);
+courseMap.set(windSymphonySymphonicBand.getCourseId(), windSymphonySymphonicBand); 
 
-courseMap.set("AP Chemistry*", apChemistry);
+courseMap.set(apChemistry.getCourseId(), apChemistry); 
 
-courseMap.set("Algebra 1AB", algebra1AB);
+courseMap.set(algebra1AB.getCourseId(), algebra1AB); 
 
-courseMap.set("Geometry", geometry);
+courseMap.set(geometry.getCourseId(), geometry); 
 
-courseMap.set("Chemistry", chemistry);
+courseMap.set(chemistry.getCourseId(), chemistry); 
 
-courseMap.set("Photography 1", photography1);
+courseMap.set(photography1.getCourseId(), photography1); 
 
-courseMap.set("Woodworking 2", woodworking2);
+courseMap.set(woodworking2.getCourseId(), woodworking2); 
 
-courseMap.set("Symphony Orchestra (10-12)", symphonyOrchestra);
+courseMap.set(symphonyOrchestra.getCourseId(), symphonyOrchestra); 
 
-courseMap.set("Lifeguarding/WSI*", lifeguardingWSI);
+courseMap.set(lifeguardingWSI.getCourseId(), lifeguardingWSI); 
 
-courseMap.set("Advanced Photography", advancedPhotography);
+courseMap.set(advancedPhotography.getCourseId(), advancedPhotography); 
 
-courseMap.set("Internship Program (Internship 1 & Internship 2) – Dual Credit Courses", internshipProgram_HumanServices);
+courseMap.set(internshipProgram_HumanServices.getCourseId(), internshipProgram_HumanServices); 
 
-courseMap.set("Advanced Jewelry", advancedJewelry);
+courseMap.set(advancedJewelry.getCourseId(), advancedJewelry); 
 
-courseMap.set("Introduction to Journalism (writing)", introToJournalism);
+courseMap.set(introToJournalism.getCourseId(), introToJournalism); 
 
-courseMap.set("Physics", physics);
+courseMap.set(physics.getCourseId(), physics); 
 
-courseMap.set("Video Production", videoProduction);
+courseMap.set(videoProduction.getCourseId(), videoProduction); 
 
-courseMap.set("Statistics (MAT 157)", statistics);
+courseMap.set(statistics.getCourseId(), statistics); 
 
-courseMap.set("Western Civilization II", westernCiv2);
+courseMap.set(westernCiv2.getCourseId(), westernCiv2); 
 
-courseMap.set("Lifespan Nutrition and Wellness", lifespanNutritionAndWellness);
+courseMap.set(lifespanNutritionAndWellness.getCourseId(), lifespanNutritionAndWellness); 
 
-courseMap.set("AP US Government", apUSGovernment);
+courseMap.set(apUSGovernment.getCourseId(), apUSGovernment); 
 
-courseMap.set("Advanced 4-D art", advanced4DArt);
+courseMap.set(advanced4DArt.getCourseId(), advanced4DArt); 
 
-courseMap.set("Basic Composition (writing)", basicComposition);
+courseMap.set(basicComposition.getCourseId(), basicComposition); 
 
-courseMap.set("Lifetime Activities", lifetimeActivities);
+courseMap.set(lifetimeActivities.getCourseId(), lifetimeActivities); 
 
-courseMap.set("Foundations Of 4 Dart", foundationsOf4DArt);
+courseMap.set(foundationsOf4DArt.getCourseId(), foundationsOf4DArt); 
 
-courseMap.set("Freshman Choir", freshmanChoir);
+courseMap.set(freshmanChoir.getCourseId(), freshmanChoir); 
 
-courseMap.set("Concert Choir", concertChoir);
+courseMap.set(concertChoir.getCourseId(), concertChoir); 
 
-courseMap.set("Concert Band (Fall)", concertBandFall);
+courseMap.set(concertBandFall.getCourseId(), concertBandFall); 
 
-courseMap.set("Early Childhood Education I", earlyChildhoodEducation1);
+courseMap.set(earlyChildhoodEducation1.getCourseId(), earlyChildhoodEducation1); 
 
-courseMap.set("AP Physics*", apPhysics);
+courseMap.set(apPhysics.getCourseId(), apPhysics); 
 
-courseMap.set("Advertising", advertising);
+courseMap.set(advertising.getCourseId(), advertising); 
 
-courseMap.set("Drama", drama);
+courseMap.set(drama.getCourseId(), drama); 
 
-courseMap.set("Natural Resources", NaturalResources);
+courseMap.set(NaturalResources.getCourseId(), NaturalResources); 
 
-courseMap.set("SPIRIT (AHS Yearbook)", spiritYearbook);
+courseMap.set(spiritYearbook.getCourseId(), spiritYearbook); 
 
-courseMap.set("Accounting 2", accounting2);
+courseMap.set(accounting2.getCourseId(), accounting2); 
 
-courseMap.set("World Studies", worldStudies);
+courseMap.set(worldStudies.getCourseId(), worldStudies); 
 
-courseMap.set("Honors World Studies", honorsWorldStudies);
+courseMap.set(honorsWorldStudies.getCourseId(), honorsWorldStudies); 
 
-courseMap.set("Foundations Of 2 Dart", foundationsOf2DArt);
+courseMap.set(foundationsOf2DArt.getCourseId(), foundationsOf2DArt); 
 
-courseMap.set("Freshman Band (9)", freshmanBand9);
+courseMap.set(freshmanBand9.getCourseId(), freshmanBand9); 
 
-courseMap.set("Advanced 3 Dart", advanced3DArt);
+courseMap.set(advanced3DArt.getCourseId(), advanced3DArt); 
 
-courseMap.set("AP Biology*", apBiology);
+courseMap.set(apBiology.getCourseId(), apBiology); 
 
-courseMap.set("Graphic Design 1", graphicDesign1);
+courseMap.set(graphicDesign1.getCourseId(), graphicDesign1); 
 
-courseMap.set("Internship Program 2 – Dual Credit Courses", internshipProgram2);
+courseMap.set(internshipProgram2.getCourseId(), internshipProgram2); 
 
-courseMap.set("Entrepreneurship 1", entrepreneurship1);
+courseMap.set(entrepreneurship1.getCourseId(), entrepreneurship1); 
 
-courseMap.set("Freshman Orchestra (9)", freshmanOrchestra9);
+courseMap.set(freshmanOrchestra9.getCourseId(), freshmanOrchestra9); 
 
-courseMap.set("Drawing Painting Printmaking", drawingPaintingPrintmaking);
+courseMap.set(drawingPaintingPrintmaking.getCourseId(), drawingPaintingPrintmaking); 
 
-courseMap.set("Concert Chorale*", concertChorale);
+courseMap.set(concertChorale.getCourseId(), concertChorale); 
 
-courseMap.set("Accounting 1 – Dual Credit Course", accounting1);
+courseMap.set(accounting1.getCourseId(), accounting1); 
 
-courseMap.set("Sociology", sociology);
+courseMap.set(sociology.getCourseId(), sociology); 
 
-courseMap.set("Advanced Physics", advancedPhysics);
+courseMap.set(advancedPhysics.getCourseId(), advancedPhysics); 
 
-courseMap.set("Advanced Algebra 2", advancedAlgebra2);
+courseMap.set(advancedAlgebra2.getCourseId(), advancedAlgebra2); 
 
-courseMap.set("Advanced Creative Writing (11-12)* (ENG221) – Dual Credit Course", advancedCreativeWriting_ENG221);
+courseMap.set(advancedCreativeWriting_ENG221.getCourseId(), advancedCreativeWriting_ENG221); 
 
-courseMap.set("Aquatics", aquatics);
+courseMap.set(aquatics.getCourseId(), aquatics); 
 
-courseMap.set("Survey of Literature (12th) (Literature)", surveyOfLiterature12);
+courseMap.set(surveyOfLiterature12.getCourseId(), surveyOfLiterature12); 
 
-courseMap.set("World Literature 2* (LIT 151) (Offered 26-27) – Dual Credit Course", worldLiterature2_LIT151);
+courseMap.set(worldLiterature2_LIT151.getCourseId(), worldLiterature2_LIT151); 
 
-courseMap.set("Economics", economics);
+courseMap.set(economics.getCourseId(), economics); 
 
-courseMap.set("Jewelry 1", jewelry1);
+courseMap.set(jewelry1.getCourseId(), jewelry1); 
 
-courseMap.set("Foundations Of 3-D art", foundationsOf3DArt);
+courseMap.set(foundationsOf3DArt.getCourseId(), foundationsOf3DArt); 
 
-courseMap.set("Chamber Orchestra* (10-12)", chamberOrchestra);
+courseMap.set(chamberOrchestra.getCourseId(), chamberOrchestra); 
 
-courseMap.set("Western Civilization I", westernCiv1);
+courseMap.set(westernCiv1.getCourseId(), westernCiv1); 
 
-courseMap.set("Ag Research & Development Capstone", AgResearchAndDevelopmentCapstone);
+courseMap.set(AgResearchAndDevelopmentCapstone.getCourseId(), AgResearchAndDevelopmentCapstone); 
 
-courseMap.set("Creative Writing (writing)", creativeWriting10);
+courseMap.set(creativeWriting10.getCourseId(), creativeWriting10); 
 
-courseMap.set("Team Games/Sports", teamGamesSports);
+courseMap.set(teamGamesSports.getCourseId(), teamGamesSports); 
 
-courseMap.set("Advanced Chemistry", advancedChemistry);
+courseMap.set(advancedChemistry.getCourseId(), advancedChemistry); 
 
-courseMap.set("Twirler (10-12)", twirler);
+courseMap.set(twirler.getCourseId(), twirler); 
 
-courseMap.set("American Society Through Film* (HUM 121)", americanSocietyThroughFilm_HUM121);
+courseMap.set(americanSocietyThroughFilm_HUM121.getCourseId(), americanSocietyThroughFilm_HUM121); 
 
-courseMap.set("AP Calculus (AB) (MAT 211)", apCalculusAB);
+courseMap.set(apCalculusAB.getCourseId(), apCalculusAB); 
 
-courseMap.set("Child Development I", childDevelopment1);
+courseMap.set(childDevelopment1.getCourseId(), childDevelopment1); 
 
-courseMap.set("Contract Woodworking", contractWoodworking);
+courseMap.set(contractWoodworking.getCourseId(), contractWoodworking); 
 
-courseMap.set("Weights I", weights1);
+courseMap.set(weights1.getCourseId(), weights1); 
 
-courseMap.set("Entrepreneurship 3", entrepreneurship3);
+courseMap.set(entrepreneurship3.getCourseId(), entrepreneurship3); 
 
-courseMap.set("World Issues", worldIssues);
+courseMap.set(worldIssues.getCourseId(), worldIssues); 
 
-courseMap.set("AP Psychology", apPsychology);
+courseMap.set(apPsychology.getCourseId(), apPsychology); 
 
-courseMap.set("US Government", usGovernment);
+courseMap.set(usGovernment.getCourseId(), usGovernment); 
 
-courseMap.set("Microsoft Certification* – Dual Credit Course", microsoftCertification);
+courseMap.set(microsoftCertification.getCourseId(), microsoftCertification); 
 
-courseMap.set("Algebra 2", algebra2);
+courseMap.set(algebra2.getCourseId(), algebra2); 
 
-courseMap.set("Geometry AB", geometryAB);
+courseMap.set(geometryAB.getCourseId(), geometryAB); 
 
-courseMap.set("Architectural Cadddrafting", architecturalCADDDrafting);
+courseMap.set(architecturalCADDDrafting.getCourseId(), architecturalCADDDrafting); 
 
-courseMap.set("Entrepreneurship 2", entrepreneurship2);
+courseMap.set(entrepreneurship2.getCourseId(), entrepreneurship2); 
 
-courseMap.set("Survey of Literature (10th) (literature)", surveyOfLiterature10);
+courseMap.set(surveyOfLiterature10.getCourseId(), surveyOfLiterature10); 
 
-courseMap.set("Woodworking 1", woodworking1);
+courseMap.set(woodworking1.getCourseId(), woodworking1); 
 
-courseMap.set("Algebra 1*", algebra1);
+courseMap.set(algebra1.getCourseId(), algebra1); 
