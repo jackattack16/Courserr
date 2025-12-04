@@ -436,9 +436,11 @@ function clearSearch() {
 const searchBar = document.getElementById('search-container');
 console.log(searchBar);
 searchBar.addEventListener("focusout", (event) => {
-  const searchInput = document.getElementById('searchInput');
-  searchInput.value = '';
-  searchCourses();
+  setTimeout(() => {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.value = '';
+    searchCourses();
+  }, 100);
 });
 
 function fav(element) {
