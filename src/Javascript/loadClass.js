@@ -89,9 +89,15 @@ function displayCourseDetails(courseId) {
   if (quickHitsEl) {
 
 
+    const timeLog = course.getTimePerWeekLog();
+    const gradesLog = course.getGrades();
+    
+    const homeworkDisplay = (timeLog && timeLog.length >= 3) ? `~${course.getAverageTimePerWeek() || 2} hours/week` : "TBD";
+    const gradeDisplay = (gradesLog && gradesLog.length >= 3) ? (course.getAverageGrade() || 'B') : "TBD";
+
     quickHitsEl.innerHTML += `
-      <div class='elevated-rectangle'>Homework: ~${course.getAverageTimePerWeek() || 2} hours/week</div>
-      <div class ='elevated-rectangle'>Average Grade: ${course.getAverageGrade() || 'B'}</div>
+      <div class='elevated-rectangle'>Homework: ${homeworkDisplay}</div>
+      <div class ='elevated-rectangle'>Average Grade: ${gradeDisplay}</div>
       <div class ='elevated-rectangle'>Duration: ${course.getDuration()}</div>
       <div class ='elevated-rectangle'>Grade Level: ${course.getUsualGrade()}</div>
       <div class ='elevated-rectangle'>Dual Credit: ${course.getDualCredit() ? 'Yes' : 'No'}</div>
@@ -225,7 +231,7 @@ function loadDynamicTags(course) {
   const courseTags = course.getTags();
   console.log('Course tags:', courseTags);
   
-  if (courseTags && courseTags.length > 0) {
+  if (courseTags && courseTags.length >= 3) {
     // Create tag elements for each tag
     courseTags.forEach(tag => {
       const tagElement = document.createElement('div');
@@ -234,15 +240,27 @@ function loadDynamicTags(course) {
       tagsHolder.appendChild(tagElement);
     });
   } else {
+    // Show TBD if not enough tags
+    const tbdElement = document.createElement('div');
+    tbdElement.className = 'elevated-rectangle-half';
+    tbdElement.textContent = "Tags: TBD";
+    tagsHolder.appendChild(tbdElement);
+  }
     // Default tags if none are provided
-    const defaultTags = ['Academic', 'Core Subject'];
+    /* const defaultTags = ['Academic', 'Core Subject'];
+    defaultTags.forEach(tag => {
+      const tagElement = document.createElement('div');
+      tagElement.className = 'elevated-rectangle-half';
+      tagElement.textContent = tag;
+  }
+    // Default tags if none are provided
+    /* const defaultTags = ['Academic', 'Core Subject'];
     defaultTags.forEach(tag => {
       const tagElement = document.createElement('div');
       tagElement.className = 'elevated-rectangle-half';
       tagElement.textContent = tag;
       tagsHolder.appendChild(tagElement);
-    });
-  }
+    }); */
   
   console.log('Dynamic tags loaded successfully');
 }
@@ -288,7 +306,7 @@ function createDynamicGraph(course) {
   }
   
   // get the course data we need
-  const hours = course.getAverageTimePerWeek();
+  const hours = course.getTimePerWeekLog(); // Use the raw log, not the average
   const grades = course.getGrades();
   
   console.log('course hours:', hours);
@@ -322,18 +340,24 @@ function createDynamicGraph(course) {
   
   // if we don't have enough data, create some sample points
   if (dataPoints.length < 3) {
-    const avgHours = course.getAverageTimePerWeek();
-    const avgGrade = course.getAverageGrade();
-    const avgGradeValue = gradeValues[avgGrade] || 9; // default to B
+    // Not enough data points to show a meaningful graph
+    console.log('Not enough data points for graph (< 3). Hiding graph or showing message.');
     
-    console.log('creating sample data. avg hours:', avgHours, 'avg grade:', avgGrade);
-    
-    // create some points around the average
-    dataPoints.push(
-      { x: avgGradeValue - 1, y: Math.max(0, avgHours - 1) },
-      { x: avgGradeValue, y: avgHours },
-      { x: avgGradeValue + 1, y: avgHours + 1 }
-    );
+    // Option 1: Hide the canvas parent container or show a message
+    const chartContainer = canvas.parentElement; // Assuming canvas is in a container
+    if (chartContainer) {
+       // You might want to replace the canvas with a message div
+       const messageDiv = document.createElement('div');
+       messageDiv.className = 'elevated-rectangle';
+       messageDiv.style.textAlign = 'center';
+       messageDiv.style.width = '100%';
+       messageDiv.textContent = 'Graph Data: TBD (Insufficient Data)';
+       
+       // Insert message before canvas and hide canvas
+       canvas.parentNode.insertBefore(messageDiv, canvas);
+       canvas.style.display = 'none';
+    }
+    return; // Stop graph creation
   }
   
   console.log('final data points:', dataPoints);
