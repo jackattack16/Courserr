@@ -469,18 +469,36 @@ function openPrereq(className) {
 
   // Find course by name to get its ID
   const allCourses = Array.from(courseMap.values());
-  // Try exact match first, then case-insensitive
+
+  // 1. Try exact match
   let targetCourse = allCourses.find(c => c.getClassName() === className);
 
+  // 2. Try case-insensitive exact match
   if (!targetCourse) {
     targetCourse = allCourses.find(c => c.getClassName().toLowerCase() === className.toLowerCase());
+  }
+
+  // 3. Try fuzzy match (token based)
+  if (!targetCourse) {
+    targetCourse = allCourses.find(c => {
+      // Normalize both strings: lowercase, replace special chars with space, trim excessive spaces
+      const normalize = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, ' ').replace(/\s+/g, ' ').trim();
+
+      const searchTokens = normalize(className).split(' ');
+      const targetTokens = normalize(c.getClassName()).split(' ');
+
+      // Check if ALL search tokens are present in the target tokens
+      // This allows "Foundations of 2-D Art" to match "Foundations of 2-Dimensional Art (2-D Art)"
+      // because "2", "d", "art" are all present in the target.
+      return searchTokens.length > 0 && searchTokens.every(token => targetTokens.includes(token));
+    });
   }
 
   if (targetCourse) {
     window.location.href = './newClassPageLayoutTest.html?courseId=' + targetCourse.getCourseId();
   } else {
     console.error('Prerequisite course not found:', className);
-    // Fallback to search or alert if needed, but for now just log error
+    // Fallback to search or alert if needed
     alert("Course page not found for: " + className);
   }
 }
