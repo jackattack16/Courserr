@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
   </script>
   <script type="module">
     import '@material/web/all.js';
-    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+    import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   </script>
 
@@ -52,15 +52,19 @@
       color: #006A6A;
       --md-icon-size: 48px;
     }
+
     md-icon.rounded {
       --md-icon-font: 'Material Symbols Rounded';
     }
+
     md-icon.sharp {
       --md-icon-font: 'Material Symbols Sharp';
     }
+
     md-icon.outlined {
       --md-icon-font: 'Material Symbols Outlined';
     }
+
     md-icon[filled] {
       font-variation-settings: 'FILL' 1;
     }
@@ -68,179 +72,180 @@
 </head>
 
 <body class="classPage" style="background-color: var(--light-bg)" id="body">
-    <div class="container" id="fullHeightDiv">
-        <img src="../Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
-        <img src="../Images/closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
-        <span class="material-symbols-rounded mode" style="font-size:5vh" onclick="modeChange()">light_mode</span>
-        <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
-          <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: calc(6vh + 1vw + 0.5vw)">
-            <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.location.href = './index.html'";>back</span>
-          </div>
-          <div class="sidebarItem">
-            <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.location.href = './index.html'";>flood</span>Home
-          </div>
-          <div class="sidebarItem">
-            <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.open('../handbook.pdf')">menu_book</span>Handbook
-          </div>
-          <div class="sidebarItem" onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
-            <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">groups</span>Clubs & Activities
-          </div>
-          <div class="sidebarItem">
-            <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.location.href = './help.html'">help</span>Help
-          </div>
-          
-          
+  <div class="container" id="fullHeightDiv">
+    <img src="../Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
+    <img src="../Images/closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
+    <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
+
+      <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose"
+        style="padding-left: calc(6vh + 1vw + 0.5vw)">
+        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
+          onclick="window.location.href = './index.html'" ;>back</span>
+      </div>
+      <div class="sidebarItem">
+        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
+          onclick="window.location.href = './index.html'" ;>flood</span>Home
+      </div>
+      <div class="sidebarItem">
+        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
+          onclick="window.open('../handbook.pdf')">menu_book</span>Handbook
+      </div>
+      <div class="sidebarItem"
+        onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
+        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">groups</span>Clubs & Activities
+      </div>
+      <div class="sidebarItem">
+        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
+          onclick="window.location.href = './help.html'">help</span>Help
+      </div>
+
+
+    </div>
+    <div class="main-content">
+      <div class="header" style="background-color: var(--light-mode-bg);height: 10vh;" id="header">
+        <div class="title">
+          <strong>Course<i>rr</i></strong>
+          <!--<button style="height: 10vh; width: 10vw">Click Me</button>-->
         </div>
-        <div class="main-content">
-          <div class="header" style="background-color: var(--light-mode-bg);height: 10vh;" id="header">
-                <div class="title"> 
-                  <strong>Course<i>rr</i></strong>
-                  <!--<button style="height: 10vh; width: 10vw">Click Me</button>-->
-                </div>
-        </div>
-        
-        
-        
-        </div>
+      </div>
 
 
-        <div class="main-content-class-page">
-        <div class="class-info-container" style="padding-top:12.5vh">
-            <div class="class-page-header">
-                <div class="class-page-header-left">
-                    <div class="class-title-teacher-holder">
 
-                        <h1 class="class-title" id="className">Loading...</h1>
-                        <hr class="title-teacher-break">
-                        <div class="class-teacher" id="teachers">Loading...</div>
+    </div>
 
-                    </div>
-                </div>
-                <div class="class-page-header-right">
 
-                    <div class="class-prerequisites" id="prereq">
+    <div class="main-content-class-page">
+      <div class="class-info-container" style="padding-top:12.5vh">
+        <div class="class-page-header">
+          <div class="class-page-header-left">
+            <div class="class-title-teacher-holder">
 
-                        <div class="elevated-rectangle-title">Prerequisites</div>
-                    </div>
+              <h1 class="class-title" id="className">Loading...</h1>
+              <hr class="title-teacher-break">
+              <div class="class-teacher" id="teachers">Loading...</div>
 
-                    <div class="class-tags">
-                      <div class="elevated-rectangle-title">Tags</div>
-                        <div class="class-tags-holder">
-                          <div class="elevated-rectangle-half">Reading Heavy</div>
-                          <div class="elevated-rectangle-half">Extra Credit</div>
-                          <div class="elevated-rectangle-half">Hard Tests</div>
-                          <div class="elevated-rectangle-half">Fun</div>
-                          <div class="elevated-rectangle-half">Engaging</div>
-                        </div>
-                    </div>
+            </div>
+          </div>
+          <div class="class-page-header-right">
 
-                    <div class="class-quick-info" id="quickHits">
+            <div class="class-prerequisites" id="prereq">
 
-                        <div class="elevated-rectangle-title">Quick Hits</div>
-
-                    </div>
-
-                </div>
+              <div class="elevated-rectangle-title">Prerequisites</div>
             </div>
 
-            <div class="class-page-half-box description classPageClassDecription" id="getColor">
-              <p class="description-paragraph">Loading...</p>
+            <div class="class-tags">
+              <div class="elevated-rectangle-title">Tags</div>
+              <div class="class-tags-holder">
+                <div class="elevated-rectangle-half">Reading Heavy</div>
+                <div class="elevated-rectangle-half">Extra Credit</div>
+                <div class="elevated-rectangle-half">Hard Tests</div>
+                <div class="elevated-rectangle-half">Fun</div>
+                <div class="elevated-rectangle-half">Engaging</div>
+              </div>
             </div>
 
-            <div class="class-page-half-box">
-              <canvas id="myChart" class='classPageGraphHalf'></canvas>
-            </div>
+            <div class="class-quick-info" id="quickHits">
 
-           
-        </div>
-
-
-
-
-
+              <div class="elevated-rectangle-title">Quick Hits</div>
 
             </div>
 
-       
+          </div>
+        </div>
+
+        <div class="class-page-half-box description classPageClassDecription" id="getColor">
+          <p class="description-paragraph">Loading...</p>
+        </div>
+
+        <div class="class-page-half-box">
+          <canvas id="myChart" class='classPageGraphHalf'></canvas>
+        </div>
 
 
-        
-</div>
+      </div>
 
 
 
-<script src="../Javascript/loadClass.js"></script>
 
-<script>
-let course;
-  window.onload = function() {
-        console.log('JavaScript is running!');
-        // Your onload logic
-        const params = new URLSearchParams(window.location.search);
-        let courseName = params.get('courseId');
-        console.log(courseName)
-        
-        // If course parameter doesn't exist, try category parameter (for backward compatibility)
-        if (!courseName) {
-          courseName = params.get('courseId');
-          if (courseName) {
-            // Convert underscores back to spaces for category parameter
-            courseName = courseName.replace(/_/g, ' ');
-          }
-        }
-        
-        
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+  <script src="../Javascript/loadClass.js"></script>
+
+  <script>
+    let course;
+    window.onload = function () {
+      console.log('JavaScript is running!');
+      // Your onload logic
+      const params = new URLSearchParams(window.location.search);
+      let courseName = params.get('courseId');
+      console.log(courseName)
+
+      // If course parameter doesn't exist, try category parameter (for backward compatibility)
+      if (!courseName) {
+        courseName = params.get('courseId');
         if (courseName) {
-          if (typeof displayCourseDetails === 'function') {
-            displayCourseDetails(courseName);
-          } else {
-           console.error('displayCourseDetails function not found');
-          }
-            console.log('Course: ' + courseName);
-        } else {
-           console.error('No course found in URL');
-            console.log('No course found');
+          // Convert underscores back to spaces for category parameter
+          courseName = courseName.replace(/_/g, ' ');
         }
+      }
+
+
+      if (courseName) {
+        if (typeof displayCourseDetails === 'function') {
+          displayCourseDetails(courseName);
+        } else {
+          console.error('displayCourseDetails function not found');
+        }
+        console.log('Course: ' + courseName);
+      } else {
+        console.error('No course found in URL');
+        console.log('No course found');
+      }
 
 
     };
 
-    function modeChange(thing) {
-        console.log("darkmode");
-        document.getElementsByTagName('style')[0].innerHTML="md-filter-chip { background-color: rgba(150, 150, 150, 0.5); --md-sys-color-outline:lightgrey;} .header {color: white;} .sidebar{color: white} .menuPic {filter: invert(100%)} .mode {filter: invert(100%)}";
-          document.getElementById('body').style.backgroundColor = "var(--dark-bg)";
-          document.getElementById('sidebar').style.backgroundColor = "var(--dark-mode-bg)";
-          document.getElementById('header').style.backgroundColor = "var(--dark-mode-bg)";
+
+    function openClose(closed) {
+      let lines = document.getElementById('lines');
+
+      let exes = document.getElementById('exes');
+      let text = document.getElementById('mobileClose');
+      let sidebar = document.getElementById('sidebar');
+      if (closed) {
+        exes.style.opacity = "1";
+        exes.style.transform = "rotate(-90deg)"
+        exes.style.zIndex = "1002";
+        lines.style.opacity = "0";
+        lines.style.transform = "rotate(90deg)";
+        lines.style.zIndex = "1001";
+        sidebar.style.transform = "translateX(0vw)"
+        text.style.opacity = "1";
+
+      } else {
+        exes.style.opacity = "0";
+        exes.style.transform = "rotate(0deg)"
+        exes.style.zIndex = "1001";
+        lines.style.opacity = "1";
+        lines.style.transform = "rotate(0deg)";
+        lines.style.zIndex = "1002";
+        sidebar.style.transform = "translateX(-40vw)"
+        text.style.opacity = "0";
       }
 
-      function openClose(closed) {
-  let lines = document.getElementById('lines');
-  let exes = document.getElementById('exes');
-  let text = document.getElementById('mobileClose');
-  let sidebar = document.getElementById('sidebar');
-  if(closed) {
-    exes.style.opacity = "1";
-    exes.style.transform = "rotate(-90deg)"
-    exes.style.zIndex = "1002";
-    lines.style.opacity = "0";
-    lines.style.transform = "rotate(90deg)";
-    lines.style.zIndex = "1001";
-    sidebar.style.transform = "translateX(0vw)"
-    text.style.opacity = "1";
-    
-  } else {
-    exes.style.opacity = "0";
-    exes.style.transform = "rotate(0deg)"
-    exes.style.zIndex = "1001";
-    lines.style.opacity = "1";
-    lines.style.transform = "rotate(0deg)";
-    lines.style.zIndex = "1002";
-    sidebar.style.transform = "translateX(-40vw)"
-    text.style.opacity = "0";
-  }
-
-}
-</script>
+    }
+  </script>
 
 </body>
+
 </html>
