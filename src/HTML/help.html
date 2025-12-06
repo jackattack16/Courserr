@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6N8FBM6L1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-H6N8FBM6L1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courserr - Help</title>
-    
+
     <link rel="icon" href="logo.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <link rel="stylesheet" href="../Style/style.css">
     <link rel="stylesheet" href="../Style/classColours.css">
-    
+
     <script type="importmap">
     {
       "imports": {
@@ -23,10 +36,10 @@
       }
     }
     </script>
-    
+
     <script type="module">
         import '@material/web/all.js';
-        import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
 
@@ -46,18 +59,22 @@
             margin: 0 auto;
             padding: 4rem 2rem;
             font-family: 'Roboto', sans-serif;
-            overflow-y: auto; /* Enable scrolling */
-            height: calc(100vh - 14.5vh); /* Adjust height for header */
+            overflow-y: auto;
+            /* Enable scrolling */
+            height: calc(100vh - 14.5vh);
+            /* Adjust height for header */
         }
-        
+
         /* Custom scrollbar for help container */
         .help-container::-webkit-scrollbar {
             width: 8px;
         }
+
         .help-container::-webkit-scrollbar-thumb {
             background-color: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
         }
+
         .help-container::-webkit-scrollbar-track {
             background: transparent;
         }
@@ -94,14 +111,14 @@
             background: white;
             border-radius: 16px;
             padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
 
         .card-icon {
@@ -137,16 +154,16 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .tracker-section {
             margin-top: 4rem;
             background: white;
             border-radius: 16px;
             padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
-        
+
         .tracker-title {
             font-size: 1.5rem;
             font-weight: 500;
@@ -154,7 +171,7 @@
             margin-bottom: 1rem;
             text-align: center;
         }
-        
+
         .chart-container {
             position: relative;
             height: 300px;
@@ -211,35 +228,27 @@
             height: 100%;
             flex-shrink: 0;
             background: linear-gradient(45deg,
-                #B5C9A8 0%, #90A4AE 16.67%, #E6CCB2 33.33%,
-                #E0C097 50%, #D7CCC8 66.67%, #E6EE9C 83.33%, #B5C9A8 100%);
+                    #B5C9A8 0%, #90A4AE 16.67%, #E6CCB2 33.33%,
+                    #E0C097 50%, #D7CCC8 66.67%, #E6EE9C 83.33%, #B5C9A8 100%);
             background-size: 400% 400%;
             animation: color-shift 8s ease-in-out infinite, wave-distort 12s ease-in-out infinite alternate;
-            clip-path: polygon(
-                0% 100%, 5% 90%, 10% 95%, 15% 85%, 20% 92%, 25% 88%, 30% 94%, 35% 86%, 40% 91%, 45% 87%,
-                50% 93%, 55% 89%, 60% 95%, 65% 87%, 70% 92%, 75% 88%, 80% 94%, 85% 90%, 90% 96%, 95% 88%, 100% 100%
-            );
+            clip-path: polygon(0% 100%, 5% 90%, 10% 95%, 15% 85%, 20% 92%, 25% 88%, 30% 94%, 35% 86%, 40% 91%, 45% 87%,
+                    50% 93%, 55% 89%, 60% 95%, 65% 87%, 70% 92%, 75% 88%, 80% 94%, 85% 90%, 90% 96%, 95% 88%, 100% 100%);
         }
 
         .wave-layer:nth-child(2) .wave-shape {
-            clip-path: polygon(
-                0% 100%, 7% 93%, 14% 97%, 21% 89%, 28% 95%, 35% 91%, 42% 97%, 49% 89%, 56% 93%, 63% 97%,
-                70% 90%, 77% 96%, 84% 92%, 91% 98%, 98% 94%, 100% 100%
-            );
+            clip-path: polygon(0% 100%, 7% 93%, 14% 97%, 21% 89%, 28% 95%, 35% 91%, 42% 97%, 49% 89%, 56% 93%, 63% 97%,
+                    70% 90%, 77% 96%, 84% 92%, 91% 98%, 98% 94%, 100% 100%);
         }
 
         .wave-layer:nth-child(3) .wave-shape {
-            clip-path: polygon(
-                0% 100%, 9% 89%, 18% 95%, 27% 91%, 36% 97%, 45% 90%, 54% 94%, 63% 88%, 72% 96%, 81% 92%,
-                90% 98%, 100% 100%
-            );
+            clip-path: polygon(0% 100%, 9% 89%, 18% 95%, 27% 91%, 36% 97%, 45% 90%, 54% 94%, 63% 88%, 72% 96%, 81% 92%,
+                    90% 98%, 100% 100%);
         }
 
         .wave-layer:nth-child(4) .wave-shape {
-            clip-path: polygon(
-                0% 100%, 5% 96%, 10% 88%, 15% 94%, 20% 90%, 25% 96%, 30% 92%, 35% 88%, 40% 94%, 45% 90%,
-                50% 96%, 55% 92%, 60% 88%, 65% 94%, 70% 90%, 75% 96%, 80% 92%, 85% 88%, 90% 94%, 95% 90%, 100% 100%
-            );
+            clip-path: polygon(0% 100%, 5% 96%, 10% 88%, 15% 94%, 20% 90%, 25% 96%, 30% 92%, 35% 88%, 40% 94%, 45% 90%,
+                    50% 96%, 55% 92%, 60% 88%, 65% 94%, 70% 90%, 75% 96%, 80% 92%, 85% 88%, 90% 94%, 95% 90%, 100% 100%);
         }
 
         .ripple-container {
@@ -255,21 +264,32 @@
             position: absolute;
             border-radius: 50%;
             background: radial-gradient(circle,
-                rgba(255, 255, 255, 0.8) 0%,
-                rgba(181, 201, 168, 0.6) 20%,
-                rgba(144, 164, 174, 0.4) 40%,
-                rgba(230, 204, 178, 0.2) 60%,
-                transparent 80%);
+                    rgba(255, 255, 255, 0.8) 0%,
+                    rgba(181, 201, 168, 0.6) 20%,
+                    rgba(144, 164, 174, 0.4) 40%,
+                    rgba(230, 204, 178, 0.2) 60%,
+                    transparent 80%);
             transform: scale(0);
             animation: ripple-expand 3s ease-out infinite;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
             display: none;
         }
 
-        .ripple:nth-child(1) { animation-delay: 0s; }
-        .ripple:nth-child(2) { animation-delay: 1s; }
-        .ripple:nth-child(3) { animation-delay: 2s; }
-        .ripple:nth-child(4) { animation-delay: 3s; }
+        .ripple:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .ripple:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .ripple:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        .ripple:nth-child(4) {
+            animation-delay: 3s;
+        }
 
         /* Floating particles for extra quirkiness */
         .particle {
@@ -302,12 +322,15 @@
                 transform: translateY(100vh) translateX(0px) rotate(0deg);
                 opacity: 0;
             }
+
             10% {
                 opacity: 0.6;
             }
+
             90% {
                 opacity: 0.6;
             }
+
             100% {
                 transform: translateY(-100px) translateX(50px) rotate(360deg);
                 opacity: 0;
@@ -315,36 +338,74 @@
         }
 
         @keyframes wave-flow {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         @keyframes color-shift {
-            0%, 100% { background-position: 0% 50%; opacity: 1; }
-            12.5% { background-position: 100% 0%; }
-            25% { background-position: 100% 100%; }
-            37.5% { background-position: 0% 100%; }
-            50% { background-position: 0% 0%; }
-            62.5% { background-position: 100% 0%; }
-            75% { background-position: 100% 100%; }
-            87.5% { background-position: 0% 100%; opacity: 0;}
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+                opacity: 1;
+            }
+
+            12.5% {
+                background-position: 100% 0%;
+            }
+
+            25% {
+                background-position: 100% 100%;
+            }
+
+            37.5% {
+                background-position: 0% 100%;
+            }
+
+            50% {
+                background-position: 0% 0%;
+            }
+
+            62.5% {
+                background-position: 100% 0%;
+            }
+
+            75% {
+                background-position: 100% 100%;
+            }
+
+            87.5% {
+                background-position: 0% 100%;
+                opacity: 0;
+            }
         }
 
         @keyframes wave-distort {
-            0%, 100% {
+
+            0%,
+            100% {
                 clip-path: polygon(0% 100%, 5% 90%, 10% 95%, 15% 85%, 20% 92%, 25% 88%, 30% 94%, 35% 86%, 40% 91%, 45% 87%, 50% 93%, 55% 89%, 60% 95%, 65% 87%, 70% 92%, 75% 88%, 80% 94%, 85% 90%, 90% 96%, 95% 88%, 100% 100%);
             }
+
             33% {
                 clip-path: polygon(0% 100%, 6% 88%, 12% 94%, 18% 86%, 24% 92%, 30% 88%, 36% 96%, 42% 84%, 48% 90%, 54% 96%, 60% 88%, 66% 92%, 72% 88%, 78% 94%, 84% 86%, 90% 92%, 96% 88%, 100% 100%);
             }
+
             66% {
                 clip-path: polygon(0% 100%, 4% 92%, 8% 86%, 12% 94%, 16% 88%, 20% 96%, 24% 84%, 28% 90%, 32% 96%, 36% 88%, 40% 92%, 44% 86%, 48% 94%, 52% 88%, 56% 96%, 60% 84%, 64% 90%, 68% 96%, 72% 88%, 76% 92%, 80% 86%, 84% 94%, 88% 88%, 92% 96%, 96% 84%, 100% 100%);
             }
+
             90% {
-              opacity: 1;
+                opacity: 1;
             }
+
             100% {
-              opacity: 0;
+                opacity: 0;
             }
         }
 
@@ -353,12 +414,15 @@
                 transform: scale(0);
                 opacity: 1;
             }
+
             30% {
                 opacity: 0.7;
             }
+
             70% {
                 opacity: 0.3;
             }
+
             100% {
                 transform: scale(2.5);
                 opacity: 0;
@@ -400,36 +464,43 @@
     <div class="container" id="fullHeightDiv">
         <img src="/Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
         <img src="closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
-        
+
         <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
-            <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: calc(6vh + 1vw + 0.5vw)">
+            <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose"
+                style="padding-left: calc(6vh + 1vw + 0.5vw)">
                 Close
             </div>
             <div class="sidebarItem">
-                <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.location.href = './index.html'">flood</span>Home
+                <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
+                    onclick="window.location.href = './index.html'">flood</span>Home
             </div>
             <div class="sidebarItem">
-                <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.open('../handbook.pdf')">menu_book</span>Handbook
+                <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
+                    onclick="window.open('../handbook.pdf')">menu_book</span>Handbook
             </div>
-            <div class="sidebarItem" onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
-                <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">groups</span>Clubs & Activities
+            <div class="sidebarItem"
+                onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
+                <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">groups</span>Clubs &
+                Activities
             </div>
             <div class="sidebarItem">
-                <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw" onclick="window.location.href = './help.html'">help</span>Help
+                <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
+                    onclick="window.location.href = './help.html'">help</span>Help
             </div>
         </div>
 
         <div class="main-content">
             <div class="header" style="background-color: white; box-shadow: 0 1px 4px rgba(0,0,0,0.1);" id="header">
-                <div class="title"> 
+                <div class="title">
                     <strong style="color: var(--text-grey)">Course<i>rr</i></strong>
                 </div>
             </div>
-            
+
             <div class="help-container">
                 <div class="hero-section">
                     <h1 class="hero-title">Made Just for Students Like You</h1>
-                    <p class="hero-subtitle">We put together a easy and and super-friendly design to help you discover amazing classes that actually fit your interests!</p>
+                    <p class="hero-subtitle">We put together a easy and and super-friendly design to help you discover
+                        amazing classes that actually fit your interests!</p>
                 </div>
 
                 <div class="feature-grid">
@@ -438,7 +509,8 @@
                         <span class="material-symbols-rounded card-icon">shuffle</span>
                         <h3 class="card-title">Fun Class Surprises!</h3>
                         <p class="card-text">
-                            We show new classes each time you venture to the main page! This allows for easy discovery of classes that might fit your unique interests. 
+                            We show new classes each time you venture to the main page! This allows for easy discovery
+                            of classes that might fit your unique interests.
                         </p>
                     </div>
 
@@ -447,7 +519,9 @@
                         <span class="material-symbols-rounded card-icon">monitoring</span>
                         <h3 class="card-title">See What to Expect</h3>
                         <p class="card-text">
-                            See information about classes, such as subject, descriptions, grade levels, and more at a glance. Additionaly, (coming soon), students will be able to share their unique experiences to help others find the perfect match.
+                            See information about classes, such as subject, descriptions, grade levels, and more at a
+                            glance. Additionaly, (coming soon), students will be able to share their unique experiences
+                            to help others find the perfect match.
                         </p>
                     </div>
 
@@ -456,7 +530,8 @@
                         <span class="material-symbols-rounded card-icon">account_tree</span>
                         <h3 class="card-title">Class Pathways</h3>
                         <p class="card-text">
-                            Figuring out what classes to take next can be confusing. But if you want to get somewhere, we have the tools. Easily see prerequisites for the classes you want to take!
+                            Figuring out what classes to take next can be confusing. But if you want to get somewhere,
+                            we have the tools. Easily see prerequisites for the classes you want to take!
                     </div>
 
                     <div class="feature-card">
@@ -464,11 +539,13 @@
                         <span class="material-symbols-rounded card-icon">search</span>
                         <h3 class="card-title">Search That Gets You</h3>
                         <p class="card-text">
-                            Finding classes can be hard. But searching is easy. So we desiged an easy system to discover classes based on the information we have on them! Seach for class names, subjects, or contents and see what you can discover!
+                            Finding classes can be hard. But searching is easy. So we desiged an easy system to discover
+                            classes based on the information we have on them! Seach for class names, subjects, or
+                            contents and see what you can discover!
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- <div class="tracker-section">
                     <h3 class="tracker-title">See Who's Here With You</h3>
                     <div class="chart-container">
@@ -488,7 +565,7 @@
             let exes = document.getElementById('exes');
             let text = document.getElementById('mobileClose');
             let sidebar = document.getElementById('sidebar');
-            if(closed) {
+            if (closed) {
                 exes.style.opacity = "1";
                 exes.style.transform = "rotate(-90deg)"
                 exes.style.zIndex = "1002";
@@ -508,11 +585,11 @@
                 text.style.opacity = "0";
             }
         }
-        
+
         // Visitor Tracker Chart
-        window.onload = function() {
+        window.onload = function () {
             const ctx = document.getElementById('visitorChart').getContext('2d');
-            
+
 
             // Simulate fetching visit timestamps (replace with actual data source like localStorage)
             // For demonstration, let's generate some random timestamps for the last 24 hours
@@ -559,7 +636,7 @@
                             borderWidth: 1,
                             displayColors: false,
                             callbacks: {
-                                label: function(tooltipItem) {
+                                label: function (tooltipItem) {
                                     return tooltipItem.yLabel + ' Students Online';
                                 }
                             }
@@ -612,7 +689,7 @@
         let rippleContainer = document.getElementById('rippleContainer');
         let lastMouseUpdate = 0;
 
-        document.addEventListener('mousemove', function(e) {
+        document.addEventListener('mousemove', function (e) {
             mouseX = e.clientX / window.innerWidth;
             mouseY = e.clientY / window.innerHeight;
 
@@ -708,10 +785,11 @@
         // Continuously create new particles
         setInterval(createParticle, 2000);
 
-        window.onload = function() {
+        window.onload = function () {
             updateVisitorChart(); // Initial chart load
             setInterval(updateVisitorChart, 60 * 1000); // Refresh every minute
         };
     </script>
 </body>
+
 </html>
