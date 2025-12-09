@@ -272,7 +272,24 @@ function dothing() {
 
 }
 
+const subjectToIcon = {
+  "Agriculture": "agriculture",
+  "Arts": "brush",
+  "business": "business_center",
+  "CTE": "carpenter",
+  "English": "book",
+  "Mathematics": "calculate",
+  "Music": "music_note_2",
+  "PE": "sports",
+  "Science": "science",
+  "SocialStudies": "globe",
+  "Language": "record_voice_over",
+  "humanservices": "accessibility_new"
+
+}
+
 function makeHTML(course, fill) {
+  console.log(subjectToIcon[course.getSubject()]);
   let bodyHTML = "";
   //console.log('makeHTML called for course:', course.getClassName());
   // Always use lowercase, no spaces, for subject class assignment
@@ -287,7 +304,7 @@ function makeHTML(course, fill) {
     bodyHTML += htmlCard;
   } else {
     let classCardDiv = `<div class="classCard ${subjectClass}"  >`;
-    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded"${unfilled}>${course.getIcon()}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
+    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded"${unfilled}>${subjectToIcon[course.getSubject()]}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
     // Add subjectClass to classRate for color
     let starDiv = `<div class="classRate ${subjectClass}">` + numberToStars(course.getAverageRating()) + `</div>`;
     let descriptionDiv = `<div class="classDes">${course.getDescription()}</div></div>`;
