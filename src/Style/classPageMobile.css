@@ -1,0 +1,46 @@
+
+@media (max-width: 768px) {
+
+  .class-page-header {
+    height: fit-content;
+    display: flex;
+    flex-direction: rows;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .class-page-header-left {
+    width: 100%;
+  }
+
+  .class-page-header-right {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .class-prerequisites {
+    width: 100%;
+  }
+
+  .class-title-teacher-holder {
+    background-color: transparent;
+    width: 100vw;
+  }
+  .class-title-teacher-holder > h1 {
+    font-size: 4vh;
+    font-weight: bolder;
+  }
+  .class-title-teacher-holder > div {
+    font-size: 2vh;
+    font-weight: normal;
+  }
+
+  .class-page-half-box {
+    WIDTH: 100%;
+  }
+
+  .description-paragraph {
+    font-size: 5vw;
+  }
+}

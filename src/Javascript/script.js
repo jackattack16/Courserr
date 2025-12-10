@@ -19,13 +19,15 @@ const subjectMapping = {
   "English": "English",
   "Mathematics": "Mathematics",
   "Music": "Music",
-  "Science": "Science"
+  "Science": "Science",
+  "Information Solutions": "informationsolutions"
 };
 
 // Helper function to normalize subject names for comparison
 function normalizeSubjectForComparison(filterLabel) {
   const normalized = filterLabel.trim();
   // Use mapping if exists, otherwise return the label as-is (for case-insensitive matching)
+  console.log(normalized);
   if (subjectMapping.hasOwnProperty(normalized)) {
     return subjectMapping[normalized].toLowerCase();
   }
@@ -45,7 +47,8 @@ function updateFilterButtons() {
     "Physical Education",
     "Science",
     "Social Studies",
-    "World Languages"
+    "World Languages",
+    "Information Solutions"
   ];
 
   console.log("Using formal subjects:", subjects);
@@ -274,29 +277,29 @@ function dothing() {
 
 const subjectToIcon = {
   "Agriculture": "agriculture",
-  "Arts": "brush",
+  "Arts": "palette",
   "business": "business_center",
-  "CTE": "carpenter",
-  "English": "book",
+  "CTE": "handyman",
+  "English": "auto_stories",
   "Mathematics": "calculate",
   "Music": "music_note_2",
-  "PE": "sports",
-  "Science": "science",
+  "PE": "exercise",
+  "Science": "rocket",
   "SocialStudies": "globe",
-  "Language": "record_voice_over",
-  "humanservices": "accessibility_new"
+  "Language": "translate",
+  "humanservices": "accessibility_new",
+  "informationsolutions": "climate_mini_split "
 
 }
-
+g
 function makeHTML(course, fill) {
-  console.log(subjectToIcon[course.getSubject()]);
   let bodyHTML = "";
   //console.log('makeHTML called for course:', course.getClassName());
   // Always use lowercase, no spaces, for subject class assignment
   const subjectClass = course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase();
   if (fill === true) {
     let classCardDiv = `<div class="classCard ${subjectClass}" onclick="openClass('${course.getClassName()}')" >`;
-    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded"${unfilled}>${course.getIcon()}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 1" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
+    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded class-icon"${unfilled}>${subjectToIcon[course.getSubject()]}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 1" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
     // Add subjectClass to classRate for color
     let starDiv = `<div class="classRate ${subjectClass}">` + numberToStars(course.getAverageRating()) + `</div>`;
     let descriptionDiv = `<div class="classDes">${course.getDescription()}</div></div>`;
@@ -304,7 +307,7 @@ function makeHTML(course, fill) {
     bodyHTML += htmlCard;
   } else {
     let classCardDiv = `<div class="classCard ${subjectClass}"  >`;
-    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded"${unfilled}>${subjectToIcon[course.getSubject()]}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
+    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded class-icon"${unfilled}>${subjectToIcon[course.getSubject()]}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
     // Add subjectClass to classRate for color
     let starDiv = `<div class="classRate ${subjectClass}">` + numberToStars(course.getAverageRating()) + `</div>`;
     let descriptionDiv = `<div class="classDes">${course.getDescription()}</div></div>`;
