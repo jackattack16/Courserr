@@ -23,9 +23,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link rel="stylesheet" href="../Style/style.css">
+    <link rel="stylesheet" href="../Style/sidebar.css">
     <link rel="stylesheet" href="../Style/classColours.css">
 
     <script type="importmap">
@@ -427,6 +429,14 @@
                 opacity: 0;
             }
         }
+
+        .material-symbols-rounded {
+          font-variation-settings:
+            'FILL' 1,
+            'wght' 500,
+            'GRAD' 200,
+            'opsz' 48;
+        }
     </style>
 </head>
 
@@ -461,36 +471,32 @@
     </div>
 
     <div class="container" id="fullHeightDiv">
-        <img src="/Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
-        <img src="closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
-
+        <span class="material-symbols-rounded menuMobile openMenu mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="lines" onclick="openClose(true)">menu</span>
+        <span class="material-symbols-rounded menuMobile mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="exes" onclick="openClose(false)">close</span>
         <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
-            <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose"
-                style="padding-left: calc(6vh + 1vw + 0.5vw)">
-                Close
+            <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: 7vh;"
+                ><p>Close</p>
             </div>
-            <div class="sidebarItem"onclick="window.location.href = './index.html'" ;>
-              <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
-                >flood</span>Home
+            <div class="sidebarItem" onclick="window.location.href = './index.html'" ;>
+                <span class="material-symbols-rounded sidebar-icon">flood</span><p>Home</p>
             </div>
             <!-- <div class="sidebarItem" onclick="window.open('https://forms.gle/BzNknKsfrAYHzkww7', '_blank').focus();">
                   <span class="material-symbols-rounded sidebar-icon no-fill" style="font-size:4vw">add</span>Rate class
                 </div> -->
-            <div class="sidebarItem" onclick="window.open('https://docs.google.com/document/d/1n4HRkpug7Vh7ZYWIeSQcKXRjLHPDzmVj/edit#heading=h.gjdgxs')">
-              <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
-                >menu_book</span>Handbook
+            <div class="sidebarItem"
+                onclick="window.open('https://docs.google.com/document/d/1n4HRkpug7Vh7ZYWIeSQcKXRjLHPDzmVj/edit#heading=h.gjdgxs')">
+                <span class="material-symbols-rounded sidebar-icon">menu_book</span><p>Handbook</p>
             </div>
             <div class="sidebarItem"
-              onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
-              <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">groups</span>Clubs & Activities
+                onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
+                <span class="material-symbols-rounded sidebar-icon no-fill">groups</span><p>Clubs & Activities</p>
             </div>
-            <div class="sidebarItem" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdDH42uqIz3Om26jL_gGW5gQYDMwOj298VUGsPA_PfuC-56Dw/viewform?usp=publish-editor', '_blank').focus()">
-              <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
-                >bug_report</span>Bugs/Issues
+            <div class="sidebarItem"
+                onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdDH42uqIz3Om26jL_gGW5gQYDMwOj298VUGsPA_PfuC-56Dw/viewform?usp=publish-editor', '_blank').focus()">
+                <span class="material-symbols-rounded sidebar-icon">bug_report</span><p>Bugs/Issues</p>
             </div>
             <div class="sidebarItem" onclick="window.location.href = './help.html'">
-              <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
-                >help</span>Help
+                <span class="material-symbols-rounded sidebar-icon">help</span><p>Help</p>
             </div>
         </div>
 
@@ -576,7 +582,6 @@
                 exes.style.zIndex = "1002";
                 lines.style.opacity = "0";
                 lines.style.transform = "rotate(90deg)";
-                lines.style.zIndex = "1001";
                 sidebar.style.transform = "translateX(0vw)"
                 text.style.opacity = "1";
             } else {
@@ -586,7 +591,7 @@
                 lines.style.opacity = "1";
                 lines.style.transform = "rotate(0deg)";
                 lines.style.zIndex = "1002";
-                sidebar.style.transform = "translateX(-40vw)"
+                sidebar.style.transform = "translateX(-75vw)"
                 text.style.opacity = "0";
             }
         }

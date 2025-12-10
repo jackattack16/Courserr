@@ -29,6 +29,7 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
   <link rel="stylesheet" href="../Style/style.css">
+  <link rel="stylesheet" href="../Style/sidebar.css">
   <link rel="stylesheet" href="../Style/classColours.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="importmap">
@@ -60,7 +61,6 @@
         'wght' 500,
         'GRAD' 200,
         'opsz' 48;
-      /*font-size: 4vh;*/
       transition: font-variation-settings 0.5s ease;
     }
 
@@ -82,9 +82,6 @@
     }
 
     @media (max-width:768px) {
-      .material-symbols-rounded {
-        font-size: 3vh;
-      }
     }
 
     .codePic {
@@ -93,6 +90,21 @@
       top: 92vh;
       position: absolute;
     }
+  .class-icon {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-size: max(1.75vw, 1.75vh);
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+  }
 
     md-filter-chip {
       transition: background-color 1.5s ease;
@@ -100,6 +112,10 @@
 
     md-sys-color {
       transition: outline-color 1.5s ease;
+    }
+
+    .sidebar-icon {
+      font-size: max(4vw, 7vh);
     }
   </style>
 
@@ -113,33 +129,32 @@
 
 
   <div class="container" id="fullHeightDiv">
-    <img src="/Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
-    <img src="closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
+    <span class="material-symbols-rounded menuMobile openMenu mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="lines" onclick="openClose(true)">menu</span>
+    <span class="material-symbols-rounded menuMobile mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="exes" onclick="openClose(false)">close</span>
     <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
-      <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose"
-        style="padding-left: calc(6vh + 1vw + 0.5vw)">
-        Close
+      <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: 7vh;"
+        ><p>Close</p>
       </div>
       <div class="sidebarItem" onclick="window.location.href = './index.html'" ;>
-        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">flood</span>Home
+        <span class="material-symbols-rounded sidebar-icon">flood</span><p>Home</p>
       </div>
       <!-- <div class="sidebarItem" onclick="window.open('https://forms.gle/BzNknKsfrAYHzkww7', '_blank').focus();">
             <span class="material-symbols-rounded sidebar-icon no-fill" style="font-size:4vw">add</span>Rate class
           </div> -->
       <div class="sidebarItem"
         onclick="window.open('https://docs.google.com/document/d/1n4HRkpug7Vh7ZYWIeSQcKXRjLHPDzmVj/edit#heading=h.gjdgxs')">
-        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">menu_book</span>Handbook
+        <span class="material-symbols-rounded sidebar-icon">menu_book</span><p>Handbook</p>
       </div>
       <div class="sidebarItem"
         onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
-        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">groups</span>Clubs & Activities
+        <span class="material-symbols-rounded sidebar-icon no-fill">groups</span><p>Clubs & Activities</p>
       </div>
       <div class="sidebarItem"
         onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdDH42uqIz3Om26jL_gGW5gQYDMwOj298VUGsPA_PfuC-56Dw/viewform?usp=publish-editor', '_blank').focus()">
-        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">bug_report</span>Bugs/Issues
+        <span class="material-symbols-rounded sidebar-icon">bug_report</span><p>Bugs/Issues</p>
       </div>
       <div class="sidebarItem" onclick="window.location.href = './help.html'">
-        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">help</span>Help
+        <span class="material-symbols-rounded sidebar-icon">help</span><p>Help</p>
       </div>
 
 
@@ -296,7 +311,6 @@
         exes.style.zIndex = "1002";
         lines.style.opacity = "0";
         lines.style.transform = "rotate(90deg)";
-        lines.style.zIndex = "1001";
         sidebar.style.transform = "translateX(0vw)"
         text.style.opacity = "1";
 
@@ -307,7 +321,7 @@
         lines.style.opacity = "1";
         lines.style.transform = "rotate(0deg)";
         lines.style.zIndex = "1002";
-        sidebar.style.transform = "translateX(-40vw)"
+        sidebar.style.transform = "translateX(-75vw)"
         text.style.opacity = "0";
       }
 
@@ -318,6 +332,37 @@
       let change = encodeURIComponent(classToOpen);
       window.location.href = './newClassPageLayoutTest.html?category=' + encodeURIComponent(change);
     }
+
+    // Mobile search: replace title when search is active
+    function initMobileSearchToggle() {
+      const searchInput = document.getElementById('searchInput');
+      const clearBtn = document.getElementById('clearSearch');
+      const body = document.getElementById('body');
+      if (!searchInput || !body) return;
+
+      const activate = () => body.classList.add('mobile-search-active');
+      const deactivate = () => {
+        if (!searchInput.value.trim()) {
+          body.classList.remove('mobile-search-active');
+        }
+      };
+
+      searchInput.addEventListener('focus', activate);
+      searchInput.addEventListener('input', () => {
+        if (searchInput.value.trim()) activate();
+        else deactivate();
+      });
+      searchInput.addEventListener('blur', () => setTimeout(deactivate, 150));
+
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          body.classList.remove('mobile-search-active');
+          searchInput.blur();
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initMobileSearchToggle);
 
   </script>
   <script src="../Javascript/script.js"></script>
