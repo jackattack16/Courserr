@@ -114,8 +114,14 @@
       transition: outline-color 1.5s ease;
     }
 
-    .sidebar-icon {
-      font-size: max(4vw, 7vh);
+  </style>
+
+  <style>
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .class-grid {
+        grid-template-columns: repeat(3, calc(80vw / 3)); /* Two columns on mobile */
+        padding: 2.5vw; /* Adjust padding for mobile */
+      }
     }
   </style>
 
