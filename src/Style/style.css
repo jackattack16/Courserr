@@ -167,7 +167,7 @@ body:not(.classPage) .class-grid {
   width: 95vw;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: left;
   align-items: flex-end;
   overflow-x: auto;
   overflow-y: hidden;

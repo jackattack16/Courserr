@@ -114,8 +114,14 @@
       transition: outline-color 1.5s ease;
     }
 
-    .sidebar-icon {
-      font-size: max(4vw, 7vh);
+  </style>
+
+  <style>
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .class-grid {
+        grid-template-columns: repeat(3, calc(80vw / 3)); /* Two columns on mobile */
+        padding: 2.5vw; /* Adjust padding for mobile */
+      }
     }
   </style>
 
@@ -135,7 +141,7 @@
       <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: 7vh;"
         ><p>Close</p>
       </div>
-      <div class="sidebarItem" onclick="window.location.href = './index.html'" ;>
+      <div class="sidebarItem" onclick="window.location.href = './allClasses.html'" ;>
         <span class="material-symbols-rounded sidebar-icon">flood</span><p>Home</p>
       </div>
       <!-- <div class="sidebarItem" onclick="window.open('https://forms.gle/BzNknKsfrAYHzkww7', '_blank').focus();">
@@ -153,7 +159,7 @@
         onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdDH42uqIz3Om26jL_gGW5gQYDMwOj298VUGsPA_PfuC-56Dw/viewform?usp=publish-editor', '_blank').focus()">
         <span class="material-symbols-rounded sidebar-icon">bug_report</span><p>Bugs/Issues</p>
       </div>
-      <div class="sidebarItem" onclick="window.location.href = './help.html'">
+      <div class="sidebarItem" onclick="window.location.href = '../index.html'">
         <span class="material-symbols-rounded sidebar-icon">help</span><p>Help</p>
       </div>
 
