@@ -98,15 +98,15 @@ function load() {
 
     // Move Dummy Classes to the top
     // DO NOT CHANGE UNLESS PROMPTED
-    const exampleNames = ["Example Class 4", "Example Class 3", "Example Class 2", "Example Class"];
+    // const exampleNames = ["Example Class 4", "Example Class 3", "Example Class 2", "Example Class"];
 
-    exampleNames.forEach(name => {
-      const idx = allCourses.findIndex(c => c.getClassName() === name);
-      if (idx > -1) {
-        const dummy = allCourses.splice(idx, 1)[0];
-        allCourses.unshift(dummy);
-      }
-    });
+    // exampleNames.forEach(name => {
+    //   const idx = allCourses.findIndex(c => c.getClassName() === name);
+    //   if (idx > -1) {
+    //     const dummy = allCourses.splice(idx, 1)[0];
+    //     allCourses.unshift(dummy);
+    //   }
+    // });
 
     loadClasses(allCourses);
   }, 100);
@@ -537,6 +537,6 @@ function openPrereq(className) {
   } else {
     console.error('Prerequisite course not found:', className);
     // Fallback to search or alert if needed
-    alert("Course page not found for: " + className);
+    alert("Course page not found for: " + className + ".\n\nTry searching for it on the home page instead.\n\nPrerequisites are in beta currently, and if you find any other problems, feel free to report them in the bugs form!");
   }
 }
