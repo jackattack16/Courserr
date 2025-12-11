@@ -95,6 +95,19 @@ function load() {
     updateFilterButtons();
     const allCourses = Array.from(courseMap.values());
     shuffleArray(allCourses);
+
+    // Move Dummy Classes to the top
+    // DO NOT CHANGE UNLESS PROMPTED
+    const exampleNames = ["Example Class 4", "Example Class 3", "Example Class 2", "Example Class"];
+
+    exampleNames.forEach(name => {
+      const idx = allCourses.findIndex(c => c.getClassName() === name);
+      if (idx > -1) {
+        const dummy = allCourses.splice(idx, 1)[0];
+        allCourses.unshift(dummy);
+      }
+    });
+
     loadClasses(allCourses);
   }, 100);
 
@@ -165,20 +178,23 @@ function addFilter(filter) {
 function filterCourses(course) {
   const courseSubject = course.getSubject().toLowerCase();
 
-  // Check if Bookmarked filter is active
-  if (curentFilters.some(f => f.toLowerCase() === 'bookmarked')) {
-    const matchesSubject = curentFilters.some(filter => {
-      if (filter.toLowerCase() === 'bookmarked') return false;
-      const normalizedFilter = normalizeSubjectForComparison(filter);
-      return normalizedFilter === courseSubject;
-    });
-    return matchesSubject || bookmarks.includes(course.getClassName());
-  } else {
-    return curentFilters.some(filter => {
-      const normalizedFilter = normalizeSubjectForComparison(filter);
-      return normalizedFilter === courseSubject;
-    });
+  const hasBookmarkFilter = curentFilters.some(f => f.toLowerCase() === 'bookmarked');
+  const subjectFilters = curentFilters.filter(f => f.toLowerCase() !== 'bookmarked');
+  if (hasBookmarkFilter && !bookmarks.includes(course.getClassName())) {
+    return false;
   }
+
+  if (subjectFilters.length > 0) {
+    const matchesSubject = subjectFilters.some(filter => {
+      const normalizedFilter = normalizeSubjectForComparison(filter);
+      return normalizedFilter === courseSubject;
+    });
+    if (!matchesSubject) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 function dothing() {
@@ -203,9 +219,26 @@ function dothing() {
   console.log("Search query:", searchQuery);
 
   if (curentFilters.length === 0 && !searchQuery) {
+    // Determine output targets
+    const columns = [
+      document.getElementById('col1'),
+      document.getElementById('col2'),
+      document.getElementById('col3'),
+      document.getElementById('col4')
+    ];
+    // Clear content? (Wait, dothing is usually called after clearing or when refreshing? 
+    // The original code appended to existing content? No, it looks like it assumes empty or appending?)
+    // Actually the original dothing didn't clear explicitly at the start, but filter() clears it at line 379. 
+    // searchCourses calls waitToSearch -> runSearch -> clears cols.
+    // clearSearch calls dothing. So dothing should PROBABLY clear or assume cleared.
+    // But let's stick to the original logic which just appends. 
+    // Wait, line 379 in `filter` CLEARS the innerHTML of `classGrid` (the container of cols? No, it REPLACES the `classGrid` content with new cols?)
+    // Yes: body.innerHTML = '...cols...' 
+    // So dothing runs on fresh columns.
+
     for (let i = 0; i < allCourses.length; i++) {
       const course = allCourses[i];
-      const colNum = (i % 4) + 1; // cycle 1 → 4
+      const colNum = (i % 4) + 1;
       const targetCol = document.getElementById(`col${colNum}`);
 
       if (bookmarks.includes(course.getClassName())) {
@@ -236,26 +269,10 @@ function dothing() {
         shouldShow = true;
       }
 
-      // Filter logic
+      // Filter logic - reuse filterCourses
       if (shouldShow && curentFilters.length > 0) {
-        shouldShow = false;
-
-        for (let j = 0; j < curentFilters.length; j++) {
-          const filter = curentFilters[j];
-          const courseSubject = course.getSubject().toLowerCase();
-
-          if (filter.toLowerCase() === "bookmarked") {
-            if (bookmarks.includes(course.getClassName())) {
-              shouldShow = true;
-              break;
-            }
-          } else {
-            const normalizedFilter = normalizeSubjectForComparison(filter);
-            if (normalizedFilter === courseSubject) {
-              shouldShow = true;
-              break;
-            }
-          }
+        if (!filterCourses(course)) {
+          shouldShow = false;
         }
       }
 
@@ -288,17 +305,18 @@ const subjectToIcon = {
   "SocialStudies": "globe",
   "Language": "translate",
   "humanservices": "accessibility_new",
-  "informationsolutions": "climate_mini_split "
+  "informationsolutions": "climate_mini_split ",
+  "exampleclass": "flutter_dash"
 
 }
-g
+
 function makeHTML(course, fill) {
   let bodyHTML = "";
   //console.log('makeHTML called for course:', course.getClassName());
   // Always use lowercase, no spaces, for subject class assignment
   const subjectClass = course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase();
   if (fill === true) {
-    let classCardDiv = `<div class="classCard ${subjectClass}" onclick="openClass('${course.getClassName()}')" >`;
+    let classCardDiv = `<div class="classCard ${subjectClass}"  >`;
     let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded class-icon"${unfilled}>${subjectToIcon[course.getSubject()]}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 1" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
     // Add subjectClass to classRate for color
     let starDiv = `<div class="classRate ${subjectClass}">` + numberToStars(course.getAverageRating()) + `</div>`;
