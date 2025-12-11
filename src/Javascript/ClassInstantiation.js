@@ -97,7 +97,7 @@ const PlantScience = new Class(
     [], // grades
     [], //classDifficulty
     [] // tags
-); 
+);
 
 const FoodScienceAndSafety = new Class(
     false, // dualCredit
@@ -116,7 +116,7 @@ const FoodScienceAndSafety = new Class(
     [], // grades
     [], //classDifficulty
     [] // tags
-); 
+);
 
 
 
@@ -3346,242 +3346,327 @@ courseMap.set(apEnglishLiteratureAndComposition_LIT101_185.getCourseId(), apEngl
 
 courseMap.set(introductionToManufacturing.getCourseId(), introductionToManufacturing);
 
-courseMap.set(AdvancedAnimalScience.getCourseId(), AdvancedAnimalScience); 
+courseMap.set(AdvancedAnimalScience.getCourseId(), AdvancedAnimalScience);
 
-courseMap.set(unifiedPE.getCourseId(), unifiedPE); 
+courseMap.set(unifiedPE.getCourseId(), unifiedPE);
 
-courseMap.set(internshipProgramBusiness.getCourseId(), internshipProgramBusiness); 
+courseMap.set(internshipProgramBusiness.getCourseId(), internshipProgramBusiness);
 
-courseMap.set(spanish3.getCourseId(), spanish3); 
+courseMap.set(spanish3.getCourseId(), spanish3);
 
-courseMap.set(weights2.getCourseId(), weights2); 
+courseMap.set(weights2.getCourseId(), weights2);
 
-courseMap.set(FoodScienceAndSafety.getCourseId(), FoodScienceAndSafety); 
+courseMap.set(FoodScienceAndSafety.getCourseId(), FoodScienceAndSafety);
 
-courseMap.set(shakespeare.getCourseId(), shakespeare); 
+courseMap.set(shakespeare.getCourseId(), shakespeare);
 
-courseMap.set(introductionToBusiness.getCourseId(), introductionToBusiness); 
+courseMap.set(introductionToBusiness.getCourseId(), introductionToBusiness);
 
-courseMap.set(spanish1.getCourseId(), spanish1); 
+courseMap.set(spanish1.getCourseId(), spanish1);
 
-courseMap.set(concertBandSpring.getCourseId(), concertBandSpring); 
+courseMap.set(concertBandSpring.getCourseId(), concertBandSpring);
 
-courseMap.set(AnimalScience.getCourseId(), AnimalScience); 
+courseMap.set(AnimalScience.getCourseId(), AnimalScience);
 
-courseMap.set(carpentry1.getCourseId(), carpentry1); 
+courseMap.set(carpentry1.getCourseId(), carpentry1);
 
-courseMap.set(personalFinance.getCourseId(), personalFinance); 
+courseMap.set(personalFinance.getCourseId(), personalFinance);
 
-courseMap.set(heritageSpanish.getCourseId(), heritageSpanish); 
+courseMap.set(heritageSpanish.getCourseId(), heritageSpanish);
 
-courseMap.set(preCalculus.getCourseId(), preCalculus); 
+courseMap.set(preCalculus.getCourseId(), preCalculus);
 
-courseMap.set(PlantScience.getCourseId(), PlantScience); 
+courseMap.set(PlantScience.getCourseId(), PlantScience);
 
-courseMap.set(advancedJournalism.getCourseId(), advancedJournalism); 
+courseMap.set(advancedJournalism.getCourseId(), advancedJournalism);
 
-courseMap.set(advancedBusinessEngagementCollaborative.getCourseId(), advancedBusinessEngagementCollaborative); 
+courseMap.set(advancedBusinessEngagementCollaborative.getCourseId(), advancedBusinessEngagementCollaborative);
 
-courseMap.set(german2.getCourseId(), german2); 
+courseMap.set(german2.getCourseId(), german2);
 
-courseMap.set(earlyChildhoodEducation2.getCourseId(), earlyChildhoodEducation2); 
+courseMap.set(earlyChildhoodEducation2.getCourseId(), earlyChildhoodEducation2);
 
-courseMap.set(introductionToAgriscience.getCourseId(), introductionToAgriscience); 
+courseMap.set(introductionToAgriscience.getCourseId(), introductionToAgriscience);
 
-courseMap.set(introductiontoCarpentry.getCourseId(), introductiontoCarpentry); 
+courseMap.set(introductiontoCarpentry.getCourseId(), introductiontoCarpentry);
 
-courseMap.set(german3.getCourseId(), german3); 
+courseMap.set(german3.getCourseId(), german3);
 
-courseMap.set(multimediaComposition.getCourseId(), multimediaComposition); 
+courseMap.set(multimediaComposition.getCourseId(), multimediaComposition);
 
-courseMap.set(earlyChildhoodEducation3.getCourseId(), earlyChildhoodEducation3); 
+courseMap.set(earlyChildhoodEducation3.getCourseId(), earlyChildhoodEducation3);
 
-courseMap.set(spanish2.getCourseId(), spanish2); 
+courseMap.set(spanish2.getCourseId(), spanish2);
 
-courseMap.set(childDevelopment2.getCourseId(), childDevelopment2); 
+courseMap.set(childDevelopment2.getCourseId(), childDevelopment2);
 
-courseMap.set(speech.getCourseId(), speech); 
+courseMap.set(speech.getCourseId(), speech);
 
-courseMap.set(french4.getCourseId(), french4); 
+courseMap.set(french4.getCourseId(), french4);
 
-courseMap.set(advancedCeramics.getCourseId(), advancedCeramics); 
+courseMap.set(advancedCeramics.getCourseId(), advancedCeramics);
 
-courseMap.set(apEuropeanHistory.getCourseId(), apEuropeanHistory); 
+courseMap.set(apEuropeanHistory.getCourseId(), apEuropeanHistory);
 
-courseMap.set(french3.getCourseId(), french3); 
+courseMap.set(french3.getCourseId(), french3);
 
-courseMap.set(horrorLiterature.getCourseId(), horrorLiterature); 
+courseMap.set(horrorLiterature.getCourseId(), horrorLiterature);
 
-courseMap.set(german4.getCourseId(), german4); 
+courseMap.set(german4.getCourseId(), german4);
 
-courseMap.set(internshipProgram1.getCourseId(), internshipProgram1); 
+courseMap.set(internshipProgram1.getCourseId(), internshipProgram1);
 
-courseMap.set(ceramics1.getCourseId(), ceramics1); 
+courseMap.set(ceramics1.getCourseId(), ceramics1);
 
-courseMap.set(nonWesternWorld.getCourseId(), nonWesternWorld); 
+courseMap.set(nonWesternWorld.getCourseId(), nonWesternWorld);
 
-courseMap.set(outdoorRecreation.getCourseId(), outdoorRecreation); 
+courseMap.set(outdoorRecreation.getCourseId(), outdoorRecreation);
 
-courseMap.set(webDesign.getCourseId(), webDesign); 
+courseMap.set(webDesign.getCourseId(), webDesign);
 
-courseMap.set(mythologyFantasyFolklore.getCourseId(), mythologyFantasyFolklore); 
+courseMap.set(mythologyFantasyFolklore.getCourseId(), mythologyFantasyFolklore);
 
-courseMap.set(windSymphonySymphonicBand.getCourseId(), windSymphonySymphonicBand); 
+courseMap.set(windSymphonySymphonicBand.getCourseId(), windSymphonySymphonicBand);
 
-courseMap.set(apChemistry.getCourseId(), apChemistry); 
+courseMap.set(apChemistry.getCourseId(), apChemistry);
 
-courseMap.set(algebra1AB.getCourseId(), algebra1AB); 
+courseMap.set(algebra1AB.getCourseId(), algebra1AB);
 
-courseMap.set(geometry.getCourseId(), geometry); 
+courseMap.set(geometry.getCourseId(), geometry);
 
-courseMap.set(chemistry.getCourseId(), chemistry); 
+courseMap.set(chemistry.getCourseId(), chemistry);
 
-courseMap.set(photography1.getCourseId(), photography1); 
+courseMap.set(photography1.getCourseId(), photography1);
 
-courseMap.set(woodworking2.getCourseId(), woodworking2); 
+courseMap.set(woodworking2.getCourseId(), woodworking2);
 
-courseMap.set(symphonyOrchestra.getCourseId(), symphonyOrchestra); 
+courseMap.set(symphonyOrchestra.getCourseId(), symphonyOrchestra);
 
-courseMap.set(lifeguardingWSI.getCourseId(), lifeguardingWSI); 
+courseMap.set(lifeguardingWSI.getCourseId(), lifeguardingWSI);
 
-courseMap.set(advancedPhotography.getCourseId(), advancedPhotography); 
+courseMap.set(advancedPhotography.getCourseId(), advancedPhotography);
 
-courseMap.set(internshipProgram_HumanServices.getCourseId(), internshipProgram_HumanServices); 
+courseMap.set(internshipProgram_HumanServices.getCourseId(), internshipProgram_HumanServices);
 
-courseMap.set(advancedJewelry.getCourseId(), advancedJewelry); 
+courseMap.set(advancedJewelry.getCourseId(), advancedJewelry);
 
-courseMap.set(introToJournalism.getCourseId(), introToJournalism); 
+courseMap.set(introToJournalism.getCourseId(), introToJournalism);
 
-courseMap.set(physics.getCourseId(), physics); 
+courseMap.set(physics.getCourseId(), physics);
 
-courseMap.set(videoProduction.getCourseId(), videoProduction); 
+courseMap.set(videoProduction.getCourseId(), videoProduction);
 
-courseMap.set(statistics.getCourseId(), statistics); 
+courseMap.set(statistics.getCourseId(), statistics);
 
-courseMap.set(westernCiv2.getCourseId(), westernCiv2); 
+courseMap.set(westernCiv2.getCourseId(), westernCiv2);
 
-courseMap.set(lifespanNutritionAndWellness.getCourseId(), lifespanNutritionAndWellness); 
+courseMap.set(lifespanNutritionAndWellness.getCourseId(), lifespanNutritionAndWellness);
 
-courseMap.set(apUSGovernment.getCourseId(), apUSGovernment); 
+courseMap.set(apUSGovernment.getCourseId(), apUSGovernment);
 
-courseMap.set(advanced4DArt.getCourseId(), advanced4DArt); 
+courseMap.set(advanced4DArt.getCourseId(), advanced4DArt);
 
-courseMap.set(basicComposition.getCourseId(), basicComposition); 
+courseMap.set(basicComposition.getCourseId(), basicComposition);
 
-courseMap.set(lifetimeActivities.getCourseId(), lifetimeActivities); 
+courseMap.set(lifetimeActivities.getCourseId(), lifetimeActivities);
 
-courseMap.set(foundationsOf4DArt.getCourseId(), foundationsOf4DArt); 
+courseMap.set(foundationsOf4DArt.getCourseId(), foundationsOf4DArt);
 
-courseMap.set(freshmanChoir.getCourseId(), freshmanChoir); 
+courseMap.set(freshmanChoir.getCourseId(), freshmanChoir);
 
-courseMap.set(concertChoir.getCourseId(), concertChoir); 
+courseMap.set(concertChoir.getCourseId(), concertChoir);
 
-courseMap.set(concertBandFall.getCourseId(), concertBandFall); 
+courseMap.set(concertBandFall.getCourseId(), concertBandFall);
 
-courseMap.set(earlyChildhoodEducation1.getCourseId(), earlyChildhoodEducation1); 
+courseMap.set(earlyChildhoodEducation1.getCourseId(), earlyChildhoodEducation1);
 
-courseMap.set(apPhysics.getCourseId(), apPhysics); 
+courseMap.set(apPhysics.getCourseId(), apPhysics);
 
-courseMap.set(advertising.getCourseId(), advertising); 
+courseMap.set(advertising.getCourseId(), advertising);
 
-courseMap.set(drama.getCourseId(), drama); 
+courseMap.set(drama.getCourseId(), drama);
 
-courseMap.set(NaturalResources.getCourseId(), NaturalResources); 
+courseMap.set(NaturalResources.getCourseId(), NaturalResources);
 
-courseMap.set(spiritYearbook.getCourseId(), spiritYearbook); 
+courseMap.set(spiritYearbook.getCourseId(), spiritYearbook);
 
-courseMap.set(accounting2.getCourseId(), accounting2); 
+courseMap.set(accounting2.getCourseId(), accounting2);
 
-courseMap.set(worldStudies.getCourseId(), worldStudies); 
+courseMap.set(worldStudies.getCourseId(), worldStudies);
 
-courseMap.set(honorsWorldStudies.getCourseId(), honorsWorldStudies); 
+courseMap.set(honorsWorldStudies.getCourseId(), honorsWorldStudies);
 
-courseMap.set(foundationsOf2DArt.getCourseId(), foundationsOf2DArt); 
+courseMap.set(foundationsOf2DArt.getCourseId(), foundationsOf2DArt);
 
-courseMap.set(freshmanBand9.getCourseId(), freshmanBand9); 
+courseMap.set(freshmanBand9.getCourseId(), freshmanBand9);
 
-courseMap.set(advanced3DArt.getCourseId(), advanced3DArt); 
+courseMap.set(advanced3DArt.getCourseId(), advanced3DArt);
 
-courseMap.set(apBiology.getCourseId(), apBiology); 
+courseMap.set(apBiology.getCourseId(), apBiology);
 
-courseMap.set(graphicDesign1.getCourseId(), graphicDesign1); 
+courseMap.set(graphicDesign1.getCourseId(), graphicDesign1);
 
-courseMap.set(internshipProgram2.getCourseId(), internshipProgram2); 
+courseMap.set(internshipProgram2.getCourseId(), internshipProgram2);
 
-courseMap.set(entrepreneurship1.getCourseId(), entrepreneurship1); 
+courseMap.set(entrepreneurship1.getCourseId(), entrepreneurship1);
 
-courseMap.set(freshmanOrchestra9.getCourseId(), freshmanOrchestra9); 
+courseMap.set(freshmanOrchestra9.getCourseId(), freshmanOrchestra9);
 
-courseMap.set(drawingPaintingPrintmaking.getCourseId(), drawingPaintingPrintmaking); 
+courseMap.set(drawingPaintingPrintmaking.getCourseId(), drawingPaintingPrintmaking);
 
-courseMap.set(concertChorale.getCourseId(), concertChorale); 
+courseMap.set(concertChorale.getCourseId(), concertChorale);
 
-courseMap.set(accounting1.getCourseId(), accounting1); 
+courseMap.set(accounting1.getCourseId(), accounting1);
 
-courseMap.set(sociology.getCourseId(), sociology); 
+courseMap.set(sociology.getCourseId(), sociology);
 
-courseMap.set(advancedPhysics.getCourseId(), advancedPhysics); 
+courseMap.set(advancedPhysics.getCourseId(), advancedPhysics);
 
-courseMap.set(advancedAlgebra2.getCourseId(), advancedAlgebra2); 
+courseMap.set(advancedAlgebra2.getCourseId(), advancedAlgebra2);
 
-courseMap.set(advancedCreativeWriting_ENG221.getCourseId(), advancedCreativeWriting_ENG221); 
+courseMap.set(advancedCreativeWriting_ENG221.getCourseId(), advancedCreativeWriting_ENG221);
 
-courseMap.set(aquatics.getCourseId(), aquatics); 
+courseMap.set(aquatics.getCourseId(), aquatics);
 
-courseMap.set(surveyOfLiterature12.getCourseId(), surveyOfLiterature12); 
+courseMap.set(surveyOfLiterature12.getCourseId(), surveyOfLiterature12);
 
-courseMap.set(worldLiterature2_LIT151.getCourseId(), worldLiterature2_LIT151); 
+courseMap.set(worldLiterature2_LIT151.getCourseId(), worldLiterature2_LIT151);
 
-courseMap.set(economics.getCourseId(), economics); 
+courseMap.set(economics.getCourseId(), economics);
 
-courseMap.set(jewelry1.getCourseId(), jewelry1); 
+courseMap.set(jewelry1.getCourseId(), jewelry1);
 
-courseMap.set(foundationsOf3DArt.getCourseId(), foundationsOf3DArt); 
+courseMap.set(foundationsOf3DArt.getCourseId(), foundationsOf3DArt);
 
-courseMap.set(chamberOrchestra.getCourseId(), chamberOrchestra); 
+courseMap.set(chamberOrchestra.getCourseId(), chamberOrchestra);
 
-courseMap.set(westernCiv1.getCourseId(), westernCiv1); 
+courseMap.set(westernCiv1.getCourseId(), westernCiv1);
 
-courseMap.set(AgResearchAndDevelopmentCapstone.getCourseId(), AgResearchAndDevelopmentCapstone); 
+courseMap.set(AgResearchAndDevelopmentCapstone.getCourseId(), AgResearchAndDevelopmentCapstone);
 
-courseMap.set(creativeWriting10.getCourseId(), creativeWriting10); 
+courseMap.set(creativeWriting10.getCourseId(), creativeWriting10);
 
-courseMap.set(teamGamesSports.getCourseId(), teamGamesSports); 
+courseMap.set(teamGamesSports.getCourseId(), teamGamesSports);
 
-courseMap.set(advancedChemistry.getCourseId(), advancedChemistry); 
+courseMap.set(advancedChemistry.getCourseId(), advancedChemistry);
 
-courseMap.set(twirler.getCourseId(), twirler); 
+courseMap.set(twirler.getCourseId(), twirler);
 
-courseMap.set(americanSocietyThroughFilm_HUM121.getCourseId(), americanSocietyThroughFilm_HUM121); 
+courseMap.set(americanSocietyThroughFilm_HUM121.getCourseId(), americanSocietyThroughFilm_HUM121);
 
-courseMap.set(apCalculusAB.getCourseId(), apCalculusAB); 
+courseMap.set(apCalculusAB.getCourseId(), apCalculusAB);
 
-courseMap.set(childDevelopment1.getCourseId(), childDevelopment1); 
+courseMap.set(childDevelopment1.getCourseId(), childDevelopment1);
 
-courseMap.set(contractWoodworking.getCourseId(), contractWoodworking); 
+courseMap.set(contractWoodworking.getCourseId(), contractWoodworking);
 
-courseMap.set(weights1.getCourseId(), weights1); 
+courseMap.set(weights1.getCourseId(), weights1);
 
-courseMap.set(entrepreneurship3.getCourseId(), entrepreneurship3); 
+courseMap.set(entrepreneurship3.getCourseId(), entrepreneurship3);
 
-courseMap.set(worldIssues.getCourseId(), worldIssues); 
+courseMap.set(worldIssues.getCourseId(), worldIssues);
 
-courseMap.set(apPsychology.getCourseId(), apPsychology); 
+courseMap.set(apPsychology.getCourseId(), apPsychology);
 
-courseMap.set(usGovernment.getCourseId(), usGovernment); 
+courseMap.set(usGovernment.getCourseId(), usGovernment);
 
-courseMap.set(microsoftCertification.getCourseId(), microsoftCertification); 
+courseMap.set(microsoftCertification.getCourseId(), microsoftCertification);
 
-courseMap.set(algebra2.getCourseId(), algebra2); 
+courseMap.set(algebra2.getCourseId(), algebra2);
 
-courseMap.set(geometryAB.getCourseId(), geometryAB); 
+courseMap.set(geometryAB.getCourseId(), geometryAB);
 
-courseMap.set(architecturalCADDDrafting.getCourseId(), architecturalCADDDrafting); 
+courseMap.set(architecturalCADDDrafting.getCourseId(), architecturalCADDDrafting);
 
-courseMap.set(entrepreneurship2.getCourseId(), entrepreneurship2); 
+courseMap.set(entrepreneurship2.getCourseId(), entrepreneurship2);
 
-courseMap.set(surveyOfLiterature10.getCourseId(), surveyOfLiterature10); 
+courseMap.set(surveyOfLiterature10.getCourseId(), surveyOfLiterature10);
 
-courseMap.set(woodworking1.getCourseId(), woodworking1); 
+courseMap.set(woodworking1.getCourseId(), woodworking1);
 
-courseMap.set(algebra1.getCourseId(), algebra1); 
+courseMap.set(algebra1.getCourseId(), algebra1);
+
+const exampleClass = new Class(
+    false, // dualCredit
+    "exampleclass", // subject
+    "9,10,11,12", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
+    [5, 4, 3, 4, 5], // ratings
+    ["Great class!", "Learned a lot.", "Challenging but fun."], // comments
+    [7, 8, 5, 8, 4], // averageTimePerWeek
+    "rocket", // icon
+    "Example Class", // className
+    ['A', 'A-', 'B+', 'A', 'B'], // grades
+    [3, 4, 2, 5, 3], // classDifficulty
+    ["Demo", "Test", "Graph", "Cool"] // tags
+);
+
+const exampleClass2 = new Class(
+    false, // dualCredit
+    "exampleclass", // subject
+    "10,11,12", // usualGrade
+    "Example Class", // prerequisite
+    "Semester", // duration
+    "Both", // Semester Offered
+    "None", // honorsAP
+    "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
+    [4, 5, 5, 4, 5], // ratings
+    ["Amazing teacher", "Very useful content"], // comments
+    [3, 4, 5, 3, 4], // averageTimePerWeek
+    "science", // icon
+    "Example Class 2", // className
+    ['A+', 'A', 'A', 'A-', 'B+'], // grades
+    [2, 3, 2, 3, 2], // classDifficulty
+    ["Demo", "Second", "Example"] // tags
+);
+
+const exampleClass3 = new Class(
+    true, // dualCredit
+    "exampleclass", // subject
+    "11,12", // usualGrade
+    "None", // prerequisite
+    "Year", // duration
+    "Both", // Semester Offered
+    "AP", // honorsAP
+    "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
+    [3, 3, 4, 2, 3], // ratings
+    ["Tough but fair", "Lots of homework"], // comments
+    [10, 12, 11, 13, 10], // averageTimePerWeek
+    "book", // icon
+    "Example Class 3", // className
+    ['B', 'B-', 'C+', 'B', 'B+'], // grades
+    [5, 4, 5, 5, 4], // classDifficulty
+    ["Hard", "AP", "Demo"] // tags
+);
+
+const exampleClass4 = new Class(
+    false, // dualCredit
+    "exampleclass", // subject
+    "9", // usualGrade
+    "None", // prerequisite
+    "Semester", // duration
+    "Spring", // Semester Offered
+    "None", // honorsAP
+    "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
+    [5, 5, 5, 5, 5], // ratings
+    ["Best class ever!", "Easy A"], // comments
+    [1, 2, 1, 2, 1], // averageTimePerWeek
+    "star", // icon
+    "Example Class 4", // className
+    ['A+', 'A+', 'A+', 'A+', 'A+'], // grades
+    [1, 1, 1, 1, 1], // classDifficulty
+    ["Easy", "Fun", "Demo"] // tags
+);
+
+
+// DO NOT CHANGE UNLESS PROMPTED
+if (typeof courseMap !== 'undefined') {
+    courseMap.set(exampleClass.getCourseId(), exampleClass);
+    courseMap.set(exampleClass2.getCourseId(), exampleClass2);
+    courseMap.set(exampleClass3.getCourseId(), exampleClass3);
+    courseMap.set(exampleClass4.getCourseId(), exampleClass4);
+} 

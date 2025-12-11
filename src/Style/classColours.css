@@ -1,64 +1,123 @@
 .agriculture {
-  background: #B5C9A8 !important; /* Muted Sage Green */
+  background: #B5C9A8 !important;
+  /* Muted Sage Green */
   color: #4A5D3F !important;
 }
-.appliescience, .technology, .engineering, .manufacturing, .cte {
-  background: #90A4AE !important; /* Muted Blue Grey */
+
+.appliescience,
+.technology,
+.engineering,
+.manufacturing,
+.cte {
+  background: #90A4AE !important;
+  /* Muted Blue Grey */
   color: #37474F !important;
 }
-.arteducation, .arts {
-  background: #E6CCB2 !important; /* Muted Sand/Beige */
+
+.arteducation,
+.arts {
+  background: #E6CCB2 !important;
+  /* Muted Sand/Beige */
   color: #5D4037 !important;
 }
-.business, .finance, .marketing, .management {
-  background: #E0C097 !important; /* Muted Gold/Tan */
+
+.business,
+.finance,
+.marketing,
+.management {
+  background: #E0C097 !important;
+  /* Muted Gold/Tan */
   color: #5D4037 !important;
 }
-.career, .technicaleducation {
-  background: #D7CCC8 !important; /* Muted Grey/Brown */
+
+.career,
+.technicaleducation {
+  background: #D7CCC8 !important;
+  /* Muted Grey/Brown */
   color: #4E342E !important;
 }
+
 .english {
-  background: #E6EE9C !important; /* Muted Lime/Yellow */
+  background: #E6EE9C !important;
+  /* Muted Lime/Yellow */
   color: #558B2F !important;
 }
+
 .health {
-  background: #EF9A9A !important; /* Muted Red */
+  background: #EF9A9A !important;
+  /* Muted Red */
   color: #C62828 !important;
 }
-.human, .services, .humanservices {
-  background: #CE93D8 !important; /* Muted Purple */
+
+.human,
+.services,
+.humanservices {
+  background: #CE93D8 !important;
+  /* Muted Purple */
   color: #6A1B9A !important;
 }
-.information, .solutions, .informationsolutions {
-  background: #80DEEA !important; /* Muted Cyan */
+
+.information,
+.solutions,
+.informationsolutions {
+  background: #80DEEA !important;
+  /* Muted Cyan */
   color: #00838F !important;
 }
-.mathematics, .math {
-  background: #9FA8DA !important; /* Muted Indigo */
+
+.mathematics,
+.math {
+  background: #9FA8DA !important;
+  /* Muted Indigo */
   color: #283593 !important;
 }
+
 .music {
-  background: #FFCC80 !important; /* Muted Orange */
+  background: #FFCC80 !important;
+  /* Muted Orange */
   color: #EF6C00 !important;
 }
-.physical, .education, .pe {
-  background: #A5D6A7 !important; /* Muted Green */
+
+.physical,
+.education,
+.pe {
+  background: #A5D6A7 !important;
+  /* Muted Green */
   color: #2E7D32 !important;
 }
+
 .science {
-  background: #C5E1A5 !important; /* Muted Light Green */
+  background: #C5E1A5 !important;
+  /* Muted Light Green */
   color: #33691E !important;
 }
-.social, .studies, .history, .socialstudies {
-  background: #EF9A9A !important; /* Muted Red (same as health, maybe slightly diff?) */
+
+.social,
+.studies,
+.history,
+.socialstudies {
+  background: #EF9A9A !important;
+  /* Muted Red (same as health, maybe slightly diff?) */
   color: #B71C1C !important;
 }
-.world, .language, .foreign, .language {
-  background: #80CBC4 !important; /* Muted Teal */
+
+.world,
+.language,
+.foreign,
+.language {
+  background: #80CBC4 !important;
+  /* Muted Teal */
   color: #00695C !important;
 }
+
 .misc {
-  background: #B0BEC5 !important; /* Muted Blue Grey */
+  background: #B0BEC5 !important;
+  /* Muted Blue Grey */
   color: #37474F !important;
+}
+
+.exampleclass {
+  background: #ff03bc !important;
+  /* Muted Blue Grey */
+  color: #ff03bc6a !important;
 }
