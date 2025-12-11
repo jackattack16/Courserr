@@ -481,7 +481,7 @@ const itecContractAdvancedTechnology = new Class(
     false, // dualCredit
     "CTE", // subject
     "11, 12", // usualGrade
-    "Woodworking 2, Carpentry 2 OR Advanced Metals and Welding **Instructor Approval", // prerequisite
+    "Instructor Approval, Woodworking 2%, Carpentry 2%, Advanced Manufacturing and Welding", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -502,7 +502,7 @@ const internshipProgram1 = new Class(
     true, // dualCredit
     "CTE", // subject
     "11, 12", // usualGrade
-    "**Instructor Approval Required", // prerequisite
+    "Instructor Approval", // prerequisite
     "Semester (2-period block)", // duration
     "Spring", // Semester Offered
     "None", // honorsAP
@@ -523,7 +523,7 @@ const internshipProgram2 = new Class(
     true, // dualCredit
     "CTE", // subject
     "12", // usualGrade
-    "Internship 1 – Seniors only", // prerequisite
+    "Internship 1", // prerequisite
     "Semester (2-period block)", // duration
     "Spring", // Semester Offered
     "None", // honorsAP
@@ -586,7 +586,7 @@ const advancedDrawingPaintingPrintmaking = new Class(
     false, // dualCredit
     "Arts", // subject
     "10, 11, 12", // usualGrade
-    "Foundations of 2-D ART, Drawing, Painting, Printmaking", // prerequisite
+    "Foundations of 2-D ART, Drawing^ Painting^ Printmaking", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -712,7 +712,7 @@ const advancedCeramics = new Class(
     false, // dualCredit
     "Arts", // subject
     "10, 11, 12", // usualGrade
-    "Foundations of 3-D Art; Ceramics 1", // prerequisite
+    "Foundations of 3-D Art, Ceramics 1", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -754,7 +754,7 @@ const advancedJewelry = new Class(
     false, // dualCredit
     "Arts", // subject
     "10, 11, 12", // usualGrade
-    "Foundations of 3-D Art; Jewelry 1", // prerequisite
+    "Foundations of 3-D Art, Jewelry 1", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -1006,7 +1006,7 @@ const businessEngagementCollaborative = new Class(
     true, // dualCredit
     "business", // subject
     "11, 12", // usualGrade
-    "Any Business or informationsolutions course or Instructor Approval", // prerequisite
+    "Instructor Approval, #See Handbook", // prerequisite
     "Semester (2-period block)", // duration
     "Fall", // Semester Offered
     "None", // honorsAP
@@ -1048,7 +1048,7 @@ const internshipProgramBusiness = new Class(
     true, // dualCredit
     "business", // subject
     "11, 12", // usualGrade
-    "Instructor Approval Required", // prerequisite
+    "Instructor Approval", // prerequisite
     "Semester (2-period block)", // duration
     "Spring", // Semester Offered
     "None", // honorsAP
@@ -1447,7 +1447,7 @@ const advancedJournalism = new Class(
     false, // dualCredit
     "English", // subject
     "10, 11, 12", // usualGrade
-    "Introduction to Journalism or Multimedia Composition", // prerequisite
+    "Introduction to Journalism%, Multimedia Composition", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -1739,7 +1739,7 @@ const internshipProgram_HumanServices = new Class(
     true, // dualCredit
     "humanservices", // subject
     "11, 12", // usualGrade
-    "Instructor Approval Required", // prerequisite
+    "Instructor Approval", // prerequisite
     "Semester (2-period block)", // duration
     "Spring", // Semester Offered
     "None", // honorsAP
@@ -1884,7 +1884,7 @@ const geometryAB = new Class(
     false, // dualCredit
     "Mathematics", // subject
     "9, 10, 11, 12", // usualGrade
-    "Algebra 1AB or Algebra 1", // prerequisite
+    "Algebra 1AB%, Algebra 1", // prerequisite
     "Full Year", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -1905,7 +1905,7 @@ const geometry = new Class(
     false, // dualCredit
     "Mathematics", // subject
     "9, 10, 11, 12", // usualGrade
-    "Algebra 1AB or Algebra 1", // prerequisite
+    "Algebra 1AB%, Algebra 1", // prerequisite
     "Full Year", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -1926,7 +1926,7 @@ const algebra2 = new Class(
     false, // dualCredit
     "Mathematics", // subject
     "11, 12", // usualGrade
-    "Algebra 1AB or Algebra 1, Geometry AB or Geometry", // prerequisite
+    "Algebra 1AB%, Algebra 1, Geometry AB%, Geometry", // prerequisite
     "Full Year", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -1945,7 +1945,7 @@ const advancedAlgebra2 = new Class(
     false, // dualCredit
     "Mathematics", // subject
     "9, 10, 11, 12", // usualGrade
-    "Algebra 1AB or Algebra 1, Geometry AB or Geometry", // prerequisite
+    "Algebra 1AB%, Algebra 1, Geometry AB%, Geometry", // prerequisite
     "Full Year", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -1966,7 +1966,7 @@ const computerScience = new Class(
     false, // dualCredit
     "Mathematics", // subject
     "10, 11, 12", // usualGrade
-    "Sophomore or higher grade level", // prerequisite
+    "None", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -1987,7 +1987,7 @@ const statistics = new Class(
     true, // dualCredit
     "Mathematics", // subject
     "11, 12", // usualGrade
-    "Algebra 2 or Advanced Algebra 2", // prerequisite
+    "Algebra 2%, Advanced Algebra 2", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -2008,7 +2008,7 @@ const preCalculus = new Class(
     true, // dualCredit
     "Mathematics", // subject
     "11, 12", // usualGrade
-    "Algebra 2 or Advanced Algebra 2", // prerequisite
+    "Algebra 2%, Advanced Algebra 2", // prerequisite
     "Full Year", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -2134,7 +2134,7 @@ const windSymphonySymphonicBand = new Class(
     false, // dualCredit
     "Music", // subject
     "10, 11, 12", // usualGrade
-    "Audition / Director Placement", // prerequisite
+    "#Audition, #Director Placement", // prerequisite
     "Semester", // duration
     "Spring", // Semester Offered
     "None", // honorsAP
@@ -2155,7 +2155,7 @@ const twirler = new Class(
     false, // dualCredit
     "Music", // subject
     "10, 11, 12", // usualGrade
-    "Director Selection", // prerequisite
+    "#Director Selection", // prerequisite
     "Quarter", // duration
     "Fall", // Semester Offered
     "None", // honorsAP
@@ -2218,7 +2218,7 @@ const concertChorale = new Class(
     false, // dualCredit
     "Music", // subject
     "10, 11, 12", // usualGrade
-    "Audition", // prerequisite
+    "#Audition", // prerequisite
     "Full Year", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -2281,7 +2281,7 @@ const chamberOrchestra = new Class(
     false, // dualCredit
     "Music", // subject
     "10, 11, 12", // usualGrade
-    "Audition", // prerequisite
+    "#Audition", // prerequisite
     "Full Year", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -2323,7 +2323,7 @@ const lifeguardingWSI = new Class(
     false, // dualCredit
     "PE", // subject
     "10, 11, 12", // usualGrade
-    "Must be 15+ yrs and meet swimming prerequisites", // prerequisite
+    "#See Handbook", // prerequisite
     "Semester", // duration
     "Spring", // Semester Offered
     "None", // honorsAP
@@ -2344,7 +2344,7 @@ const unifiedPE = new Class(
     false, // dualCredit
     "PE", // subject
     "9, 10, 11, 12", // usualGrade
-    "Instructor Approval Required", // prerequisite
+    "Instructor Approval", // prerequisite
     "Full Year", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -2407,7 +2407,7 @@ const outdoorRecreation = new Class(
     false, // dualCredit
     "PE", // subject
     "11, 12", // usualGrade
-    "Junior or Senior standing", // prerequisite
+    "#Good Standing", // prerequisite
     "Semester", // duration
     "Spring", // Semester Offered
     "None", // honorsAP
@@ -2785,7 +2785,7 @@ const apPsychology = new Class(
     true, // dualCredit
     "SocialStudies", // subject
     "11, 12", // usualGrade
-    "Sociology or AP Psychology", // prerequisite
+    "Sociology%, AP Psychology", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "AP", // honorsAP
@@ -2869,7 +2869,7 @@ const sociology = new Class(
     false, // dualCredit
     "SocialStudies", // subject
     "11, 12", // usualGrade
-    "Sociology or AP Psychology", // prerequisite
+    "Sociology%, AP Psychology", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -3253,7 +3253,7 @@ const heritageSpanish = new Class(
     false, // dualCredit
     "Language", // subject
     "9, 10, 11, 12", // usualGrade
-    "Home language Spanish", // prerequisite
+    "#Home language Spanish", // prerequisite
     "Full Year", // duration
     "Both", // Semester Offered
     "None", // honorsAP
