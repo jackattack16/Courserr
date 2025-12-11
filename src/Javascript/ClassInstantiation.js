@@ -460,7 +460,7 @@ const contractWoodworking = new Class(
     false, // dualCredit
     "CTE", // subject
     "11, 12", // usualGrade
-    "Woodworking 2 and Carpentry 2", // prerequisite
+    "Woodworking 2, Carpentry 2", // prerequisite
     "Semester", // duration
     "Both", // Semester Offered
     "None", // honorsAP
@@ -3586,87 +3586,87 @@ courseMap.set(woodworking1.getCourseId(), woodworking1);
 
 courseMap.set(algebra1.getCourseId(), algebra1);
 
-const exampleClass = new Class(
-    false, // dualCredit
-    "exampleclass", // subject
-    "9,10,11,12", // usualGrade
-    "None", // prerequisite
-    "Semester", // duration
-    "Both", // Semester Offered
-    "None", // honorsAP
-    "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
-    [5, 4, 3, 4, 5], // ratings
-    ["Great class!", "Learned a lot.", "Challenging but fun."], // comments
-    [7, 8, 5, 8, 4], // averageTimePerWeek
-    "rocket", // icon
-    "Example Class", // className
-    ['A', 'A-', 'B+', 'A', 'B'], // grades
-    [3, 4, 2, 5, 3], // classDifficulty
-    ["Demo", "Test", "Graph", "Cool"] // tags
-);
+// const exampleClass = new Class(
+//     false, // dualCredit
+//     "exampleclass", // subject
+//     "9,10,11,12", // usualGrade
+//     "None", // prerequisite
+//     "Semester", // duration
+//     "Both", // Semester Offered
+//     "None", // honorsAP
+//     "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
+//     [5, 4, 3, 4, 5], // ratings
+//     ["Great class!", "Learned a lot.", "Challenging but fun."], // comments
+//     [7, 8, 5, 8, 4], // averageTimePerWeek
+//     "rocket", // icon
+//     "Example Class", // className
+//     ['A', 'A-', 'B+', 'A', 'B'], // grades
+//     [3, 4, 2, 5, 3], // classDifficulty
+//     ["Demo", "Test", "Graph", "Cool"] // tags
+// );
 
-const exampleClass2 = new Class(
-    false, // dualCredit
-    "exampleclass", // subject
-    "10,11,12", // usualGrade
-    "Example Class", // prerequisite
-    "Semester", // duration
-    "Both", // Semester Offered
-    "None", // honorsAP
-    "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
-    [4, 5, 5, 4, 5], // ratings
-    ["Amazing teacher", "Very useful content"], // comments
-    [3, 4, 5, 3, 4], // averageTimePerWeek
-    "science", // icon
-    "Example Class 2", // className
-    ['A+', 'A', 'A', 'A-', 'B+'], // grades
-    [2, 3, 2, 3, 2], // classDifficulty
-    ["Demo", "Second", "Example"] // tags
-);
+// const exampleClass2 = new Class(
+//     false, // dualCredit
+//     "exampleclass", // subject
+//     "10,11,12", // usualGrade
+//     "Example Class", // prerequisite
+//     "Semester", // duration
+//     "Both", // Semester Offered
+//     "None", // honorsAP
+//     "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
+//     [4, 5, 5, 4, 5], // ratings
+//     ["Amazing teacher", "Very useful content"], // comments
+//     [3, 4, 5, 3, 4], // averageTimePerWeek
+//     "science", // icon
+//     "Example Class 2", // className
+//     ['A+', 'A', 'A', 'A-', 'B+'], // grades
+//     [2, 3, 2, 3, 2], // classDifficulty
+//     ["Demo", "Second", "Example"] // tags
+// );
 
-const exampleClass3 = new Class(
-    true, // dualCredit
-    "exampleclass", // subject
-    "11,12", // usualGrade
-    "None", // prerequisite
-    "Year", // duration
-    "Both", // Semester Offered
-    "AP", // honorsAP
-    "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
-    [3, 3, 4, 2, 3], // ratings
-    ["Tough but fair", "Lots of homework"], // comments
-    [10, 12, 11, 13, 10], // averageTimePerWeek
-    "book", // icon
-    "Example Class 3", // className
-    ['B', 'B-', 'C+', 'B', 'B+'], // grades
-    [5, 4, 5, 5, 4], // classDifficulty
-    ["Hard", "AP", "Demo"] // tags
-);
+// const exampleClass3 = new Class(
+//     true, // dualCredit
+//     "exampleclass", // subject
+//     "11,12", // usualGrade
+//     "None", // prerequisite
+//     "Year", // duration
+//     "Both", // Semester Offered
+//     "AP", // honorsAP
+//     "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
+//     [3, 3, 4, 2, 3], // ratings
+//     ["Tough but fair", "Lots of homework"], // comments
+//     [10, 12, 11, 13, 10], // averageTimePerWeek
+//     "book", // icon
+//     "Example Class 3", // className
+//     ['B', 'B-', 'C+', 'B', 'B+'], // grades
+//     [5, 4, 5, 5, 4], // classDifficulty
+//     ["Hard", "AP", "Demo"] // tags
+// );
 
-const exampleClass4 = new Class(
-    false, // dualCredit
-    "exampleclass", // subject
-    "9", // usualGrade
-    "None", // prerequisite
-    "Semester", // duration
-    "Spring", // Semester Offered
-    "None", // honorsAP
-    "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
-    [5, 5, 5, 5, 5], // ratings
-    ["Best class ever!", "Easy A"], // comments
-    [1, 2, 1, 2, 1], // averageTimePerWeek
-    "star", // icon
-    "Example Class 4", // className
-    ['A+', 'A+', 'A+', 'A+', 'A+'], // grades
-    [1, 1, 1, 1, 1], // classDifficulty
-    ["Easy", "Fun", "Demo"] // tags
-);
+// const exampleClass4 = new Class(
+//     false, // dualCredit
+//     "exampleclass", // subject
+//     "9", // usualGrade
+//     "None", // prerequisite
+//     "Semester", // duration
+//     "Spring", // Semester Offered
+//     "None", // honorsAP
+//     "This is an example class for demonstration purposes of what a class would look like with student reviews. It contains data to visualize graphs and tags.", // description
+//     [5, 5, 5, 5, 5], // ratings
+//     ["Best class ever!", "Easy A"], // comments
+//     [1, 2, 1, 2, 1], // averageTimePerWeek
+//     "star", // icon
+//     "Example Class 4", // className
+//     ['A+', 'A+', 'A+', 'A+', 'A+'], // grades
+//     [1, 1, 1, 1, 1], // classDifficulty
+//     ["Easy", "Fun", "Demo"] // tags
+// );
 
 
-// DO NOT CHANGE UNLESS PROMPTED
-if (typeof courseMap !== 'undefined') {
-    courseMap.set(exampleClass.getCourseId(), exampleClass);
-    courseMap.set(exampleClass2.getCourseId(), exampleClass2);
-    courseMap.set(exampleClass3.getCourseId(), exampleClass3);
-    courseMap.set(exampleClass4.getCourseId(), exampleClass4);
-} 
+// // DO NOT CHANGE UNLESS PROMPTED
+// if (typeof courseMap !== 'undefined') {
+//     courseMap.set(exampleClass.getCourseId(), exampleClass);
+//     courseMap.set(exampleClass2.getCourseId(), exampleClass2);
+//     courseMap.set(exampleClass3.getCourseId(), exampleClass3);
+//     courseMap.set(exampleClass4.getCourseId(), exampleClass4);
+// } 

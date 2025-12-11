@@ -53,9 +53,16 @@
     font-size: 4vw;
 }
 
+img.sidebar-icon {
+  width:4vw; filter: brightness(0)
+}
+
 @media (max-width: 768px) {
   .sidebar-icon {
     font-size: 7vh;
+  }
+  img.sidebar-icon {
+    width:7vh;
   }
 }
 
