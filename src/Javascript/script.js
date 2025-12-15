@@ -111,12 +111,6 @@ function load() {
     loadClasses(allCourses);
   }, 100);
 
-  // Add navigation and engagement tracking
-  setTimeout(() => {
-    initNavigationTracking();
-    initEngagementTracking();
-  }, 200);
-
 }
 
 function loadClasses(courseArray) {
@@ -154,9 +148,6 @@ function loadClasses(courseArray) {
 
 function addFilter(filter) {
   // Add the selected filter to the currentFilters array
-  const wasSelected = curentFilters.includes(filter);
-  const action = wasSelected ? 'remove' : 'add';
-
   if (curentFilters.includes(filter)) {
     curentFilters.splice(curentFilters.indexOf(filter), 1);
     console.log(curentFilters);
@@ -164,13 +155,6 @@ function addFilter(filter) {
     curentFilters.push(filter);
     console.log(curentFilters);
   }
-
-  // Track filter interaction in Google Analytics
-  gtag('event', 'filter_' + action, {
-    filter_name: filter,
-    total_active_filters: curentFilters.length,
-    page_location: window.location.href
-  });
 
   // Filter out unwanted courses
   const allCourses = Array.from(courseMap.values());
@@ -458,12 +442,6 @@ function searchCourses() {
 }
 
 function runSearch(allCourses, filteredCourses) {
-  // Track search event in Google Analytics
-  if (searchQuery !== '') {
-    gtag('event', 'search', {
-      search_term: searchQuery
-    });
-  }
 
   document.getElementById('col1').innerHTML = '';
   document.getElementById('col2').innerHTML = '';
@@ -484,14 +462,6 @@ function filterSearch(query) {
 function clearSearch() {
   const searchInput = document.getElementById('searchInput');
   const clearButton = document.getElementById('clearSearch');
-
-  // Track search clear action
-  if (searchQuery !== '') {
-    gtag('event', 'search_clear', {
-      previous_search_term: searchQuery,
-      page_location: window.location.href
-    });
-  }
 
   searchInput.value = '';
   searchQuery = '';
@@ -514,11 +484,6 @@ searchBar.addEventListener("focusout", (event) => {
 function fav(element) {
   let fillValue;
   //alert(element.id);
-
-  // Determine if this is adding or removing bookmark
-  const isBookmarked = element.style.cssText.includes("1");
-  const action = isBookmarked ? 'remove' : 'add';
-
   if (element.style.cssText.includes("1")) {
     fillValue = "'FILL' 0";  // If it's filled, switch to unfilled.
     bookmarks[bookmarks.indexOf(element.id)] = "";
@@ -529,23 +494,10 @@ function fav(element) {
   element.style.fontVariationSettings = fillValue;
   bookmarks = bookmarks.filter(item => item !== "");
   sessionStorage.setItem("bookmarks", bookmarks);
-
-  // Track bookmark interaction in Google Analytics
-  gtag('event', 'bookmark_' + action, {
-    course_name: element.id,
-    page_location: window.location.href
-  });
-
   //alert(sessionStorage.getItem("bookmarks"));
 }
 
 function openClass(courseId) {
-  // Track course click in Google Analytics
-  gtag('event', 'course_click', {
-    course_id: courseId,
-    page_location: window.location.href
-  });
-
   //console.log('Opening class:', className);
   window.location.href = './newClassPageLayoutTest.html?courseId=' + encodeURIComponent(courseId);
 }
@@ -587,116 +539,4 @@ function openPrereq(className) {
     // Fallback to search or alert if needed
     alert("Course page not found for: " + className + ".\n\nTry searching for it on the home page instead.\n\nPrerequisites are in beta currently, and if you find any other problems, feel free to report them in the bugs form!");
   }
-}
-
-// Initialize navigation tracking for sidebar and external links
-function initNavigationTracking() {
-  // Track sidebar navigation clicks
-  const sidebarItems = document.querySelectorAll('.sidebarItem');
-  sidebarItems.forEach(item => {
-    item.addEventListener('click', function(e) {
-      // Get the navigation destination
-      let destination = '';
-      let navType = 'internal';
-
-      if (this.onclick) {
-        const onclickString = this.onclick.toString();
-        if (onclickString.includes('window.location.href')) {
-          destination = onclickString.match(/window\.location\.href\s*=\s*['"]([^'"]+)['"]/);
-          if (destination) destination = destination[1];
-        } else if (onclickString.includes('window.open')) {
-          destination = onclickString.match(/window\.open\s*\(\s*['"]([^'"]+)['"]/);
-          if (destination) {
-            destination = destination[1];
-            navType = 'external';
-          }
-        }
-      }
-
-      // Get the link text for identification
-      const linkText = this.querySelector('p') ? this.querySelector('p').textContent : 'Unknown';
-
-      // Track the navigation event
-      gtag('event', 'navigation_click', {
-        navigation_type: navType,
-        destination: destination,
-        link_text: linkText,
-        page_location: window.location.href
-      });
-    });
-  });
-
-  // Track external form links (FAB and other external links)
-  const fabButton = document.querySelector('.fab');
-  if (fabButton) {
-    fabButton.addEventListener('click', function() {
-      gtag('event', 'external_link_click', {
-        link_type: 'feedback_form',
-        link_text: 'Add Your Input On Classes',
-        destination: 'https://docs.google.com/forms/d/e/1FAIpQLSdzS9RgGFL1E0A3C-tiwaXu3Zx13y2GUMDnRKxamePGoYw8-w/viewform?usp=header',
-        page_location: window.location.href
-      });
-    });
-  }
-}
-
-// Initialize engagement tracking (scroll depth and time on page)
-function initEngagementTracking() {
-  // Track scroll depth milestones
-  let scrollMilestones = [25, 50, 75, 100];
-  let milestonesReached = new Set();
-
-  function trackScrollDepth() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const windowHeight = window.innerHeight;
-    const documentHeight = Math.max(
-      document.body.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.clientHeight,
-      document.documentElement.scrollHeight,
-      document.documentElement.offsetHeight
-    );
-
-    const scrollPercentage = Math.round((scrollTop / (documentHeight - windowHeight)) * 100);
-
-    scrollMilestones.forEach(milestone => {
-      if (scrollPercentage >= milestone && !milestonesReached.has(milestone)) {
-        milestonesReached.add(milestone);
-
-        gtag('event', 'scroll_depth', {
-          scroll_percentage: milestone,
-          page_location: window.location.href
-        });
-      }
-    });
-  }
-
-  // Track scroll depth on scroll events (throttled)
-  let scrollTimeout;
-  window.addEventListener('scroll', function() {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(trackScrollDepth, 100);
-  });
-
-  // Track time spent on page (every 30 seconds)
-  let timeSpent = 0;
-  const timeInterval = setInterval(() => {
-    timeSpent += 30;
-    gtag('event', 'time_on_page', {
-      time_seconds: timeSpent,
-      page_location: window.location.href
-    });
-  }, 30000); // 30 seconds
-
-  // Clear interval when user leaves the page
-  window.addEventListener('beforeunload', () => {
-    clearInterval(timeInterval);
-  });
-
-  // Track device type for user experience insights
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  gtag('event', 'device_type', {
-    device_category: isMobile ? 'mobile' : 'desktop',
-    page_location: window.location.href
-  });
 }
