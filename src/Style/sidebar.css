@@ -54,7 +54,9 @@
 }
 
 img.sidebar-icon {
-  width:4vw; filter: brightness(0)
+  width: 4vw;
+  filter: brightness(0);
+  transition: filter 1.5s ease; /* Smooth transition for filter */
 }
 
 @media (max-width: 768px) {

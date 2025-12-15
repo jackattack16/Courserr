@@ -666,3 +666,23 @@ body.dark-mode #searchInput {
 body.dark-mode #searchInput::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+
+
+
+.dark-mode {
+  /* background-color: red; */
+  height: 6vh;
+  width: 6vh;
+  padding: 0;
+  position: absolute;
+  font-size: 0;
+  right: 1vw;
+  top: 2vh;
+}
+
+.mode-switch {
+  font-size: 6vh;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+}
