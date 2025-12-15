@@ -1,16 +1,16 @@
 // this file handles loading individual class pages
 // pretty much just takes the course name from URL and displays all the info
 function displayCourseDetails(courseId) {
-  console.log(typeof (courseId));
-  console.log('loading course details...');
+  //console.log(typeof (courseId));
+  //console.log('loading course details...');
   const course = courseMap.get(Number(courseId));
-  console.log(course.getCourseId());
+  //console.log(course.getCourseId());
   // if (!course) { 
   //   console.error('no course data available');
   //   return;
   // }
 
-  console.log('course loaded:', course.getClassName());
+  //console.log('course loaded:', course.getClassName());
 
   // update the page title
   document.title = course.getClassName() + " - Courserr";
@@ -35,18 +35,18 @@ function displayCourseDetails(courseId) {
 
   for (let i = 0; i < headerElements.length; i++) {
     headerElements[i].classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
-    console.log("changed colour")
+    //console.log("changed colour")
   }
   for (let i = 0; i < halfElements.length; i++) {
     halfElements[i].classList.add(course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase());
-    console.log("changed colour");
+    //console.log("changed colour");
   }
 
   // create the star rating display
   if (starRateEl) {
     let starsHTML = "";
     const rating = course.getAverageRating();
-    console.log('course rating:', rating);
+    //console.log('course rating:', rating);
 
     // create 5 stars, filled or empty based on rating
     for (let i = 0; i < 5; i++) {
@@ -67,14 +67,37 @@ function displayCourseDetails(courseId) {
 
   if (prereqEl) {
     if (course.getPrerequisite() === "None") {
-      prereqEl.innerHTML += "<div class='elevated-rectangle'>None</div>"
+      prereqEl.innerHTML += "<div class='elevated-rectangle no-hover'>None</div>"
     } else {
       const array = course.getPrerequisite().split(/[,;]|\s+or\s+/i);
       for (let i = 0; i < array.length; i++) {
         const cleanPrereq = array[i].trim();
         if (cleanPrereq) {
-          const escapedPrereq = cleanPrereq.replace(/'/g, "\\'");
-          prereqEl.innerHTML += `<div class='elevated-rectangle' onclick="openPrereq('${escapedPrereq}')"><u>${cleanPrereq}</u></div>`;
+          let escapedPrereq = cleanPrereq.replace(/'/g, "\\'");
+          escapedPrereq = escapedPrereq.replaceAll("^", ",");
+          let visableText = escapedPrereq;
+          if (escapedPrereq.includes("%")) {
+            escapedPrereq = escapedPrereq.replaceAll("%", "");
+            visableText = escapedPrereq + " OR:"
+          }
+
+          if (escapedPrereq.includes("#")) {
+            escapedPrereq = escapedPrereq.replace("#", "");
+            visableText = escapedPrereq;
+            prereqEl.innerHTML += `<div class='elevated-rectangle teacher-aproval'"><u>${visableText}</u></div>`;
+            return;
+          }
+
+          if (visableText.includes("{")) {
+            console.log(9);
+          }
+
+          if (visableText == "Instructor Approval") {
+            prereqEl.innerHTML += `<div class='elevated-rectangle teacher-aproval'"><u>${visableText}</u></div>`;
+          } else {
+            prereqEl.innerHTML += `<div class='elevated-rectangle' onclick="openPrereq('${escapedPrereq}')"><u>${visableText}</u></div>`;
+          }
+          
         }
       }
     }
@@ -119,11 +142,11 @@ function displayCourseDetails(courseId) {
   // handle comments section - load dynamic comments
   loadDynamicComments(course);
 
-  console.log('finished loading course:', course.getClassName());
+  //console.log('finished loading course:', course.getClassName());
 }
 
 function loadDynamicComments(course) {
-  console.log('Loading dynamic comments for:', course.getClassName());
+  //console.log('Loading dynamic comments for:', course.getClassName());
 
   // Get the comments area
   const commentsArea = document.querySelector('.area-with-the-comments');
@@ -143,8 +166,8 @@ function loadDynamicComments(course) {
   const averageTime = course.getAverageTimePerWeek();
   const difficulty = course.getClassDifficulty();
 
-  console.log('Course comments:', comments);
-  console.log('Course ratings:', ratings);
+  //console.log('Course comments:', comments);
+  //console.log('Course ratings:', ratings);
 
   if (comments && comments.length > 0) {
     // Create comment boxes for each comment
@@ -215,11 +238,11 @@ function loadDynamicComments(course) {
     });
   }
 
-  console.log('Dynamic comments loaded successfully');
+  //console.log('Dynamic comments loaded successfully');
 }
 
 function loadDynamicTags(course) {
-  console.log('Loading dynamic tags for:', course.getClassName());
+  //console.log('Loading dynamic tags for:', course.getClassName());
 
   // Get the tags holder element
   const tagsHolder = document.querySelector('.class-tags-holder');
@@ -233,7 +256,7 @@ function loadDynamicTags(course) {
 
   // Get tags from the course
   const courseTags = course.getTags();
-  console.log('Course tags:', courseTags);
+  //console.log('Course tags:', courseTags);
 
   if (courseTags && courseTags.length >= 3) {
     // Create tag elements for each tag
@@ -266,11 +289,11 @@ function loadDynamicTags(course) {
     tagsHolder.appendChild(tagElement);
   }); */
 
-  console.log('Dynamic tags loaded successfully');
+  //console.log('Dynamic tags loaded successfully');
 }
 
 function createDynamicGraph(course) {
-  console.log('creating graph for:', course.getClassName());
+  //console.log('creating graph for:', course.getClassName());
 
   // make sure Chart.js is loaded
   if (typeof Chart === 'undefined') {
@@ -302,7 +325,7 @@ function createDynamicGraph(course) {
         maintainAspectRatio: false
       }
     });
-    console.log('test chart worked, destroying it...');
+    //console.log('test chart worked, destroying it...');
     testChart.destroy(); // clean up test chart
   } catch (error) {
     console.error('test chart failed:', error);
@@ -313,8 +336,8 @@ function createDynamicGraph(course) {
   const hours = course.getTimePerWeekLog(); // Use the raw log, not the average
   const grades = course.getGrades();
 
-  console.log('course hours:', hours);
-  console.log('course grades:', grades);
+  //console.log('course hours:', hours);
+  //console.log('course grades:', grades);
 
   // convert letter grades to numbers for the graph
   const gradeValues = {
@@ -345,7 +368,7 @@ function createDynamicGraph(course) {
   // if we don't have enough data, create some sample points
   if (dataPoints.length < 3) {
     // Not enough data points to show a meaningful graph
-    console.log('Not enough data points for graph (< 3). Hiding graph or showing message.');
+    //console.log('Not enough data points for graph (< 3). Hiding graph or showing message.');
 
     // Option 1: Hide the canvas parent container or show a message
     const chartContainer = canvas.parentElement; // Assuming canvas is in a container
@@ -364,7 +387,7 @@ function createDynamicGraph(course) {
     return; // Stop graph creation
   }
 
-  console.log('final data points:', dataPoints);
+  //console.log('final data points:', dataPoints);
 
   // calculate the trend line
   function calcTrendLine(data) {
@@ -392,7 +415,7 @@ function createDynamicGraph(course) {
     trendLinePoints.push({ x: x, y: slope * x + intercept });
   }
 
-  console.log('creating chart with', dataPoints.length, 'data points');
+  //console.log('creating chart with', dataPoints.length, 'data points');
 
   try {
     // create the actual chart
@@ -505,7 +528,7 @@ function createDynamicGraph(course) {
       }
     });
 
-    console.log('chart created successfully!');
+    //console.log('chart created successfully!');
   } catch (error) {
     console.error('error creating chart:', error);
   }
