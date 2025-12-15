@@ -3,13 +3,24 @@
 
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6N8FBM6L1"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-H6N8FBM6L1');
+    function enableAnalytics() {
+      localStorage.setItem('ga-consent', 'granted');
+  
+      const script = document.createElement('script');
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-H6N8FBM6L1";
+      script.async = true;
+      document.head.appendChild(script);
+  
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H6N8FBM6L1');
+    }
+  
+    if (localStorage.getItem('ga-consent') === 'granted') {
+      enableAnalytics();
+    }
   </script>
 
   <meta charset="UTF-8">
@@ -42,6 +53,7 @@
   </script>
   <script src="../Javascript/Class.js"></script>
   <script src="../Javascript/ClassInstantiation.js"></script>
+  <script src="../Javascript/darkMode.js"></script>
 
   <script type="module">
     import '@material/web/all.js';
@@ -165,11 +177,11 @@
       </div>
       <div class="sidebarItem" onclick="window.open('https://github.com/jackattack16/Courserr').focus()">
         <!-- <span class="material-symbols-rounded sidebar-icon">volunteer_activism</span><p>Contrubute</p> -->
-         <img src="../Images/github-mark.png" class="sidebar-icon"><p>Contribute</p>
+         <img src="../Images/github-mark-white.png" class="sidebar-icon" id="githubIcon"><p>Contribute</p>
       </div>
 
       
-
+      
 
       <!-- <img src="codeIcon.png" class="codePic"  onclick="window.open('https://github.com/Anirudh4Neutrino/RateMyClass', '_blank').focus();">-->
 
@@ -197,6 +209,10 @@
             </div>
           </label>
         </div>
+        <div class="dark-mode">
+          <span class="material-symbols-rounded no-fill mode-switch" id="lightMode" style="z-index: 11; transition: 1s filter linear;" onclick="switchMode(1)">light_mode</span>
+          <span class="material-symbols-rounded no-fill mode-switch" id="darkMode" style="opacity: 0;z-index: 10; transition: 1s filter linear;" onclick="switchMode(0)">dark_mode</span>
+        </div>
         <div>
           <md-chip-set class="filterArea">
             <!-- Filter chips will be generated dynamically from course data -->
@@ -205,6 +221,8 @@
         <!--    <div class="profileHolder">
                   <img src="profileIcon.png" class="profile">
                 </div>-->
+
+                
       </div>
 
       <!-- Filters Row -->
