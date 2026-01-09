@@ -207,6 +207,36 @@
 
 
   </div>
+  <div class="cookie-popup-holder" id="background-blur">
+    <div id="cookie-banner" class="cookie-stuff">
+      <p>We use cookies and anonymous analytics to improve the experience for everyone. We collect data like visited pages and commonly used features to understand how Courserr is used and make it better.
+      </p>
+      <div class="privacy-holder">
+        <button onclick="acceptCookies()" class="accept">Accept</button>
+        <button onclick="declineCookies()" class="decline">Decline</button>
+      </div>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    </div>
+    <script>
+      function acceptCookies() {
+        document.getElementById('cookie-banner').style.display = 'none';
+        document.getElementById('background-blur').style.display = 'none';
+        enableAnalytics();
+      }
+    
+      if (localStorage.getItem('ga-consent') === 'granted' || localStorage.getItem('ga-consent') === 'denied') {
+        document.getElementById('cookie-banner').style.display = 'none';
+        document.getElementById('background-blur').style.display = 'none';
+      }
+
+      function declineCookies() {
+        localStorage.setItem('ga-consent', 'denied');
+        document.getElementById('cookie-banner').style.display = 'none';
+        document.getElementById('background-blur').style.display = 'none';
+      }
+
+    </script>
 
 
 
