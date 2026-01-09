@@ -3,14 +3,14 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6N8FBM6L1"></script> -->
-    <!-- <script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6N8FBM6L1"></script>
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-H6N8FBM6L1');
-    </script> -->
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courserr - Help</title>
@@ -29,10 +29,6 @@
     <link rel="stylesheet" href="Style/style.css">
     <link rel="stylesheet" href="Style/sidebar.css">
     <link rel="stylesheet" href="Style/classColours.css">
-    <link rel="stylesheet" href="Style/privacy.css">
-
-
-    <script src="Javascript/darkMode.js"></script>
 
     <script type="importmap">
     {
@@ -57,21 +53,6 @@
             --primary-green: #34a853;
             --text-grey: #5f6368;
             --heading-black: #202124;
-
-            /* Wave colors for light mode (default) */
-            --wave-bg-light: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            --wave-color-1: #B5C9A8;
-            --wave-color-2: #90A4AE;
-            --wave-color-3: #E6CCB2;
-            --wave-color-4: #E0C097;
-            --wave-color-5: #D7CCC8;
-            --wave-color-6: #E6EE9C;
-
-            /* Text colors for light mode */
-            --text-color-light: #5f6368;
-            --card-bg-light: white;
-            --hero-title-light: #202124;
-            --hero-subtitle-light: #5f6368;
         }
 
         .help-container {
@@ -107,14 +88,14 @@
         .hero-title {
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--hero-title-light);
+            color: var(--heading-black);
             margin-bottom: 1rem;
             letter-spacing: -1px;
         }
 
         .hero-subtitle {
             font-size: 1.5rem;
-            color: var(--hero-subtitle-light);
+            color: var(--text-grey);
             font-weight: 300;
             max-width: 700px;
             margin: 0 auto;
@@ -172,6 +153,7 @@
             height: 750px;
             transition: width 0.6s, height 0.6s;
         }
+
         .go-button:active {
             transform: translateY(-2px) scale(1.02);
         }
@@ -209,7 +191,7 @@
         }
 
         .feature-card {
-            background: var(--card-bg-light);
+            background: white;
             border-radius: 16px;
             padding: 2.5rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -226,7 +208,6 @@
             font-size: 3rem;
             margin-bottom: 1.5rem;
             background: -webkit-linear-gradient(45deg, var(--primary-blue), var(--primary-green));
-            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -234,12 +215,12 @@
         .card-title {
             font-size: 1.5rem;
             font-weight: 500;
-            color: var(--hero-title-light);
+            color: var(--heading-black);
             margin-bottom: 1rem;
         }
 
         .card-text {
-            color: var(--text-color-light);
+            color: var(--text-grey);
             line-height: 1.6;
             font-size: 1rem;
         }
@@ -289,7 +270,7 @@
             height: 100%;
             z-index: -1;
             overflow: hidden;
-            background: var(--wave-bg-light);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
         .wave-layer {
@@ -330,8 +311,8 @@
             height: 100%;
             flex-shrink: 0;
             background: linear-gradient(45deg,
-                    var(--wave-color-1) 0%, var(--wave-color-2) 16.67%, var(--wave-color-3) 33.33%,
-                    var(--wave-color-4) 50%, var(--wave-color-5) 66.67%, var(--wave-color-6) 83.33%, var(--wave-color-1) 100%);
+                    #B5C9A8 0%, #90A4AE 16.67%, #E6CCB2 33.33%,
+                    #E0C097 50%, #D7CCC8 66.67%, #E6EE9C 83.33%, #B5C9A8 100%);
             background-size: 400% 400%;
             animation: color-shift 8s ease-in-out infinite, wave-distort 12s ease-in-out infinite alternate;
             clip-path: polygon(0% 100%, 5% 90%, 10% 95%, 15% 85%, 20% 92%, 25% 88%, 30% 94%, 35% 86%, 40% 91%, 45% 87%,
@@ -531,15 +512,6 @@
             }
         }
 
-        .privacy-disclaimer a {
-            color: var(--text-color-light);
-            text-decoration: none;
-        }
-
-        .privacy-disclaimer a:hover {
-            text-decoration: underline;
-        }
-
         .material-symbols-rounded {
           font-variation-settings:
             'FILL' 1,
@@ -548,27 +520,6 @@
             'opsz' 48;
         }
     </style>
-
-<script>
-  function enableAnalytics() {
-    localStorage.setItem('ga-consent', 'granted');
-
-    const script = document.createElement('script');
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-H6N8FBM6L1";
-    script.async = true;
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-H6N8FBM6L1');
-  }
-
-  if (localStorage.getItem('ga-consent') === 'granted') {
-    enableAnalytics();
-  }
-</script>
-
 </head>
 
 <body style="background-color: #f8f9fa" id="body">
@@ -631,21 +582,17 @@
             </div>
             <div class="sidebarItem" onclick="window.open('https://github.com/jackattack16/Courserr').focus()">
               <!-- <span class="material-symbols-rounded sidebar-icon">volunteer_activism</span><p>Contrubute</p> -->
-               <img src="Images/github-mark-white.png" class="sidebar-icon" id="githubIcon"><p>Contribute</p>
+              <img src="Images/github-mark.png" class="sidebar-icon"><p>Contribute</p>
             </div>
         </div>
 
         <div class="main-content">
             <div class="header" style="background-color: white; box-shadow: 0 1px 4px rgba(0,0,0,0.1);" id="header">
                 <div class="title">
-                    <strong >Course<i>rr</i></strong>
-                </div>
-                <div class="dark-mode">
-                  <span class="material-symbols-rounded no-fill mode-switch" id="lightMode" style="z-index: 11; transition: 1s filter linear;" onclick="switchMode(1)">light_mode</span>
-                  <span class="material-symbols-rounded no-fill mode-switch" id="darkMode" style="opacity: 0;z-index: 10; transition: 1s filter linear;" onclick="switchMode(0)">dark_mode</span>
+                    <strong style="color: var(--text-grey)">Course<i>rr</i></strong>
                 </div>
             </div>
-<div class="help-container" id="helpCOntainer">
+<div class="help-container">
     <div class="hero-section">
         <h1 class="hero-title">Built by Students, for Students</h1>
         <p class="hero-subtitle">Picking classes shouldn't be a headache. We made this simple so you can actually find stuff you'll like.</p>
@@ -693,21 +640,8 @@
         </div>
     </div>
 </div>
-<div class="privacy-disclaimer"><p><a  href="./HTML/privacy.html">Privacy Policy</a></p></div>
-        </div>
-        
-    </div>
 
-    <div class="cookie-popup-holder" id="background-blur">
-    <div id="cookie-banner" class="cookie-stuff">
-      <p>We use cookies and anonymous analytics to improve the experience for everyone. We collect data like visited pages and commonly used features to understand how Courserr is used and make it better.
-      </p>
-      <div class="privacy-holder">
-        <button onclick="acceptCookies()" class="accept">Accept</button>
-        <button onclick="declineCookies()" class="decline">Decline</button>
-      </div>
-      <a href="HTML/privacy.html">Privacy Policy</a>
-    </div>
+        </div>
     </div>
     <script>
       function acceptCookies() {
