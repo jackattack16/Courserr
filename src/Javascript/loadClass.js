@@ -5,10 +5,12 @@ function displayCourseDetails(courseId) {
   console.log('loading course details...');
   const course = courseMap.get(Number(courseId));
   console.log(course.getCourseId());
-  // if (!course) { 
-  //   console.error('no course data available');
-  //   return;
-  // }
+  if (!course) {
+    console.error('No course data available for courseId:', courseId);
+    const classNameEl = document.getElementById('className');
+    if (classNameEl) classNameEl.textContent = 'Course not found';
+    return;
+  }
 
   console.log('course loaded:', course.getClassName());
 
@@ -17,13 +19,11 @@ function displayCourseDetails(courseId) {
 
   // get all the DOM elements we need to update
   const classNameEl = document.getElementById('className');
-  const classPageClassNameEl = document.getElementById('classPageClassName');
   const teachersEl = document.getElementById('teachers');
   const starRateEl = document.getElementById('starRate');
 
-  // update the course name in both places
+  // update the course name
   if (classNameEl) classNameEl.textContent = course.getClassName();
-  if (classPageClassNameEl) classPageClassNameEl.textContent = course.getClassName();
 
   // set the teacher/department
   if (teachersEl) teachersEl.textContent = course.getSubject() + " Department";
@@ -51,12 +51,14 @@ function displayCourseDetails(courseId) {
     // create 5 stars, filled or empty based on rating
     for (let i = 0; i < 5; i++) {
       if (i < rating) {
-        starsHTML += "<span class=\"material-symbols-rounded\" style=\"font-variation-settings:'FILL' 1;font-size: 5vh\">star</span>";
+        starsHTML += "<span class=\"material-symbols-rounded\" aria-hidden=\"true\" style=\"font-variation-settings:'FILL' 1;font-size: 5vh\">star</span>";
       } else {
-        starsHTML += "<span class=\"material-symbols-rounded\" style=\"font-variation-settings:'FILL' 0;font-size: 5vh\">star</span>";
+        starsHTML += "<span class=\"material-symbols-rounded\" aria-hidden=\"true\" style=\"font-variation-settings:'FILL' 0;font-size: 5vh\">star</span>";
       }
     }
-    starRateEl.innerHTML = starsHTML;
+    const numericRating = Number.isFinite(Number(rating)) ? Number(rating) : 0;
+    starRateEl.setAttribute('aria-label', `Rating: ${numericRating} out of 5`);
+    starRateEl.innerHTML = `${starsHTML}<span class="visually-hidden">Rating: ${numericRating} out of 5</span>`;
   }
 
   // update prerequisites section
@@ -67,14 +69,14 @@ function displayCourseDetails(courseId) {
 
   if (prereqEl) {
     if (course.getPrerequisite() === "None") {
-      prereqEl.innerHTML += "<div class='elevated-rectangle'>None</div>"
+      prereqEl.innerHTML += "<div class='elevated-rectangle' role='note'>None</div>";
     } else {
       const array = course.getPrerequisite().split(/[,;]|\s+or\s+/i);
       for (let i = 0; i < array.length; i++) {
         const cleanPrereq = array[i].trim();
         if (cleanPrereq) {
           const escapedPrereq = cleanPrereq.replace(/'/g, "\\'");
-          prereqEl.innerHTML += `<div class='elevated-rectangle' onclick="openPrereq('${escapedPrereq}')"><u>${cleanPrereq}</u></div>`;
+          prereqEl.innerHTML += `<button type="button" class="elevated-rectangle" onclick="openPrereq('${escapedPrereq}')" aria-label="Open prerequisite course ${cleanPrereq}"><u>${cleanPrereq}</u></button>`;
         }
       }
     }

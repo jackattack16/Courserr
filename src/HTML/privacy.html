@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Courserr Privacy Policy">
+  <title>Courserr - Privacy Policy</title>
+
+  <link rel="icon" href="../Images/logo.png">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <link rel="stylesheet" href="../Style/style.css">
+  <link rel="stylesheet" href="../Style/sidebar.css">
+  <link rel="stylesheet" href="../Style/classColours.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import '@material/web/all.js';
+    import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+
+  <style>
+    .material-symbols-rounded {
+      font-variation-settings:
+        'FILL' 1,
+        'wght' 500,
+        'GRAD' 200,
+        'opsz' 48;
+    }
+
+    :root {
+      --primary-blue: #4285f4;
+      --primary-red: #ea4335;
+      --primary-yellow: #fbbc04;
+      --primary-green: #34a853;
+      --text-grey: #5f6368;
+      --heading-black: #202124;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Roboto', sans-serif;
+      color: var(--text-grey);
+      margin: 0;
+      padding: 0;
+    }
+
+    .privacy-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      min-height: calc(100vh - 80px);
+    }
+
+    .privacy-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .privacy-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--heading-black);
+      margin-bottom: 0.5rem;
+    }
+
+    .privacy-subtitle {
+      font-size: 1rem;
+      color: var(--text-grey);
+    }
+
+    .privacy-content {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .privacy-section {
+      margin-bottom: 2rem;
+    }
+
+    .privacy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .privacy-section h2 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--heading-black);
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid var(--primary-blue);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .privacy-section p {
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .privacy-section ul {
+      margin: 0.5rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .privacy-section li {
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--primary-red);
+    }
+
+    .last-updated {
+      font-size: 0.875rem;
+      color: var(--text-grey);
+      font-style: italic;
+    }
+
+    .contact-info {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .contact-info a {
+      color: var(--primary-blue);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .privacy-container {
+        padding: 2rem 1rem;
+      }
+
+      .privacy-title {
+        font-size: 2rem;
+      }
+
+      .privacy-content {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body id="body">
+  <div class="container" id="fullHeightDiv">
+    <button class="material-symbols-rounded menuMobile openMenu mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="lines" onclick="openClose(true)" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">menu</button>
+    <button class="material-symbols-rounded menuMobile mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="exes" onclick="openClose(false)" aria-label="Close navigation menu" aria-expanded="true" aria-controls="sidebar">close</button>
+    <nav class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)" aria-label="Main navigation">
+      <button class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: 7vh;" aria-label="Close menu">
+        <span>Close</span>
+      </button>
+      <button class="sidebarItem" onclick="window.location.href = './allClasses.html';">
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">flood</span><span>Home</span>
+      </button>
+      <button class="sidebarItem" onclick="window.open('https://docs.google.com/document/d/1n4HRkpug7Vh7ZYWIeSQcKXRjLHPDzmVj/edit#heading=h.gjdgxs');">
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">menu_book</span><span>Handbook</span>
+      </button>
+      <button class="sidebarItem" onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
+        <span class="material-symbols-rounded sidebar-icon no-fill" aria-hidden="true">groups</span><span>Clubs & Activities</span>
+      </button>
+      <button class="sidebarItem" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdDH42uqIz3Om26jL_gGW5gQYDMwOj298VUGsPA_PfuC-56Dw/viewform?usp=publish-editor', '_blank').focus()">
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">bug_report</span><span>Bugs/Issues</span>
+      </button>
+      <button class="sidebarItem" onclick="window.location.href = '../index.html'">
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">help</span><span>Help</span>
+      </button>
+      <button class="sidebarItem" onclick="window.open('https://github.com/jackattack16/Courserr').focus()">
+        <img src="../Images/github-mark.png" class="sidebar-icon" alt="GitHub logo"><span>Contribute</span>
+      </button>
+    </nav>
+
+    <div class="main-content">
+      <header class="header" style="background-color: white; box-shadow: 0 1px 4px rgba(0,0,0,0.1);" id="header">
+        <div class="title">
+          <strong style="color: var(--text-grey)">Course<i>rr</i></strong>
+        </div>
+      </header>
+
+      <main class="privacy-container">
+        <a href="../index.html" class="back-link">
+          <span class="material-symbols-rounded">arrow_back</span>
+          Back to Home
+        </a>
+
+        <header class="privacy-header">
+          <h1 class="privacy-title">Privacy Policy</h1>
+          <p class="privacy-subtitle">Last updated: February 2026</p>
+        </header>
+
+        <div class="privacy-content">
+          <section class="privacy-section">
+            <h2>Introduction</h2>
+            <p>Welcome to Courserr. We are a student-built course discovery platform for Ames High School, and we value your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use our website.</p>
+            <p>Courserr is an open-source project created by students, for students. We believe in transparency and want you to understand exactly what data we collect and how we use it.</p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>Information We Collect</h2>
+            <p>We collect the following types of information:</p>
+            <ul>
+              <li><strong>Usage Data:</strong> Anonymous analytics data about how you use Courserr, such as which pages you visit and which features you use most.</li>
+              <li><strong>Cookies:</strong> Small data files stored on your device to remember your preferences and improve your experience.</li>
+              <li><strong>Local Storage:</strong> Data stored locally in your browser, including your cookie consent preferences.</li>
+            </ul>
+            <p>We do not collect personally identifiable information such as your name, email address, or school ID.</p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>How We Use Your Information</h2>
+            <p>The information we collect is used to:</p>
+            <ul>
+              <li>Improve and optimize Courserr based on usage patterns</li>
+              <li>Understand which features are most helpful to students</li>
+              <li>Fix bugs and improve overall performance</li>
+              <li>Remember your privacy preferences</li>
+            </ul>
+          </section>
+
+          <section class="privacy-section">
+            <h2>Cookies & Analytics</h2>
+            <p>When you first visit Courserr, you'll see a cookie consent banner. You can choose to:</p>
+            <ul>
+              <li><strong>Accept:</strong> Allow anonymous analytics to help us improve the site</li>
+              <li><strong>Decline:</strong> Opt out of all analytics tracking</li>
+            </ul>
+            <p>If you decline, we do not collect any analytics data. Your choice is stored locally and will be remembered on future visits.</p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>Data Sharing</h2>
+            <p>We do not sell, trade, or otherwise transfer your information to outside parties. We may share anonymous, aggregated data with:</p>
+            <ul>
+              <li>Future developers working on Courserr (for improvement purposes)</li>
+              <li>No third-party advertising networks</li>
+              <li>No commercial data brokers</li>
+            </ul>
+          </section>
+
+          <section class="privacy-section">
+            <h2>Third-Party Services</h2>
+            <p>Courserr may contain links to external websites or services, including:</p>
+            <ul>
+              <li>Ames High School course handbook</li>
+              <li>Clubs and activities information</li>
+              <li>GitHub (for our open-source project)</li>
+            </ul>
+            <p>We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies.</p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>Children's Privacy</h2>
+            <p>Courserr is designed for high school students. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+              <li>Access any data we may have collected (which, as noted above, is minimal)</li>
+              <li>Delete your local storage data (clear your browser cache)</li>
+              <li>Opt out of analytics at any time by declining cookies</li>
+            </ul>
+          </section>
+
+          <section class="privacy-section">
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. If we make changes, we will update the "Last updated" date at the top of this page. We encourage you to review this policy periodically.</p>
+          </section>
+
+          <section class="privacy-section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or our practices, please reach out:</p>
+            <div class="contact-info">
+              <p><strong>Email:</strong> <a href="mailto:888278die@ames.k12.ia.us">Jackson Diekmann</a></p>
+              <p><strong>Email:</strong> <a href="mailto:887500man@ames.k12.ia.us">Anirudh Manimaran</a></p>
+              <p><strong>Email:</strong> <a href="mailto:889889che@ames.k12.ia.us">Laura Chen</a></p>
+              <p><strong>GitHub:</strong> <a href="https://github.com/jackattack16/Courserr" target="_blank" rel="noopener">github.com/jackattack16/Courserr</a></p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    function openClose(closed) {
+      let lines = document.getElementById('lines');
+      let exes = document.getElementById('exes');
+      let text = document.getElementById('mobileClose');
+      let sidebar = document.getElementById('sidebar');
+      
+      if (closed) {
+        exes.style.opacity = "1";
+        exes.style.transform = "rotate(-90deg)"
+        exes.style.zIndex = "1002";
+        exes.setAttribute('aria-expanded', 'true');
+        lines.style.opacity = "0";
+        lines.style.transform = "rotate(90deg)";
+        lines.style.zIndex = "1001";
+        lines.setAttribute('aria-expanded', 'true');
+        sidebar.style.transform = "translateX(0vw)"
+        sidebar.setAttribute('aria-hidden', 'false');
+        text.style.opacity = "1";
+        exes.focus();
+      } else {
+        exes.style.opacity = "0";
+        exes.style.transform = "rotate(0deg)"
+        exes.style.zIndex = "1001";
+        exes.setAttribute('aria-expanded', 'false');
+        lines.style.opacity = "1";
+        lines.style.transform = "rotate(0deg)";
+        lines.style.zIndex = "1002";
+        lines.setAttribute('aria-expanded', 'false');
+        sidebar.style.transform = "translateX(-75vw)"
+        sidebar.setAttribute('aria-hidden', 'true');
+        text.style.opacity = "0";
+        lines.focus();
+      }
+    }
+  </script>
+</body>
+
+</html>

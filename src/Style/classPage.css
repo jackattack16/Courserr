@@ -4,17 +4,15 @@
 
 
 .classPageInfoContainer {
-  position: absolute;
-  overflow-y: scroll;
-  width: 95vw;
-  height: 100vh;
-  left: 5vw;
-  /* top | right | bottom | left */
+  overflow-y: auto;
+  width: 100%;
+  min-height: calc(100vh - 14vh);
   padding: 13vh 2.5vw 3vh 2.5vw;
   border-radius: var(--borderRad);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .classPageFullSpread {
@@ -188,7 +186,7 @@
 }
 
 .tagsTitle {
-  height: 3vh;
+  min-height: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -347,8 +345,8 @@
   margin-right: 2vw;
 }
 
-h1 {
-  height: 3.5vh;
+h1, h2, h3 {
+  min-height: 3.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -361,6 +359,18 @@ h1 {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 0.8vh;
   padding: 0.3vh 0.8vw;
+}
+
+h1 {
+  font-size: 2.4vh;
+}
+
+h2 {
+  font-size: 2.2vh;
+}
+
+h3 {
+  font-size: 2vh;
 }
 
 ul {

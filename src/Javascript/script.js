@@ -60,7 +60,7 @@ function updateFilterButtons() {
 
     // Add subject filters dynamically
     subjects.forEach(subject => {
-      filterHTML += `<span class="filterChip"><md-filter-chip label="${subject}" onclick="addFilter(this.label)"></md-filter-chip></span>`;
+      filterHTML += `<md-filter-chip class="filterChip" label="${subject}" onclick="addFilter(this.label)"></md-filter-chip>`;
     });
 
     // Add bookmarked filter
@@ -312,40 +312,28 @@ const subjectToIcon = {
 
 function makeHTML(course, fill) {
   let bodyHTML = "";
-  //console.log('makeHTML called for course:', course.getClassName());
-  // Always use lowercase, no spaces, for subject class assignment
   const subjectClass = course.getSubject().replace(/\s+ |&|,/g, '').toLowerCase();
-  if (fill === true) {
-    let classCardDiv = `<div class="classCard ${subjectClass}"  >`;
-    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded class-icon"${unfilled}>${subjectToIcon[course.getSubject()]}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 1" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
-    // Add subjectClass to classRate for color
-    let starDiv = `<div class="classRate ${subjectClass}">` + numberToStars(course.getAverageRating()) + `</div>`;
-    let descriptionDiv = `<div class="classDes">${course.getDescription()}</div></div>`;
-    let htmlCard = classCardDiv + headerDiv + descriptionDiv;
-    bodyHTML += htmlCard;
-  } else {
-    let classCardDiv = `<div class="classCard ${subjectClass}"  >`;
-    let headerDiv = `<div class="classHeader">` + `<span class="material-symbols-rounded class-icon"${unfilled}>${subjectToIcon[course.getSubject()]}</span><div class="className" onclick="openClass('${course.getCourseId()}')"><u>${course.getClassName()}</u></div><span class="material-symbols-rounded" style="cursor: pointer;font-variation-settings:'FILL' 0" onclick="fav(this)" id="${course.getClassName()}">bookmark</span></div>`;
-    // Add subjectClass to classRate for color
-    let starDiv = `<div class="classRate ${subjectClass}">` + numberToStars(course.getAverageRating()) + `</div>`;
-    let descriptionDiv = `<div class="classDes">${course.getDescription()}</div></div>`;
-    let htmlCard = classCardDiv + headerDiv + descriptionDiv;
-    bodyHTML += htmlCard;
-  }
-  //console.log('Generated HTML for', course.getClassName(), ':', bodyHTML);
-  return bodyHTML;
-}
+  const courseName = course.getClassName();
+  const courseId = course.getCourseId();
+  const isBookmarked = fill === true;
+  
+  const bookmarkAriaLabel = isBookmarked ? `Remove ${courseName} from bookmarks` : `Add ${courseName} to bookmarks`;
+  const bookmarkFill = isBookmarked ? "'FILL' 1" : "'FILL' 0";
+  
+  let classCardDiv = `<article class="classCard ${subjectClass}" aria-label="${courseName} course card">`;
+  
+  let headerDiv = `<div class="classHeader">` + 
+    `<span class="material-symbols-rounded class-icon" aria-hidden="true"${unfilled}>${subjectToIcon[course.getSubject()] || 'school'}</span>` +
+    `<button class="className" onclick="openClass('${courseId}')" aria-label="View details for ${courseName}">${courseName}</button>` +
+    `<button class="material-symbols-rounded bookmark-btn" style="cursor: pointer;font-variation-settings:${bookmarkFill}" onclick="fav(this)" id="${courseName}" aria-label="${bookmarkAriaLabel}" aria-pressed="${isBookmarked}">bookmark</button>` +
+    `</div>`;
 
-function numberToStars(rating) {
-  let output = "";
-  for (i = 0; i < 5; i++) {
-    if (i < rating) {
-      output += "<span class=\"material-symbols-rounded\">star</span>";
-    } else {
-      output += "<span class=\"material-symbols-rounded\"" + unfilled + ">star</span>";
-    }
-  }
-  return (output);
+  let descriptionDiv = `<p class="classDes">${course.getDescription()}</p></article>`;
+  
+  let htmlCard = classCardDiv + headerDiv + descriptionDiv;
+  bodyHTML += htmlCard;
+  
+  return bodyHTML;
 }
 
 function loopThroughClasses() {
@@ -483,18 +471,24 @@ searchBar.addEventListener("focusout", (event) => {
 
 function fav(element) {
   let fillValue;
-  //alert(element.id);
+  let isNowFilled;
+  const courseName = element.id;
+  
   if (element.style.cssText.includes("1")) {
-    fillValue = "'FILL' 0";  // If it's filled, switch to unfilled.
-    bookmarks[bookmarks.indexOf(element.id)] = "";
+    fillValue = "'FILL' 0";
+    isNowFilled = false;
+    bookmarks[bookmarks.indexOf(courseName)] = "";
   } else {
-    fillValue = "'FILL' 1";  // If it's unfilled, switch to filled.
-    bookmarks.push(element.id);
+    fillValue = "'FILL' 1";
+    isNowFilled = true;
+    bookmarks.push(courseName);
   }
   element.style.fontVariationSettings = fillValue;
+  element.setAttribute('aria-pressed', isNowFilled);
+  element.setAttribute('aria-label', isNowFilled ? `Remove ${courseName} from bookmarks` : `Add ${courseName} to bookmarks`);
+  
   bookmarks = bookmarks.filter(item => item !== "");
   sessionStorage.setItem("bookmarks", bookmarks);
-  //alert(sessionStorage.getItem("bookmarks"));
 }
 
 function openClass(courseId) {
