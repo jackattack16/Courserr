@@ -2,114 +2,93 @@
 .sidebar {
     z-index: 900;
     width: 5vw;
-    color: white;
+    min-width: 60px;
+    color: black;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     height: 100vh;
-    color: black;
     transition: transform 0.35s ease, width 0.2s ease, box-shadow 0.3s ease-out, background-color 1.5s ease, color 1.5s ease;
     backdrop-filter: blur(50px);
     position: fixed;
     left: 0;
     top: 0;
     overflow: hidden;
-    transform: translateX(0); /* default desktop position */
+    transform: translateX(0);
+    padding-top: 2vh;
 }
 
 .menuMobile {
     display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .sidebarItem {
-    padding-left: 0.5vw;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0);
     width: 100%;
-    height: 10vh;
-    text-wrap: wrap;
-    overflow: clip;
-    font-weight: bold;
-    transition: font-size 0.15s ease, background-color 0.15s ease;
+    height: 8vh;
+    min-height: 50px;
+    font-weight: 500;
+    font-size: 1.4vw;
+    transition: all 0.2s ease;
     cursor: pointer;
     white-space: nowrap;
-    min-width: fit-content;
+    border: none;
+    border-radius: 1vh;
+    color: inherit;
+    font-family: inherit;
+    text-align: left;
+    margin: 0.5vh 0;
+    position: relative;
+    padding: 0 1vw;
 }
 
-.sidebarItem > p {
-    margin: 0;
-    padding: 0;
-    margin-left: 0.5vw;
-    font-size: 1.75vw;
-    width: 100%;
-    text-wrap: wrap;
-    transition: 0.2s font-size ease;
+/* Icon styling */
+.sidebarItem .material-symbols-rounded,
+.sidebarItem .sidebar-icon {
+    font-size: 4.5vh;
+    min-width: 4.5vh;
+    min-height: 4.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.sidebar-icon {
-    margin-right: 1vw;
-    font-size: 4vw;
+/* Text label - hidden by default */
+.sidebarItem > span:not(.material-symbols-rounded):not(.sidebar-icon) {
+    position: absolute;
+    left: 6vw;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+    font-size: 1.4vw;
 }
 
 img.sidebar-icon {
-  width:4vw; filter: brightness(0)
-}
-
-@media (max-width: 768px) {
-  .sidebar-icon {
-    font-size: 7vh;
-  }
-  img.sidebar-icon {
-    width:7vh;
-  }
-}
-
-.menuPic {
-    height: 4vw;
-    width: 4vw;
-    margin-right: 1vw;
-    transition: all 0.15s ease, filter 1.5s ease;
-}
-
-.mobileClose {
-    display: none;
-    transition: opacity 0.75s ease;
-    opacity: 0;
-}
-
-/* Desktop hover expansion */
-@media (min-width: 769px) {
-    .sidebar:hover {
-        width: 17.5vw;
-        box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2);
-    }
-
-    .sidebarItem:hover > p {
-        font-size: 1.9vw;
-    }
-
-    .sidebarItem:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-
-    .sidebarItem:hover > .menuPic {
-        height: 4.1vw;
-        width: 4.1vw;
-    }
+    width: 4.5vh;
+    height: 4.5vh;
+    filter: brightness(0);
+    object-fit: contain;
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
     .sidebar {
         width: 75vw;
+        min-width: auto;
         transform: translateX(-75vw);
         box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2);
         transition: transform 0.35s ease;
+        align-items: flex-start;
+        padding-top: 0;
     }
 
-    /* When open, slide in */
     .sidebar.open {
         transform: translateX(0);
         box-shadow: 0 0 6vh rgba(0, 0, 0, 0.35);
@@ -121,24 +100,40 @@ img.sidebar-icon {
     }
 
     span.mobileClose:not(.openMenu) {
-      opacity: 0;
-      z-index: 901;
+        opacity: 0;
+        z-index: 901;
     }
 
     .sidebar.open .mobileClose {
         opacity: 1;
     }
 
-    /* Sidebar items should be easier to click on smaller devices */
     .sidebarItem {
-        height: 12vh;
-        font-size: 4vh;
+        height: 10vh;
+        justify-content: flex-start;
+        padding-left: 2vw;
+        width: 100%;
     }
 
-    .sidebarItem > p {
-        font-size: 4.5vh;
-        width: 100%;
-        text-wrap: wrap;
+    .sidebarItem .material-symbols-rounded,
+    .sidebarItem .sidebar-icon {
+        font-size: 5vh;
+        min-width: 5vh;
+        min-height: 5vh;
+        margin-right: 2vw;
+    }
+
+    /* Show text on mobile */
+    .sidebarItem > span:not(.material-symbols-rounded):not(.sidebar-icon) {
+        position: static;
+        opacity: 1;
+        font-size: 2.5vh;
+    }
+
+    img.sidebar-icon {
+        width: 5vh;
+        height: 5vh;
+        margin-right: 2vw;
     }
 
     .menuPic {
@@ -156,6 +151,9 @@ img.sidebar-icon {
         margin-right: 1vw;
         z-index: 902;
         transition: opacity 0.25s ease, transform 0.5s ease;
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 
     .menuMobile.openMenu {
@@ -168,7 +166,6 @@ img.sidebar-icon {
         transform: rotate(90deg);
     }
 
-    /* Overlay that appears when sidebar is open (visual dim) */
     .sidebar-overlay {
         position: fixed;
         inset: 0;
@@ -178,16 +175,48 @@ img.sidebar-icon {
     }
 }
 
+/* Desktop hover expansion */
+@media (min-width: 769px) {
+    .sidebar:hover {
+        width: 18vw;
+        box-shadow: 0 0 5vh rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar:hover .sidebarItem {
+        justify-content: flex-start;
+    }
+
+    .sidebar:hover .sidebarItem > span:not(.material-symbols-rounded):not(.sidebar-icon) {
+        opacity: 1;
+        position: static;
+        margin-left: 1vw;
+    }
+
+    .sidebarItem:hover {
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+}
+
+/* Focus states for sidebar items */
+.sidebarItem:focus {
+    outline: 2px solid #4285f4;
+    outline-offset: -2px;
+    background-color: rgba(66, 133, 244, 0.1);
+}
+
+.sidebarItem:focus-visible {
+    outline: 2px solid #4285f4;
+    outline-offset: -2px;
+}
+
 /* For touch devices, prevent hover rules from changing layout */
 @media (hover: none) and (pointer: coarse) {
     .sidebarItem:hover {
         background-color: initial;
-        font-size: initial;
     }
 
-    /* prevent accidental width changes from :hover on touch */
     .sidebar:hover {
-        width: initial !important;
+        width: 5vw !important;
         box-shadow: initial;
     }
 }
@@ -208,10 +237,14 @@ body.dark-mode .mode {
     filter: invert(100%);
 }
 
+body.dark-mode img.sidebar-icon {
+    filter: brightness(0) invert(1);
+}
+
 .no-fill {
-  font-variation-settings:
-    'FILL' 0,
-    'wght' 500,
-    'GRAD' 200,
-    'opsz' 48  !important;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 500,
+        'GRAD' 200,
+        'opsz' 48 !important;
 }

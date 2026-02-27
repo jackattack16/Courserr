@@ -2,19 +2,10 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6N8FBM6L1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-H6N8FBM6L1');
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Courserr</title>
+  <meta name="description" content="Courserr - Course details and information">
+  <title>Courserr - Course Details</title>
 
   <link rel="icon" href="../Images/logo.png">
   <link rel="stylesheet"
@@ -28,6 +19,7 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="../Style/style.css">
+  <link rel="stylesheet" href="../Style/sidebar.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="importmap">
@@ -41,6 +33,7 @@
   <script src="../Javascript/Class.js"></script>
   <script src="../Javascript/ClassInstantiation.js"></script>
   <script src="../Javascript/script.js"></script>
+  <script src="../Javascript/cookies.js"></script>
   <script type="module">
     import '@material/web/all.js';
     import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
@@ -51,6 +44,41 @@
   <style>
     md-suggestion-chip {
       background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Accessibility: Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #4285f4;
+      color: white;
+      padding: 8px 16px;
+      z-index: 10000;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 0 0 4px 0;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Accessibility: Focus States */
+    :focus-visible {
+      outline: 3px solid #4285f4;
+      outline-offset: 2px;
+    }
+
+    /* Accessibility: Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
   <style>
@@ -145,98 +173,104 @@
 </head>
 
 <body class="classPage" onload="load();dothing()" style="background-color: var(--light-bg)" id="body">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="container" id="fullHeightDiv">
-    <img src="../Images/menuIcon.png" class="menuMobile openMenu" id="lines" onclick="openClose(true)">
-    <img src="../Images/closeIcon.png" class="menuMobile closeMenu" id="exes" onclick="openClose(false)">
-    <span class="material-symbols-rounded mode" style="font-size:5vh" onclick="modeChange(this)">light_mode</span>
-    <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
-      <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose"
-        style="padding-left: calc(6vh + 1vw + 0.5vw)">
-        Close
-      </div>
-      <div class="sidebarItem">
-        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
-          onclick="window.location.href = './allClasses.html'" ;>flood</span>Home
-      </div>
-      <div class="sidebarItem" onclick="window.open('https://forms.gle/BzNknKsfrAYHzkww7', '_blank').focus();">
-        <span class="material-symbols-rounded sidebar-icon no-fill" style="font-size:4vw">rate_review</span>Rate class
-      </div>
-      <div class="sidebarItem">
-        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw"
-          onclick="window.open('https://docs.google.com/document/d/1n4HRkpug7Vh7ZYWIeSQcKXRjLHPDzmVj/edit#heading=h.gjdgxs')">menu_book</span>Handbook
-      </div>
-      <div class="sidebarItem"
-        onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
-        <span class="material-symbols-rounded sidebar-icon" style="font-size:4vw">groups</span>Clubs & Activities
-      </div>
-
-
-    </div>
+    <button class="material-symbols-rounded menuMobile openMenu" id="lines" onclick="openClose(true)" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">menu</button>
+    <button class="material-symbols-rounded menuMobile closeMenu" id="exes" onclick="openClose(false)" aria-label="Close navigation menu" aria-expanded="true" aria-controls="sidebar">close</button>
+    <button class="material-symbols-rounded mode" onclick="modeChange(this)" aria-label="Toggle dark mode">light_mode</button>
+    <nav class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)" aria-label="Main navigation">
+      <button class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" aria-label="Close menu">
+        <span>Close</span>
+      </button>
+      <button class="sidebarItem" onclick="window.location.href = './allClasses.html';">
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">flood</span>
+        <span>Home</span>
+      </button>
+      <button class="sidebarItem" onclick="window.open('https://forms.gle/BzNknKsfrAYHzkww7', '_blank').focus();" aria-label="Rate this class - opens form">
+        <span class="material-symbols-rounded sidebar-icon no-fill" aria-hidden="true">rate_review</span>
+        <span>Rate class</span>
+      </button>
+      <button class="sidebarItem" onclick="window.open('https://docs.google.com/document/d/1n4HRkpug7Vh7ZYWIeSQcKXRjLHPDzmVj/edit#heading=h.gjdgxs');">
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">menu_book</span>
+        <span>Handbook</span>
+      </button>
+      <button class="sidebarItem" onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">groups</span>
+        <span>Clubs & Activities</span>
+      </button>
+    </nav>
 
     <div class="main-content">
-      <div class="header" style="background-color: var(--light-mode-bg)" id="header">
-        <div class="title">
+      <header class="header" style="background-color: var(--light-mode-bg)" id="header">
+        <h1 class="title">
           <strong>Course<i>rr</i></strong>
-          <!--<button style="height: 10vh; width: 10vw">Click Me</button>-->
-        </div>
-      </div>
-
-
-
+        </h1>
+      </header>
     </div>
 
 
-    <div class="classPageInfoContainer">
-      <div class="classPageFullSpread">
+    <main id="main-content" class="classPageInfoContainer" aria-label="Course details">
+      <section class="classPageFullSpread" aria-label="Course overview">
         <div class="classPageHeaderRight">
           <div class="classPageClassName" id="classPageClassName">
-            <div class="classPageName" id="className">Loading...</div>
-            <div class="classPageTeacher" id="teachers">Loading...</div>
+            <h2 class="classPageName" id="className">Loading...</h2>
+            <p class="classPageTeacher" id="teachers">Loading...</p>
           </div>
-          <div class="classPageClassRateing" id="starRate">
+          <div class="classPageClassRateing" id="starRate" aria-label="Course rating">
             <!-- Star rating will be populated dynamically -->
           </div>
         </div>
         <div class="classPageHeaderLeft">
           <div class="classPageClassInfo">
             <div class="classPageClassPrereq">
-              <h1>Prerequisites</h1>
+              <h3>Prerequisites</h3>
               <ul>
                 <li>Loading...</li>
               </ul>
             </div>
             <div class="classPageClassTags">
-              <div class="tagsTitle">Tags</div>
-              <md-chip-set class="classPageClassTagsArea">
+              <h3 class="tagsTitle">Tags</h3>
+              <md-chip-set class="classPageClassTagsArea" role="list" aria-label="Course tags">
                 <!-- Tags will be populated dynamically -->
               </md-chip-set>
             </div>
           </div>
           <div class="classPageClassInfo classPageBORDERS">
-            <h1>Quick Hits</h1>
+            <h3>Quick Hits</h3>
             <ul>
               <li>Loading...</li>
             </ul>
           </div>
         </div>
 
-      </div>
+      </section>
       <div class="classPageDescriptionGraphContainer">
-        <div class="classPageHalfSpread classPageClassDecription">
-          <h1>Description</h1>
+        <section class="classPageHalfSpread classPageClassDecription" aria-label="Course description">
+          <h3>Description</h3>
           <p>Loading...</p>
-        </div>
-        <div class="classPageHalfSpread">
-          <canvas id="myChart" class='classPageGraphHalf'></canvas>
-        </div>
+        </section>
+        <section class="classPageHalfSpread" aria-label="Course statistics">
+          <canvas id="myChart" class='classPageGraphHalf' role="img" aria-label="Course statistics chart"></canvas>
+        </section>
       </div>
 
 
 
+    </main>
 
+
+  </div>
+
+  <div class="cookie-popup-holder" id="background-blur" role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
+    <div id="cookie-banner" class="cookie-stuff" role="document">
+      <h2 id="cookie-title" class="visually-hidden">Cookie preferences</h2>
+      <p id="cookie-desc">We use cookies and anonymous analytics to improve the experience for everyone. We collect data like visited pages and commonly used features to understand how Courserr is used and make it better.</p>
+      <div class="privacy-holder">
+        <button onclick="acceptCookies()" class="accept" aria-label="Accept cookies">Accept</button>
+        <button onclick="declineCookies()" class="decline" aria-label="Decline cookies">Decline</button>
+      </div>
+      <a href="privacy.html">Privacy Policy</a>
     </div>
-
-
   </div>
 
 
@@ -303,25 +337,33 @@
       let exes = document.getElementById('exes');
       let text = document.getElementById('mobileClose');
       let sidebar = document.getElementById('sidebar');
+      
       if (closed) {
         exes.style.opacity = "1";
         exes.style.transform = "rotate(-90deg)"
         exes.style.zIndex = "1002";
+        exes.setAttribute('aria-expanded', 'true');
         lines.style.opacity = "0";
         lines.style.transform = "rotate(90deg)";
         lines.style.zIndex = "1001";
+        lines.setAttribute('aria-expanded', 'true');
         sidebar.style.transform = "translateX(0vw)"
+        sidebar.setAttribute('aria-hidden', 'false');
         text.style.opacity = "1";
-
+        exes.focus();
       } else {
         exes.style.opacity = "0";
         exes.style.transform = "rotate(0deg)"
         exes.style.zIndex = "1001";
+        exes.setAttribute('aria-expanded', 'false');
         lines.style.opacity = "1";
         lines.style.transform = "rotate(0deg)";
         lines.style.zIndex = "1002";
+        lines.setAttribute('aria-expanded', 'false');
         sidebar.style.transform = "translateX(-40vw)"
+        sidebar.setAttribute('aria-hidden', 'true');
         text.style.opacity = "0";
+        lines.focus();
       }
 
     }

@@ -1,77 +1,74 @@
-/* Subject Color Styles */
+/* Subject Color Styles - Original with improvements */
 .agriculture {
-    background: #8bc34a; /* green for agriculture */
-    color: #3e5c1c;
+    background: #8bc34a;
+    color: #1b3608;
 }
 .appliedSciences, .technology, .engineering, .manufacturing {
-    background: #607d8b; /* blue-grey for STEM */
+    background: #90a4ae;
     color: #263238;
 }
 .artEducation, .arts {
-    background: #ffb74d; /* orange for art */
-    color: #7c4700;
+    background: #ffb74d;
+    color: #5c3200;
 }
 .business, .finance, .marketing, .management {
-    background: #ffd600; /* gold for business */
-    color: #7c6f00;
+    background: #ffd600;
+    color: #524700;
 }
-.career, .technicalEducation {
-    background: #bdbdbd; /* grey for CTE */
-    color: #333;
+.career, .technicalEducation, .cte {
+    background: #cfd8dc;
+    color: #37474f;
 }
 .english {
-    background: #7a98de;
-    color: #5e75ab;
+    background: #9fa8da;
+    color: #1a237e;
 }
 .health {
-    background: #e57373; /* red for health */
-    color: #7f2323;
+    background: #ef9a9a;
+    color: #5c1818;
 }
-.humanServices {
-    background: #f8bbd0; /* pink for human services */
-    color: #7c3f58;
+.humanServices, .humanservices {
+    background: #f48fb1;
+    color: #5c1832;
 }
-.informationSolutions {
-    background: #00bcd4; /* cyan for info tech */
-    color: #004d56;
+.informationSolutions, .informationsolutions {
+    background: #80deea;
+    color: #006064;
 }
 .mathematics, .math {
-    background: #335a8a;
-    color: #203957;
+    background: #9fa8da;
+    color: #1a237e;
 }
 .music {
-    background: #ddc260;
-    color: #ab9649;
+    background: #fff59d;
+    color: #524a00;
 }
-.physicalEducation {
-    background: #aed581; /* light green for PE */
+.physicalEducation, .physicaleducation {
+    background: #c5e1a5;
     color: #33691e;
 }
 .science {
-    background: #7f995a;
-    color: #55663c;
+    background: #a5d6a7;
+    color: #1b5e20;
 }
-.socialStudies, .history {
-    background: #5b135a;
-    color: #290928;
+.socialStudies, .socialstudies, .history {
+    background: #ce93d8;
+    color: #4a148c;
 }
-.worldLanguage, .foreignLanguage {
-    background: #e99ca5;
-    color: #b57980;
+.worldLanguage, .foreignlanguage, .worldlanguage {
+    background: #ef9a9a;
+    color: #5c1818;
 }
+
 /* Class Grid Styles */
 .class-grid {
-    position: absolute;
-    top: 0vh;
-    padding: 2.5vw;
-    padding-top: 18.5vh;
+    position: relative;
+    padding: 2vw;
     display: grid;
     grid-template-columns: 20vw 20vw 20vw 20vw;
-    column-gap: 3.3vw;
+    column-gap: 3vw;
     row-gap: 2vh;
-    height: 100vh;
-    width: 95vw;
-    overflow-y: scroll;
+    width: 100%;
 }
 .class-grid::-webkit-scrollbar {
     width: 0.5vw;
@@ -81,32 +78,27 @@
     border-radius: 10px;
 }
 
-/* Class Card Styles */
+/* Class Card Styles - Improved layout */
 .classCard {
-    border: 3px solid currentColor;
+    border: 3px solid rgba(0,0,0,0.15);
     height: min-content;
     width: fit-content;
-    padding: 1vh 1vw;
+    padding: 1.2vh 1vw;
     border-radius: 2vh;
-    transition: box-shadow 0.2s ease, transform 0.1s ease;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
 .classCard:hover {
-    box-shadow: 0 0 1vh currentColor;
-    transform: scale(1.005);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    border-color: rgba(0,0,0,0.25);
 }
-.classHeader {
-    width: 18vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+.classCard:focus-within {
+    outline: 3px solid #4285f4;
+    outline-offset: 2px;
 }
-.className {
-    width: 100%;
-    font-size: 1.5vw;
-    font-weight: bold;
-}
-/* Class Card Color Styles */
-/* ...existing code... */
 
 /* Class Card Layout */
 .classHeader {
@@ -114,48 +106,160 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: black;
+    gap: 0.5vw;
+    margin-bottom: 0.8vh;
 }
+
 .className {
-    font-size: 1.5vw;
+    flex: 1;
+    font-size: 1.4vw;
     font-weight: bold;
     text-align: center;
-    transition: transform 0.25s ease;
+    cursor: pointer;
+    padding: 0.5vh 0;
+    border-radius: 0.8vh;
+    transition: all 0.2s ease;
+    line-height: 1.2;
 }
+
+.className:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.className:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+/* Star ratings styling */
 .classRate {
-    margin-top: 1vh;
-    padding: 0 1vh;
+    margin-top: 0.8vh;
+    padding: 0.5vh 1vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 6vh;
+    justify-content: center;
+    gap: 0.3vw;
+    height: auto;
+    min-height: 4vh;
     width: 18vw;
-    border: 1px solid black;
-    border-radius: 2vh;
-    backdrop-filter: saturate(80%);
-    color: black;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 1.5vh;
+    background: rgba(255,255,255,0.4);
 }
+
+.classRate .material-symbols-rounded {
+    font-size: 1.5vw;
+    color: #f57c00;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
 .classDes {
-    padding: 1%;
+    padding: 0.8vh 0.5vw;
     margin-top: 1vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: black;
+    font-size: 1vw;
+    line-height: 1.4;
+    min-height: 8vh;
 }
 
+/* Bookmark button styling */
+.bookmark-btn {
+    background: rgba(255,255,255,0.4);
+    border: 2px solid rgba(0,0,0,0.2);
+    cursor: pointer;
+    padding: 0.3vh 0.5vw;
+    border-radius: 0.8vh;
+    font-size: 1.8vw;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5vw;
+    min-height: 3vh;
+}
+
+.bookmark-btn:hover {
+    background: rgba(255,255,255,0.6);
+    border-color: rgba(0,0,0,0.3);
+    transform: scale(1.05);
+}
+
+/* Class icon styling */
+.class-icon {
+    font-size: 2vw;
+    opacity: 0.9;
+}
+
+/* Responsive design for mobile */
 @media (max-width: 768px) {
-    /* Adjust class grid layout for mobile */
     .class-grid {
-        grid-template-columns: repeat(2, 40vw); /* Two columns on mobile */
-        padding: 2.5vw; /* Adjust padding for mobile */
+        grid-template-columns: 46vw 46vw;
+        column-gap: 3vw;
+        padding: 2vw;
     }
 
-    /* Class card styles */
     .classCard {
-        width: 90%; /* Make cards take more width on mobile */
-        margin: 1vh auto; /* Center cards */
+        width: 100%;
+        padding: 1.5vh 2vw;
+    }
+
+    .classHeader {
+        width: 100%;
+    }
+
+    .className {
+        font-size: 3.5vw;
+    }
+
+    .classRate {
+        width: 100%;
+        min-height: 5vh;
+    }
+    
+    .classRate .material-symbols-rounded {
+        font-size: 3vw;
+    }
+
+    .classDes {
+        font-size: 2.5vw;
+        min-height: 6vh;
+    }
+    
+    .bookmark-btn {
+        font-size: 4vw;
+        min-width: 8vw;
+        min-height: 5vh;
+    }
+    
+    .class-icon {
+        font-size: 4vw;
     }
 }
 
+/* Dark mode card styles */
+body.dark-mode .classCard {
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .classCard:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    border-color: rgba(255,255,255,0.3);
+}
+
+body.dark-mode .classRate {
+    background: rgba(0,0,0,0.3);
+    border-color: rgba(255,255,255,0.2);
+}
+
+body.dark-mode .bookmark-btn {
+    background: rgba(0,0,0,0.3);
+    border-color: rgba(255,255,255,0.2);
+}
+
+body.dark-mode .bookmark-btn:hover {
+    background: rgba(0,0,0,0.5);
+}

@@ -101,40 +101,41 @@
 </head>
 
 <body class="classPage" style="background-color: var(--light-bg)" id="body">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="container" id="fullHeightDiv">
-    <span class="material-symbols-rounded menuMobile openMenu mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="lines" onclick="openClose(true)">menu</span>
-    <span class="material-symbols-rounded menuMobile mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="exes" onclick="openClose(false)">close</span>
-    <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
+    <button class="material-symbols-rounded menuMobile openMenu mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="lines" onclick="openClose(true)" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">menu</button>
+    <button class="material-symbols-rounded menuMobile mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="exes" onclick="openClose(false)" aria-label="Close navigation menu" aria-expanded="true" aria-controls="sidebar">close</button>
+    <nav class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)" aria-label="Main navigation">
 
-      <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: 7vh;"
-        ><p>Close</p>
-      </div>
-      <div class="sidebarItem" onclick="window.location.href = './allClasses.html'" ;>
-        <span class="material-symbols-rounded sidebar-icon">flood</span><p>Home</p>
-      </div>
+      <button class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: 7vh;" aria-label="Close menu">
+        <span>Close</span>
+      </button>
+      <button class="sidebarItem" onclick="window.location.href = './allClasses.html';">
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">flood</span><span>Home</span>
+      </button>
       <!-- <div class="sidebarItem" onclick="window.open('https://forms.gle/BzNknKsfrAYHzkww7', '_blank').focus();">
             <span class="material-symbols-rounded sidebar-icon no-fill" style="font-size:4vw">add</span>Rate class
           </div> -->
-      <div class="sidebarItem"
+      <button class="sidebarItem"
         onclick="window.open('https://docs.google.com/document/d/1n4HRkpug7Vh7ZYWIeSQcKXRjLHPDzmVj/edit#heading=h.gjdgxs')">
-        <span class="material-symbols-rounded sidebar-icon">menu_book</span><p>Handbook</p>
-      </div>
-      <div class="sidebarItem"
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">menu_book</span><span>Handbook</span>
+      </button>
+      <button class="sidebarItem"
         onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
-        <span class="material-symbols-rounded sidebar-icon no-fill">groups</span><p>Clubs & Activities</p>
-      </div>
-      <div class="sidebarItem"
+        <span class="material-symbols-rounded sidebar-icon no-fill" aria-hidden="true">groups</span><span>Clubs & Activities</span>
+      </button>
+      <button class="sidebarItem"
         onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdDH42uqIz3Om26jL_gGW5gQYDMwOj298VUGsPA_PfuC-56Dw/viewform?usp=publish-editor', '_blank').focus()">
-        <span class="material-symbols-rounded sidebar-icon">bug_report</span><p>Bugs/Issues</p>
-      </div>
-      <div class="sidebarItem" onclick="window.location.href = '../index.html'">
-        <span class="material-symbols-rounded sidebar-icon">help</span><p>Help</p>
-      </div>
-      <div class="sidebarItem" onclick="window.open('https://github.com/jackattack16/Courserr').focus()">
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">bug_report</span><span>Bugs/Issues</span>
+      </button>
+      <button class="sidebarItem" onclick="window.location.href = '../index.html'">
+        <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">help</span><span>Help</span>
+      </button>
+      <button class="sidebarItem" onclick="window.open('https://github.com/jackattack16/Courserr').focus()">
         <!-- <span class="material-symbols-rounded sidebar-icon">volunteer_activism</span><p>Contrubute</p> -->
-        <img src="../Images/github-mark.png" class="sidebar-icon"><p>Contribute</p>
-      </div>
-    </div>
+        <img src="../Images/github-mark.png" class="sidebar-icon" alt="GitHub logo"><span>Contribute</span>
+      </button>
+    </nav>
     <div class="main-content">
       <div class="header" style="background-color: var(--light-mode-bg);height: 10vh;" id="header">
         <div class="title">
@@ -148,7 +149,7 @@
     </div>
 
 
-    <div class="main-content-class-page">
+    <main class="main-content-class-page" id="main-content" aria-label="Course details">
 
         <div class="class-info-container" style="padding-top:12.5vh">
           <div class="class-page-header">
@@ -193,13 +194,13 @@
           </div>
 
           <div class="class-page-half-box">
-            <canvas id="myChart" class='classPageGraphHalf'></canvas>
+            <canvas id="myChart" class='classPageGraphHalf' role="img" aria-label="Course statistics chart"></canvas>
           </div>
 
 
         </div>
 
-      </div>
+      </main>
       
 
 
@@ -207,32 +208,20 @@
 
 
   </div>
-  <div class="cookie-popup-holder" id="background-blur">
-    <div id="cookie-banner" class="cookie-stuff">
-      <p>We use cookies and anonymous analytics to improve the experience for everyone. We collect data like visited pages and commonly used features to understand how Courserr is used and make it better.
-      </p>
+  <div class="cookie-popup-holder" id="background-blur" role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
+    <div id="cookie-banner" class="cookie-stuff" role="document">
+      <h2 id="cookie-title" class="visually-hidden">Cookie preferences</h2>
+      <p id="cookie-desc">We use cookies and anonymous analytics to improve the experience for everyone. We collect data like visited pages and commonly used features to understand how Courserr is used and make it better.</p>
       <div class="privacy-holder">
-        <button onclick="acceptCookies()" class="accept">Accept</button>
-        <button onclick="declineCookies()" class="decline">Decline</button>
+        <button onclick="acceptCookies()" class="accept" aria-label="Accept cookies">Accept</button>
+        <button onclick="declineCookies()" class="decline" aria-label="Decline cookies">Decline</button>
       </div>
       <a href="privacy.html">Privacy Policy</a>
     </div>
     </div>
-    <script>
-      function acceptCookies() {
-        document.getElementById('cookie-banner').style.display = 'none';
-        document.getElementById('background-blur').style.display = 'none';
-        enableAnalytics();
-      }
-    
-      if (localStorage.getItem('ga-consent') === 'granted' || localStorage.getItem('ga-consent') === 'denied') {
-        document.getElementById('cookie-banner').style.display = 'none';
-        document.getElementById('background-blur').style.display = 'none';
-      }
-
-
 
   <script src="../Javascript/loadClass.js"></script>
+  <script src="../Javascript/cookies.js"></script>
 
   <script>
     let course;
@@ -278,20 +267,29 @@
         exes.style.opacity = "1";
         exes.style.transform = "rotate(-90deg)"
         exes.style.zIndex = "1002";
+        exes.setAttribute('aria-expanded', 'true');
         lines.style.opacity = "0";
         lines.style.transform = "rotate(90deg)";
+        lines.style.zIndex = "1001";
+        lines.setAttribute('aria-expanded', 'true');
         sidebar.style.transform = "translateX(0vw)"
+        sidebar.setAttribute('aria-hidden', 'false');
         text.style.opacity = "1";
+        exes.focus();
 
       } else {
         exes.style.opacity = "0";
         exes.style.transform = "rotate(0deg)"
         exes.style.zIndex = "1001";
+        exes.setAttribute('aria-expanded', 'false');
         lines.style.opacity = "1";
         lines.style.transform = "rotate(0deg)";
         lines.style.zIndex = "1002";
+        lines.setAttribute('aria-expanded', 'false');
         sidebar.style.transform = "translateX(-75vw)"
+        sidebar.setAttribute('aria-hidden', 'true');
         text.style.opacity = "0";
+        lines.focus();
       }
 
     }

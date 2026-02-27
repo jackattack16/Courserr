@@ -2,18 +2,10 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6N8FBM6L1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-H6N8FBM6L1');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courserr - Help</title>
+    <meta name="description" content="Courserr - A student-built course discovery platform for Ames High School">
 
     <link rel="icon" href="../Images/logo.png">
     <link rel="stylesheet"
@@ -519,12 +511,61 @@
             'GRAD' 200,
             'opsz' 48;
         }
+
+        /* Accessibility: Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-blue);
+            color: white;
+            padding: 8px 16px;
+            z-index: 10000;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 0 0 4px 0;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Accessibility: Focus States */
+        :focus-visible {
+            outline: 3px solid var(--primary-blue);
+            outline-offset: 2px;
+        }
+
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible {
+            outline: 3px solid var(--primary-blue);
+            outline-offset: 2px;
+        }
+
+        /* Accessibility: Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .wave-background,
+            .wave-layer,
+            .wave-shape,
+            .ripple,
+            .particle {
+                animation: none !important;
+            }
+        }
     </style>
 </head>
 
 <body style="background-color: #f8f9fa" id="body">
-    <!-- Fancy Wave Background Animation -->
-    <div class="wave-background">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="wave-background" aria-hidden="true">
         <div class="wave-layer">
             <div class="wave-shape"></div>
             <div class="wave-shape"></div>
@@ -553,137 +594,107 @@
     </div>
 
     <div class="container" id="fullHeightDiv">
-        <span class="material-symbols-rounded menuMobile openMenu mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="lines" onclick="openClose(true)">menu</span>
-        <span class="material-symbols-rounded menuMobile mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="exes" onclick="openClose(false)">close</span>
-        <div class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)">
-            <div class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: 7vh;"
-                ><p>Close</p>
-            </div>
-            <div class="sidebarItem" onclick="window.location.href = './HTML/allClasses.html'" ;>
-                <span class="material-symbols-rounded sidebar-icon">flood</span><p>Home</p>
-            </div>
-            <!-- <div class="sidebarItem" onclick="window.open('https://forms.gle/BzNknKsfrAYHzkww7', '_blank').focus();">
-                  <span class="material-symbols-rounded sidebar-icon no-fill" style="font-size:4vw">add</span>Rate class
-                </div> -->
-            <div class="sidebarItem"
-                onclick="window.open('https://docs.google.com/document/d/1n4HRkpug7Vh7ZYWIeSQcKXRjLHPDzmVj/edit#heading=h.gjdgxs')">
-                <span class="material-symbols-rounded sidebar-icon">menu_book</span><p>Handbook</p>
-            </div>
-            <div class="sidebarItem"
-                onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
-                <span class="material-symbols-rounded sidebar-icon no-fill">groups</span><p>Clubs & Activities</p>
-            </div>
-            <div class="sidebarItem"
-                onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdDH42uqIz3Om26jL_gGW5gQYDMwOj298VUGsPA_PfuC-56Dw/viewform?usp=publish-editor', '_blank').focus()">
-                <span class="material-symbols-rounded sidebar-icon">bug_report</span><p>Bugs/Issues</p>
-            </div>
-            <div class="sidebarItem" onclick="window.location.href = './index.html'">
-                <span class="material-symbols-rounded sidebar-icon">help</span><p>Help</p>
-            </div>
-            <div class="sidebarItem" onclick="window.open('https://github.com/jackattack16/Courserr').focus()">
-              <!-- <span class="material-symbols-rounded sidebar-icon">volunteer_activism</span><p>Contrubute</p> -->
-              <img src="Images/github-mark.png" class="sidebar-icon"><p>Contribute</p>
-            </div>
-        </div>
+        <button class="material-symbols-rounded menuMobile openMenu mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="lines" onclick="openClose(true)" aria-label="Open navigation menu" aria-expanded="false" aria-controls="sidebar">menu</button>
+        <button class="material-symbols-rounded menuMobile mobileClose" style="font-size: 5vh; transition: opacity 0.25s ease, transform 0.5s ease;" id="exes" onclick="openClose(false)" aria-label="Close navigation menu" aria-expanded="true" aria-controls="sidebar">close</button>
+        <nav class="sidebar" id="sidebar" style="background-color: var(--light-mode-bg)" aria-label="Main navigation">
+            <button class="sidebarItem mobileClose" onclick="openClose(false)" id="mobileClose" style="padding-left: 7vh;" aria-label="Close menu">
+                <span>Close</span>
+            </button>
+            <button class="sidebarItem" onclick="window.location.href = './HTML/allClasses.html';">
+                <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">flood</span><span>Home</span>
+            </button>
+            <button class="sidebarItem" onclick="window.open('https://docs.google.com/document/d/1n4HRkpug7Vh7ZYWIeSQcKXRjLHPDzmVj/edit#heading=h.gjdgxs');">
+                <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">menu_book</span><span>Handbook</span>
+            </button>
+            <button class="sidebarItem" onclick="window.open('https://ameshighathletics.org/activities/?per_page=12&page=1', '_blank').focus();">
+                <span class="material-symbols-rounded sidebar-icon no-fill" aria-hidden="true">groups</span><span>Clubs & Activities</span>
+            </button>
+            <button class="sidebarItem" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdDH42uqIz3Om26jL_gGW5gQYDMwOj298VUGsPA_PfuC-56Dw/viewform?usp=publish-editor', '_blank').focus()">
+                <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">bug_report</span><span>Bugs/Issues</span>
+            </button>
+            <button class="sidebarItem" onclick="window.location.href = './index.html'">
+                <span class="material-symbols-rounded sidebar-icon" aria-hidden="true">help</span><span>Help</span>
+            </button>
+            <button class="sidebarItem" onclick="window.open('https://github.com/jackattack16/Courserr').focus()">
+                <img src="Images/github-mark.png" class="sidebar-icon" alt="GitHub logo"><span>Contribute</span>
+            </button>
+        </nav>
 
         <div class="main-content">
-            <div class="header" style="background-color: white; box-shadow: 0 1px 4px rgba(0,0,0,0.1);" id="header">
+            <header class="header" style="background-color: white; box-shadow: 0 1px 4px rgba(0,0,0,0.1);" id="header">
                 <div class="title">
                     <strong style="color: var(--text-grey)">Course<i>rr</i></strong>
                 </div>
-            </div>
-<div class="help-container">
-    <div class="hero-section">
+            </header>
+<main id="main-content" class="help-container">
+    <section class="hero-section">
         <h1 class="hero-title">Built by Students, for Students</h1>
         <p class="hero-subtitle">Picking classes shouldn't be a headache. We made this simple so you can actually find stuff you'll like.</p>
-    </div>
+    </section>
 
     <div class="go-button-container">
         <a href="./HTML/allClasses.html" class="go-button">Explore Classes →</a>
     </div>
 
-    <div class="feature-grid">
-        <div class="feature-card">
+    <section class="feature-grid" aria-label="Features">
+        <article class="feature-card">
             <div class="tech-pill">Class Discovery</div>
-            <span class="material-symbols-rounded card-icon">shuffle</span>
-            <h3 class="card-title">Randomized Picks</h3>
+            <span class="material-symbols-rounded card-icon" aria-hidden="true">shuffle</span>
+            <h2 class="card-title">Randomized Picks</h2>
             <p class="card-text">
                 Every time you hit the main page, you'll see different classes. It's a good way to stumble onto something you didn't know existed.
             </p>
-        </div>
+        </article>
 
-        <div class="feature-card">
+        <article class="feature-card">
             <div class="tech-pill">Informed Decisions</div>
-            <span class="material-symbols-rounded card-icon">monitoring</span>
-            <h3 class="card-title">Know Before You Enroll</h3>
+            <span class="material-symbols-rounded card-icon" aria-hidden="true">monitoring</span>
+            <h2 class="card-title">Know Before You Enroll</h2>
             <p class="card-text">
                 Check out subjects, descriptions, grade levels - all the basics. We're also working on adding student reviews so you can hear from people who've actually taken the class.
             </p>
-        </div>
+        </article>
 
-        <div class="feature-card">
+        <article class="feature-card">
             <div class="tech-pill">Easy Connections</div>
-            <span class="material-symbols-rounded card-icon">account_tree</span>
-            <h3 class="card-title">Class Pathways</h3>
+            <span class="material-symbols-rounded card-icon" aria-hidden="true">account_tree</span>
+            <h2 class="card-title">Class Pathways</h2>
             <p class="card-text">
                 Not sure what you need to take first? We show prerequisites so you can plan ahead without digging through the course catalog.
             </p>
-        </div>
+        </article>
 
-        <div class="feature-card">
+        <article class="feature-card">
             <div class="tech-pill">Smart Search</div>
-            <span class="material-symbols-rounded card-icon">search</span>
-            <h3 class="card-title">Just Search It</h3>
+            <span class="material-symbols-rounded card-icon" aria-hidden="true">search</span>
+            <h2 class="card-title">Just Search It</h2>
             <p class="card-text">
                 Type in a class name, subject, or even a keyword from the description. It's not complicated - just search and see what comes up.
             </p>
-        </div>
-    </div>
-</div>
+        </article>
+    </section>
+</main>
 
         </div>
+        <footer style="position: fixed; bottom: 0; right: 0; padding: 8px; width: 95vw; background-color: var(--light-mode-bg); text-align: center; backdrop-filter: blur(50px);">
+          <a href="HTML/privacy.html">Privacy Policy</a>
+        </footer>
     </div>
-    <script>
-      function acceptCookies() {
-        document.getElementById('cookie-banner').style.display = 'none';
-        document.getElementById('background-blur').style.display = 'none';
-        enableAnalytics();
-      }
-    
-      if (localStorage.getItem('ga-consent') === 'granted' || localStorage.getItem('ga-consent') === 'denied') {
-        document.getElementById('cookie-banner').style.display = 'none';
-        document.getElementById('background-blur').style.display = 'none';
-      }
 
-      function declineCookies() {
-        localStorage.setItem('ga-consent', 'denied');
-        document.getElementById('cookie-banner').style.display = 'none';
-        document.getElementById('background-blur').style.display = 'none';
-      }
+    <div class="cookie-popup-holder" id="background-blur" role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
+      <div id="cookie-banner" class="cookie-stuff" role="document">
+        <h2 id="cookie-title" class="visually-hidden">Cookie preferences</h2>
+        <p id="cookie-desc">We use cookies and anonymous analytics to improve the experience for everyone. We collect data like visited pages and commonly used features to understand how Courserr is used and make it better.</p>
+        <div class="privacy-holder">
+          <button onclick="acceptCookies()" class="accept" aria-label="Accept cookies">Accept</button>
+          <button onclick="declineCookies()" class="decline" aria-label="Decline cookies">Decline</button>
+        </div>
+        <a href="HTML/privacy.html">Privacy Policy</a>
+      </div>
+      
+    </div>
 
-    </script>
-    
-
-    <script>
-      function acceptCookies() {
-        document.getElementById('cookie-banner').style.display = 'none';
-        document.getElementById('background-blur').style.display = 'none';
-        enableAnalytics();
-      }
-    
-      if (localStorage.getItem('ga-consent') === 'granted' || localStorage.getItem('ga-consent') === 'denied') {
-        document.getElementById('cookie-banner').style.display = 'none';
-        document.getElementById('background-blur').style.display = 'none';
-      }
-
-      function declineCookies() {
-        localStorage.setItem('ga-consent', 'denied');
-        document.getElementById('cookie-banner').style.display = 'none';
-        document.getElementById('background-blur').style.display = 'none';
-      }
-
-    </script>
-    
+    <script src="Javascript/cookies.js"></script>
 
     <script>
         function openClose(closed) {
@@ -691,23 +702,33 @@
             let exes = document.getElementById('exes');
             let text = document.getElementById('mobileClose');
             let sidebar = document.getElementById('sidebar');
+            
             if (closed) {
                 exes.style.opacity = "1";
                 exes.style.transform = "rotate(-90deg)"
                 exes.style.zIndex = "1002";
+                exes.setAttribute('aria-expanded', 'true');
                 lines.style.opacity = "0";
                 lines.style.transform = "rotate(90deg)";
+                lines.style.zIndex = "1001";
+                lines.setAttribute('aria-expanded', 'true');
                 sidebar.style.transform = "translateX(0vw)"
+                sidebar.setAttribute('aria-hidden', 'false');
                 text.style.opacity = "1";
+                exes.focus();
             } else {
                 exes.style.opacity = "0";
                 exes.style.transform = "rotate(0deg)"
                 exes.style.zIndex = "1001";
+                exes.setAttribute('aria-expanded', 'false');
                 lines.style.opacity = "1";
                 lines.style.transform = "rotate(0deg)";
                 lines.style.zIndex = "1002";
+                lines.setAttribute('aria-expanded', 'false');
                 sidebar.style.transform = "translateX(-75vw)"
+                sidebar.setAttribute('aria-hidden', 'true');
                 text.style.opacity = "0";
+                lines.focus();
             }
         }
 
